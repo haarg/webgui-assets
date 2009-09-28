@@ -12,18 +12,9 @@ URL         : root/import/survey/default-survey-take
 
     <tmpl_if user_canTakeSurvey></tmpl_if>
 
-	    <script type="text/javascript" src="/extras/yui/build/utilities/utilities.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/container/container-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/menu/menu-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/button/button-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/calendar/calendar-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/json/json-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/logger/logger-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/resize/resize-min.js"></script>
-	    <script type="text/javascript" src="/extras/yui/build/slider/slider-min.js"></script>
-	
-	    <script type="text/javascript" src="/extras/wobject/Survey/administersurvey/comm.js"></script>
-	    <script type="text/javascript" src="/extras/wobject/Survey/administersurvey.js"></script>
+
+	    <script type="text/javascript" src="^Extras(wobject/Survey/administersurvey/comm.js);"></script>
+	    <script type="text/javascript" src="^Extras(wobject/Survey/administersurvey.js);"></script>
 	
 	    <div class="survey-header"></div>
 	    <div id="survey"></div>
@@ -32,9 +23,11 @@ URL         : root/import/survey/default-survey-take
 
 </div>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
-<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/survey.css" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
+<link rel="stylesheet" type="text/css" href="/survey.css" />
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

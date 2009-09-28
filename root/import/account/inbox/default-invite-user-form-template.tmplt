@@ -8,57 +8,48 @@ URL         : root/import/account/inbox/default-invite-user-form-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>  
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%">
-                <tbody>
-                <tr>
-                    <td class="bar">
+<div class="WGProfile_registration">
+	
+            <div class="WGinboxTbl">
+
+                    <p class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>	
-                <tr class="bar">
-                    <td>^International(invite a friend,Account_Inbox);</td>
-                </tr>
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </p>
+
+                <p class="bar">
+                    ^International(invite a friend,Account_Inbox);
+                </p>
                 <tmpl_if message_display_error>
-                <tr>
-                    <td style="font-weight:bold;color:red;text-align:center;"><tmpl_var message_display_error></td>
-                </tr>
+
+                    <p class="WGinbox_errors"><tmpl_var message_display_error></p>
+
                 </tmpl_if>
-                <tr>
-                    <td align="center">
-                        <table border="0" cellpadding="1" cellspacing="5">
+						
+                        <table class="WGProfileFields">
                             <tbody>
                             <tr>
-                                <td width="50px" align="right"><strong>^International(to label,Account_Inbox);:</strong></td>
-                                <td align="left"><tmpl_var form_to></td>
+                                <td class="WG_inbox_InviteLabel"><strong>^International(to label,Account_Inbox);:</strong></td>
+                                <td><tmpl_var form_to></td>
                             </tr>
                             <tr>
-                                <td width="50px" align="right"><strong>^International(subject label,Account_Inbox);:</strong></td>
-                                <td align="left"><tmpl_if subject_allowed><tmpl_var form_subject><tmpl_else><div class="userInvite_subject"><tmpl_var form_subject></div></tmpl_if></td>
+                                <td class="WG_inbox_InviteLabel"><strong>^International(subject label,Account_Inbox);:</strong></td>
+                                <td><tmpl_if subject_allowed><tmpl_var form_subject><tmpl_else><div class="WGuserInvite_subject"><tmpl_var form_subject></div></tmpl_if></td>
                             </tr>
                             <tr>
-                                <td colspan="2"><tmpl_if message_allowed><tmpl_var form_message_text><tmpl_else><div class="account_message"><tmpl_var form_message_text></div></tmpl_if></td>
+                                <td colspan="2"><tmpl_if message_allowed><tmpl_var form_message_text><tmpl_else><div class="WGaccount_message"><tmpl_var form_message_text></div></tmpl_if></td>
                             </tr>
                             <tr>
-                                <td align="right" colspan="2" class="send">
+                                <td colspan="2" class="WGsend">
                                     <input type="submit" name="send" value="^International(send label,Account_Inbox);" />&nbsp;&nbsp;
                                     <input type="button" name="cancel" value="^International(cancel label,Account_Inbox);" onclick="location.href='<tmpl_var back_url>'" />
                                 </td>
                             </tr>
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+
+			</div>
+</div>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
 ~

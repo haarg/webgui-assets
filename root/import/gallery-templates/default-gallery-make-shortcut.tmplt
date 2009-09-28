@@ -49,7 +49,7 @@ URL         : root/import/gallery-templates/default-gallery-make-shortcut
 			<input type="button" value="^International(cancel,Asset_GalleryAlbum);" class="adminButton" onclick="history.go(-1); return false" /> <input type="submit" value="^International(save,Asset_GalleryAlbum);" class="adminButton" />
 		</div>
 
-		</div></form>
+		<tmpl_var form_end>
 	</div>
 </div>
 ==== extraHeadTags ===========================================================

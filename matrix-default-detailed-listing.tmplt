@@ -89,22 +89,22 @@ URL         : matrix-default-detailed-listing
     <br class="wg-clear" />
 </div>
 ==== extraHeadTags ===========================================================
-<link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
-<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
-<script src="/extras/yui/build/yahoo/yahoo-min.js" type="text/javascript"></script>
-<script src="/extras/yui/build/dom/dom-min.js" type="text/javascript"></script>
-<script src="/extras/yui/build/event/event-min.js" type="text/javascript"></script>
-<script src="/extras/yui/build/container/container-min.js" type="text/javascript"></script>
-<script src="/extras/hoverhelp.js" type="text/javascript"></script>
-<script src="^/;new-matrix/show-hide.js" type="text/javascript"></script>
+<link href="^Extras(yui/build/container/assets/container.css);" rel="stylesheet" type="text/css" />
+<link href="^Extras(hoverhelp.css);" rel="stylesheet" type="text/css" />
+<script src="^Extras(yui/build/yahoo/yahoo-min.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/dom/dom-min.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/event/event-min.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/container/container-min.js);" type="text/javascript"></script>
+<script src="^Extras(hoverhelp.js);" type="text/javascript"></script>
+<script src="^/(new-matrix/show-hide.js);" type="text/javascript"></script>
 
 <style type="text/css">
-@import url(^/;new-matrix/matrix.css);
+@import url(^/(new-matrix/matrix.css););
 </style>
 
 <!--[if IE]>
 <style type="text/css">
-@import url(^/;new-matrix/matrix-ie.css);
+@import url(^/(new-matrix/matrix-ie.css););
 </style>
 <![endif]-->
 ==== Properties ==============================================================

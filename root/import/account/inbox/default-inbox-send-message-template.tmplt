@@ -8,20 +8,20 @@ URL         : root/import/account/inbox/default-inbox-send-message-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>  
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
+<table class="WGProfile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
     <tbody>
     <tr>
-        <td class="yourselfBG">	
+        <td class="WGyourselfBG">	
             <table cellspacing="5" cellpadding="1" border="0" width="100%">
                 <tbody>
                 <tr>
                     <td class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
                     </td>
                 </tr>	
                 <tr class="bar">
-                    <td>^International(<tmpl_if isReply>reply message label<tmpl_else>compose message label</tmpl_if>,Account_Inbox);</td>
+                    <td><tmpl_if isReply>^International(reply message label,Account_Inbox);<tmpl_else>^International(compose message label,Account_Inbox);</tmpl_if></td>
                 </tr>
                 <tmpl_if message_display_error>
                 <tr>
@@ -64,7 +64,7 @@ URL         : root/import/account/inbox/default-inbox-send-message-template
 </table>
 <tmpl_if isNew>
 <div id="friends"> 
-    <table width="100%" class="inbox_contactsTbl">
+    <table width="100%" class="WGinbox_contactsTbl">
         <tbody>
         <tr class="bar">
             <td>
@@ -79,8 +79,8 @@ URL         : root/import/account/inbox/default-inbox-send-message-template
                         <tbody>
                         <tmpl_loop friends_loop>
                         <tr>
-                            <td class="datacells"><tmpl_var friend_checkbox></td>
-                            <td class="datacells" id="friend_<tmpl_var friend_id>_name"><tmpl_var friend_name><tmpl_if friend_wholeName> [<tmpl_var friend_wholeName>]</tmpl_if></td>
+                            <td class="WGdatacells"><tmpl_var friend_checkbox></td>
+                            <td class="WGdatacells" id="friend_<tmpl_var friend_id>_name"><tmpl_var friend_name><tmpl_if friend_wholeName> [<tmpl_var friend_wholeName>]</tmpl_if></td>
                         </tr>
                         </tmpl_loop>
                         </tbody>

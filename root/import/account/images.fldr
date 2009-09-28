@@ -1,9 +1,9 @@
 ==== Wobject::Folder =========================================================
-Asset ID    : iLzlwGmwrvzlGHXKzaDyjA
-Menu Title  : Messaging
-Parent      : root/import
-Title       : Messaging
-URL         : root/import/messaging
+Asset ID    : HW-sPoDDZR8wBZ0YgFgPtg
+Menu Title  : images
+Parent      : root/import/account
+Title       : images
+URL         : root/import/account/images
 ==== synopsis ================================================================
 ~
 ==== extraHeadTags ===========================================================
@@ -13,9 +13,9 @@ URL         : root/import/messaging
 ==== Properties ==============================================================
 display:
   displayTitle: '1'
-  isHidden: '0'
+  isHidden: '1'
   newWindow: '0'
-  printableStyleTemplateId: PBtmpl0000000000000060
+  printableStyleTemplateId: PBtmpl0000000000000111
   sortAlphabetically: '0'
   sortOrder: ASC
   styleTemplateId: PBtmpl0000000000000060
@@ -27,7 +27,7 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 security:
-  groupIdEdit: '3'
-  groupIdView: '12'
+  groupIdEdit: '12'
+  groupIdView: '7'
   ownerUserId: '3'
 

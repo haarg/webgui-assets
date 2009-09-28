@@ -140,12 +140,12 @@ URL         : matrix-default-view-template
 <div style="clear:both"></div>
 ==== extraHeadTags ===========================================================
 <style type="text/css">
-@import url(^/;new-matrix/matrix.css);
+@import url(^/(new-matrix/matrix.css););
 </style>
 
 <!--[if IE]>
 <style type="text/css">
-@import url(^/;new-matrix/matrix-ie.css);
+@import url(^/(new-matrix/matrix-ie.css););
 </style>
 <![endif]-->
 ==== Properties ==============================================================

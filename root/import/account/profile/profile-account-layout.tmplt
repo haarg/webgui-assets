@@ -8,23 +8,23 @@ URL         : root/import/account/profile/profile-account-layout
 ~
 ==== template ================================================================
 <tmpl_var form_header>
-<div class="divclear">
-    <tmpl_if is_edit><input type="submit" class="topbutton" value="^International(save changes,Account_Profile);" /></tmpl_if>
-    <ul class="topTabs">
+<div class="WGdivclear">
+    <tmpl_if is_edit><input type="submit" class="WGtopbutton" value="^International(save changes,Account_Profile);" /></tmpl_if>
+    <ul class="WGtopTabs">
         <tmpl_loop account_loop>
         <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
         </tmpl_loop>
     </ul>
 </div>
-<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
-<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
-<tmpl_unless is_edit><a href="<tmpl_var edit_profile_url>" class="profile_displayView">^International('back to profile label','Account_Profile');</a></tmpl_unless>
-<div class="<tmpl_if is_edit>subContent<tmpl_else>profile_displaySubContent</tmpl_if>">
+<!--[if gt IE 6]> <div class="WGcleartab"></div> <![endif]-->
+<!--[if !IE]>--><div class="WGcleartab"></div><!--<![endif]-->
+<tmpl_unless is_edit><a href="<tmpl_var edit_profile_url>" class="WGprofile_displayView">^International('back to profile label','Account_Profile');</a></tmpl_unless>
+<div class="<tmpl_if is_edit>WGsubContent<tmpl_else>WGprofile_displaySubContent</tmpl_if>">
     <div class="yui-skin-sam">
         <div id="wgAccountTabs" class="yui-navset">
-            <div class="cleardiv">
+            <div class="wg-clear">
                 <tmpl_if is_edit>
-                <a href="<tmpl_var view_profile_url>" class="view">^International(profile as others label,Account_Profile);</a>
+                <a href="<tmpl_var view_profile_url>" class="WGview">^International(profile as others label,Account_Profile);</a>
                 <ul class="yui-nav">
                     <tmpl_loop profile_category_loop>
                     <li <tmpl_if profile_category_isActive>class="selected"</tmpl_if>><a href="#tab<tmpl_var profile_category_index>" title="<tmpl_var profile_category_label>"><em><tmpl_var profile_category_shortLabel></em></a></li>
@@ -39,11 +39,10 @@ URL         : root/import/account/profile/profile-account-layout
         </div>
     </div>
 </div>
-<tmpl_if is_edit><input type="submit" class="bottombutton" value="^International(save changes,Account_Profile);" /><br /></tmpl_if>
+<tmpl_if is_edit><input type="submit" class="WGbottombutton" value="^International(save changes,Account_Profile);" /><br /></tmpl_if>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
 ==== Properties ==============================================================
 display:
   isHidden: '1'

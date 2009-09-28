@@ -387,7 +387,7 @@ URL         : new-matrix/matrix.css
 	color:#333;
 }
 #matrixRatings .formDescription a:before {
-	content: "» ";
+	content: "Â» ";
 	text-decoration:none;
 }
 #matrixRatings .formDescription a {

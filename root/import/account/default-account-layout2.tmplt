@@ -7,18 +7,19 @@ URL         : root/import/account/default-account-layout2
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div class="divclear">
-    <ul class="topTabs">
+<div class="wg-clear">
+    <ul class="WGtopTabs">
         <tmpl_loop account_loop>
         <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
         </tmpl_loop>
     </ul>
 </div>
-<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
-<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<!--[if gt IE 6]> <div class="WGcleartab"></div> <![endif]-->
+<!--[if !IE]>--><div class="WGcleartab"></div><!--<![endif]-->
 <tmpl_var content>
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
 <link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:

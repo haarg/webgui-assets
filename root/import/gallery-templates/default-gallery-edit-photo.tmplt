@@ -100,7 +100,7 @@ URL         : root/import/gallery-templates/default-gallery-edit-photo
 		<a href="<tmpl_var url_album>" class="adminButton" onclick="history.go(-1); return false">^International('editForm cancel','Asset_Photo');</a> <input type="submit" value="^International('editForm save','Asset_Photo');" class="adminButton" />
 	</div>
 
-	</div></form>
+	<tmpl_var form_end>
 
 </div>
 ==== extraHeadTags ===========================================================

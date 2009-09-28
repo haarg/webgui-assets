@@ -7,22 +7,35 @@ URL         : root/import/datatable/default-datatable-template-html
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+<div id="dataTable<tmpl_var assetId>" class="dataTable">
 
-<tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
 
-<tmpl_var description>
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
 
-<table>
-	<thead><tmpl_loop columns>
-		<th><tmpl_var key></th></tmpl_loop>
+<div class="description">
+	<tmpl_var description>
+</div><!--description-->
+
+<table class="data">
+	<thead>
+		<tmpl_loop columns>
+		<th><tmpl_var key></th>
+		</tmpl_loop>
 	</thead>
-	<tbody><tmpl_loop rows>
+	<tbody>
+		<tmpl_loop rows>
 		<tr><tmpl_loop row_columns>
 		<td><tmpl_var value></td>
 		</tmpl_loop></tr>
-	</tmpl_loop></tbody>
-</table>
+		</tmpl_loop>
+	</tbody>
+</table><!--data-->
+</div><!--dataTable-->
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

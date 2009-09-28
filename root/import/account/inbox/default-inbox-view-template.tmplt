@@ -8,89 +8,66 @@ URL         : root/import/account/inbox/default-inbox-view-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%" id="inboxTbl">
-                <tbody>
-                <tr>
-                    <td colspan="6" class="bar">
+<div class="WGProfile_registration">
+
+            <div class="WGinboxTbl">
+                    <p class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>	
-                <tr>
-                    <td colspan="6" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%"> <input type="button" value="^International(new message label,Account_Inbox);" onclick="<tmpl_if canSendMessages>location.href='<tmpl_var new_message_url>'<tmpl_else>alert('^International(no friends hover,Account_Inbox);');</tmpl_if>" /><input type="submit" value="^International(delete label,Account_Inbox);"></td>
-                                <td style="text-align:center;width=20%">
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </p>
+	
+			<p class="bar">
+                            <span class="WGinbox_buttons"> <input type="button" value="^International(new message label,Account_Inbox);" onClick="<tmpl_if canSendMessages>location.href='<tmpl_var new_message_url>'<tmpl_else>alert('^International(no friends hover,Account_Inbox);');</tmpl_if>" /><input type="submit" value="^International(delete label,Account_Inbox);"></span>
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                    <span class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
-                                    </div>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
+                                    </span>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="bar" width="5%">&nbsp;</td>
-                    <td class="bar" width="5%"><input type="checkbox" name="all" id="check_all"  /></td>
-                    <td class="bar" width="15%"><a href="<tmpl_var from_url>">^International(from label,Account_Inbox);</a></td>
-                    <td class="bar" width="50%"><a href="<tmpl_var subject_url>">^International(subject label,Account_Inbox);</a></td>
-                    <td class="bar" width="15%"><a href="<tmpl_var dateStamp_url>">^International(date label,Account_Inbox);</a></td>
-                    <td class="bar" width="10%"><a href="<tmpl_var status_url>">^International(status label,Account_Inbox);</a></td>
+                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+			</p>
+                    
+                <table class="WGProfileFields">
+               <tr>
+                    <td class="barFive">&nbsp;</td>
+                    <td class="barFive"><input type="checkbox" name="all" id="check_all"  /></td>
+                    <td class="barFifteen"><a href="<tmpl_var from_url>">^International(from label,Account_Inbox);</a></td>
+                    <td class="barFifty"><a href="<tmpl_var subject_url>">^International(subject label,Account_Inbox);</a></td>
+                    <td class="barFifteen"><a href="<tmpl_var dateStamp_url>">^International(date label,Account_Inbox);</a></td>
+                    <td class="barTen"><a href="<tmpl_var status_url>">^International(status label,Account_Inbox);</a></td>
                 </tr>
                 <tmpl_loop message_loop>
-                <tr class="<tmpl_if __ODD__>oddThread<tmpl_else>evenThread</tmpl_if>">
-                    <td><img src="^Extras(account/images/<tmpl_if isRead>old.png<tmpl_else>new.png</tmpl_if>);" /></td>
-                    <td><tmpl_var inbox_form_delete></td>
+                <tr class="<tmpl_if __ODD__>WGoddThread<tmpl_else>WGevenThread</tmpl_if>">
+                    <td class="centered"><img src="^Extras(account/images/<tmpl_if isRead>old.png<tmpl_else>new.png</tmpl_if>);" /></td>
+                    <td class="centered"><tmpl_var inbox_form_delete></td>
                     <td><a href="<tmpl_var from_url>" class="inbox_from"><tmpl_var from></a></td>
-                    <td style="text-align: left;"><a href="<tmpl_var message_url>"><tmpl_var subject></a></td>
+                    <td><a href="<tmpl_var message_url>"><tmpl_var subject></a></td>
                     <td>^D(,<tmpl_var dateStamp>);</td>
-                    <td><tmpl_var status></td>
+                    <td class="centered"><tmpl_var status></td>
                 </tr>
                 </tmpl_loop>
-                <tr>
-                    <td colspan="6" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%"> <input type="button" value="^International(new message label,Account_Inbox);" onclick="location.href='<tmpl_var new_message_url>'" /><input type="submit" value="^International(delete label,Account_Inbox);"></td>
-                                <td style="text-align:center;width=20%">
+                </table>
+                
+           	<p class="bar">
+                            <span class="WGinbox_buttons"> <input type="button" value="^International(new message label,Account_Inbox);" onClick="<tmpl_if canSendMessages>location.href='<tmpl_var new_message_url>'<tmpl_else>alert('^International(no friends hover,Account_Inbox);');</tmpl_if>" /><input type="submit" value="^International(delete label,Account_Inbox);"></span>
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
-                                        <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if></tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
-                                    </div>
+                                    <span class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                        <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
+                                    </span>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="6" class="bar" style="font-size:12px;text-align:left;padding:3px">
+                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+			</p>	
+
+                     <p class="WGinbox_count">
                         <tmpl_var message_total> ^International(message count,'Account_Inbox');
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+                    </p>
+            
+            </div>
+
+</div>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>

@@ -7,7 +7,7 @@ URL         : root/import/account/profile/default-profile-error-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div class="profile_displaySubContent">
+<div class="WGprofile_displaySubContent">
 <div class="yui-skin-sam">
     <div id="wgAccountTabs" class="yui-navset">
         <div class="yui-content">

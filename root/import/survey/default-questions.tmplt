@@ -163,11 +163,11 @@ URL         : root/import/survey/default-questions
             <tmpl_loop name='a1'>
                 <div id='<tmpl_var name='id'>slider-min-thumb' class=slider-min-thumb>
             </tmpl_loop>
-            <img src='/extras/wobject/Survey/thumb-n.gif'></div>
+            <img src='^Extras(/wobject/Survey/thumb-n.gif);'></div>
             <tmpl_loop name='a2'>
                 <div id='<tmpl_var name='id'>slider-max-thumb' class=slider-max-thumb>
             </tmpl_loop>
-            <img src='/extras/wobject/Survey/thumb-n.gif'></div>
+            <img src='^Extras(/wobject/Survey/thumb-n.gif);'></div>
             </div>
             </div>
             <tmpl_loop name='a2'>
@@ -189,7 +189,7 @@ URL         : root/import/survey/default-questions
                         <tr><td>0&nbsp;&nbsp;</td><td>
                         <div id='<tmpl_var name='id'>slider-bg' tabindex='-1' title='Slider' class=slider-bg>
                         <div id='<tmpl_var name='id'>slider-thumb' class=slider-thumb>
-                                    <img src='/extras/wobject/Survey/thumb-n.gif'>
+                                    <img src='^Extras(/wobject/Survey/thumb-n.gif);'>
                             </div>
                                 </div>
                         <td><tmpl_var name='max'></td><td>

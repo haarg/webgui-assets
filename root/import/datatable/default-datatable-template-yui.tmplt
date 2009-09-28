@@ -7,15 +7,24 @@ URL         : root/import/datatable/default-datatable-template-yui
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+<div id="dataTable<tmpl_var assetId>" class="dataTable">
 
-<tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
 
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<div class="description">
 <tmpl_var description>
+</div><!--description-->
 
 <div class="yui-skin-sam">
 <tmpl_var dataTable>
-</div>
+</div><!--yui-skin-sam-->
+</div> <!--dataTable-->
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

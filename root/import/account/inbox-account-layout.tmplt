@@ -7,20 +7,20 @@ URL         : root/import/account/inbox-account-layout
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div class="divclear">
-    <ul class="topTabs">
+<div class="WGdivclear">
+    <ul class="WGtopTabs">
         <tmpl_loop account_loop>
         <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
         </tmpl_loop>
     </ul>
 </div>
-<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
-<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
-<div class="subContent">
+<!--[if gt IE 6]> <div class="WGcleartab"></div> <![endif]-->
+<!--[if !IE]>--><div class="WGcleartab"></div><!--<![endif]-->
+<div class="WGsubContent">
 <div class="yui-skin-sam">
     <div id="wgAccountTabs" class="yui-navset">
-        <div class="cleardiv">
-            <tmpl_if user_invitations_enabled><a href="<tmpl_var invite_friend_url>" class="view">^International(invite a friend,Account_Inbox);</a></tmpl_if>
+        <div class="wg-clear">
+            <tmpl_if user_invitations_enabled><a href="<tmpl_var invite_friend_url>" class="WGview">^International(invite a friend,Account_Inbox);</a></tmpl_if>
             <ul class="yui-nav">
                 <li <tmpl_if is_tab_inbox>class="selected"</tmpl_if>><a href="<tmpl_var view_inbox_url>" title="^International(messages label,Account_Inbox);"><em>^International(messages label,Account_Inbox); (<tmpl_var unread_message_count>)</em></a></li>
                 <tmpl_if invitations_enabled><li <tmpl_if is_tab_invitations>class="selected"</tmpl_if>><a href="<tmpl_var view_invitations_url>" title="^International(invitations label,Account_Inbox);"><em>^International(invitations label,Account_Inbox); (<tmpl_var invitation_count>)</em></a></li></tmpl_if>
@@ -35,8 +35,7 @@ URL         : root/import/account/inbox-account-layout
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
 ==== Properties ==============================================================
 display:
   isHidden: '1'

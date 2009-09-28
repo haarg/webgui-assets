@@ -1,19 +1,19 @@
 ==== File::Image =============================================================
-Asset ID    : 7-0-style0000000000018
-Menu Title  : nav2_off_left.jpg
-Parent      : root/import/webgui-7-style-1
-Title       : nav2_off_left.jpg
-URL         : style1/nav2_off_left.jpg
+Asset ID    : FOBV6KkifreXa4GmEAUU4A
+Menu Title  : no_photo_sm.gif
+Parent      : root/import/account/images
+Title       : no_photo_sm.gif
+URL         : root/import/account/images/no_photo_sm.gif
 ==== parameters ==============================================================
-style="border-style:none;"
+style="border-style:none;" alt="no_photo_sm.gif"
 ==== synopsis ================================================================
 ~
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
 display:
-  cacheTimeout: '3600'
-  isHidden: '0'
+  cacheTimeout: '0'
+  isHidden: '1'
   newWindow: '0'
 meta:
   inheritUrlFromParent: '0'

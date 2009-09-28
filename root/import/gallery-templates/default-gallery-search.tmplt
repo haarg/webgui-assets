@@ -121,7 +121,7 @@ URL         : root/import/gallery-templates/default-gallery-search
 					</tmpl_if>
 					<div class="details">
 						<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> Comments</a></div>
-						<div class="date"> Created ^D("%M/%d/%Y",^International('template file creationDate','Asset_GalleryAlbum'););</div>
+						<div class="date">^International("template file creationDate","Asset_GalleryAlbum"); ^D("%M/%d/%Y",<tmpl_var creationDate>);</div>
 						<div style="clear:both"></div>
 					</div>
 					<div style="clear:both"></div>

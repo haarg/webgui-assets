@@ -8,52 +8,40 @@ URL         : root/import/account/inbox/default-view-invitation-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%">
-                <tbody>
-                <tr>
-                    <td colspan="2" class="bar">
+<div class="WGProfile_registration">
+	
+            <div class="WGinboxTbl">
+
+                    <p class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>	
-                <tr>
-                    <td ><tmpl_var form_accept>  <tmpl_var form_deny>  <input type="button" value="^International(cancel label,Account_Inbox);" onclick="location.href='<tmpl_var view_invitations_url>'" /></td>
-                    <td align="right"><input type="button" value="<< ^International(previous label,Account_Inbox);" onclick="location.href='<tmpl_var prev_message_url>'" <tmpl_unless hasPrevious>disabled</tmpl_unless>/>  <input type="button" value="^International(next label,Account_Inbox); >>" onclick="location.href='<tmpl_var next_message_url>'" <tmpl_unless hasNext>disabled</tmpl_unless>/></td>
-                </tr>
-                <tr class="bar">
-                    <td colspan="2">&nbsp;</td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center">
-                        <table cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </p>
+					<div class="WGProfileFields">
+                    		<span class="WGbuttons_left"><tmpl_var form_accept>  <tmpl_var form_deny>  <input type="button" value="^International(cancel label,Account_Inbox);" onclick="location.href='<tmpl_var view_invitations_url>'" /></span><span class="WGbuttons_right"> <input type="button" value="<< ^International(previous label,Account_Inbox);" onclick="location.href='<tmpl_var prev_message_url>'" <tmpl_unless hasPrevious>disabled</tmpl_unless>/>  <input type="button" value="^International(next label,Account_Inbox); >>" onclick="location.href='<tmpl_var next_message_url>'" <tmpl_unless hasNext>disabled</tmpl_unless>/></span
+                    		<br />
+                	</div>
+                
+                <p class="bar">
+                </p>
+							
+                        <table class="WGProfileFields">
                             <tr>
-                                <td width="120px" align="right"><strong>^International(from label,Account_Inbox);:</strong></td> 
-                                <td align="left"><tmpl_var message_from></td>
+                                <td class="WG_inbox_InviteLabelView">^International(from label,Account_Inbox);:</td> 
+                                <td><div><tmpl_var message_from></div></td>
                             </tr>
                             <tr>
-                                <td width="120px" align="right"><strong>^International(received label,Account_Inbox);:</strong></td> 
-                                <td align="left">^D("%z %Z",<tmpl_var message_dateStamp>);</td>
+                                <td class="WG_inbox_InviteLabelView">^International(received label,Account_Inbox);:</td> 
+                                <td><div>^D("%z %Z",<tmpl_var message_dateStamp>);</div></td>
                             </tr>
                             <tr>
-                                <td colspan="2">
-                                    <div class="account_message"><tmpl_var message_body></div>
+                                <td colspan="2"><div class="WGaccount_message"><tmpl_var message_body></div>
                                 </td>
                             </tr>
-                            </tbody>
                         </table>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+
+            </div>
+
+</div>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
 ~

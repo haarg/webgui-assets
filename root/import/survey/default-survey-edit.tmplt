@@ -7,34 +7,34 @@ URL         : root/import/survey/default-survey-edit
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
 <title>WebGUI ^International(assetName,Asset_Survey);</title>
 
-<head>
 <style type="text/css">
     body { margin:0; padding:0; }
 </style>
 
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
-<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/surveyedit.css" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(wobject/Survey/surveyedit.css);" />
 
-<script type="text/javascript" src="/extras/yui/build/utilities/utilities.js"></script>
-<script type="text/javascript" src="/extras/yui/build/container/container-min.js"></script>
-<script type="text/javascript" src="/extras/yui/build/menu/menu-min.js"></script>
-<script type="text/javascript" src="/extras/yui/build/button/button-min.js"></script>
-<script type="text/javascript" src="/extras/yui/build/json/json-min.js"></script>
-<script type="text/javascript" src="/extras/yui/build/logger/logger-min.js"></script>
-<script type="text/javascript" src="/extras/yui/build/resize/resize-min.js"></script>
+<script type="text/javascript" src="^Extras(yui/build/utilities/utilities.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/container/container-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/json/json-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/logger/logger-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/resize/resize-min.js);"></script>
 
-<script type="text/javascript" src="/extras/wobject/Survey/dd.js"></script>
-<script type="text/javascript" src="/extras/wobject/Survey/editsurvey.js"></script>
-<script type="text/javascript" src="/extras/wobject/Survey/editsurvey/comm.js"></script>
-<script type="text/javascript" src="/extras/wobject/Survey/editsurvey/object.js"></script>
+<script type="text/javascript" src="^Extras(wobject/Survey/dd.js);"></script>
+<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey.js);"></script>
+<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/comm.js);"></script>
+<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/object.js);"></script>
 
 
-<script type="text/javascript" src="/extras/hoverhelp.js"></script>
-<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="^Extras(hoverhelp.js);"></script>
+<link href="^Extras(hoverhelp.css);" rel="stylesheet" type="text/css" />
 </head>
 
 <body class=" yui-skin-sam">

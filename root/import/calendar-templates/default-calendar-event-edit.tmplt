@@ -231,13 +231,13 @@ function addBlankRelated () {
 </script>
 
 ==== extraHeadTags ===========================================================
-<script src="/extras/yui/build/yahoo/yahoo.js" type="text/javascript"></script>
-<script src="/extras/yui/build/event/event.js" type="text/javascript"></script>
-<script src="/extras/yui/build/dom/dom.js" type="text/javascript"></script>
-<script src="/extras/yui/build/dragdrop/dragdrop.js" type="text/javascript"></script>
-<script src="/extras/yui/build/logger/logger.js" type="text/javascript"></script>
-<script src="/extras/textFix.js" type="text/javascript"></script>
-<script src="/extras/tabs/tabs.js" type="text/javascript"></script>
+<script src="^Extras(yui/build/yahoo/yahoo.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/event/event.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/dom/dom.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/dragdrop/dragdrop.js);" type="text/javascript"></script>
+<script src="^Extras(yui/build/logger/logger.js);" type="text/javascript"></script>
+<script src="^Extras(textFix.js);" type="text/javascript"></script>
+<script src="^Extras(tabs/tabs.js);" type="text/javascript"></script>
     <style type="text/css">
         body * {
             margin:0px;

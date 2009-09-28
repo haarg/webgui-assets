@@ -8,44 +8,32 @@ URL         : root/import/account/profile/default-view-profile-template
 ~
 ==== template ================================================================
 <div id="tab1">
-<p>
-    <table  border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tbody>
-        <tr>
-            <td style="text-align:right;background-color:gray;padding:4px;">
+
+
+            <div class="WGProfile_accepts">
                 <tmpl_if acceptsPrivateMessages><input type="button" value="^International(send private message label,Account_Profile);" onclick="location.href='^PageUrl(,op=account;module=inbox;do=sendMessage;userId=<tmpl_var profile_user_id>);'"/></tmpl_if>
                 &nbsp;
                 <tmpl_if acceptsFriendsRequests><tmpl_if invitations_enabled><input type="button" value="^International(send friend request label,Account_Profile);" onclick="location.href='^PageUrl(,op=account;module=friends;do=sendFriendsRequest;uid=<tmpl_var profile_user_id>);'"/></tmpl_if></tmpl_if>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            </div>
+
     <tmpl_if can_edit_profile>
-    <table  border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tbody>
-        <tr>
-            <td style="text-align:center;background-color:red;padding:4px;color:white;font-weight:bold">
+            <div class="WGprofileAlert">
                 <tmpl_if profile_privacy_friends>^International(friends only,Account_Profile);<tmpl_else><tmpl_if profile_privacy_none>^International(private profile,Account_Profile);<tmpl_else>^International(public profile,Account_Profile);</tmpl_if></tmpl_if>
-            </td>
-        </tr>
-        </tbody>
-    </table>
+            </div>
+
     </tmpl_if>
-    <table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tbody>
-        <tr>
-            <td class="yourselfBG">	
-                <table cellspacing="5" cellpadding="1" border="0" width="100%">
+
+                <table class="WGProfile_registration">
                     <tbody>
                     <tr>
                         <td <tmpl_if profile_field_photo_value>colspan=2</tmpl_if> class="bar">
                             <tmpl_var user_full_name> <br />
-                            <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                            <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
                         </td>
                     </tr>	
                     <tr>
-                        <td style="vertical-align:top" width="90%">
-                            <table cellspacing="0" cellpadding="3" border="0" width="100%">
+                        <td>
+                            <table class="WGProfile">
                                 <tbody>
                                 <tmpl_loop profile_category_loop>
                                 <tr>
@@ -54,9 +42,9 @@ URL         : root/import/account/profile/default-view-profile-template
                                 <tmpl_loop profile_fields_loop>
                                 <tmpl_unless profile_field_is_photo>
                                 <tr>
-                                    <td width="150px" class="profile_fieldLabel"><strong><tmpl_var profile_field_label></strong></td>
-                                    <td class="profile_fieldData"><tmpl_var profile_field_value></td>
-                                    <tmpl_if can_edit_profile><td width="100px" style="text-align:center;background-color:<tmpl_if profile_field_privacy_is_all>green<tmpl_else><tmpl_if profile_field_privacy_is_none>red<tmpl_else>blue</tmpl_if></tmpl_if>;padding:4px;color:white;font-weight:bold;"><tmpl_var profile_field_privacySetting></td></tmpl_if>
+                                    <td class="WGprofile_fieldLabel"><strong><tmpl_var profile_field_label></strong></td>
+                                    <td class="WGprofile_fieldData"><tmpl_var profile_field_value></td>
+                                    <tmpl_if can_edit_profile><td class="WGprofile_fieldStatus" style="background-color:<tmpl_if profile_field_privacy_is_all>green<tmpl_else><tmpl_if profile_field_privacy_is_none>red<tmpl_else>blue</tmpl_if></tmpl_if>;"><tmpl_var profile_field_privacySetting></td></tmpl_if>
                                 </tr>
                                 </tmpl_unless>
                                 </tmpl_loop>
@@ -65,29 +53,20 @@ URL         : root/import/account/profile/default-view-profile-template
                             </table>	
                         </td>
                         <tmpl_if profile_field_photo_value>
-                        <td align="center" valign="top">
-                            <img src="^StorageUrl(<tmpl_var profile_field_photo_raw>);" class="photostyle"/><br />				
+                        <td class="WGprofilePhoto">
+                            <img src="^StorageUrl(<tmpl_var profile_field_photo_raw>);" class="WGphotostyle"/><br />				
                         </td>
                         </tmpl_if>
                     </tr>
                     </tbody>
                 </table>	
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    <table  border="0" cellspacing="0" cellpadding="0" width="100%">
-        <tbody>
-        <tr>
-            <td style="text-align:right;background-color:gray;padding:4px;">
-                <tmpl_if acceptsPrivateMessages><input type="button" value="^International(send private message label,Account_Profile);" onclick="location.href='^PageUrl(?op=account;module=inbox;do=sendMessage;userId=<tmpl_var profile_user_id>);'"/></tmpl_if>
+ 
+    		<div class="WGProfile_accepts">
+                <tmpl_if acceptsPrivateMessages><input type="button" value="^International(send private message label,Account_Profile);" onClick="location.href='^PageUrl(?op=account;module=inbox;do=sendMessage;userId=<tmpl_var profile_user_id>);'"/></tmpl_if>
                 &nbsp;
-                <tmpl_if acceptsFriendsRequests><tmpl_if invitations_enabled><input type="button" value="^International(send friend request label,Account_Profile);" onclick="location.href='^PageUrl(?op=account;module=friends;do=sendFriendsRequest;userId=<tmpl_var profile_user_id>);'"/></tmpl_if></tmpl_if>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-    </p>
+                <tmpl_if acceptsFriendsRequests><tmpl_if invitations_enabled><input type="button" value="^International(send friend request label,Account_Profile);" onClick="location.href='^PageUrl(?op=account;module=friends;do=sendFriendsRequest;userId=<tmpl_var profile_user_id>);'"/></tmpl_if></tmpl_if>
+            </div>
+
 </div>
 
 ==== extraHeadTags ===========================================================

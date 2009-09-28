@@ -9,39 +9,29 @@ URL         : root/import/account/profile/default-edit-profile-template
 ==== template ================================================================
 <tmpl_loop profile_category_loop>
 <div id="tab<tmpl_var profile_category_index>">
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%" id="inboxTbl">
-                <tbody>
-                <tr>
-                    <td class="bar">
+<div class="WGProfile_registration">
+
+        	<div class="WGinboxTbl">
+                    <div class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>
-                <tmpl_if profile_errors>
-                <tr>
-                    <td id="profileErrors"><tmpl_loop profile_errors><tmpl_var error_message><br /></tmpl_loop></td>
-                </tr>
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </div>
+
+                <tmpl_if profile_errors>           
+                    <div id="WGprofileErrors"><tmpl_loop profile_errors><tmpl_var error_message><br /></tmpl_loop></div>
                 </tmpl_if>
-                <tr>
-                    <td>
-                        <table border="0" cellpadding="2" cellspacing="0">
+                        <table class="WGProfileFields">
                             <tbody>
                                 <tmpl_loop profile_fields_loop>
                                 <tr><td><tmpl_var profile_field_label><tmpl_if profile_field_required>*</tmpl_if></td><td><tmpl_var profile_field_form></td><td><tmpl_var profile_field_privacy_form><tmpl_unless profile_field_viewable>&dagger;</tmpl_unless></td></tr>
                                 </tmpl_loop>
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-</table>
+                       
+            		
+            </div>
+
+</div>
 </div>
 </tmpl_loop>
 ==== extraHeadTags ===========================================================

@@ -7,89 +7,68 @@ URL         : root/import/account/contributions/default-contributions-view
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%" id="inboxTbl">
-                <tbody>
-                <tr>
-                    <td colspan="3" class="bar">
+<div class="WGProfile_registration">
+	<div class="WGinboxTbl">
+
+                    <p class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>	
-                <tr>
-                    <td colspan="3" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%">&nbsp;</td>
-                                <td style="text-align:center;width=20%">
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </p>
+					
+                    <p class="bar">
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                    <div class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </div>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var contributions_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
+                                    <span class="WGmessagerpp"><tmpl_var contributions_rpp></span>
+                    </p>
+                       
+			<table class="WGProfileFields">
+                <thead>
                 <tr>
-                    <td class="inboxTitle" width="70%"><a href="<tmpl_var title_url>">^International(title label,Account_Contributions);</a></td>
-                    <td class="inboxTitle" width="15%"><a href="<tmpl_var type_url>">^International(type label,Account_Contributions);</a></td>
-                    <td class="inboxTitle" width="15%"><a href="<tmpl_var dateStamp_url>">^International(date label,Account_Contributions);</a></td>
+                    <td class="WGContribTitleLeft"><a href="<tmpl_var title_url>">^International(title label,Account_Contributions);</a></td>
+                    <td class="WGContribTitle"><a href="<tmpl_var type_url>">^International(type label,Account_Contributions);</a></td>
+                    <td class="WGContribTitle"><a href="<tmpl_var dateStamp_url>">^International(date label,Account_Contributions);</a></td>
                 </tr>
+                </thead>
                 <tmpl_if has_contributions>
                 <tmpl_loop contributions_loop>
-                <tr class="<tmpl_if __ODD__>oddThread<tmpl_else>evenThread</tmpl_if>">
-                    <td style="text-align: left;"><a href="<tmpl_var url>"><tmpl_var title></a></td>
-                    <td><tmpl_var className></td>
-                    <td>^D(,<tmpl_var creationDate>);</td>
+                <tbody>
+                <tr class="<tmpl_if __ODD__>WGoddThread<tmpl_else>WGevenThread</tmpl_if>">
+                    <td class="WGContribEntryLeft"><a href="<tmpl_var url>"><tmpl_var title></a></td>
+                    <td class="WGContribEntry"><tmpl_var className></td>
+                    <td class="WGContribEntry">^D(,<tmpl_var creationDate>);</td>
                 </tr>
                 </tmpl_loop>
                 <tmpl_else>
-                <tr class="oddThread"><td colspan="4" style="padding: 5px;">^International(no contributions,Account_Contributions);</td></tr>
+                <tr class="WGoddThread">
+                <td colspan="3">^International(no contributions,Account_Contributions);</td>
+                </tr>
                 </tmpl_if>
-                <tr>
-                    <td colspan="3" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%">&nbsp;</td>
-                                <td style="text-align:center;width=20%">
+                </tbody>
+              </table>
+            
+            <p class="bar">
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                    <div class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </div>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var contributions_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="bar" style="font-size:12px;text-align:left;padding:3px">
-                        <tmpl_var contributions_total> ^International(contribution count,'Account_Contributions');
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+                                    <span class="WGmessagerpp"><tmpl_var contributions_rpp></span>
+                    </p>
+                  
+           
+					<p class="bar"><span class="WGContribCount"><tmpl_var contributions_total> ^International(contribution count,'Account_Contributions'); </span></p>
+    </div>               
+</div>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="root/import/account/account.css" type="text/css">
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -29,9 +29,7 @@ URL         : root/import/survey/default-question-edit
         <option value='<tmpl_var text>' <tmpl_if selected>selected</tmpl_if>><tmpl_var text></option>
     </tmpl_loop>
     </select></p>
-<!--    <p><div>^International('randomized words','Asset_Survey');<div class="wg-hoverhelp">^International('randomized words description','Asset_Survey');</div></div>
-    <textarea name=randomWords><tmpl_var randomWords></textArea></p>
--->
+
 </td>
 <td>
 
@@ -50,7 +48,7 @@ URL         : root/import/survey/default-question-edit
             <input type=text size=2 value='<tmpl_var commentRows>' name=commentRows> </span>
 	</p>
     <p><div>^International('maximum number of answers','Asset_Survey');<div class="wg-hoverhelp">^International('maximum number of answers description','Asset_Survey');</div></div><input type=text value='<tmpl_var maxAnswers>' name=maxAnswers size=2></p>
-    <p><div>^International('required','Asset_Survey');<div class="wg-hoverhelp">^International('required description','Asset_Survey');</div></div>
+    <p><div>^International('required label','Asset_Survey');<div class="wg-hoverhelp">^International('required description','Asset_Survey');</div></div>
         <input type='radio' name='required' value=1 <tmpl_if required> checked </tmpl_if>>^International('yes','Asset_Survey');
         <input type='radio' name='required' value=0 <tmpl_unless required> checked </tmpl_unless>>^International('no','Asset_Survey');</p>
     <p><div>^International('question value','Asset_Survey');<div class="wg-hoverhelp">^International('question value description','Asset_Survey');</div></div><input maxlength=10 size=6 type=text value='<tmpl_var value>' name=value></p>

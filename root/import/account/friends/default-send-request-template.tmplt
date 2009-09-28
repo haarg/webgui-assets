@@ -8,23 +8,17 @@ URL         : root/import/account/friends/default-send-request-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>
-<p>
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">
-            <table cellspacing="5" cellpadding="1" border="0" width="100%">
-                <tbody>
-                <td class="bar">
+
+<div class="WGProfile_registration">
+                
+                <p class="bar">
                     <tmpl_var user_full_name> <br />
-                    <span class="member">^International(member since,Account_Friends);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                </td>
-                <tr>
-                    <td class="bar">^International(add to network label,Account_Friends);</td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        <table border="0" cellpadding="1" cellspacing="5">
+                    <span class="WGmember">^International(member since,Account_Friends);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                </p>
+                
+                 <p class="bar">^International(add to network label,Account_Friends);</p>
+                 
+                 		<table class="WGFriends">
                             <tbody>
                             <tr>
                                 <td align="left" >^International(adding user message,Account_Friends,<tmpl_var user_full_name>);</td>
@@ -40,15 +34,9 @@ URL         : root/import/account/friends/default-send-request-template
                             </tr>
                             </tbody>
                         </table>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody> 
-</table>
-</p>
+
+</div>
+
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
 ~

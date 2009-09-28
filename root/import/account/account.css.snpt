@@ -1,0 +1,1144 @@
+==== Snippet =================================================================
+Asset ID    : _XfvgNH__bY1ykMiKYSobQ
+Menu Title  : account.css
+Parent      : root/import/account
+Title       : account.css
+URL         : root/import/account/account.css
+==== snippet =================================================================
+/* general */	
+
+body {
+	margin:0;
+	padding:0;
+	font: 11px Verdana;
+		}
+a {
+	cursor: pointer;
+}
+button {
+	cursor: pointer;
+}
+img {
+	border: none;
+}
+.WGbutton {
+	float:right;
+	padding-right:10px;
+}	
+.centered {
+	text-align: center;
+}
+.WGaccount_message {
+	background-color: white;
+	border: solid #BECEF8 1px;
+	height: 300px;
+	margin-bottom: 10px;
+	margin-left: 60px;
+	margin-top: 20px;
+    overflow:-moz-scrollbars-vertical;
+    overflow-x:hidden;
+    overflow-y:scroll;
+	padding:10px;
+    text-align: left;
+	vertical-align:top;
+	width: 90%;
+}
+
+.WGprofileMember {
+	font-size:9px;
+	margin-right:20px;
+	text-align:right;
+}
+.WGmember {
+	color:#3e4f77;
+ 	font: 9px Verdana, Arial, Helvetica, sans-serif;
+	text-align:center;
+}
+.WGphotostyle {
+	border:solid #3e4f77 2px;
+	margin-bottom:5px;
+	margin-top:5px
+		}
+#rightalign {
+	float: right;
+}
+/*.WGsend {
+	float:right;
+	padding-right: 75px;
+}*/
+
+
+/* bio, addtonetwork, network */
+.WGbordered {
+	border-bottom: dashed #BECEF8 2px;
+	padding-bottom: 10px;
+}
+.WGfriendpic {
+	border: solid #BECEF8 1px;
+}
+.WGinvitemsg {
+	width: 600px;
+	height: 150px;
+}
+ol.WGProfile_interests {
+	color:#0B2259;
+	font-size:15px;
+	font-weight:bold;
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	padding:5px 5px;
+}
+ol.WGProfile_interests li {
+	margin-bottom:15px;
+}
+ol.WGProfile_interests span {
+	font-size:12px;
+	font-weight:normal;
+	color:black;
+}
+.WGpBio {
+	border-bottom:solid #DDE6FB 1px;
+	margin:0px;
+	margin-bottom:5px;
+	padding-bottom:5px;			
+}
+.WGpBio div {
+	background-color:#DDE6FB;
+	padding:2px 5px;
+	margin-bottom:2px;
+}
+.WGprogram {
+	font-size: 9px;
+}
+
+/* contributions */
+
+.WGContribCount {
+	font-size:12px;
+	text-align:left;
+	padding:3px
+}
+.WGContribTitle {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#0B2259;
+	font-size:12px;
+	font-weight:bold;
+	min-height:25px;
+	padding:3px;
+    text-align:center;
+    text-decoration: underline;
+}
+.WGContribTitleLeft {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#0B2259;
+	font-size:12px;
+	font-weight:bold;
+	min-height:25px;
+	padding:3px;
+    text-align:center;
+    text-decoration: underline;
+}	
+.WGContribEntry {
+    text-align:center;
+	padding:3px;
+}
+.WGContribEntryLeft {
+	text-align:left;
+	padding:3px;
+}
+	
+/* edit box */
+.WGeditBox {
+	/*background:white url(images/edit_box_bg.jpg) no-repeat bottom left;*/
+	border:solid #8DABF1 2px;
+	display:block;
+	font-family:verdana;
+	font-size:9px;
+	font-weight:bold;
+	left:100px;
+	-moz-box-sizing:border-box;
+	padding:5px;
+	position:absolute;
+	top:100px;
+	width:590px;
+	z-index:100;
+	
+}
+.WGeditBox input, .WGeditBox select {
+	font-size:9px;	
+}
+
+/* friends */
+
+.WGfriends_name {
+	font-weight:bold;
+	width:90%;
+}
+.WGfriends_photo {
+	font-weight:bold;
+	width:10%;
+}
+.WGfriends_photo img {
+	height: 50px; 
+	width: 50px;
+}
+.WGfriends_private { 
+	float:right;
+	padding-bottom: 5px;
+	width: 50%;
+}
+.WGfriends_ninety { 
+	vertical-align:top;
+	width: 90%;
+}
+.WGfriends_seventy { 
+	vertical-align:top;
+	width: 70%;
+}
+.WGfriends_ten { 
+	width: 10%;
+}
+.WGfriends_ten img {
+	height: 50px; 
+	width: 50px;
+}
+.WGfriends_twenty { 
+	width: 20%;
+}
+.WGaccepts {
+	padding-bottom: 5px;
+}
+
+/* inbox */
+
+.WGProfile_msgcontainer {
+    padding:2px;
+}
+.WGinbox_count {
+	 font-size:12px;
+	 font-weight:bold;
+	 padding:3px;
+	 text-align:left;
+}
+.WGinbox_errors {
+	font-weight:bold;
+	color:red;
+	text-align:center;
+}
+.WG_inbox_InviteLabel {
+	width:50px;
+	text-align:right;
+}
+.WG_inbox_InviteLabelView {
+	font-weight:bold;
+	width:120px;
+}
+.WGmsgcontainer {
+    padding:6px;
+	display:block;
+	margin-bottom:6px;
+}
+/* inbox contacts */
+.WGdatacells {
+	border-bottom: dashed #BECEF8 1px;
+}
+.WGinbox_contactsTbl {
+    background-color:#EEF2FD;
+	font-family:arial;
+	font-size:9pt;
+	width:100%;
+}
+#contacts {
+	height: 275px;
+	overflow: auto;
+}
+/* inbox forms */
+.WGbuttons_left {
+	float: left;
+}
+.WGbuttons_right {
+	float: right;
+}
+.WGinbox_from {
+    color: black;
+    font-weight: normal;
+    text-decoration: none;
+}
+.WGinbox_subject {
+    width: 530px;
+}
+.WGinbox_messageTo {
+	background-color: white;
+	border: solid #BECEF8 1px;
+	height: 50px;
+	overflow:-moz-scrollbars-vertical;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    width: 530px;
+}
+/* inbox pagination */
+.WGinbox_buttons {
+	display:inline;
+	float:left;
+	font-size:10px;
+	text-align:left;
+	width:70%;	
+}
+.WGinbox_pagination {
+	display:inline;
+	text-align:center;
+	width:20%;
+}
+.WGinbox_messagerpp {
+	font-size:10px;
+	display:inline;
+	text-align:right;
+	width:20%;
+}
+.WGmessage {
+	display:inline;
+	float:left;
+	font-size:10px;
+	text-align:left;
+	width:70%;
+}
+
+.WGmessagerpp {
+	font-size:10px;
+	display:inline;
+	text-align:right;
+	float: right;
+}
+
+.WG-previous-next {
+	float: right;
+}
+
+/* inbox threads */
+
+.WGevenThread {
+	background-color: #e1e8fb;
+    border-bottom: 1px solid #bfcef9;
+    padding: 8px;
+    text-align:center;
+}
+.WGoddThread {
+	background-color: #eef2fd;
+    border-bottom: 1px solid #bfcef9;
+    padding: 8px;
+    text-align: center;
+}
+
+/* pagination */
+.WGProfile_pagination {
+	font-size:10px;
+	text-align:;
+}
+.WGProfile_messagerpp {
+	font-size:10px;
+	display:inline;
+	float:right;
+	text-align:right;
+	width:20%;
+}
+.WGProfile_paginationLeft {
+	font-size:10px;
+	text-align:left;
+	width:20%;
+}
+.WGProfile_paginationCenter {
+	font-size:10px;
+	text-align:center;
+	width:20%;
+}
+.WGProfile_pagination a {
+	background-color:#f2f5fa;
+	border:solid #bfc8dc 1px;
+	font-size:10px;
+	font-weight:bold;
+	padding:1px 5px;
+	text-decoration:none;
+}
+.WGProfile_pagination a:hover {
+	background-color:#d8dee8;
+	color:white;
+}
+.WGProfile_pagination .prevNext {
+    background-color: transparent;
+	border: none;
+    color: black;
+}
+.WGProfile_pagination .prevNext:hover {
+    background-color: transparent;
+	border: none;
+    color: black;
+}
+.WGProfile_pagination .active {
+    background-color:#d8dee8;
+	border:solid #bfc8dc 1px;
+	color:white; 
+	font-size:10px;
+	font-weight:bold;
+	padding:1px 5px;
+	text-decoration:none;
+}
+.WGProfile_pagination img {
+	vertical-align:middle;
+	margin-top:2px;
+	border:none;
+}
+/* profile */
+.WGProfile_registration {
+	background:none;
+	border:none;
+	font-size:9pt;
+	font-family:arial;
+	margin:0;
+	padding:0;
+	width:100%;
+}
+.WGProfile_registration .header {
+	background-color:#818997;
+	color:#3e4f77;
+	font-size:10px;
+	font-weight:bold;
+	text-align:left;		
+}
+.WGProfile_registration .header a {
+	color:white;
+	text-decoration:none;			
+}
+.WGProfile_registration .help a {
+	font-weight:bold;
+	text-decoration:none;
+}
+.WGProfile_registration .inputText {
+	font-size:10px;
+	margin-right:1px;
+}
+.WGProfile_registration .label {
+	font-size:9pt;
+	font-weight:bold;
+	text-align:right;
+	white-space:nowrap;
+	width:1%;
+}	
+.WGProfile_registration .labelLeft {
+	font-size:9pt;
+	font-weight:bold;
+	white-space:nowrap;
+	width:1%;
+	text-align: left;
+	vertical-align: top;
+}
+.WGProfile_registration .smallLabel {
+	font-size:8px;
+	text-align:center;
+}
+.WGProfile_registration .smallText {
+	font-size:9px;
+}
+
+.WGinboxTbl {
+	display:block;
+	margin: 4px;
+	padding: 2px;
+}
+
+.WGProfile_registration .bar {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#3e4f77;
+	font-size:14px;
+	font-weight:bold;
+	margin:10px 0px 10px 0px;
+	min-height:25px;
+	padding:4px 4px 0px 4px;
+	text-align:center;
+	vertical-align:middle;
+}
+.WGProfile_registration .bar a {
+    color:#0B2259;
+    font-size:10px;
+	font-weight:bold;
+}
+.WGProfile_registration .barFive {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#3e4f77;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	margin-right:3px;
+	min-height:25px;
+	padding:2px;
+	width:4.3%;
+}
+.WGProfile_registration .barTen {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#3e4f77;
+	font-size:14px;
+	font-weight:bold;
+	min-height:25px;
+	padding:2px;
+	text-align:center;
+	width:7.2%;
+}
+.WGProfile_registration .barFifteen {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#3e4f77;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:3px;
+	min-height:25px;
+	padding:2px;
+	text-align:center;
+	width:15%;
+}
+.WGProfile_registration .barFifty {
+	background-color:#f2f5fa;
+	border: solid #d8dee8 1px;
+	color:#3e4f77;
+	font-size:14px;
+	font-weight:bold;
+	margin-right:3px;
+	min-height:25px;
+	padding:2px;
+	text-align:center;
+	width:50%;	
+}
+.WGbarContainer {
+	display:block;
+	margin:10px 0px 10px 0px;	
+	width:100%;
+
+}
+
+/* profile edit */
+
+.WGfields {
+	padding: 2px;
+
+}
+.WGfields_left {
+	padding:2px;
+	vertical-align:top;
+	width: 15%;
+}
+.WGfields_right {
+	display:inline
+	float:right;
+	padding:2px;
+	text-align:right;
+	width:80%;
+	vertical-align: top;
+}
+.WGProfile {
+	display:table;
+	margin: 0;
+	padding: 0;
+	width:100%;
+}
+.WGProfileFields {
+	border:0;
+	padding: 0;
+	margin:0;
+	width: 100%;
+	
+}
+.WGProfileFields ol {
+	display: inline;
+	list-style-type: none;
+	
+}
+.WGProfileFields ul {
+	list-style-type: none;
+	display: inline;
+}
+.WGProfileFields ul li {
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+}
+/* profile view */
+.WGProfile_accepts {
+	text-align:right;
+	background-color:gray;
+	padding:4px;
+	width:100%;
+}
+.WGviewContainer {
+	margin:0;
+	padding:0;
+	width:90%;
+}
+.WGinternational {
+	background-color:red;
+	color:white;
+	display:inline;
+	font-weight:bold;
+	padding:4px;
+	text-align:center;
+}
+
+.WGcategoryLabel {
+	vertical-align:top; 
+	width:90%;
+}
+
+.WGprivateMessage {
+	background-color:gray;
+	padding:4px;
+	text-align:right;
+}
+
+.WGprofileAlert {
+	background-color:red;
+	color:white;
+	font-weight:bold;
+	padding:4px;
+	text-align:center;
+	width:100%;
+}
+WGprofilePhoto {
+	vertical-align:top;
+}
+
+/* profile errors */
+#WGprofileErrors {
+    background-color: #ff0000;
+	color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+}
+.WGprofilefield_required_off {
+}
+.WGprofilefield_required {
+    background-color: #ffd6bb;
+}
+.WGprofilefield_error {
+    background-color: #FF9494;
+}
+.WGerrorMsg {
+	font-weight:bold;
+	color:red;
+	text-align:center;
+}
+/* user */
+.WGuserInvite_subject {
+ 	background-color: white;
+	border: solid #BECEF8 1px;
+    height: 25px;
+    text-align: left;
+	width: 500px;
+    /*margin-left: 50px;*/
+    /*margin-bottom: 20px;*/
+    /*overflow:-moz-scrollbars-vertical;
+    overflow-x:hidden;
+	overflow-y:scroll;*/
+}
+/* view profile */
+
+.WGprofile_canEdit {
+	text-align:center;
+	background-color:red;
+	padding:4px;
+	color:white;
+	font-weight:bold;
+}
+.WGprofile_fieldLabel {
+	background: #DDE6FB;
+	padding:2px;
+	width:200px;
+}
+.WGprofile_fieldData {
+	margin-left: 5px;
+}
+.WGprofile_fieldStatus {
+	padding:4px;
+	color:white;
+	font-weight:bold
+}
+
+/**********************************************************************/
+/*                             TABS                                   */
+/**********************************************************************/
+
+/* TABS - outer */
+
+.WGbottombutton {
+    float:right;
+    padding-right:2px;
+    padding-top: 2px;
+    position: relative;
+} 
+.WGcontent {
+	padding:10px;
+
+}
+.WGcleartab {
+	clear: both; 
+	height:0;
+}
+.WGsubContent { /* color setting for border under outer tabs that surrounds inner tabs */
+	border: solid #d8dee8 6px;
+}
+.WGtopbutton {
+    float:right;
+    clear:both;
+    padding-right:2px;
+    padding-top: 2px;
+    position: relative;
+}
+
+
+ul.WGtopTabs,
+ul.WGtopTabs li {
+	list-style-type:none;
+	margin:10px 0px 0px 0px;
+	padding:0px;
+	position:relative;
+	width:auto;
+	Xposition:relative;
+	zoom:1;
+}
+ul.WGtopTabs li {
+	display:block;
+	float:left;
+	margin-right: 3px;
+}
+ul.WGtopTabs li b { 
+	background-color: #eef2fd;
+	border-top:solid #d8dee8 1px;
+	display:block;
+	padding:4px 8px;
+	position:relative;
+	top:-1px;	
+}
+ul.WGtopTabs a { /* non-selected tabs color settings */
+	display:block;
+	color:#9ea0bb;
+	font-size:12px;
+	font-family: Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	background-color:#f2f5fa;
+	border-left: solid #d8dee8 1px;
+	border-right: solid #d8dee8 1px;	
+}
+
+ul.WGtopTabs a:hover,
+ul.WGtopTabs a:hover b,
+ul.WGtopTabs a.selected,
+ul.WGtopTabs a.selected b { /* selected tab color settings */
+	background-color:#d8dee8;
+	color:#3e4f77;
+}
+
+/* TABS - YUI */
+
+.WGcleardiv {
+    clear: both;
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+}
+
+.WGview {
+    border: none;
+    font: bold 10px Verdana;
+    color: #3e4f77;
+    text-decoration:none;
+    position: absolute;
+    right: 4px;
+    top:4px;
+}
+
+.WGprofile_displayView {
+    -x-system-font:none;
+    border:medium none;
+    color:#0B2258;
+    display:inline;
+    float:right;
+    font-family:Verdana;
+    font-size:10px;
+    font-size-adjust:none;
+    font-stretch:normal;
+    font-style:normal;
+    font-variant:normal;
+    font-weight:bold;
+    line-height:normal;
+    padding-right:8px;
+    padding-top:3px;
+    text-decoration: none;
+}
+
+.WGprofile_displaySubContent { /* border around friends tab content */
+	border: solid #d8dee8 6px;
+    border-top: solid #d8dee8 18px;
+}
+
+
+ /*
+Copyright (c) 2008, Yahoo! Inc. All rights reserved.
+Code licensed under the BSD License:
+http://developer.yahoo.net/yui/license.txt
+version: 2.6.0
+*/
+
+/* yui tabs color settings below */
+
+/* .yui-navset defaults to .yui-navset-top */
+.yui-skin-sam .yui-navset .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav { /* protect nested tabviews from other orientations */
+    border:solid #eef2fd; /* color between tab list and content */
+    border-width:0 0 5px;
+    Xposition:relative;
+    zoom:1;
+}
+.yui-skin-sam .yui-navset .yui-nav a,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+    	background:#ffffff;  /* tab background */
+    	border:solid #ffffff;
+    	border-width:0 1px;
+    	color:#bfccdd;
+    	position:relative;
+    	text-decoration:none;
+    	font-size:12px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-weight: bold;
+}
+
+.yui-skin-sam .yui-navset .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em {
+    border:solid #eef2fd;
+    border-width:1px 0 0;
+    cursor:hand;
+    padding:0.25em .75em;
+    left:0; right: 0; bottom: 0; /* protect from other orientations */
+    top:-1px; /* for 1px rounded corners */
+    position:relative;
+}
+
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
+.yui-skin-sam .yui-navset .yui-nav .selected a:hover { /* no hover effect for selected */
+    	background: #eef2fd; /* selected tab background */
+    	color: #3e4f77;
+    	font-size:12px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-decoration:none;
+		font-weight: bold;
+}
+.yui-skin-sam .yui-navset .yui-nav .selected a,
+.yui-skin-sam .yui-navset .yui-nav .selected a em {
+    border-color:#eef2fd; /* selected tab border color */
+}
+
+.yui-skin-sam .yui-navset .yui-nav a:hover,
+.yui-skin-sam .yui-navset .yui-nav a:focus {
+    	background: #eef2fd; /* hover tab background */
+    	color: #3e4f77;
+    	outline:0;
+    	font-size:12px;
+		font-family: Arial, Helvetica, sans-serif;
+		text-decoration:none;
+		font-weight: bold;
+
+}
+.yui-skin-sam .yui-navset .yui-content {
+    background: #eef2fd; /* content background color */
+}
+
+.yui-skin-sam .yui-navset .yui-content,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-content {
+    border:5px solid #eef2fd; /* content border */
+    padding:0.75em 1em; /* content padding */
+}
+
+/* left and right orientations */
+.yui-skin-sam .yui-navset-left .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
+.yui-skin-sam .yui-navset-right .yui-nav {
+    border-width:0 5px 0 0;
+    Xposition:absolute; /* from tabview-core; have to reiterate for skin-sam due to pos:rel on skin-sam yui-nav */
+    top:0; bottom:0; /* stretch to fill content height */
+}
+
+.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
+.yui-skin-sam .yui-navset-right .yui-nav {
+    border-width:0 0 0 5px;
+}
+
+.yui-skin-sam .yui-navset-left .yui-nav li,
+.yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
+.yui-skin-sam .yui-navset-right .yui-nav li {
+    margin:0 0 0.3em; /* space between tabs */
+    padding:0 0 0 1px; /* gecko: make room for overflow */
+}
+
+.yui-skin-sam .yui-navset-right .yui-nav li {
+    padding:0 1px 0 0; /* gecko: make room for overflow */
+}
+
+.yui-skin-sam .yui-navset-left .yui-nav .selected,
+.yui-skin-sam .yui-navset .yui-navset-left .yui-nav .selected { 
+    margin:0 -1px 0.16em 0;
+}
+
+.yui-skin-sam .yui-navset-right .yui-nav .selected { 
+    margin:0 0 0.16em -1px;
+}
+
+.yui-skin-sam .yui-navset-left .yui-nav a,
+.yui-skin-sam .yui-navset-right .yui-nav a {
+    border-width:1px 0;
+}
+
+.yui-skin-sam .yui-navset-left .yui-nav a em,
+.yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,
+.yui-skin-sam .yui-navset-right .yui-nav a em {
+    border-width:0 0 0 1px;
+    padding:0.2em .75em;
+    top:auto;
+    left:-1px; /* for 1px rounded corners */
+}
+
+.yui-skin-sam .yui-navset-right .yui-nav a em {
+    border-width:0 1px 0 0;
+    left:auto;
+    right:-1px; /* for 1px rounded corners */
+}
+.yui-skin-sam .yui-navset-left .yui-nav a,
+.yui-skin-sam .yui-navset-left .yui-nav .selected a,
+.yui-skin-sam .yui-navset-left .yui-nav a:hover,
+.yui-skin-sam .yui-navset-right .yui-nav a,
+.yui-skin-sam .yui-navset-right .yui-nav .selected a,
+.yui-skin-sam .yui-navset-right .yui-nav a:hover,
+.yui-skin-sam .yui-navset-bottom .yui-nav a,
+.yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
+.yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
+    background-image:none; /* no left-right or bottom-top gradient */
+}
+.yui-skin-sam .yui-navset-left .yui-content {
+    border:1px solid #d8dee8; /* content border */
+}
+/* bottom orientation */
+.yui-skin-sam .yui-navset-bottom .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav {
+    border-width:5px 0 0; /* color between tab list and content */
+}
+
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
+.yui-skin-sam .yui-navset-bottom .yui-nav .selected { 
+    margin:-1px 0.3em 0 0; /* for overlap */
+}
+
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
+.yui-skin-sam .yui-navset-bottom .yui-nav li { 
+    padding:0 0 1px 0; /* gecko: make room for overflow */
+    vertical-align:top;
+}
+
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li a,
+.yui-skin-sam .yui-navset-bottom .yui-nav li a { 
+}
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav a em,
+.yui-skin-sam .yui-navset-bottom .yui-nav a em {
+    border-width:0 0 1px;
+    top:auto;
+    bottom:-1px; /* for 1px rounded corners */
+}
+.yui-skin-sam .yui-navset-bottom .yui-content,
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-content {
+    border:1px solid #f2f5fa; /* content border */
+}
+.yui-skin-sam {
+	background-color: #d8dee8;
+	padding: 10px 5 5 5px;
+	display:block;
+}
+
+/* yui tab placement settings below */
+
+.yui-skin-sam .yui-navset .yui-nav li,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li {
+    margin:0 0.3em 0 0; /* space between tabs */
+    padding:5px 0 0; /* gecko: make room for overflow */
+    zoom:1;
+}
+
+.yui-skin-sam .yui-navset .yui-nav .selected,
+.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected { 
+    margin:0 0.3em -1px 0; /* for overlap */
+}
+
+.yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
+.yui-navset .yui-navset-bottom .yui-nav li {
+	margin:0 0.5em 0 0;
+}
+.yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
+	margin:0 0 0.5em;
+}
+.yui-navset .yui-content .yui-hidden {
+	display:none;
+}
+.yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
+.yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
+	width:6em;
+}
+.yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
+	width:auto;
+}
+.yui-navset .yui-navset-left,.yui-navset-left {
+	padding:0 0 0 6em;
+}
+.yui-navset-right {
+	padding:0 6em 0 0;
+}
+.yui-navset-top,.yui-navset-bottom {
+	padding:auto;
+}
+.yui-nav,.yui-nav li {
+	list-style:none;
+	margin:0;
+	padding:0;	
+}
+.yui-navset li em {
+	font-style:normal;
+}
+.yui-navset {
+	position:relative;
+	zoom:1;
+}
+.yui-navset .yui-content {
+	zoom:1;
+}
+.yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
+.yui-navset .yui-navset-bottom .yui-nav li {
+	display:inline-block;
+	display:-moz-inline-stack;
+	*display:inline;
+	vertical-align:bottom;
+	cursor:pointer;
+	zoom:1;
+}
+.yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
+	display:block;
+}
+.yui-navset .yui-nav a {
+	position:relative;
+}
+.yui-navset .yui-nav li a,.yui-navset-top .yui-nav li a,
+.yui-navset-bottom .yui-nav li a {
+	display:block;
+	display:inline-block;
+	vertical-align:bottom;
+	zoom:1;
+}
+.yui-navset-left .yui-nav li a,.yui-navset-right .yui-nav li a {
+	display:block;
+}
+.yui-navset-bottom .yui-nav li a {
+	vertical-align:text-top;
+}
+.yui-navset .yui-nav li a em,.yui-navset-top .yui-nav li a em,
+.yui-navset-bottom .yui-nav li a em {
+	display:block;
+}
+.yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
+.yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
+	position:absolute;
+	z-index:1;
+}
+.yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
+	position:static;
+}
+.yui-navset .yui-navset-left .yui-nav,.yui-navset-left .yui-nav {
+	left:0;
+	right:auto;
+}
+.yui-navset .yui-navset-right .yui-nav,.yui-navset-right .yui-nav {
+	left:auto;
+	right:0;
+}
+.yui-skin-sam .yui-navset .yui-nav .selected a em {
+	padding:0.35em 0.75em;
+}
+.yui-skin-sam .yui-navset-left .yui-nav,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
+.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
+	border-width:0 5px 0 0;
+	bottom:0;
+	top:0;
+	Xposition:absolute;
+}
+.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
+	border-width:0 0 0 5px;
+}
+.yui-skin-sam .yui-navset-left .yui-nav li,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
+.yui-skin-sam .yui-navset-right .yui-nav li {
+	margin:0 0 0.16em;
+	padding:0 0 0 1px;
+}
+.yui-skin-sam .yui-navset-right .yui-nav li {
+	padding:0 1px 0 0;
+}
+.yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav a {
+	border-width:1px 0;
+}
+.yui-skin-sam .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset-right .yui-nav a em {
+	border-width:0 0 0 1px;
+	left:-1px;
+	padding:0.2em .75em;
+	top:auto;
+}
+.yui-skin-sam .yui-navset-right .yui-nav a em {
+	border-width:0 1px 0 0;
+	left:auto;
+	right:-1px;
+}
+
+.yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-left .yui-nav .selected a,.yui-skin-sam .yui-navset-left .yui-nav a:hover,
+.yui-skin-sam .yui-navset-right .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav .selected a,.yui-skin-sam .yui-navset-right .yui-nav a:hover,
+.yui-skin-sam .yui-navset-bottom .yui-nav a,.yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
+.yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
+	background-image:none;
+}
+
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
+.yui-skin-sam .yui-navset-bottom .yui-nav .selected {
+	margin:-1px 0.16em 0 0;
+}
+
+.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
+.yui-skin-sam .yui-navset-bottom .yui-nav li {
+	padding:0 0 1px 0;
+	vertical-align:top;
+}
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

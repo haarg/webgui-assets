@@ -8,89 +8,82 @@ URL         : root/import/account/inbox/default-manage-invitations-template
 ~
 ==== template ================================================================
 <tmpl_var form_header>
-<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
-    <tbody>
-    <tr>
-        <td class="yourselfBG">	
-            <table cellspacing="5" cellpadding="1" border="0" width="100%" id="inboxTbl">
-                <tbody>
-                <tr>
-                    <td colspan="4" class="bar">
+<div>
+<div class="WGProfile_registration">
+
+                    <p class="bar">
                         <tmpl_var user_full_name> <br />
-                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
-                    </td>
-                </tr>	
-                <tr>
-                    <td colspan="4" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%"> <tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></td>
-                                <td style="text-align:center;width=20%">
+                        <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </p>
+
+                     <p class="bar">
+       
+                                <span class="WGmessage"> <tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></span>
+
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                     <span class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
-                                    </div>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
+                                        <!--/WGProfile_pagination-->
+                                    </span>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
+                                
+                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+ 
+                    </p>
+                    
+                    
+                    
+                    
+                    
+				<table class="WGProfileFields">
                 <tr>
-                    <td class="inboxTitle" width="5%"><input type="checkbox" name="all" id="check_all"  /></td>
-                    <td class="inboxTitle" width="15%"><span>^International(from label,Account_Inbox);</span></td>
-                    <td class="inboxTitle" width="65%"><span>^International(invitation label,Account_Inbox);</span></td>
-                    <td class="inboxTitle" width="15%"><span>^International(date label,Account_Inbox);</span></td>
+                    <td class="barFive"><input type="checkbox" name="all" id="check_all"  /></td>
+                    <td class="barFifteen"><a href="<tmpl_var from_url>">^International(from label,Account_Inbox);</a></td>
+                    <td class="barFifty"><a href="<tmpl_var invitation_url>"><span>^International(invitation label,Account_Inbox);</a></td>
+                    <td class="barFifteen"><a href="<tmpl_var date_url>"><span>^International(date label,Account_Inbox);</span></a></td>
                 </tr>
                 <tmpl_if has_messages>
                 <tmpl_loop message_loop>
-                <tr class="<tmpl_if __ODD__>oddThread<tmpl_else>evenThread</tmpl_if>">
+                <tr class="<tmpl_if __ODD__>WGoddThread<tmpl_else>WGevenThread</tmpl_if>">
                     <td><tmpl_var form_checkbox></td>
-                    <td><a href="<tmpl_var from_url>" class="inbox_from"><tmpl_var from></a></td>
-                    <td style="text-align: left;"><a href="<tmpl_var message_url>">^International(invitation message,Account_Inbox,<tmpl_var from>);</a></td>
+                    <td><a href="<tmpl_var from_url>" class="WGinbox_from"><tmpl_var from></a></td>
+                    <td><a href="<tmpl_var message_url>">^International(invitation message,Account_Inbox,<tmpl_var from>);</a></td>
                     <td><tmpl_var dateStamp_formatted></td>
                 </tr>
                 </tmpl_loop>
                 <tmpl_else>
-                <tr class="oddThread"><td colspan="4" style="padding: 5px;">^International(no invitations,Account_Inbox);</td></tr>
+                <tr class="WGoddThread">
+                	<td colspan="4">^International(no invitations,Account_Inbox);</td>
+                </tr>
                 </tmpl_if>
                 <tr>
-                    <td colspan="4" class="bar" style="font-size:10px;">
-                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
-                            <tbody>
-                            <tr>
-                                <td style="font-size:10px;text-align:left;width:20%"><tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></td>
-                                <td style="text-align:center;width=20%">
+                </table>
+                
+                     <p class="bar">
+       
+                                <span class="WGmessage"> <tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></span>
+
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="Profile_pagination" style="text-align:center;">
-                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                     <span class="WGProfile_pagination">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
-                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
-                                    </div>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
+                                        <!--/WGProfile_pagination-->
+                                    </span>
                                     </tmpl_if>
-                                </td>
-                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="6" class="bar" style="font-size:12px;text-align:left;padding:3px">
+                                
+                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+ 
+                    </p>
+
+                    <p class="bar">
                         <tmpl_var message_total> ^International(invitation count,'Account_Inbox');
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+                    </p>
+
+</div>
+</div>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>

@@ -82,7 +82,7 @@ URL         : root/import/gallery-templates/default-gallery-edit-album
 	<div style="text-align:right;width:350px;margin-top:5px">
 		<tmpl_var form_cancel><tmpl_var form_submit>
 	</div>
-	<tmpl_var editForm_end></div></form>
+	<tmpl_var form_end>
 </div>
 ==== extraHeadTags ===========================================================
 <style type="text/css">

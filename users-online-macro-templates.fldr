@@ -1,7 +1,7 @@
 ==== Wobject::Folder =========================================================
 Asset ID    : QpmlAiYZz6VsKBM-_0wXaw
 Menu Title  : UsersOnline Macro
-Parent      : root/import
+Parent      : root/import/macro
 Title       : UsersOnline Macro
 URL         : users-online-macro-templates
 ==== synopsis ================================================================

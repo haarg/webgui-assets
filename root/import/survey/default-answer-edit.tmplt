@@ -17,18 +17,18 @@ URL         : root/import/survey/default-answer-edit
     <p><div>^International('answer number','Asset_Survey');<div class="wg-hoverhelp">^International('answer number description','Asset_Survey');</div></div> <tmpl_var displayed_id>
     <input type='hidden' name='id' value='<tmpl_var id>'>
     <input type='hidden' name='delete' id='delete' value=0></p>
-    <p><div>^International('verbatim','Asset_Survey');<div class="wg-hoverhelp">^International('verbatim description','Asset_Survey');</div></div>
+    <p><div>^International('verbatim label','Asset_Survey');<div class="wg-hoverhelp">^International('verbatim description','Asset_Survey');</div></div>
         <input type='radio' name='verbatim' value=1 <tmpl_if verbatim>^International('checked','Asset_Survey');</tmpl_if>>^International('yes','Asset_Survey');
         <input type='radio' name='verbatim' value=0 <tmpl_unless verbatim>^International('checked','Asset_Survey');</tmpl_unless>>^International('no','Asset_Survey');</p>
     <p><div>^International('min','Asset_Survey');<div class="wg-hoverhelp">^International('min description','Asset_Survey');</div></div><input type=text value='<tmpl_var min>' name=min size=2></p>
-    <p><div>^International('max','Asset_Survey');<div class="wg-hoverhelp">^International('max description','Asset_Survey');</div></div><input type=text value='<tmpl_var max>' name=max size=2></p>
-    <p><div>^International('step','Asset_Survey');<div class="wg-hoverhelp">^International('step description','Asset_Survey');</div></div><input type=text value='<tmpl_var step>' name=step size=2></p>
+    <p><div>^International('max label','Asset_Survey');<div class="wg-hoverhelp">^International('max description','Asset_Survey');</div></div><input type=text value='<tmpl_var max>' name=max size=2></p>
+    <p><div>^International('step label','Asset_Survey');<div class="wg-hoverhelp">^International('step description','Asset_Survey');</div></div><input type=text value='<tmpl_var step>' name=step size=2></p>
 
     </td><td>
 
     <p><div>^International('recorded answer','Asset_Survey');<div class="wg-hoverhelp">^International('recorded answer description','Asset_Survey');</div></div><textarea name='recordedAnswer'><tmpl_var recordedAnswer></textArea></p>
     <p><div>^International('jump to','Asset_Survey');<div class="wg-hoverhelp">^International('jump to description','Asset_Survey');</div></div><input type=text value='<tmpl_var goto>' name=goto size=4>
-    <span id='textParams'><p><tmpl_var 'text answer'><div>^International('cols','Asset_Survey');<div class="wg-hoverhelp">^International('cols description','Asset_Survey');</div></div><input type=text size=2 value='<tmpl_var textCols>' name=textCols>
+    <span id='textParams'><p>^International('text answer','Asset_Survey');<div>^International('cols','Asset_Survey');<div class="wg-hoverhelp">^International('cols description','Asset_Survey');</div></div><input type=text size=2 value='<tmpl_var textCols>' name=textCols>
 	<div>^International('rows','Asset_Survey');<div class="wg-hoverhelp">^International('rows description','Asset_Survey');</div></div>
     <input type=text size=2 value='<tmpl_var textRows>' name=textRows> </p></span></p>
     <p><div>^International('is this the correct answer','Asset_Survey');<div class="wg-hoverhelp">^International('is this the correct answer description','Asset_Survey');</div></div>

@@ -46,7 +46,7 @@ URL         : root/import/gallery-templates/default-gallery-edit-comment
 				<tmpl_var commentForm_bodyText>
 				<br /><tmpl_var commentForm_submit>
 			</div>
-		</div></form>
+		<tmpl_var commentForm_end>
 	</div>
 </div>
 ==== extraHeadTags ===========================================================
