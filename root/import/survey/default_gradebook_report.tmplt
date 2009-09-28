@@ -1,0 +1,73 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000062
+Menu Title  : Default Gradebook Report
+Parent      : root/import/survey
+Title       : Default Gradebook Report
+URL         : root/import/survey/default_gradebook_report
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2><tmpl_var title></h2>
+
+<div>
+<tmpl_if user_canEditSurvey>
+        <a href=<tmpl_var edit_survey_url> >^International('edit survey','Asset_Survey');</a>
+        |
+</tmpl_if>
+
+<tmpl_if user_canTakeSurvey>
+	<a href=<tmpl_var take_survey_url> >^International('take survey','Asset_Survey');</a>
+	|
+</tmpl_if>
+
+<tmpl_if user_canViewReports>
+	<a href=<tmpl_var view_simple_results_url> >^International('view simple results','Asset_Survey');</a>
+	| <a href=<tmpl_var view_transposed_results_url> >^International('view transposed results','Asset_Survey');</a>
+	| <a href=<tmpl_var view_statistical_overview_url> >^International('view statistical overview','Asset_Survey');</a>
+	| <a href=<tmpl_var view_grade_book_url> >^International('view grade book','Asset_Survey');</a>
+</tmpl_if>
+</div>
+
+
+<br /> <br />
+
+<table class="tableData">
+<tr class="tableHeader"><td style="width:60%">^International('user label','Asset_Survey');</td>
+                <td style="width:20%">^International('score label','Asset_Survey');</td>
+                <td style="width:20%">^International('percentage label','Asset_Survey');</td></tr>
+<tmpl_loop response_loop>
+<tr>
+	<td><tmpl_var response_user_name></td>
+	<td><tmpl_var response_count_correct>/<tmpl_var question_count></td>
+             <td><tmpl_var response_percent>%</td>
+</tr>
+</tmpl_loop>
+</table>
+
+
+<tmpl_if pagination.pageCount.isMultiple>
+  <div class="pagination">
+    <tmpl_var pagination.previousPage>  &middot; <tmpl_var pagination.pageList.upTo20> &middot; <tmpl_var pagination.nextPage>
+  </div>
+</tmpl_if>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Gradebook
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

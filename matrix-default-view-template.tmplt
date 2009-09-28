@@ -10,6 +10,7 @@ URL         : matrix-default-view-template
 <tmpl_if session.var.adminOn>
 	<p><tmpl_var controls></p>
 </tmpl_if>
+
 <h2><tmpl_var title></h2>
 
 <tmpl_if description>
@@ -18,172 +19,135 @@ URL         : matrix-default-view-template
 	</div>
 </tmpl_if>
 
-<table width="100%" class="matrixDefault">
-<tr><td valign="top" class="leftColumn">
-<div>
-<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button>
-</span>
-<span id="search"><button type="button" >^International('search label','Asset_Matrix');</button>
-</span>
-<br />
-<tmpl_var compareForm>
+<div class="matrixLeft">
+	<div class="buttons">
+		<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button></span>
+        <span id="search"><button type="button" >^International('search label','Asset_Matrix');</button></span>    
+    </div>        
+    <div class="matrixListing">
+    	<table border="0" cellpadding="0" cellspacing="0" class="sortButtons">
+        <tr>
+        	<td><tmpl_var bestClicks_sortButton></td>
+        	<td><tmpl_var bestViews_sortButton></td>
+            <td><tmpl_var bestCompares_sortButton></td>
+            <td><tmpl_var lastUpdated_sortButton></td>
+        </tr>
+        </table>
+        <tmpl_var compareForm>
+    </div>
+    <div class="buttons">
+     	<span id="compare2"><button type="button">^International('compare button label','Asset_Matrix');</button></span>
+    </div>
+    <div style="clear:both"></div>
 </div>
-<br />
-<span id="compare2"><button type="button">^International('compare button label','Asset_Matrix');</button>
-</span>
-</td>
 
-<td valign="top">
-<p class="grayBox">
-<b>^International('expand the matrix label','Asset_Matrix');</b><br />
-<tmpl_if isLoggedIn>
-	   <a href="<tmpl_var addMatrixListing_url>">^International('add new listing label','Asset_Matrix');</a>^International('add new listing text','Asset_Matrix');
-<tmpl_else>
-^International('create account part1 text','Asset_Matrix'); <a href="^a(linkonly);">^International('create account label','Asset_Matrix');</a> ^International('create account part2 text','Asset_Matrix');
-</tmpl_if>
+<div class="matrixRight">
+    <div class="buttons">
+        <div class="mainTitle">
+            ^International('expand the matrix label','Asset_Matrix');
+        </div>
+        <div class="adminLinks">
+            <tmpl_if isLoggedIn>
+	            <a href="<tmpl_var addMatrixListing_url>" class="newLink">^International('add new listing label','Asset_Matrix');</a>
+            <tmpl_else>
+            	<a href="^a(linkonly);" class="newLink">^International('create account label','Asset_Matrix');</a>
+            </tmpl_if>      
+			<tmpl_if session.var.adminOn>
+      			<a href="<tmpl_var listAttributes_url>">^International('list attributes label','Asset_Matrix');</a> 
+				<a href="<tmpl_var exportAttributes_url>">^International('export attributes label','Asset_Matrix');</a>               
+            </tmpl_if>
+        </div>
+        <div class="textBox">
+            <tmpl_if isLoggedIn>
+               ^International('add new listing text','Asset_Matrix');
+            <tmpl_else>
+                ^International('create account part1 text','Asset_Matrix');  ^International('create account part2 text','Asset_Matrix');
+            </tmpl_if>
+        </div>
+    </div>
+    
+    <div class="matrixStatistics">
+    	<div class="title">^International('listing statistics label','Asset_Matrix');</div>
+        <table border="0" cellspacing="0" cellpadding="3" class="statistics">
+        <tr>
+        	<td class="label">^International('most clicks label','Asset_Matrix');</td>
+            <td class="data"><a href="<tmpl_var bestClicks_url>"><tmpl_var bestClicks_name></a> (<tmpl_var bestClicks_count>)</td>
+        </tr>
+        <tr>
+        	<td class="label">^International('most views label','Asset_Matrix');</td>
+            <td class="data"><a href="<tmpl_var bestViews_url>"><tmpl_var bestViews_name></a> (<tmpl_var bestViews_count>)</td>
+        </tr> 
+        <tr>
+        	<td class="label">^International('most compares label','Asset_Matrix');</td>
+            <td class="data"><a href="<tmpl_var bestCompares_url>"><tmpl_var bestCompares_name></a> (<tmpl_var bestCompares_count>)</td>
+        </tr>               
+        </table>
+        
+        <div class="title">^International('most recently updated label','Asset_Matrix');</div>
+        <table border="0" cellspacing="0" cellpadding="3" class="statistics">
+        <tmpl_loop last_updated_loop>
+            <tr>
+                <td class="label"><tmpl_var lastUpdated></td>
+                <td class="data"><a href="<tmpl_var url>"><tmpl_var name></a></td>
+            </tr>
+        </tmpl_loop>
+        </table>
+        
+        <div class="title">^International('best rated label','Asset_Matrix');</div>
+        <table border="0" cellspacing="0" cellpadding="3" class="statistics">
+        <tmpl_loop best_rating_loop>
+            <tr>
+                <td class="label"><tmpl_var category></td>
+                <td class="data"><a href="<tmpl_var url>"><tmpl_var name></a> (<tmpl_var mean>/10)</td>
+            </tr>
+        </tmpl_loop>
+        </table>
+        
+        <div class="title">^International('worst rated label','Asset_Matrix');</div>
+        <table border="0" cellspacing="0" cellpadding="3" class="statistics">
+        <tmpl_loop worst_rating_loop>
+            <tr>
+                <td class="label"><tmpl_var category></td>
+                <td class="data"><a href="<tmpl_var url>"><tmpl_var name></a> (<tmpl_var mean>/10)</td>
+            </tr>
+        </tmpl_loop>      
+        </table> 
+        
+        <div class="title">^International('site statistics label','Asset_Matrix');</div>
+        <table border="0" cellpadding="3" cellspacing="0" class="statistics">
+        <tr>
+            <td class="label">^International('listing count label','Asset_Matrix');</td>
+            <td class="data"><tmpl_var listingCount></td>
+        </tr>
+        </table> 
+    </div>
+    
+    
+    	
 
-</p>
-
-
-
-<br /><b>^International('listing statistics label','Asset_Matrix');</b><br />
-<table width="100%" border="0" class="stats">
-<tr>
-  <td class="columnOne">^International('most clicks label','Asset_Matrix');:</td>
-  <td class="columnTwo"><tmpl_var bestClicks_count></td>
-  <td class="columnThree"><a href="<tmpl_var bestClicks_url>"><tmpl_var bestClicks_name></a></td>
-  <td class="columnFour"><tmpl_var bestClicks_sortButton></td>
-</tr>
-<tr>
-  <td>^International('most views label','Asset_Matrix');:</td>
-  <td><tmpl_var bestViews_count></td>
-  <td><a href="<tmpl_var bestViews_url>"><tmpl_var bestViews_name></a></td>
-  <td class="columnFour"><tmpl_var bestViews_sortButton></td>
-</tr>
-<tr>
-  <td>^International('most compares label','Asset_Matrix');:</td>
-  <td><tmpl_var bestCompares_count></td>
-  <td><a href="<tmpl_var bestCompares_url>"><tmpl_var bestCompares_name></a></td>
-  <td class="columnFour"><tmpl_var bestCompares_sortButton></td>
-</tr>
-
-<tr>
-  <td colspan="3" class="hrStyle">^Spacer(1,1);</td>
-</tr>
-<tr>
-  <td align="center" colspan="3">^International('most recently updated label','Asset_Matrix');:</td>
-  <td class="columnFour"><tmpl_var lastUpdated_sortButton></td>
-</tr>
-<tmpl_loop last_updated_loop>
-<tr>
-  <td colspan='2'><tmpl_var lastUpdated></td>
-  <td><a href="<tmpl_var url>"><tmpl_var name></a></td>
-</tr>
-</tmpl_loop>
-
-<tr>
-  <td colspan="3" class="hrStyle">^Spacer(1,1);</td>
-</tr>
-<tr>
-  <td align="center" colspan="3">^International('best rated label','Asset_Matrix');</td>
-</tr>
-<tmpl_loop best_rating_loop>
-<tr>
-  <td><tmpl_var category></td>
-  <td><tmpl_var mean>/10</td>
-  <td><a href="<tmpl_var url>"><tmpl_var name></a></td>
-</tr>
-</tmpl_loop>
-
-<tr>
-  <td align="center" colspan="3">^International('worst rated label','Asset_Matrix');</td>
-</tr>
-<tmpl_loop worst_rating_loop>
-<tr>
-  <td><tmpl_var category></td>
-  <td><tmpl_var mean>/10</td>
-  <td><a href="<tmpl_var url>"><tmpl_var name></a></td>
-</tr>
-</tmpl_loop>
-
-<tr>
-  <td colspan="3" class="hrStyle">^Spacer(1,1);</td>
-</tr>
-
-</table>
-
-<br />
-<br /><b>^International('site statistics label','Asset_Matrix');</b><br />
-<table class="content">
-<tr>
-  <td>^International('listing count label','Asset_Matrix');:</td>
-  <td><tmpl_var listingCount></td>
-</tr>
-</table>
-
-
-
-
-<tmpl_if session.var.adminOn>
-<p>   <a href="<tmpl_var listAttributes_url>">^International('list attributes label','Asset_Matrix');</a> 
-</p>
-<p>   <a href="<tmpl_var exportAttributes_url>">^International('export attributes label','Asset_Matrix');</a> 
-</p>
-<tmpl_if pending_loop>
-<b>^International('pending listings label','Asset_Matrix');:</b>
-</tmpl_if>
-<ul>
-<tmpl_loop pending_loop>
-<li><a href="<tmpl_var url>"><tmpl_var name></a></li>
-</tmpl_loop>
-</ul>
-</tmpl_if>
-
-</td></tr></table>
-
-
+    <tmpl_if session.var.adminOn>
+		<tmpl_if pending_loop>
+            <div>^International('pending listings label','Asset_Matrix');:</div>
+        </tmpl_if>
+        <ul>
+            <tmpl_loop pending_loop>
+                <li><a href="<tmpl_var url>"><tmpl_var name></a></li>
+            </tmpl_loop>
+        </ul>
+    </tmpl_if>
+    <div style="clear:both"></div>
+</div>
+<div style="clear:both"></div>
 ==== extraHeadTags ===========================================================
 <style type="text/css">
-h2 {
-	font-family:arial;
-}
-.fontSettings {
-	font-size:9pt;
-	font-family:arial;
-}
-.matrixDefault {
-	
-}
-.matrixDefault td {
-	font-size:9pt;
-	font-family:arial;
-}
-.matrixDefault .leftColumn {
-	width:48%;
-}
-.matrixDefault .grayBox {
-	background-color:#DADADA;
-	padding:3px;
-	-moz-box-sizing:border-box;
-	border-bottom:solid gray 2px;
-}
-.matrixDefault .stats .columnOne{
-	width:30%;
-}
-.matrixDefault .stats .columnTwo{
-	width:20%;
-}
-.matrixDefault .stats .columnThree{
-	width:50%;
-}
-.hrStyle {
-	border-bottom:solid black 1px;
-	height:1px;
-	width:100%;
-}
-
+@import url(^/;new-matrix/matrix.css);
 </style>
 
+<!--[if IE]>
+<style type="text/css">
+@import url(^/;new-matrix/matrix-ie.css);
+</style>
+<![endif]-->
 ==== Properties ==============================================================
 display:
   isHidden: '0'

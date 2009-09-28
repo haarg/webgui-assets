@@ -1,0 +1,45 @@
+==== Snippet =================================================================
+Asset ID    : kJf77eCr9GAMiEzWrzsBTA
+Menu Title  : matrix-ie.css
+Parent      : root/import/matrix
+Title       : matrix-ie.css
+URL         : new-matrix/matrix-ie.css
+==== snippet =================================================================
+.matrixLeft .buttons span,
+.matrixRight .buttons span {
+	padding:0px 0px 0px 0px;
+}
+
+.matrixLeft .buttons button,
+.matrixRight .buttons a {
+	top:-3px;
+	left:-2px;
+	height:22px;
+}
+.matrixRight .buttons a {
+	color:black;
+	text-decoration:none;
+	padding:1px 3px;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

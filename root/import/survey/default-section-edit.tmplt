@@ -13,63 +13,63 @@ URL         : root/import/survey/default-section-edit
     <form name='form' method='POST' action='?func=submitObjectEdit'>
 <table>
 <tr><td>
-    <p>^International('section number','Asset_Survey'); <tmpl_var displayed_id>
+    <p><div>^International('section number','Asset_Survey');<div class="wg-hoverhelp">^International('section number description','Asset_Survey');</div></div> <tmpl_var displayed_id></p>
     <input type='hidden' name='id' value='<tmpl_var id>'>
     <input type='hidden' id='delete' name='delete' value=0>
     <input type='hidden' id='copy' name='copy' value=0>
-    <p>^International('section name','Asset_Survey'); <input name='title' value='<tmpl_var title>' type=text>
+    <p><div>^International('section name','Asset_Survey');<div class="wg-hoverhelp">^International('section name description','Asset_Survey');</div></div> <input name='title' value='<tmpl_var title>' type=text></p>
     <hr>
-    <p>^International('randomize questions','Asset_Survey');
+    <p><div>^International('randomize questions','Asset_Survey');<div class="wg-hoverhelp">^International('randomize questions description','Asset_Survey');</div></div></p>
 
         <input type='radio' name='randomizeQuestions' value=1 <tmpl_if randomizeQuestions> checked </tmpl_if>>^International('yes','Asset_Survey');
         <input type='radio' name='randomizeQuestions' value=0 <tmpl_unless randomizeQuestions> checked </tmpl_unless>>^International('no','Asset_Survey');
 
-    <p>^International('section custom variable name','Asset_Survey');<input maxlength=35 size=10 type=text value='<tmpl_var variable>' name=variable size=2></p>
-    <p>^International('section branch goto variable name','Asset_Survey');<input maxlength=35 size=10 type=text value='<tmpl_var goto>' name=goto size=2></p>
-    <p>^International('questions per page','Asset_Survey');
+    <p><div>^International('section custom variable name','Asset_Survey');<div class="wg-hoverhelp">^International('section custom variable name description','Asset_Survey');</div></div><input maxlength=35 size=10 type=text value='<tmpl_var variable>' name=variable size=2></p>
+    <p><div>^International('section branch goto variable name','Asset_Survey');<div class="wg-hoverhelp">^International('section branch goto variable name description','Asset_Survey');</div></div><input maxlength=35 size=10 type=text value='<tmpl_var goto>' name=goto size=2></p>
+    <p><div>^International('questions per page','Asset_Survey');<div class="wg-hoverhelp">^International('questions per page description','Asset_Survey');</div></div>
     <select name='questionsPerPage'>
         <tmpl_loop questionsPerPage>
             <option value='<tmpl_var index>' <tmpl_if selected>selected=1</tmpl_if>><tmpl_var index></option>
         </tmpl_loop>
-    </select>
+    </select></p>
 </td><td>
-    <p>^International('questions on section page','Asset_Survey');<p>
+    <p><div>^International('questions on section page','Asset_Survey');<div class="wg-hoverhelp">^International('questions on section page description','Asset_Survey');</div></div>
     <tmpl_if questionsOnSectionPage>
         <input type='radio' name='questionsOnSectionPage' value=1  checked >^International('yes','Asset_Survey');
         <input type='radio' name='questionsOnSectionPage' value=0>^International('no','Asset_Survey');
     <tmpl_else>
         <input type='radio' name='questionsOnSectionPage' value=1>^International('yes','Asset_Survey');
         <input type='radio' name='questionsOnSectionPage' value=0  checked >^International('no','Asset_Survey');
-    </tmpl_if>
+    </tmpl_if><p/>
     <hr>
 
-    <p>^International('title on every page','Asset_Survey');
+    <p><div>^International('title on every page','Asset_Survey');<div class="wg-hoverhelp">^International('title on every page description','Asset_Survey');</div></div>
     <tmpl_if everyPageTitle>
         <input type='radio' name='everyPageTitle' value=1  checked >^International('yes','Asset_Survey');
         <input type='radio' name='everyPageTitle' value=0>^International('no','Asset_Survey');
     <tmpl_else>
         <input type='radio' name='everyPageTitle' value=1>^International('yes','Asset_Survey');
         <input type='radio' name='everyPageTitle' value=0  checked >^International('no','Asset_Survey');
-    </tmpl_if>
-    <p>^International('text on every page','Asset_Survey');
+    </tmpl_if><p/>
+    <p><div>^International('text on every page','Asset_Survey');<div class="wg-hoverhelp">^International('text on every page description','Asset_Survey');</div></div>
     <tmpl_if everyPageText>
         <input type='radio' name='everyPageText' value=1  checked >^International('yes','Asset_Survey');
         <input type='radio' name='everyPageText' value=0>^International('no','Asset_Survey');
     <tmpl_else>
         <input type='radio' name='everyPageText' value=1>^International('yes','Asset_Survey');
         <input type='radio' name='everyPageText' value=0  checked >^International('no','Asset_Survey');
-    </tmpl_if>
-    <p>^International('terminal section','Asset_Survey');
+    </tmpl_if><p/>
+    <p><div>^International('terminal section','Asset_Survey');<div class="wg-hoverhelp">^International('terminal section description','Asset_Survey');</div></div>
     <tmpl_if terminal>
         <input type='radio' name='terminal' value=1  checked >^International('yes','Asset_Survey');
         <input type='radio' name='terminal' value=0>^International('no','Asset_Survey');
     <tmpl_else>
         <input type='radio' name='terminal' value=1>^International('yes','Asset_Survey');
         <input type='radio' name='terminal' value=0  checked >^International('no','Asset_Survey');
-    </tmpl_if>
-    <p>^International('terminal section url','Asset_Survey'); <input type=text name=terminalUrl value='<tmpl_var terminalUrl>'>
+    </tmpl_if><p/>
+    <p><div>^International('terminal section url','Asset_Survey');<div class="wg-hoverhelp">^International('terminal section url description','Asset_Survey');</div></div> <input type=text name=terminalUrl value='<tmpl_var terminalUrl>'>
 </td></table>
-<p>^International('section text','Asset_Survey');</p> <textarea name=text maxlength=2056 cols=55 rows=4><tmpl_var text></textarea>
+<p><div>^International('section text','Asset_Survey');<div class="wg-hoverhelp">^International('section text description','Asset_Survey');</div></div></p> <textarea name=text maxlength=2056 cols=55 rows=4><tmpl_var text></textarea>
 </div>
 </div>
 

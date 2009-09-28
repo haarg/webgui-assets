@@ -1,0 +1,43 @@
+==== Snippet =================================================================
+Asset ID    : 4LQT4-bGW4FkiEQLSY5gvQ
+Menu Title  : show-hide.js
+Parent      : root/import/matrix
+Title       : show-hide.js
+URL         : new-matrix/show-hide.js
+==== snippet =================================================================
+function showHide(theLink,theId) {
+	var theId = document.getElementById(theId);
+	var theLink = document.getElementById(theLink);
+	if(theId.style.display == 'block') {
+		theId.style.display = 'none';
+		theLink.innerHTML = "Send Creator a Message";
+		theLink.className = "showLink"
+	}
+	else {
+		theId.style.display = 'block';
+		theLink.innerHTML = "Hide";	
+		theLink.className = "hideLink"		
+	}
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/javascript
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

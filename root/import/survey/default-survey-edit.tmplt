@@ -32,6 +32,9 @@ URL         : root/import/survey/default-survey-edit
 <script type="text/javascript" src="/extras/wobject/Survey/editsurvey/comm.js"></script>
 <script type="text/javascript" src="/extras/wobject/Survey/editsurvey/object.js"></script>
 
+
+<script type="text/javascript" src="/extras/hoverhelp.js"></script>
+<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class=" yui-skin-sam">

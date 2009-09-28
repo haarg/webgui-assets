@@ -1,0 +1,35 @@
+==== Template ================================================================
+Asset ID    : alraubvBu-YJJ614jAHD5w
+Menu Title  : matrix-nav-tmpl
+Parent      : root/import/matrix
+Title       : matrix-nav-tmpl
+URL         : new-matrix/matrix-nav-tmpl
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+
+<tmpl_loop page_loop>
+	<a href="<tmpl_var page.url>">Return to Matrix</a>
+</tmpl_loop>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Navigation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

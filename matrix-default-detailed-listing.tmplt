@@ -7,66 +7,87 @@ URL         : matrix-default-detailed-listing
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
-</tmpl_if>
-
-<h2><tmpl_var title></h2>
-
-<table class="content" border="0" cellspacing="5">
-<tr>
-	<td valign="top">
-	<span id="stickied"><button type="button">^International('hide stickied button label','Asset_Matrix');</button>
-</span><br />
-	<div id="attributes"></div>
-	</td>
-	<td valign="top">
-		<table class="content">
-		<tr><td><b>^International('web site label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></td></tr>
-		<tr><td><b>^International('version label','Asset_MatrixListing');</b></td><td><tmpl_var version></td></tr>
-		<tr><td><b>^International('manufacturer label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a></td></tr>
-		<tr><td><b>^International('last updated label','Asset_MatrixListing');</b></td><td><tmpl_var lastUpdated_date></td></tr>
-		<tr><td><b>^International('clicks label','Asset_Matrix');</b></td><td><tmpl_var clicks></td></tr>
-		<tr><td><b>^International('views label','Asset_Matrix');</b></td><td><tmpl_var views></td></tr>
-		<tr><td><b>^International('compares label','Asset_Matrix');</b></td><td><tmpl_var compares></td></tr>
-		<tr><td><b>^International('screenshots label','Asset_MatrixListing');</b></td><td><tmpl_var screenshots></a></td></tr>
-		</table>
-	</td>
-	<td valign="top" style="background-color:silver;">&nbsp;</td>
-	<td valign="top">
-		<tmpl_if description>
-			<b>^International('description label','Asset_MatrixListing');</b><br />
-			<tmpl_var description><br /><br />
-		</tmpl_if>
-
-		<b>^International('contact maintainer label','Asset_MatrixListing');</b><br />
-		<tmpl_if emailSent>
-			<div style="color: green;">^International('message sent message','Asset_MatrixListing');<br /></div>
-		</tmpl_if>
-		<tmpl_var emailForm>
-	</td>
-	<td valign="top" style="background-color:silver;">&nbsp;</td>
-	<td valign="top">
-		<tmpl_var ratings>
-	</td>
-</tr>
-</table>
-
-<p />
-
-
-<tmpl_var comments>
-
-<tmpl_if user.canEdit>
-  <br /> <hr /><a href="<tmpl_var edit.url>">^International(Edit this listing.,Asset_MatrixListing);</a> <br />
-</tmpl_if>
-<tmpl_if user.canApprove>
- <tmpl_if isPending>
-   <a href="<tmpl_var approve.url>">^International(Approve this listing.,Asset_MatrixListing);</a><br />
- </tmpl_if>
-   <a href="<tmpl_var delete.url>">^International(Delete this listing.,Asset_MatrixListing);</a><br />
-  
-</tmpl_if>
+<div id="matrixDetail">
+	
+    <tmpl_if session.var.adminOn>
+        <p><tmpl_var controls></p>
+    </tmpl_if>
+   
+    <h2>
+    	<tmpl_var title>
+        <span class="editBtns"> 
+        [
+        	^AssetProxy(new-matrix/matrix-nav);
+        	<span style="display:<tmpl_if user.canEdit>block<tmpl_else><tmpl_if user.canApprove>block<tmpl_else><!--none-->block</tmpl_if></tmpl_if>">
+                <tmpl_if user.canEdit>
+                    &bull; <a href="<tmpl_var edit.url>">Edit</a>
+                </tmpl_if>
+                <tmpl_if user.canApprove>
+                    <tmpl_if isPending>
+                        &bull; <a href="<tmpl_var approve.url>">Approve</a>
+                    </tmpl_if>
+                    &bull; <a href="<tmpl_var delete.url>">Delete</a>
+                </tmpl_if>
+            </span>
+        ]
+        </span>
+    </h2>
+    
+    <div id="matrixAttributes">    
+        <span id="stickied">
+            <button type="button">
+            ^International('hide stickied button label','Asset_Matrix');
+            </button>
+        </span>
+        <div id="attributes"></div>    
+    </div>    
+    
+    <div id="rightDetails">
+        <div class="description">
+            <tmpl_if description>
+                <strong>^International('description label','Asset_MatrixListing');</strong>
+                <tmpl_var description>
+            <tmpl_else>
+                <tmpl_if user.canEdit> 
+                    <a href="?func=edit">Add a Description</a>
+                <tmpl_else>
+                    No Description
+                </tmpl_if>
+            </tmpl_if>
+        </div>
+        <div class="stats">
+            <div class="screenshot">
+                <tmpl_var screenshots>
+            </div>
+            <ul>
+                <li><strong>^International('web site label','Asset_MatrixListing');</strong><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></li>
+                <li><strong>^International('version label','Asset_MatrixListing');</strong><tmpl_var version></li>
+                <li><strong>^International('manufacturer label','Asset_MatrixListing');</strong><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a></li>
+                <li><strong>^International('last updated label','Asset_MatrixListing');</strong><tmpl_var lastUpdated_date></li>
+                <li><strong>^International('clicks label','Asset_Matrix');</strong><tmpl_var clicks></li>
+                <li><strong>^International('views label','Asset_Matrix');</strong><tmpl_var views></li>
+                <li><strong>^International('compares label','Asset_Matrix');</strong> <tmpl_var compares></li>            
+            </ul>
+            <div id="matrixRatings">
+                <tmpl_var ratings>
+            </div>        
+            <br class="wg-clear" />
+        </div>
+        <div class="commentsMail">
+            <strong class="title">Comments</strong>
+            <tmpl_var comments>
+            <a onclick="showHide('theLink','matrixMail');" href="javascript:return false" class="showLink" id="theLink">Send Creator a Message</a>
+            <div id="matrixMail" style="display:none">
+                <tmpl_if emailSent>
+                    <div style="color: green;">^International('message sent message','Asset_MatrixListing');<br /></div>
+                </tmpl_if>
+                <tmpl_var emailForm>
+            </div>
+        </div>
+        <br class="wg-clear" />
+    </div>
+    <br class="wg-clear" />
+</div>
 ==== extraHeadTags ===========================================================
 <link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
 <link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
@@ -75,14 +96,17 @@ URL         : matrix-default-detailed-listing
 <script src="/extras/yui/build/event/event-min.js" type="text/javascript"></script>
 <script src="/extras/yui/build/container/container-min.js" type="text/javascript"></script>
 <script src="/extras/hoverhelp.js" type="text/javascript"></script>
+<script src="^/;new-matrix/show-hide.js" type="text/javascript"></script>
+
 <style type="text/css">
-.ratingForm {
- font-size: 9px;
-}
-.statBox {
-	width:100%;
-}
+@import url(^/;new-matrix/matrix.css);
 </style>
+
+<!--[if IE]>
+<style type="text/css">
+@import url(^/;new-matrix/matrix-ie.css);
+</style>
+<![endif]-->
 ==== Properties ==============================================================
 display:
   isHidden: '0'

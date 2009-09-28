@@ -7,47 +7,60 @@ URL         : matrix-default-compare-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<h2>^International('comparison label','Asset_Matrix');</h2>
-<table cellpadding="0" cellspacing="0" border="0" style="font-size: 11px; font-family: helvetica, arial, sans-serif;">
+<div class="matrixLeft" style="width:25%">
+	<div class="buttons">
+    	<script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
+		<span id="compare">
+        	<button type="button">^International('compare button label','Asset_Matrix');</button>
+        </span>
+        <span id="search">  
+        	<button type="button" >^International('search label','Asset_Matrix');</button>
+		</span>        
+        <span class="yui-button yui-push-button">
+        	<button type="button" onclick="javascript:location.replace('^/(<tmpl_var url>);')">Return to Matrix</a>
+        </span>
+    </div>        
+    <br class="wg-clear" />
+    <div class="matrixListing">
+        <div id="compareForm"></div>
+    </div>
+    <br class="wg-clear" />
+</div>
 
-<tr>
-<td valign="top">
-<script type="text/javascript" src="/extras/yui/build/button/button-min.js"></script>
-<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button>
-</span>
-<span id="search"><button type="button" >^International('search label','Asset_Matrix');</button>
-</span>
-<br />
-<div id="compareForm"></div>
-<br />
-<span id="compare2"><button type="button">^International('compare button label','Asset_Matrix');</button>
-</span>
-</td>
-<td style="width:10px;">&nbsp;</td>
-<td style="width:3px;background-color:silver;">&nbsp;</td>
-<td style="width:10px;">&nbsp;</td>
-<td valign="top">
+<div class="matrixRight" style="width:65%">
+	<div class="mainTitle">^International('comparison label','Asset_Matrix');</div>
+    <div class="matrixStatistics">
+		<span id="compare2" style="display:none">
+        	<button type="button">^International('compare button label','Asset_Matrix');</button>
+		</span>  
+		<tmpl_var javascript>
+		<span id="stickied">
+        	<button type="button">^International('hide stickied button label','Asset_Matrix');</button>
+		</span>
+        
+        <br />
 
-<tmpl_var javascript>
-<span id="stickied"><button type="button">^International('hide stickied button label','Asset_Matrix');</button>
-</span><br />
-<div id="compareList"></div>
+		<div id="compareList"></div>          
+    </div>
+</div>
 
-</td></tr></table>
 
 ==== extraHeadTags ===========================================================
-<link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
-<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
+<link href="^Extras(yui/build/container/assets/container.css);" rel="stylesheet" type="text/css" />
+<link href="^Extras(hoverhelp.css);" rel="stylesheet" type="text/css" />
 <script src="/extras/yui/build/container/container-min.js" type="text/javascript"></script>
 <script src="/extras/hoverhelp.js" type="text/javascript"></script>
+<script src="^/;new-matrix/show-hide.js" type="text/javascript"></script>
+
 <style type="text/css">
-	.lastUpdated {
-		background-color:#F0F0F0;
-	}
-	.category {
-		font-size:13px;
-	}
+@import url(^/;new-matrix/matrix.css);
 </style>
+
+<!--[if IE]>
+<style type="text/css">
+@import url(^/;new-matrix/matrix-ie.css);
+</style>
+<![endif]-->
 
 
 ==== Properties ==============================================================
