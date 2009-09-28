@@ -7,156 +7,179 @@ URL         : one_over_three
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div><a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a></div>
+<div id="layout<tmpl_var assetId>" class="layout oneoverthree">
+    
+    <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
-<tmpl_if showAdmin>
-<p><tmpl_var controls></p>
-</tmpl_if>
+    <tmpl_if session.var.adminOn>
+        <tmpl_var controls>
+    </tmpl_if>
 
+    <tmpl_if displayTitle>
+        <h2>
+            <tmpl_var title>
+        </h2>
+    </tmpl_if>
 
-<tmpl_if displayTitle>
-  <h2><tmpl_var title></h2>
-</tmpl_if>
+    <tmpl_if description>
+        <div class="description">
+            <tmpl_var description>
+        <!--/description-->
+        </div>
+    </tmpl_if>    
+    
+    <!-- begin position 1 -->
+    <div class="wg-content-position">
+        
+        <tmpl_if session.var.adminOn>
+            <table border="0" id="position1" class="content">
+                <tbody>
+        </tmpl_if>
 
-<tmpl_if description>
-  <tmpl_var description>
-</tmpl_if>
+        <tmpl_loop position1_loop>
+            <tmpl_if session.var.adminOn>
+                <tr id="td<tmpl_var id>">
+                    <td>
+                        <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+            </tmpl_if>
 
-<!-- begin position 1 -->
-<div class="layoutColumnPadding">
-<tmpl_if showAdmin>
-	<table border="0" id="position1" class="content"><tbody>
-</tmpl_if>
+            <tmpl_var dragger.icon>
+            <tmpl_var content>
+            
+            <tmpl_if session.var.adminOn>
+                        </div>
+                    </td>
+                </tr>
+            </tmpl_if>
+        </tmpl_loop>
 
-<tmpl_loop position1_loop>
-	<tmpl_if showAdmin>
-            	<tr id="td<tmpl_var id>">
-            		<td><div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
-	</tmpl_if>
+        <tmpl_if session.var.adminOn>
+                </tbody>
+            </table>
+        </tmpl_if>
 
-	<div class="content"><tmpl_var dragger.icon><tmpl_var content></div>
+    <!-- end position 1 -->
+    </div>
 
-	<tmpl_if showAdmin>
-         			</div></td>
-            	</tr>
-	</tmpl_if>
-</tmpl_loop>
+    <div class="wg-clear"></div>
 
-<tmpl_if showAdmin>
-            </tbody></table>
-</tmpl_if>
+    <!-- begin position 2 -->
+    <div class="wg-content-position wg-first-column wg-left">
+        
+        <tmpl_if session.var.adminOn>
+            <table border="0" id="position2" class="content">
+                <tbody>
+        </tmpl_if>
+
+        <tmpl_loop position2_loop>
+            <tmpl_if session.var.adminOn>
+                <tr id="td<tmpl_var id>">
+                    <td>
+                        <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+            </tmpl_if>
+
+            <tmpl_var dragger.icon>
+            <tmpl_var content>
+            
+            <tmpl_if session.var.adminOn>
+                        </div>
+                    </td>
+                </tr>
+            </tmpl_if>
+        </tmpl_loop>
+
+        <tmpl_if session.var.adminOn>
+                </tbody>
+            </table>
+        </tmpl_if>
+
+    <!-- end position 2 -->
+    </div>
+
+    <!-- begin position 3 -->
+    <div class="wg-content-position wg-second-column wg-left">
+        
+        <tmpl_if session.var.adminOn>
+            <table border="0" id="position3" class="content">
+                <tbody>
+        </tmpl_if>
+
+        <tmpl_loop position3_loop>
+            <tmpl_if session.var.adminOn>
+                <tr id="td<tmpl_var id>">
+                    <td>
+                        <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+            </tmpl_if>
+
+            <tmpl_var dragger.icon>
+            <tmpl_var content>
+
+            <tmpl_if session.var.adminOn>
+                        </div>
+                    </td>
+                </tr>
+            </tmpl_if>
+        </tmpl_loop>
+
+        <tmpl_if session.var.adminOn>
+                </tbody>
+            </table>
+        </tmpl_if>
+
+    <!-- end position 3 -->
+    </div>
+
+    <!-- begin position 4 -->
+    <div class="wg-content-position wg-third-column wg-right">
+        
+        <tmpl_if session.var.adminOn>
+            <table border="0" id="position4" class="content">
+                <tbody>
+        </tmpl_if>
+
+        <tmpl_loop position4_loop>
+            <tmpl_if session.var.adminOn>
+                <tr id="td<tmpl_var id>">
+                    <td>
+                        <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+            </tmpl_if>
+
+            <tmpl_var dragger.icon>
+            <tmpl_var content>
+            
+            <tmpl_if session.var.adminOn>
+                        </div>
+                    </td>
+                </tr>
+            </tmpl_if>
+        </tmpl_loop>
+
+        <tmpl_if session.var.adminOn>
+                </tbody>
+            </table>
+        </tmpl_if>
+
+    <!-- end position 4 -->
+    </div>
+
+    <div class="wg-clear"></div>
+
+    <tmpl_if session.var.adminOn>
+        <table>
+            <tr id="blank" class="hidden">
+                <td>
+                    <div class="empty">&nbsp;</div>
+                </td>
+            </tr>
+        </table>
+        <tmpl_var dragger.init>
+    </tmpl_if>
+
+<!--/id="layout<tmpl_var assetId>" class="layout oneoverthree-->
 </div>
-<!-- end position 1 -->
-
-<div class="endFloat">&nbsp;</div>
-
-<!-- begin position 2 -->
-<div class="firstColumn"><div class="layoutColumnPadding">
-<tmpl_if showAdmin>
-	<table border="0" id="position2" class="content"><tbody>
-</tmpl_if>
-
-<tmpl_loop position2_loop>
-	<tmpl_if showAdmin>
-            	<tr id="td<tmpl_var id>">
-            		<td><div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
-	</tmpl_if>
-
-	<div class="content"><tmpl_var dragger.icon><tmpl_var content></div>
-
-	<tmpl_if showAdmin>
-         			</div></td>
-            	</tr>
-	</tmpl_if>
-</tmpl_loop>
-
-<tmpl_if showAdmin>
-            </tbody></table>
-</tmpl_if>
-</div></div>
-<!-- end position 2 -->
-
-<!-- begin position 3 -->
-<div class="secondColumn"><div class="layoutColumnPadding">
-<tmpl_if showAdmin>
-	<table border="0" id="position3" class="content"><tbody>
-</tmpl_if>
-
-<tmpl_loop position3_loop>
-	<tmpl_if showAdmin>
-            	<tr id="td<tmpl_var id>">
-            		<td><div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
-	</tmpl_if>
-
-	<div class="content"><tmpl_var dragger.icon><tmpl_var content></div>
-
-	<tmpl_if showAdmin>
-         			</div></td>
-            	</tr>
-	</tmpl_if>
-</tmpl_loop>
-
-<tmpl_if showAdmin>
-            </tbody></table>
-</tmpl_if>
-</div></div>
-<!-- end position 3 -->
-
-<!-- begin position 4 -->
-<div class="secondColumn"><div class="layoutColumnPadding">
-<tmpl_if showAdmin>
-	<table border="0" id="position4" class="content"><tbody>
-</tmpl_if>
-
-<tmpl_loop position4_loop>
-	<tmpl_if showAdmin>
-            	<tr id="td<tmpl_var id>">
-            		<td><div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
-	</tmpl_if>
-
-	<div class="content"><tmpl_var dragger.icon><tmpl_var content></div>
-
-	<tmpl_if showAdmin>
-         			</div></td>
-            	</tr>
-	</tmpl_if>
-</tmpl_loop>
-
-<tmpl_if showAdmin>
-            </tbody></table>
-</tmpl_if>
-</div></div>
-<!-- end position 4 -->
-
-<div class="endFloat">&nbsp;</div>
-
-<tmpl_if showAdmin>
-	<table><tr id="blank" class="hidden"><td><div><div class="empty">&nbsp;</div></div></td></tr></table>
-            <tmpl_var dragger.init>
-</tmpl_if>
-
 
 ==== extraHeadTags ===========================================================
-<style type="text/css">
-.firstColumn {
-  float: left;
-  width: 33%;
-}
-.secondColumn {
-        float: left;
-        width: 33%;
-}
-.thirdColumn {
-        float: left;
-        width: auto;
-        max-width: 33%;
-}
-.endFloat {
- clear: both;
-}
-</style>
-
-
+<link href="^/(layout.css);" rel="stylesheet" type="text/css" /><!--page layout-->
 ==== Properties ==============================================================
 display:
   isHidden: '1'

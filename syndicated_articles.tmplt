@@ -7,45 +7,57 @@ URL         : syndicated_articles
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="syndicated<tmpl_var assetId>" class="syndicated articles">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
+	<tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+	<h3><tmpl_var title></h3>
 </tmpl_if>
 
 <tmpl_if description>
-	<tmpl_var description><p />
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
 
-<h2>
 <tmpl_if channel_link>
-	<a href="<tmpl_var channel.link>"><tmpl_var channel_title></a>
+	<h4><a href="<tmpl_var channel_link>"><tmpl_var channel_title></a></h4>
 <tmpl_else>
-	<tmpl_var channel.title>
+	<h4><tmpl_var channel_title></h4>
 </tmpl_if>
-</h2>
 
 <tmpl_if channel_description>
-	<tmpl_var channel.description><p />
+	<div class="channelDescription">
+		<tmpl_var channel_description>
+	<!--/channelDescription-->
+	</div>
 </tmpl_if>
 
 <tmpl_loop item_loop>
-	<b><tmpl_var title></b>
-	<tmpl_if description>
-		<br />
-		<tmpl_var description>
-	</tmpl_if>
-	<tmpl_if link>
-		<br />
-		<a href="<tmpl_var link>" style="font-size: 9px;">^International(read more,WebGUI);...</a>
-	</tmpl_if>
-	<br />
-	<br />
+	<div class="feedItem">
+		<h5><tmpl_var title></h5>
+		<tmpl_if description>
+			<div class="feedDescription">
+				<tmpl_var description>
+			<!--/feedDescription-->
+			</div>
+		</tmpl_if>
+		<tmpl_if link>
+			<a href="<tmpl_var link>" class="feedLink">^International(read more,WebGUI);...</a>
+		</tmpl_if>
+	<!--/feedItem-->
+	</div>   
 </tmpl_loop>
+
+<!--/syndicated<tmpl_var assetId> /syndicated articles-->
+</div>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

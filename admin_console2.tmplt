@@ -42,9 +42,11 @@ URL         : admin_console2
 	</div>
 	<tmpl_if submenu_loop>
 	<div id="adminConsoleApplicationSubmenu" class="adminConsoleApplicationSubmenu">
+        <tmpl_var formHeader>
 		<tmpl_loop submenu_loop>
 			<a href="<tmpl_var url>" <tmpl_var extras>><tmpl_var label></a><br />
 		</tmpl_loop>
+        <tmpl_var formFooter>
 	</div>
 	</tmpl_if>
 	<tmpl_if versionTags>

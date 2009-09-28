@@ -7,23 +7,40 @@ URL         : horizontalmenu
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-		<tmpl_if displayTitle>
-		<h2><tmpl_var title></h2>
-		</tmpl_if>
-		<tmpl_if description>
-			<p><tmpl_var description></p>
-		</tmpl_if>
-		<tmpl_if session.var.adminOn>
-<tmpl_var controls>
+<div id="nav<tmpl_var assetId>" class="nav horizontalMenu">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
 </tmpl_if>
-<span class="horizontalMenu">
-<tmpl_loop page_loop>
-<a class="horizontalMenu" <tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
-   <tmpl_unless "__last__"> &middot; </tmpl_unless>
-</tmpl_loop>
-</span>
+
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
+</tmpl_if>
+
+<tmpl_if page_loop>
+	<ul class="menu">
+	<tmpl_loop page_loop>
+		<li<tmpl_if page.isCurrent> class="current"<tmpl_else><tmpl_if page.isAncestor> class="ancestor"</tmpl_if></tmpl_if>>
+			<a <tmpl_if page.newWindow>onclick="window.open(this.href);return false;" </tmpl_if>href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a>
+		</li>
+	</tmpl_loop>
+	</ul>
+</tmpl_if>
+
+<!--/nav<tmpl_var assetId> /nav horizontalMenu-->
+</div>
+
 ==== extraHeadTags ===========================================================
-~
+<link href="^/(navigation.css);" type="text/css" rel="stylesheet" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

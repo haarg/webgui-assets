@@ -7,31 +7,37 @@ URL         : synopsis2
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-		<tmpl_if displayTitle>
-		<h2><tmpl_var title></h2>
-		</tmpl_if>
-		<tmpl_if description>
-			<p><tmpl_var description></p>
-		</tmpl_if>
-		<tmpl_if session.var.adminOn>
-<tmpl_var controls>
+<div id="nav<tmpl_var assetId>" class="nav synopsisMenu">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
 </tmpl_if>
-<div class="synopsis">
-<tmpl_loop page_loop>
-   <div class="synopsis_title">
-      <a href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a>
-   </div>
-   <tmpl_if page.indent>
-      <div class="synopsis_sub">
-         <tmpl_var page.synopsis>
-      </div>
-   <tmpl_else>
-      <div class="synopsis_summary">
-         <tmpl_var page.synopsis>
-      </div>
-   </tmpl_if>
-</tmpl_loop>
+
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
+</tmpl_if>
+
+<tmpl_if page_loop>
+    <dl class="menu">
+    <tmpl_loop page_loop>
+        <dt class="level<tmpl_var relDepth><tmpl_if page.isCurrent> current</tmpl_if>"><a href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a></dt>
+        <dd class="level<tmpl_var relDepth>"><tmpl_var page.synopsis></dd>
+    </tmpl_loop>
+    </dl>
+</tmpl_if>
+
+<!--/nav<tmpl_var assetId> /nav synopsisMenu-->
 </div>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

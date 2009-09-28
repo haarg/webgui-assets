@@ -1,14 +1,14 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0000000000000131
-Menu Title  : Right Column
+Asset ID    : -PkdI8l1idu-8gDX3iOdcw
+Menu Title  : One Over Two
 Parent      : root/import/layout
-Title       : Right Column
-URL         : right_column
+Title       : One Over Two
+URL         : one_over_two
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div id="layout<tmpl_var assetId>" class="layout rightcolumn">
-
+<div id="layout<tmpl_var assetId>" class="layout oneovertwo">
+    
     <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
     <tmpl_if session.var.adminOn>
@@ -29,7 +29,7 @@ URL         : right_column
     </tmpl_if>    
     
     <!-- begin position 1 -->
-    <div class="wg-content-position wg-first-column wg-left">
+    <div class="wg-content-position wg-top">
         
         <tmpl_if session.var.adminOn>
             <table border="0" id="position1" class="content">
@@ -45,7 +45,7 @@ URL         : right_column
 
             <tmpl_var dragger.icon>
             <tmpl_var content>
-
+            
             <tmpl_if session.var.adminOn>
                         </div>
                     </td>
@@ -62,7 +62,7 @@ URL         : right_column
     </div>
 
     <!-- begin position 2 -->
-    <div class="wg-content-position wg-second-column wg-right">
+    <div class="wg-content-position wg-left">
         
         <tmpl_if session.var.adminOn>
             <table border="0" id="position2" class="content">
@@ -70,6 +70,39 @@ URL         : right_column
         </tmpl_if>
 
         <tmpl_loop position2_loop>
+            <tmpl_if session.var.adminOn>
+                <tr id="td<tmpl_var id>">
+                    <td>
+                        <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+            </tmpl_if>
+
+            <tmpl_var dragger.icon>
+            <tmpl_var content>
+            
+            <tmpl_if session.var.adminOn>
+                        </div>
+                    </td>
+                </tr>
+            </tmpl_if>
+        </tmpl_loop>
+
+        <tmpl_if session.var.adminOn>
+                </tbody>
+            </table>
+        </tmpl_if>
+
+    <!-- end position 2 -->
+    </div>
+
+    <!-- begin position 3 -->
+    <div class="wg-content-position wg-right">
+        
+        <tmpl_if session.var.adminOn>
+            <table border="0" id="position3" class="content">
+                <tbody>
+        </tmpl_if>
+
+        <tmpl_loop position3_loop>
             <tmpl_if session.var.adminOn>
                 <tr id="td<tmpl_var id>">
                     <td>
@@ -91,11 +124,11 @@ URL         : right_column
             </table>
         </tmpl_if>
 
-    <!-- end position 2 -->
+    <!-- end position 3 -->
     </div>
 
     <div class="wg-clear"></div>
-    
+
     <tmpl_if session.var.adminOn>
         <table>
             <tr id="blank" class="hidden">
@@ -107,7 +140,7 @@ URL         : right_column
         <tmpl_var dragger.init>
     </tmpl_if>
 
-<!--/id="layout<tmpl_var assetId>" class="layout rightcolumn-->
+<!--/id="layout<tmpl_var assetId>" class="layout oneovertwo-->
 </div>
 
 ==== extraHeadTags ===========================================================

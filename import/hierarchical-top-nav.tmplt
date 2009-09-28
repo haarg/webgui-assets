@@ -7,8 +7,12 @@ URL         : import/hierarchical-top-nav
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="nav<tmpl_var assetId>" class="nav topNav">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
 <tmpl_if session.var.adminOn>
-	<div style="margin: 0pt 5px; float: left;"><tmpl_var controls></div>
+	<tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
@@ -16,7 +20,10 @@ URL         : import/hierarchical-top-nav
 </tmpl_if>
 
 <tmpl_if description>
-	<p><tmpl_var description></p>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
 
 <div class="yui-skin-sam">
@@ -50,6 +57,9 @@ URL         : import/hierarchical-top-nav
 </tmpl_loop>
 </div>
 
+<!--/nav<tmpl_var assetId> /nav topNav-->
+</div>
+
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
@@ -57,6 +67,7 @@ URL         : import/hierarchical-top-nav
 <script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
 <!-- Page-specific script -->
 <script type="text/javascript">
+//<![CDATA[
     YAHOO.util.Event.onAvailable("webguinavigation", function() {
         var wgMenuBar = new YAHOO.widget.MenuBar("webguinavigation", {
             autosubmenudisplay : true,
@@ -66,6 +77,7 @@ URL         : import/hierarchical-top-nav
         });
         wgMenuBar.render();
     });
+//]]>
 </script>
 
 ==== Properties ==============================================================

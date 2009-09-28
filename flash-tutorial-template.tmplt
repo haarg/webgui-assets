@@ -7,15 +7,17 @@ URL         : flash-tutorial-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-
 <tmpl_if session.var.adminOn><tmpl_if controls><p><tmpl_var controls></p></tmpl_if></tmpl_if>
 <p><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="800" height="600" align="middle">
 <param name="allowScriptAccess" value="sameDomain" />
 <param name="movie" value="<tmpl_var fileUrl>" /><param name="quality" value="high" /><embed src="<tmpl_var fileUrl>" quality="high" width="800" height="600" align="middle" allowScriptAccess="sameDomain" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
 </object></p>
-		
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript" src="^Extras(ukplayer/swfobject.js);"></script>
+<script type="text/javascript">
+	swfobject.registerObject("myFlashContent", "9.0.0", "^Extras(ukplayer/expressinstall.swf"););
+</script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

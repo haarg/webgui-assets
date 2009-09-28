@@ -7,49 +7,76 @@ URL         : default_page
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div><a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a></div>
+<div id="layout<tmpl_var assetId>" class="layout default">
 
-<tmpl_if showAdmin>
-	<p><tmpl_var controls></p>
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+    <tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h1><tmpl_var title></h1>
+	<h2><tmpl_var title></h2>
 </tmpl_if>
 
 <tmpl_if description>
-	<tmpl_var description>
+    <div class="description">
+        <tmpl_var description>
+    <!--/description-->
+    </div>
 </tmpl_if>
 
-<div class="layoutColumnPadding">
-<tmpl_if showAdmin>
-	<table border="0" id="position1" class="content"><tbody>
-</tmpl_if>
+<!-- begin position 1 -->
+<div class="wg-content-position">
 
-<tmpl_loop position1_loop>
-	<tmpl_if showAdmin>
-		<tr id="td<tmpl_var id>"><td><div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
-	</tmpl_if>
+    <tmpl_if session.var.adminOn>
+        <table border="0" id="position1" class="content">
+            <tbody>
+    </tmpl_if>
+    
+    <tmpl_loop position1_loop>
+        <tmpl_if session.var.adminOn>
+            <tr id="td<tmpl_var id>">
+                <td>
+                    <div id="td<tmpl_var id>_div" class="dragable<tmpl_if isUncommitted> uncommitted-asset</tmpl_if>">
+        </tmpl_if>
+    
+        <tmpl_var dragger.icon>
+        <tmpl_var content>
+    
+        <tmpl_if session.var.adminOn>
+                    </div>
+                </td>
+            </tr>
+        </tmpl_if>
+    </tmpl_loop>
+    
+    <tmpl_if session.var.adminOn>
+            </tbody>
+        </table>
+    </tmpl_if>
 
-	<div class="content"><tmpl_var dragger.icon><tmpl_var content></div>
-
-	<tmpl_if showAdmin>
-		</div></td></tr>
-	</tmpl_if>
-</tmpl_loop>
-
-<tmpl_if showAdmin>
-	</tbody></table>
-</tmpl_if>
+<!-- end position 1 -->  
 </div>
 
-<tmpl_if showAdmin>
-	<table><tr id="blank" class="hidden"><td><div><div class="empty">&nbsp;</div></div></td></tr></table>
-	<tmpl_var dragger.init>
-</tmpl_if>
+<div class="wg-clear"></div>
+
+<tmpl_if session.var.adminOn>
+    <table>
+        <tr id="blank" class="hidden">
+            <td>
+                <div class="empty">&nbsp;</div>
+            </td>
+        </tr>
+    </table>
+<tmpl_var dragger.init>
+</tmpl_if>  
+
+<!--/layout<tmpl_var assetId> /layout default-->
+</div>
 
 ==== extraHeadTags ===========================================================
-~
+<link href="^/(layout.css);" rel="stylesheet" type="text/css" /><!--page layout-->
 ==== Properties ==============================================================
 display:
   isHidden: '1'

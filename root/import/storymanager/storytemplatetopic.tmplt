@@ -20,13 +20,42 @@ URL         : root/import/storymanager/storytemplatetopic
 <tmpl_unless __LAST__>&gt;</tmpl_unless>
 </tmpl_loop>
 </span></p>
-<p><span class="storyTitle"><tmpl_var title><br /></span>
+<p><span class="storyTitle"><tmpl_if headline><tmpl_var headline><tmpl_else><tmpl_var title></tmpl_if><br /></span>
 <tmpl_if subtitle><span class="storySummary"><tmpl_var subtitle></span></tmpl_if>
 <tmpl_if highlights><div class="storyHighlights"><ul><tmpl_loop highlights_loop><li><tmpl_var highlight></li></tmpl_loop></ul></div></tmpl_if>
 </p>
 <p class="storyUpdated">^International(last updated,Asset); <tmpl_var updatedTime> ^International(ago,Asset_Story);</p>
 <p class="storyByline">^International(by,Asset_Collaboration); <tmpl_var byline></p>
-<p class="story"><tmpl_if location><span class="storyLocation"><tmpl_var location> &mdash; </span></tmpl_if><tmpl_var story></p>
+<p class="story"><tmpl_if location><span class="storyLocation"><tmpl_var location> &mdash; </span></tmpl_if>
+<tmpl_if hasPhotos>
+    <span class="storyPhoto" id="photoContainer">
+    <tmpl_if singlePhoto>
+        <tmpl_loop photo_loop>
+            <tmpl_if imgCaption><span class="photoCaption"><tmpl_var imgCaption></span></tmpl_if>
+            <tmpl_if imageLink><a href="<tmpl_var imageLink>"></tmpl_if><img src="<tmpl_var imageUrl>" <tmpl_if imageAlt>alt="<tmpl_var imageAlt>"</tmpl_if> <tmpl_if imageTitle>title="<tmpl_var imageTitle>"</tmpl_if> /><tmpl_if imageLink></a></tmpl_if>
+            <tmpl_if imgByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imgByline></span></tmpl_if>
+        </tmpl_loop>
+    <tmpl_else>
+        <ol id="photoCarousel">
+        <tmpl_loop photo_loop>
+            <li>
+            <tmpl_if imgCaption><span class="photoCaption"><tmpl_var imgCaption></span></tmpl_if>
+            <tmpl_if imageLink><a href="<tmpl_var imageLink>"></tmpl_if><img src="<tmpl_var imageUrl>" <tmpl_if imageAlt>alt="<tmpl_var imageAlt>"</tmpl_if> <tmpl_if imageTitle>title="<tmpl_var imageTitle>"</tmpl_if> /><tmpl_if imageLink></a></tmpl_if>
+            <tmpl_if imgByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imgByline></span></tmpl_if>
+            </li>
+        </tmpl_loop>
+        </ol>
+        <script>
+        YAHOO.util.Event.onContentReady("photoContainer", function (ev) {
+            var carousel = new YAHOO.widget.Carousel("photoContainer", { numVisible: 1 });
+            carousel.render();
+            carousel.show();
+        });
+        </script>
+    </tmpl_if>
+    </span>
+</tmpl_if>
+<tmpl_var story></p>
 <p class="storyKeywords">^International(keywords,Asset); <tmpl_loop keyword_loop><a href="<tmpl_var url>"><tmpl_var keyword></a> </tmpl_loop></p>
 </div>
 ==== extraHeadTags ===========================================================

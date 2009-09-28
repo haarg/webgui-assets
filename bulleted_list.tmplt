@@ -7,41 +7,56 @@ URL         : bulleted_list
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="nav<tmpl_var assetId>" class="nav bulletedList">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
 <tmpl_if session.var.adminOn>
-<tmpl_var controls><br />
+	<tmpl_var controls>
 </tmpl_if>
+
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+	<h3><tmpl_var title></h3>
 </tmpl_if>
+
 <tmpl_if description>
-	<p><tmpl_var description></p>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
+
+<tmpl_if page_loop>
+<ul class="menu">
 
 <tmpl_loop page_loop>
-<tmpl_if __FIRST__>
-	<ul class="bulletList">
-</tmpl_if>
-
-
 <tmpl_loop page.depthDiff_loop>
-   </ul></li>
+    </ul>
+    </li>
 </tmpl_loop>
 
-<li class="level<tmpl_var page.relDepth>"><a <tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
+	<li<tmpl_if page.isCurrent> class="current"<tmpl_else><tmpl_if page.isAncestor> class="ancestor"</tmpl_if></tmpl_if>>
+	<a <tmpl_if page.newWindow>onclick="window.open(this.href);return false;" </tmpl_if>href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a>
+
 <tmpl_if page.hasViewableChildren>
-	<ul>
+    <ul class="level<tmpl_var page.relDepth>">
 <tmpl_else>
-	</li>
+    </li>
 </tmpl_if>
 
-<tmpl_if __LAST__> 
-	<tmpl_loop page.indent_loop>
-		<tmpl_unless __first__></li></tmpl_unless>
-       		</ul>
- 	</tmpl_loop>
-	</li></ul>
+<tmpl_if __LAST__>
+    <tmpl_loop page.indent_loop>
+    </ul>
+    </li>
+    </tmpl_loop>
 </tmpl_if>
 </tmpl_loop>
+
+</ul>
+</tmpl_if>
+
+<!--/nav<tmpl_var assetId> /nav bulletedList-->
+</div>
 
 ==== extraHeadTags ===========================================================
 <style type="text/css">

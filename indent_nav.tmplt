@@ -7,62 +7,38 @@ URL         : indent_nav
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
-</tmpl_if>
-		
-<tmpl_if description>
-	<p><tmpl_var description></p>
-</tmpl_if>
-		
+<div id="navigation<tmpl_var assetId>" class="navigation indentMenu">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
 <tmpl_if session.var.adminOn>
 	<tmpl_var controls>
 </tmpl_if>
+
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
+</tmpl_if>
 		
-<div class="mainNav">
+<span class="menu">
 	<tmpl_loop page_loop>
-		<div class="level<tmpl_var page.relDepth>">
-			<a <tmpl_if page.isCurrent> class="navOn"</tmpl_if><tmpl_if page.isAncestor> class="anAncestor" </tmpl_if><tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
-		</div>
+		<a href="<tmpl_var page.url>"
+		class="level<tmpl_var page.relDepth><tmpl_if page.isCurrent> current<tmpl_else><tmpl_if page.isAncestor> ancestor</tmpl_if></tmpl_if>"
+		<tmpl_if page.newWindow>onclick="window.open(this.href);return false;"</tmpl_if>><tmpl_var page.menuTitle></a>
 	</tmpl_loop>
+</span>
+
+<!--/navigation<tmpl_var assetId> /navigation indentMenu-->
 </div>
 
 ==== extraHeadTags ===========================================================
-<style type="text/css">
-.mainNav {
-
-}
-.mainNav a {
-
-}
-a.navOn {
-
-}
-a.anAncestor {
-
-}
-div.level0 a {
-	margin-left:0px;
-	display:block;
-}
-div.level1 a {
-	margin-left:15px;
-	display:block;	
-}
-div.level2 a {
-	margin-left:30px;
-	display:block;
-}
-div.level3 a {
-	margin-left:45px;
-	display:block;
-}
-div.level4 a {
-	margin-left:60px;
-	display:block;
-}
-</style>
-
+<link href="^/(navigation.css);" type="text/css" rel="stylesheet" />
 ==== Properties ==============================================================
 display:
   isHidden: '0'

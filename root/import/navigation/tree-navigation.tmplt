@@ -7,50 +7,83 @@ URL         : root/import/navigation/tree-navigation
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
-</tmpl_if>
+<div id="nav<tmpl_var assetId>" class="nav treeNav">
 
-<tmpl_if description>
-	<p><tmpl_var description></p>
-</tmpl_if>
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
 	<tmpl_var controls>
 </tmpl_if>
 
-<div  class=" yui-skin-sam">
-	<div id="treenavdiv"> </div>
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
+</tmpl_if>
+
+<div class="yui-skin-sam">
+<tmpl_loop page_loop>
+	<tmpl_if __FIRST__>
+		<div id="navigation-<tmpl_var assetId>" class="yuimenubar h-top-nav-noscript">
+		  <div class="bd">
+		    <ul class="first-of-type">
+	</tmpl_if>
+
+	<tmpl_loop page.depthDiff_loop>
+		    </ul>
+		  </div>
+		</div>
+		</li>
+	</tmpl_loop>
+
+	<li class="yuimenuitem"><a <tmpl_if page.newWindow>onclick="window.open(this.href);return false;" </tmpl_if>href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a>
+
+	<tmpl_if page.hasViewableChildren>
+		<div>
+		  <div class="bd">
+		    <ul>
+	<tmpl_else>
+		</li>
+	</tmpl_if>
+
+	<tmpl_if __LAST__>
+		<tmpl_loop page.indent_loop>
+			    </ul>
+			  </div>
+			</div>
+			</li>
+		</tmpl_loop>
+		    </ul>
+		  </div>
+		</div>
+	</tmpl_if>
+
+</tmpl_loop>
 </div>
 
 <script type="text/javascript">
-//Wrap our initialization code in an anonymous function
-//to keep out of the global namespace:
+//<![CDATA[
 (function(){
-  var init = function() {
-    //create the TreeView instance:
-    var tree = new YAHOO.widget.TreeView("treenavdiv");
-		
-    //get a reusable reference to the root node:
-    var root = tree.getRoot();
-
-   //create a place to store all the new nodes
-    var nodes = [];
-
-    //create the nodes
-<tmpl_loop page_loop>
-    nodes['<tmpl_var page.assetId escape=JS>'] = new YAHOO.widget.TextNode('<a <tmpl_if page.newWindow>onclick="window.open(\'<tmpl_var page.url>\')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle escape=JS></a>', ((nodes['<tmpl_var page.parent.assetId escape=JS>']) ? nodes['<tmpl_var page.parent.assetId escape=JS>'] : root), <tmpl_if page.relativeDepthIs0>true<tmpl_else><tmpl_if page.isAncestor>true<tmpl_else>false</tmpl_if></tmpl_if>);
-</tmpl_loop>
-
-    // draw the tree
-    tree.draw();
-  }
-  //Add an onDOMReady handler to build the tree when the document is ready
-  YAHOO.util.Event.onDOMReady(init);
+    YAHOO.util.Dom.removeClass('navigation-<tmpl_var assetId>', 'h-top-nav-noscript');
+    var menu = new YAHOO.widget.MenuBar("navigation-<tmpl_var assetId>", {
+        autosubmenudisplay: true,
+        showdelay: 250,
+        hidedelay: 750,
+        lazyload: true,
+        visible: true
+    }).render();
 })();
+//]]>
 </script>
 
 
+<!--/nav<tmpl_var assetId> /nav treeNav-->
+</div>
 
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />

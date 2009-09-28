@@ -7,23 +7,20 @@ URL         : dropmenu
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="nav<tmpl_var assetId>" class="nav dropMenu">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
 <tmpl_if displayTitle>
 	<h2><tmpl_var title></h2>
 </tmpl_if>
 
 <tmpl_if description>
-	<p><tmpl_var description></p>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
-
-<script type="text/javascript" defer="defer">
-<!--
-function go(formObj) {
-	if (formObj.chooser.options[formObj.chooser.selectedIndex].value != "none") {
-		location = formObj.chooser.options[formObj.chooser.selectedIndex].value;
-	}
-}
-//-->
-</script>
 
 <form action="#">
 <tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
@@ -36,8 +33,30 @@ function go(formObj) {
 </select>
 </p>
 </form>
+
+<noscript>
+<tmpl_if page_loop>
+<ul class="menu">
+<tmpl_loop page_loop>
+	<li><a href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a></li>
+</tmpl_loop>
+</ul>
+</tmpl_if>
+</noscript>
+
+<!--/nav<tmpl_var assetId> /nav dropMenu-->
+</div>
+
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript" defer="defer">
+//<![CDATA[
+function go(formObj) {
+	if (formObj.chooser.options[formObj.chooser.selectedIndex].value != "none") {
+		location = formObj.chooser.options[formObj.chooser.selectedIndex].value;
+	}
+}
+//]]>
+</script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

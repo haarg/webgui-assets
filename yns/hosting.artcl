@@ -18,7 +18,7 @@ display:
   newWindow: '0'
   printableStyleTemplateId: stevestyle000000000003
   styleTemplateId: stevestyle000000000003
-  templateId: PBtmpl0000000000000002
+  templateId: PBtmpl0000000000000103
 meta:
   inheritUrlFromParent: '0'
   isExportable: '1'
@@ -28,7 +28,7 @@ meta:
 properties:
   linkTitle: ~
   linkURL: ~
-  storageId: eTxnooflqjFWIwkyfE0nPQ
+  storageId: TlE3LEEoLsOLiuTpAnxxUw
 security:
   groupIdEdit: '4'
   groupIdView: '7'

@@ -1,9 +1,9 @@
 ==== Template ================================================================
 Asset ID    : pbtmpl0000000000000220
-Menu Title  : Flash Template
+Menu Title  : Flash Style 3 Template
 Parent      : root/import/fileasset
-Title       : Flash Template
-URL         : flash-template
+Title       : Flash Style 3 Template
+URL         : flash-style-3-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -13,14 +13,17 @@ URL         : flash-template
 	</tmpl_if>
 </tmpl_if>
 
-
 <div>
 	<object type="application/x-shockwave-flash" data="<tmpl_var fileUrl>" style="height:auto;min-height:100px;width:100%;display:block;">
 		<param name="movie" value="<tmpl_var fileUrl>" />		
 	</object>
 </div>
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript" src="^Extras(ukplayer/swfobject.js);"></script>
+<script type="text/javascript">
+	swfobject.registerObject("myFlashContent", "9.0.0", "^Extras(ukplayer/expressinstall.swf"););
+</script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

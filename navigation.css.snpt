@@ -1,0 +1,99 @@
+==== Snippet =================================================================
+Asset ID    : FEDP3dk8J3Chw_gyr7_XEQ
+Menu Title  : navigation.css
+Parent      : root/import/navigation
+Title       : navigation.css
+URL         : navigation.css
+==== snippet =================================================================
+/*/Horizontal Menu styles/*/
+.horizontalMenu ul.menu {
+	padding: 0;
+	margin: 0 0 1em;
+	list-style: none;
+	width: 100%;	/*/clear floated li elements/*/
+	overflow: auto;	/*/clear floated li elements/*/
+}
+.horizontalMenu ul.menu li {
+	float: left;
+}
+.horizontalMenu ul.menu li a {
+	float: left;
+	padding: 4px 8px;
+	margin-right: 1px;
+	background: #ddd;
+	color: #000;
+	text-decoration: none;
+}
+.horizontalMenu ul.menu li.current a {
+	background:#eee;
+}
+.horizontalMenu ul.menu li a:hover {
+	background:#fff;
+}
+
+/*/Tabs (tabbed navigation) styles/*/
+.tabsMenu ul.menu {
+	margin: 0 0 1em;
+}
+.tabsMenu ul.menu li {
+	display: inline;
+}
+.tabsMenu ul.menu li a {
+	border: 1px solid #999;
+	border-bottom: 0;
+	padding: 5px 10px 2px;
+	color: #777;
+	text-decoration:none;
+}
+.tabsMenu ul.menu li.current a,
+.tabsMenu ul.menu li a:hover {
+	border: 1px solid #000;
+	border-bottom: 0;
+	color: #000;
+}
+
+/*/Indent Nav styles/*/
+.indentMenu a.level0 {
+	margin-left:0px;
+	display:block;
+}
+.indentMenu a.level1 {
+	margin-left:15px;
+	display:block;	
+}
+.indentMenu a.level2 {
+	margin-left:30px;
+	display:block;
+}
+.indentMenu a.level3 {
+	margin-left:45px;
+	display:block;
+}
+.indentMenu a.level4 {
+	margin-left:60px;
+	display:block;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

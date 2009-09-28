@@ -1,23 +1,35 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0000000000000024
-Menu Title  : File
+Asset ID    : MK4fCNoyrx5SE8eyDfOpxg
+Menu Title  : Flash File
 Parent      : root/import/fileasset
-Title       : File
-URL         : file
+Title       : Flash File
+URL         : flash-file
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div id="file<tmpl_var assetId>" class="file">
+<div id="file<tmpl_var assetId>" class="file swfobject">
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
 	<tmpl_var controls>
 </tmpl_if>
 
-<img src="<tmpl_var fileIcon>" alt="<tmpl_var title>" class="wg-icon" />
-<a href="<tmpl_var fileUrl>"><tmpl_var title></a>
+<div>
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="400" height="300" id="myFlashContent">
+    <param name="movie" value="<tmpl_var fileUrl>" />
+    <!--[if !IE]>-->
+    <object type="application/x-shockwave-flash" data="<tmpl_var fileUrl>" width="400" height="300">
+    <!--<![endif]-->
+        <a href="http://www.adobe.com/go/getflashplayer">
+            <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" />
+        </a>
+    <!--[if !IE]>-->
+    </object>
+    <!--<![endif]-->
+</object>
+</div>
 
-<!--/file<tmpl_var assetId> /file-->
+<!--/file<tmpl_var assetId> /file swfobject-->
 </div>
 
 ==== extraHeadTags ===========================================================

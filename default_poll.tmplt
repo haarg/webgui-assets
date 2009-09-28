@@ -7,6 +7,8 @@ URL         : default_poll
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="poll<tmpl_var assetId>" class="poll">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
@@ -14,24 +16,29 @@ URL         : default_poll
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+    <div class="description">
+        <tmpl_var description>
+    <!--/description-->
+    </div>
 </tmpl_if>
 
 <div class="fontSettings">
-<tmpl_if description>
-	<tmpl_var description>
-	<p />
-</tmpl_if>
-
-<span class="pollQuestion"><tmpl_var question></span><br />
+<h4 class="pollQuestion"><tmpl_var question></h4>
 
 <tmpl_if canVote>
 	<tmpl_var form.start>
-	<tmpl_loop answer_loop>
-		<tmpl_var answer.form> <tmpl_var answer.text><br />
-	</tmpl_loop>
-	<p />
-	<tmpl_var form.submit>
+    <fieldset class="pollOptions">
+		<tmpl_loop answer_loop>
+			<tmpl_var answer.form> <span><tmpl_var answer.text></span><br />
+		</tmpl_loop>
+    </fieldset>
+    <fieldset class="pollSubmit">
+	    <tmpl_var form.submit>
+    </fieldset>
 	<tmpl_var form.end>
 <tmpl_else>
 	<tmpl_if hasImageGraph>
@@ -39,42 +46,23 @@ URL         : default_poll
 	<tmpl_else>
 		<tmpl_loop answer_loop>
 			<span class="pollAnswer"><tmpl_var answer.text><br /></span>
-			<table cellpadding=0 cellspacing=0 border=0>
+			<table cellspacing="0">
 			<tr>
 				<td width="<tmpl_var answer.graphWidth>" class="pollColor">^Spacer(1,1);</td>
-				<td class="pollAnswer">&nbsp;&nbsp;<tmpl_var answer.percent>% (<tmpl_var answer.total>)</td>
+				<td class="pollAnswer">&nbsp;<tmpl_var answer.percent>% (<tmpl_var answer.total>)</td>
 			</tr>
 			</table>
 		</tmpl_loop>
-		<span class="pollAnswer"><hr size="1"><b><tmpl_var responses.label>:</b> <tmpl_var responses.total></span>
+		<p class="pollAnswer"><span><tmpl_var responses.label>:</span> <tmpl_var responses.total></p>
 	</tmpl_if>
 </tmpl_if>
 </div>
 
-
+<!--/poll<tmpl_var assetId> /poll-->
+</div>
 
 ==== extraHeadTags ===========================================================
-<style type="text/css">
-.fontSettings {
-	font-family:arial;
-	font-size:9pt;
-}
-h2 {
-	font-family:arial;
-	margin-top:3px;
-	margin-bottom:3px;
-}
-.pollQuestion {
-	border-bottom:solid gray 1px;
-	font-family:arial;
-	font-size:10pt;
-	font-weight:bold;				
-}
-.pollColor {
-	background-color:gray;
-}
-</style>
-
+<link href="^/(poll.css);" type="text/css" rel="stylesheet" /><!--poll-->
 ==== Properties ==============================================================
 display:
   isHidden: '1'

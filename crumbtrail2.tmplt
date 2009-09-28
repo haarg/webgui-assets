@@ -7,22 +7,36 @@ URL         : crumbtrail2
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-		<tmpl_if displayTitle>
-		<h2><tmpl_var title></h2>
-		</tmpl_if>
-		<tmpl_if description>
-			<p><tmpl_var description></p>
-		</tmpl_if>
-		<tmpl_if session.var.adminOn>
-<tmpl_var controls>
+<div id="nav<tmpl_var assetId>" class="nav crumbTrail">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
 </tmpl_if>
-<span class="crumbTrail">
-<tmpl_loop page_loop>
-<a class="crumbTrail" 
-    <tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
-   <tmpl_unless "__last__"> &gt; </tmpl_unless>
-</tmpl_loop>
-</span>
+
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_if description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
+</tmpl_if>
+
+<tmpl_if page_loop>
+	<span class="menu">
+	<tmpl_loop page_loop>
+		<a href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a><tmpl_unless __LAST__> &gt;</tmpl_unless>
+	</tmpl_loop>
+	</span>
+</tmpl_if>
+
+<!--/nav<tmpl_var assetId> /nav crumbTrail-->
+</div>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

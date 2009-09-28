@@ -7,57 +7,51 @@ URL         : linked_image_with_caption
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="article<tmpl_var assetId>" class="article linkedImage">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
+    <tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+    <h3><tmpl_var title></h3>
 </tmpl_if>
 
-<tmpl_if pagination.isFirstPage>
+<div class="articleContent">
+    
 <tmpl_if image.url>
-	<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td class="content">
-		<table align="right">
-		<tr><td align="center">
-			<tmpl_if linkUrl>
-				<a href="<tmpl_var linkUrl>">
-				<img src="<tmpl_var image.url>" alt="<tmpl_var image.url>" border="0" /><br /><tmpl_var linkTitle>
-				</a>
-			<tmpl_else>
-				<img src="<tmpl_var image.url>" alt="<tmpl_var image.url>" border="0" /><br /><tmpl_var linkTitle>
-			</tmpl_if>
-		</td></tr>
-		</table>
-</tmpl_if>
+    <div class="articleImage">
+        <tmpl_if linkUrl>
+            <tmpl_if linkTitle>
+                <a href="<tmpl_var linkUrl>"><img src="<tmpl_var image.url>" alt="<tmpl_var linkTitle>" /></a>
+                <a href="<tmpl_var linkUrl>"><tmpl_var linkTitle></a>
+            </tmpl_if>
+        <tmpl_else>
+            <img src="<tmpl_var image.url>" alt="<tmpl_var image.url>" />
+        </tmpl_if>
+    </div>
+    <!--/articleImage-->
 </tmpl_if>
 
 <tmpl_if description>
-	<tmpl_var description>
-	<p />
+    <div class="description">
+            <tmpl_var description>
+    </div>
+    <!--/description-->
 </tmpl_if>
 
-<tmpl_if pagination.isLastPage>
-	<tmpl_if attachment.name><p><p style="display:inline;vertical-align:middle;"><a href="<tmpl_var attachment.url>"><img src="<tmpl_var attachment.icon>" style="vertical-align:middle;border: 0px;" alt="<tmpl_var attachment.name>" /> <tmpl_var attachment.name></a></p></p></tmpl_if>
-</tmpl_if>
+</div>
+<!--/articleContent-->
 
-<tmpl_if pagination.isFirstPage>
-<tmpl_if image.url>
-	</td></tr></table>
-</tmpl_if>
-</tmpl_if>
+<div class="wg-clear"></div>
 
-<tmpl_if pagination.pageCount.isMultiple>
-<tmpl_var pagination.previousPage>
-&#183;
-<tmpl_var pagination.pageList.upTo20>
-&#183;
-<tmpl_var pagination.nextPage>
-</tmpl_if>
+<!--/article<tmpl_var assetId> /article linkedImage-->
+</div>
+
 ==== extraHeadTags ===========================================================
-~
+<link href="^/(article.css);" rel="stylesheet" type="text/css" /><!--article-->
 ==== Properties ==============================================================
 display:
   isHidden: '1'

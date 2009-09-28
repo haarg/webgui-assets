@@ -7,24 +7,51 @@ URL         : item
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+<div id="article<tmpl_var assetId>" class="article item">
 
-<tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
-</tmpl_if>
+    <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
-<tmpl_if displaytitle>
-	<tmpl_if linkurl><a href="<tmpl_var linkurl>"></tmpl_if><span class="itemTitle"><tmpl_var title></span><tmpl_if linkurl></a></tmpl_if>
-</tmpl_if>
+    <tmpl_if session.var.adminOn>
+        <tmpl_var controls>
+    </tmpl_if>
+    
+    <h3>    
+    <tmpl_if displayTitle>
+        <tmpl_if linkUrl>
+            <a href="<tmpl_var linkUrl>">
+                <tmpl_var title>
+            </a>
+        <tmpl_else>
+            <tmpl_var title>
+        </tmpl_if>
+    </tmpl_if>
+    </h3>
+    
+    <tmpl_if description>
+        <div class="description">
+            <tmpl_var description>
+        </div>
+        <!--/description-->
+    </tmpl_if>
+    
+    <tmpl_if attachment_loop>
+        <div class="attachments">
+            <ul>
+                <tmpl_loop attachment_loop>
+                    <li>
+                        <img src="<tmpl_var iconUrl>" alt="<tmpl_var filename>" class="wg-icon" />
+                        <a href="<tmpl_var url>"><tmpl_var filename></a>
+                    </li>
+                </tmpl_loop>
+            </ul>
+        <!--/attachments-->
+        </div>
+    </tmpl_if>
 
-<tmpl_if attachment.name>
-	<tmpl_if displaytitle> - </tmpl_if>
-	<p style="display:inline;vertical-align:middle;"><a href="<tmpl_var attachment.url>"><img src="<tmpl_var attachment.icon>" style="vertical-align:middle;border: 0px;" alt="<tmpl_var attachment.name>" /></a></p>
-</tmpl_if>
+    <div class="wg-clear"></div>
 
-<tmpl_if description>
-  - <tmpl_var description>
-</tmpl_if>
+<!--/article<tmpl_var assetId> /article item-->
+</div>
 
 ==== extraHeadTags ===========================================================
 ~

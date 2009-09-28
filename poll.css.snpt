@@ -1,0 +1,40 @@
+==== Snippet =================================================================
+Asset ID    : i5kt5aodVs_oepNEkE7Okw
+Menu Title  : poll.css
+Parent      : root/import/poll
+Title       : poll.css
+URL         : poll.css
+==== snippet =================================================================
+/*/styles for the poll asset/*/
+.pollColor {
+background-color:#808080;
+}
+.pollOptions, .pollSubmit {
+border:0;
+margin:0;
+padding:0;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -7,48 +7,52 @@ URL         : default_syndicated_content
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="syndicated<tmpl_var assetId>" class="syndicated default">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
+	<tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+	<h3><tmpl_var title></h3>
 </tmpl_if>
 
 <tmpl_if description>
-	<tmpl_var description>
-	<p />
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
 
-<h2>
 <tmpl_if channel_link>
-	<a href="<tmpl_var channel.link>"><tmpl_var channel_title></a>
+	<h4><a href="<tmpl_var channel_link>"><tmpl_var channel_title></a></h4>
 <tmpl_else>
-	<tmpl_var channel.title>
+	<h4><tmpl_var channel_title></h4>
 </tmpl_if>
-</h2>
 
 <tmpl_if channel_description>
-	<tmpl_var channel.description>
-	<p />
+	<div class="channelDescription">
+		<tmpl_var channel_description>
+	<!--/channelDescription-->
+	</div>
 </tmpl_if>
 
-<ul>
-<tmpl_loop item_loop>
-<li>
-	<tmpl_if link>
-		<a href="<tmpl_var link>"><tmpl_var title></a>
-	<tmpl_else>
-		<tmpl_var title>
-	</tmpl_if>
-	<tmpl_if description>
-		- <tmpl_var description>
-	</tmpl_if>
-</li>	
-</tmpl_loop>
-</ul>
+<tmpl_if item_loop>
+	<ul class="feedList">
+		<tmpl_loop item_loop>
+			<li>
+				<span class="feedTitle"><tmpl_if link><a href="<tmpl_var link>"><tmpl_var title></a><tmpl_else><tmpl_var title></tmpl_if></span>
+				<tmpl_if description>- <tmpl_var description></tmpl_if>
+			</li>
+		</tmpl_loop>
+	</ul>
+</tmpl_if>
+
+<!--/syndicated<tmpl_var assetId> /syndicated default-->
+</div>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

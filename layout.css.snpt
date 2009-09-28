@@ -1,0 +1,60 @@
+==== Snippet =================================================================
+Asset ID    : VyCINX2KixKYr2pzQGX9Mg
+Menu Title  : layout.css
+Parent      : root/import/layout
+Title       : layout.css
+URL         : layout.css
+==== snippet =================================================================
+/*/ styles for the layout asset /*/
+.wg-left {
+  float: left;
+}
+.wg-right {
+  float: right;
+}
+.wg-clear {
+  clear: both;
+}
+.sidebyside .wg-content-position, .oneovertwo .wg-content-position {
+  width: 49%;
+}
+.oneovertwo .wg-top {
+  width: 100%;
+}
+.oneoverthree .wg-first-column, .oneoverthree .wg-second-column, .oneoverthree .wg-third-column {
+  width: 32%;
+}
+.oneoverthree .wg-first-column {
+  margin-right:2%;
+}
+.rightcolumn .wg-first-column {
+  width: 65%;
+}
+.rightcolumn .wg-second-column {
+  width: 33%;
+}
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

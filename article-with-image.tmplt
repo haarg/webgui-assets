@@ -1,57 +1,62 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0000000000000207
-Menu Title  : Article with Files
+Asset ID    : PBtmpl0000000000000103
+Menu Title  : Article With Image
 Parent      : root/import/article
-Title       : Article with Files
-URL         : article-with-files
+Title       : Article With Image
+URL         : article-with-image
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="article<tmpl_var assetId>" class="article withImage">
 
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
-	<p><tmpl_var controls></p>
+	<tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
+	<h3><tmpl_var title></h3>
 </tmpl_if>
 
-<tmpl_if pagination.isFirstPage>
+<div class="articleContent">
+
+<tmpl_if image.url>
+	<div class="articleImage">
+		<img src="<tmpl_var image.url>" alt="<tmpl_var image.url>" />
+	<!--/articleImage-->
+	</div>
 </tmpl_if>
 
 <tmpl_if description>
-	<tmpl_var description>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
 
-<tmpl_if pagination.isLastPage>
-	<tmpl_if linkUrl>
+<tmpl_if linkUrl>
 	<tmpl_if linkTitle>
-		<p />
-		<a href="<tmpl_var linkUrl>"><tmpl_var linkTitle></a>
+		<div class="articleLink">
+			<p><a href="<tmpl_var linkUrl>"><tmpl_var linkTitle></a></p>
+		<!--/articlelink-->
+		</div>
 	</tmpl_if>
-	</tmpl_if>
-	<tmpl_loop attachment_loop>
-		<p style="display:inline;vertical-align:middle;"><a href="<tmpl_var url>"><img src="<tmpl_var iconUrl>" style="vertical-align:middle;border: 0px;" alt="<tmpl_var filename>" /> <tmpl_var filename></a></p><br />
-	</tmpl_loop>
 </tmpl_if>
 
-<tmpl_if pagination.pageCount.isMultiple>
-<tmpl_var pagination.previousPage>
-&#183;
-<tmpl_var pagination.pageList.upTo20>
-&#183;
-<tmpl_var pagination.nextPage>
-</tmpl_if>
+<!--/articlecontent-->
+</div>
 
-<tmpl_if pagination.isFirstPage>
-</tmpl_if>
+<div class="wg-clear"></div>
+
+<!--/article<tmpl_var assetId> /article withImage-->
+</div>
+
 ==== extraHeadTags ===========================================================
-~
+<link href="^/(article.css);" rel="stylesheet" type="text/css" /><!--article-->
 ==== Properties ==============================================================
 display:
-  isHidden: '0'
+  isHidden: '1'
   newWindow: '0'
 meta:
   inheritUrlFromParent: '0'

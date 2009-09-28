@@ -5,55 +5,84 @@ Parent      : root/import/folder
 Title       : File Folder
 URL         : file_folder
 ==== synopsis ================================================================
-
+~
 ==== template ================================================================
+<div id="folder<tmpl_var assetId>" class="folder">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
-<tmpl_if session.var.adminOn> <p><tmpl_var controls></p> </tmpl_if>
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
 	
-<tmpl_if displayTitle> <h2><tmpl_var title></h2> </tmpl_if>
+<tmpl_if displayTitle>
+	<h3><tmpl_var title></h3>
+</tmpl_if>
 		
-<tmpl_if description> <tmpl_var description> </tmpl_if>
+<tmpl_if description>
+<div class="description">
+	<tmpl_var description>
+<!--/description-->
+</div>
+</tmpl_if>
 			
-<tmpl_if session.var.adminOn> <p><a href="<tmpl_var addFile.url>"><tmpl_var addFile.label></a></p> </tmpl_if>
-				
-<table width="100%" cellpadding="3" cellspacing="0" class="content"> 
-<tmpl_loop subfolder_loop> 
+<tmpl_if session.var.adminOn>
+	<p><a href="<tmpl_var addFile.url>"><tmpl_var addFile.label></a></p>
+</tmpl_if>
 
- <tr>
- <td class="tableData" valign="top">
-<tmpl_if canView>
-	<a href="<tmpl_var url>"><img src="<tmpl_var icon.small>" border="0" alt="<tmpl_var title>" /></a>
-	<a href="<tmpl_var url>"><tmpl_var title></a>
-<tmpl_else>
-	<img src="<tmpl_var icon.small>" border="0" alt="<tmpl_var title>" /><tmpl_var title>
-</tmpl_if>
- </td>
- <td class="tableData" valign="top" colspan="3">
- <tmpl_var synopsis>
- </td>
- </tr>
+<table cellspacing="0" class="content"> 
+<tbody>
+<tmpl_loop subfolder_loop> 
+<tr>
+    <td class="tableData">
+        <tmpl_if canView>
+            <img src="<tmpl_var icon.small>" class="wg-icon" alt="<tmpl_var title>" />
+            <a href="<tmpl_var url>"><tmpl_var title></a>
+        <tmpl_else>
+            <img src="<tmpl_var icon.small>" class="wg-icon" alt="<tmpl_var title>" />
+            <tmpl_var title>
+        </tmpl_if>
+    </td>
+    <td class="tableData" colspan="3">
+        <tmpl_var synopsis>
+    </td>
+</tr>
 </tmpl_loop>
-				    								
+</tbody>
+
+<tbody>                                            
 <tmpl_loop file_loop>
- <tr>
- <td valign="top" class="tableData">
- <tmpl_if session.var.adminOn>
-  <tmpl_if canEdit>
-   <tmpl_var controls>
-  </tmpl_if>
- </tmpl_if>
-<tmpl_if canView>
- <a href="<tmpl_if isFile><tmpl_var file.url><tmpl_else><tmpl_var url></tmpl_if>"><img src="<tmpl_var icon.small>" border="0" alt="<tmpl_var title>" /></a>
- <a href="<tmpl_if isFile><tmpl_var file.url><tmpl_else><tmpl_var url></tmpl_if>"><tmpl_var title></a>
-<tmpl_else>
- <img src="<tmpl_var icon.small>" border="0" alt="<tmpl_var title>" /><tmpl_var title>
-</tmpl_if>
-</td> <td class="tableData" valign="top">
- <tmpl_var synopsis></td><td class="tableData" valign="top">^D("%z %Z",<tmpl_var date.epoch>);</td>
- <td class="tableData" valign="top"><tmpl_var size></td></tr>
+<tr>
+    <td class="tableData">
+        <tmpl_if session.var.adminOn>
+            <tmpl_if canEdit>
+                <tmpl_var controls>
+            </tmpl_if>
+        </tmpl_if>
+        <tmpl_if canView>
+            <img src="<tmpl_var icon.small>" class="wg-icon" alt="<tmpl_var title>" />
+            <a href="<tmpl_if isFile><tmpl_var file.url><tmpl_else><tmpl_var url></tmpl_if>"><tmpl_var title></a>
+        <tmpl_else>
+            <img src="<tmpl_var icon.small>" class="wg-icon" alt="<tmpl_var title>" />
+            <tmpl_var title>
+        </tmpl_if>
+    </td>
+    <td class="tableData">
+        <tmpl_var synopsis>
+    </td>
+    <td class="tableData">
+    	^D("%z %Z",<tmpl_var date.epoch>);
+	</td>
+	<td class="tableData">
+    	<tmpl_var size>
+	</td>
+</tr>
 </tmpl_loop>
+</tbody>
 </table>
+
+<!--/folder<tmpl_var assetId> /folder-->
+</div>
 
 ==== extraHeadTags ===========================================================
 ~

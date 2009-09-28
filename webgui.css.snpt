@@ -1,0 +1,51 @@
+==== Snippet =================================================================
+Asset ID    : PcRRPhh-0KfvLLNIPdxJTw
+Menu Title  : webgui.css
+Parent      : root/import
+Title       : webgui.css
+URL         : webgui.css
+==== snippet =================================================================
+.wg-icon {
+    border: 0px none;
+    vertical-align: middle;
+}
+.wg-clear {
+    clear: both;
+}
+ul.wg-inline {
+    margin:0;
+    padding:0;
+}
+ul.wg-inline li {
+    display: inline;
+    margin:0;
+    padding:0;
+}
+ul.wg-inline li.active {
+    font-weight:bold;
+}
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+  usePacked: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

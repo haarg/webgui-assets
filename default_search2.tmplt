@@ -7,38 +7,67 @@ URL         : default_search2
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<div id="search<tmpl_var assetId>" class="search">
+
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
 
 <tmpl_if session.var.adminOn>
-        <p><tmpl_var controls></p>
+        <tmpl_var controls>
 </tmpl_if>
 
 <tmpl_if displayTitle>
-  <h2><tmpl_var title></h2>
+  <h3><tmpl_var title></h3>
 </tmpl_if>
 
 <tmpl_if description>
-  <p><tmpl_var description></p>
+	<div class="description">
+		<tmpl_var description>
+	<!--/description-->
+	</div>
 </tmpl_if>
 
-<tmpl_var form_header>
-<tmpl_var form_keywords> <tmpl_var form_submit>
-<tmpl_var form_footer>
+<form action="^/(^Page(url););" enctype="multipart/form-data" method="post">
+<div class="formContents">
+    <input type="hidden" name="doit" value="1"  />
+    <input id="keywords_formId" type="text" name="keywords" value="<tmpl_var session.form.keywords>" size="30" maxlength="255"  />
+    <input type="submit" value="search" class="forwardButton" />
+</div>
+</form>
 
 <tmpl_if session.form.doit>
-	<tmpl_loop result_set>
-		<dl>
-			<dt><a href="^/(<tmpl_var url>);"><tmpl_var title></a></dt>
-			<dd><tmpl_var synopsis></dd>
-		</dl>
+    <tmpl_if results_found>
+        <div class="resultsFeedback">
+            <span>^International('resultsFeedback',Asset_Search); <strong><tmpl_var session.form.keywords></strong></span>
+            <span class="pageCount">^International('page',Asset_Search); <tmpl_var pagination.pageNumber> ^International('of',Asset_Search); <tmpl_var pagination.pageCount></span>
+        <!-- resultsFeedback //-->
+        </div>
+    <tmpl_else>
+        <h4><tmpl_var no_results></h4>
+    </tmpl_if>
+
+	<dl>
+    <tmpl_loop result_set>
+		<dt><a href="^/(<tmpl_var url>);"><tmpl_var title></a></dt>
+		<dd><tmpl_var synopsis></dd>
 	</tmpl_loop>
-	<tmpl_if pagination.pageCount.isMultiple>
-		<div class="pagination">
-			<tmpl_var pagination.previousPage> &#183; <tmpl_var pagination.pageList.upTo10> &#183; <tmpl_var pagination.nextPage>
-		</div>
-	</tmpl_if>
+    </dl>
+
+    <tmpl_if pagination.pageCount.isMultiple>
+    <ul class="pagination wg-inline">
+        <li class="previous"><tmpl_var pagination.previousPage></li>
+        <tmpl_loop pagination.pageLoop.upTo10>
+            <li<tmpl_if pagination.activePage> class="active"</tmpl_if>>
+                <a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a>
+            </li>
+        </tmpl_loop>
+        <li class="next"><tmpl_var pagination.nextPage></li>
+    </ul>
+    </tmpl_if>
+
 </tmpl_if>
 
+<!--/search<tmpl_var assetId> /search-->
+</div>
 
 ==== extraHeadTags ===========================================================
 ~

@@ -1,0 +1,41 @@
+==== Snippet =================================================================
+Asset ID    : zb_OPKNqcTuIjdvvbEkRjw
+Menu Title  : article.css
+Parent      : root/import/article
+Title       : article.css
+URL         : article.css
+==== snippet =================================================================
+/*/ styles for the article asset /*/
+.withImage .articleContent, .linkedImage .articleContent {
+  width:100%;
+  overflow:hidden;
+}
+.withImage .articleImage, .linkedImage .articleImage {
+  float:right;
+  margin:0 0 10px 10px;
+}
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

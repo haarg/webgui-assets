@@ -27,7 +27,7 @@ URL         : home/thinyrecord-templates/default-thingyrecord-view
 <tmpl_loop form_fields>
 	<tr>
 		<td><tmpl_var field_label></td>
-		<td><tmpl_var field_input></td>
+		<td><tmpl_var field_input><tmpl_if field_price><em>(add $<tmpl_var field_price>)</em></tmpl_if></td>
 	</tr>
 </tmpl_loop>
 

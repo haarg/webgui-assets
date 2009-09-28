@@ -7,7 +7,17 @@ URL         : image
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_if session.var.adminOn><tmpl_if controls><p><tmpl_var controls></p></tmpl_if></tmpl_if><img src="<tmpl_var fileUrl>" <tmpl_var parameters> />
+<div id="image<tmpl_var assetId>" class="image">
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls><br />
+</tmpl_if>
+
+<img src="<tmpl_var fileUrl>" <tmpl_var parameters> />
+
+<!--/image<tmpl_var assetId> /image-->
+</div>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
