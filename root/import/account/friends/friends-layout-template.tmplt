@@ -29,7 +29,7 @@ URL         : root/import/account/friends/friends-layout-template
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
+<link rel="stylesheet" href="^/(/root/import/account/account.css);" type="text/css">
 
 ==== Properties ==============================================================
 display:

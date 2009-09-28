@@ -67,7 +67,7 @@ URL         : root/import/gallery-templates/default-gallery-view-album-thumbnail
 
 	<div id="galleryThumbnails">
 		<tmpl_loop file_loop>
-			<a href="<tmpl_var url_albumViewThumbnails>" title="<tmpl_var synopsis_textonly escape="html">" class="thumb">
+			<a href="<tmpl_var url_albumViewThumbnails>" class="thumb">
 				<img src="<tmpl_var thumbnailUrl>" />
 			</a>
 		</tmpl_loop>
@@ -88,8 +88,6 @@ URL         : root/import/gallery-templates/default-gallery-view-album-thumbnail
 <script type="text/javascript" src="^Extras(yui/build/yahoo/yahoo-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/dom/dom-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/event/event-min.js);"></script>
-<script type="text/javascript" src="^/(root/import/gallery-templates/browserdetect.js);"></script>
-<script type="text/javascript" src="^/(root/import/gallery-templates/thumbnails.js);"></script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -112,7 +112,7 @@ URL         : root/import/gallery-templates/gallery.css
 	padding:3px;
 	margin-top:5px;
 	font-size:10px;	
-	vertical-align:center;
+	vertical-align:middle;
 	cursor:pointer;
 	height:21px;
 }	
@@ -497,31 +497,25 @@ a.fullSize:visited {
 	float:left;
 	border:solid black 2px;
 	margin:10px;
+        z-index: 0;
+        position: relative;
+}
+.thumb:hover {
+    background-color: transparent;
+    z-index: 50;
+    overflow: visible;
 }
 .thumb img {
 	width:100px;
 	height:auto;
 	border-style:none;
 }
-.thumb-popup {
-	border:solid #555 1px;
-	padding:2px;
-	padding-bottom:4px;
-	padding-right:4px;
-	background-color:silver;
+.thumb:hover img {
+    bottom: 65px;
+    left: -75px;
+    position: absolute;
+    width: 250px;
 }
-.thumb-popup img {
-	border:solid #555 1px;
-}
-.thumb-popup .caption {
-	background-color:black;
-	color:white;
-	padding:4px;
-	border:solid #555 2px;
-}
-
-
-
 
 /* 
 *	--BEGIN STYLES FOR SLIDESHOW VIEW --

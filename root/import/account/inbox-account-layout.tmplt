@@ -35,7 +35,7 @@ URL         : root/import/account/inbox-account-layout
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
+<link rel="stylesheet" href="^/(/root/import/account/account.css);" type="text/css">
 ==== Properties ==============================================================
 display:
   isHidden: '1'

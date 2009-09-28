@@ -42,7 +42,7 @@ URL         : root/import/account/profile/profile-account-layout
 <tmpl_if is_edit><input type="submit" class="WGbottombutton" value="^International(save changes,Account_Profile);" /><br /></tmpl_if>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
+<link rel="stylesheet" href="^/(/root/import/account/account.css);" type="text/css">
 ==== Properties ==============================================================
 display:
   isHidden: '1'

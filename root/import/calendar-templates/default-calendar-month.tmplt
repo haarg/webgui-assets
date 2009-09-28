@@ -241,7 +241,7 @@ URL         : root/import/calendar-templates/default-calendar-month
 	top:			0px;
 	right:			0px;
 	height:			10px;
-	width:			10px;
+	width:			13px;
 	background-color:	#516BA4;
 	color:			white;
 	text-align:		center;

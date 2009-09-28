@@ -19,7 +19,7 @@ URL         : root/import/account/default-account-layout2
 <tmpl_var content>
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
+<link rel="stylesheet" href="^/(/root/import/account/account.css);" type="text/css">
 <link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
