@@ -23,6 +23,11 @@ URL         : root/import/account/profile/default-view-profile-template
 
     </tmpl_if>
 
+<tmpl_if notViewable>
+    <h2>^International(error label,Account_Inbox);</h2>
+    <p><strong><tmpl_var error_message></strong></p>
+    <p><a href="<tmpl_var back_url>">^International(back label,Account_Profile);</a></p>
+<tmpl_else>
                 <table class="WGProfile_registration">
                     <tbody>
                     <tr>
@@ -59,7 +64,8 @@ URL         : root/import/account/profile/default-view-profile-template
                         </tmpl_if>
                     </tr>
                     </tbody>
-                </table>	
+                </table>
+</tmpl_if>
  
     		<div class="WGProfile_accepts">
                 <tmpl_if acceptsPrivateMessages><input type="button" value="^International(send private message label,Account_Profile);" onClick="location.href='^PageUrl(?op=account;module=inbox;do=sendMessage;userId=<tmpl_var profile_user_id>);'"/></tmpl_if>

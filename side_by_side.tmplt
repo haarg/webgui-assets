@@ -94,7 +94,7 @@ URL         : side_by_side
 	max-width: 50%;
 }
 
-.endFloat {
+.endFloat, .content {
 	clear: both;
 }
 </style>

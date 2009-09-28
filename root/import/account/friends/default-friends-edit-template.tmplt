@@ -33,7 +33,7 @@ URL         : root/import/account/friends/default-friends-edit-template
                                     </div>
                                     </tmpl_if>
                                 </span>
-                                <span class="WGProfile_messagerpp"><tmpl_var message_rpp></span>
+                                <span class="WGProfile_messagerpp"><tmpl_var message_rpp><tmpl_if has_friends><input type="button" value="^International(send group message label,Account_Friends);" onClick="location.href='<tmpl_var new_message_url>'" /></tmpl_if></span>
                     </p>
 
 				<table class="WGProfileFields">
@@ -74,7 +74,7 @@ URL         : root/import/account/friends/default-friends-edit-template
                                     </div>
                                     </tmpl_if>
                                 </span>
-                                <span class="WGProfile_messagerpp"><tmpl_var message_rpp></span>
+                                <span class="WGProfile_messagerpp"><tmpl_var message_rpp><tmpl_if has_friends><input type="button" value="^International(send group message label,Account_Friends);" onClick="location.href='<tmpl_var new_message_url>'" /></tmpl_if></span>
                     </p>
 
     </div>

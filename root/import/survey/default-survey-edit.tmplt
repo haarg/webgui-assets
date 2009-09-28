@@ -17,7 +17,7 @@ URL         : root/import/survey/default-survey-edit
     
     <link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
     <link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
-    <link rel="stylesheet" type="text/css" href="^Extras(wobject/Survey/surveyedit.css);" />
+    <link rel="stylesheet" type="text/css" href="/root/import/survey/surveyedit.css" />
     <link rel="stylesheet" type="text/css" href="^Extras(hoverhelp.css);"/>
     
     <!-- YUI dependencies: http://developer.yahoo.com/yui/articles/hosting/?autocomplete&button&container&datasource&json&logger&menu&resize&simpleeditor&utilities&MIN&nocombine -->

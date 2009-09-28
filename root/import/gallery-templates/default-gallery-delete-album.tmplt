@@ -26,7 +26,7 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />									
 			</form>
 		</div>	
-^International(template url_delete,Asset_Photo);
+^International(template url_delete,Asset_GalleryAlbum);
 	</div>		
 
 	<br /><br />
