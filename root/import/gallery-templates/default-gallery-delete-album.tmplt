@@ -4,22 +4,6 @@ Menu Title  : Default Gallery Delete Album
 Parent      : root/import/gallery-templates
 Title       : Default Gallery Delete Album
 URL         : root/import/gallery-templates/default-gallery-delete-album
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-	@import url(^/(root/import/gallery-templates/admin.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
-<!--[if IE 7]>
-	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -62,7 +46,21 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

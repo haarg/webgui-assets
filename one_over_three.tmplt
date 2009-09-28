@@ -4,27 +4,6 @@ Menu Title  : One Over Three
 Parent      : root/import/layout
 Title       : One Over Three
 URL         : one_over_three
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-  float: left;
-  width: 33%;
-}
-.secondColumn {
-        float: left;
-        width: 33%;
-}
-.thirdColumn {
-        float: left;
-        width: auto;
-        max-width: 33%;
-}
-.endFloat {
- clear: both;
-}
-</style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -158,7 +137,26 @@ URL         : one_over_three
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+  float: left;
+  width: 33%;
+}
+.secondColumn {
+        float: left;
+        width: 33%;
+}
+.thirdColumn {
+        float: left;
+        width: auto;
+        max-width: 33%;
+}
+.endFloat {
+ clear: both;
+}
+</style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

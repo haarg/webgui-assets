@@ -4,8 +4,6 @@ Menu Title  : Default WebGUI Login Template
 Parent      : root/import/auth/webgui/login
 Title       : Default WebGUI Login Template
 URL         : default_webgui_login_template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

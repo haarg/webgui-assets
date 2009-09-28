@@ -4,12 +4,6 @@ Menu Title  : Site Nav
 Parent      : root/import/webgui-7-style-3
 Title       : Site Nav
 URL         : webgui7/style3/hierarchical-top-nav
-==== headBlock ===============================================================
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
-<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -68,7 +62,11 @@ URL         : webgui7/style3/hierarchical-top-nav
     });
 </script>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,8 +4,6 @@ Menu Title  : Print Badge (Default)
 Parent      : root/import/ems
 Title       : Print Badge (Default)
 URL         : root/import/ems/print-badge-default
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

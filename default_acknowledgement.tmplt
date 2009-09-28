@@ -4,24 +4,6 @@ Menu Title  : Default Acknowledgement
 Parent      : root/import/dataform
 Title       : Default Acknowledgement
 URL         : default_acknowledgement
-==== headBlock ===============================================================
-<style type="text/css">
-.acknowledgement
-{
-	margin-top:5px;
-}
-.acknowledgement td
-{
-	font-size:9pt;
-	font-family:arial;
-}
-
-a.blackLabel
-{
-	color:#29587E;
-}
-
-</style>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -49,7 +31,23 @@ a.blackLabel
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.acknowledgement
+{
+	margin-top:5px;
+}
+.acknowledgement td
+{
+	font-size:9pt;
+	font-family:arial;
+}
+
+a.blackLabel
+{
+	color:#29587E;
+}
+
+</style>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

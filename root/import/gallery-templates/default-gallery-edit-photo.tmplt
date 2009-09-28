@@ -4,22 +4,6 @@ Menu Title  : Default Gallery Edit Photo
 Parent      : root/import/gallery-templates
 Title       : Default Gallery Edit Photo
 URL         : root/import/gallery-templates/default-gallery-edit-photo
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-	@import url(^/(root/import/gallery-templates/admin.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
-<!--[if IE 7]>
-	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -122,7 +106,21 @@ URL         : root/import/gallery-templates/default-gallery-edit-photo
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

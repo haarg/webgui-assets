@@ -4,8 +4,6 @@ Menu Title  : StockData Default Display
 Parent      : root/import/stockdata
 Title       : StockData Default Display
 URL         : stockdatatmpl000000002
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

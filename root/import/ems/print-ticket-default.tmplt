@@ -4,8 +4,6 @@ Menu Title  : Print Ticket (Default)
 Parent      : root/import/ems
 Title       : Print Ticket (Default)
 URL         : root/import/ems/print-ticket-default
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

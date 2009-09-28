@@ -4,11 +4,6 @@ Menu Title  : Tree Navigation
 Parent      : root/import/navigation
 Title       : Tree Navigation
 URL         : root/import/navigation/tree-navigation
-==== headBlock ===============================================================
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/treeview/assets/skins/sam/treeview.css);" />
-<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/treeview/treeview-min.js);"></script>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -58,7 +53,10 @@ URL         : root/import/navigation/tree-navigation
 
 
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/treeview/assets/skins/sam/treeview.css);" />
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/treeview/treeview-min.js);"></script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

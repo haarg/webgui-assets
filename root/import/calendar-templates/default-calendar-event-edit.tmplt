@@ -4,58 +4,6 @@ Menu Title  : Default Calendar Event Edit
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Event Edit
 URL         : root/import/calendar-templates/default-calendar-event-edit
-==== headBlock ===============================================================
-<script src="/extras/yui/build/yahoo/yahoo.js" type="text/javascript"></script>
-<script src="/extras/yui/build/event/event.js" type="text/javascript"></script>
-<script src="/extras/yui/build/dom/dom.js" type="text/javascript"></script>
-<script src="/extras/yui/build/dragdrop/dragdrop.js" type="text/javascript"></script>
-<script src="/extras/yui/build/logger/logger.js" type="text/javascript"></script>
-<script src="/extras/textFix.js" type="text/javascript"></script>
-<script src="/extras/tabs/tabs.js" type="text/javascript"></script>
-    <style type="text/css">
-        body * {
-            margin:0px;
-        }
-        table td {
-            font-family:Arial;
-            font-size:10px;
-        }
-        #tabs a {
-            border:solid #F0F0F0 1px;
-            -moz-border-radius-topLeft: 20px;
-            -moz-border-radius-topRight: 20px;
-            font-weight:bold;
-            padding: 2px 15px 0px 15px;
-            text-align;center;
-            background-color:#FBFBFB;
-            border-top:solid #F0F0F0 2px;
-            color:#b0b0b0;
-            text-decoration:none;
-            font-size:10pt;
-            display:block;
-            float:left;
-            margin-right:5px;
-        }
-        #tabs a:hover {
-            color:black;
-        }
-        #tabs .active {
-            background-color:#F0F0F0;
-            color:#404040;
-        }
-        table a {
-            font-size:11px;
-            color:#447BFD;
-        }
-        input, select {
-            font-size:10px;
-            border:gray solid 1px;
-            background-color:#F0F0F0;
-            cursor:pointer;
-        }
-    </style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -283,7 +231,57 @@ function addBlankRelated () {
 </script>
 
 ==== extraHeadTags ===========================================================
-~
+<script src="/extras/yui/build/yahoo/yahoo.js" type="text/javascript"></script>
+<script src="/extras/yui/build/event/event.js" type="text/javascript"></script>
+<script src="/extras/yui/build/dom/dom.js" type="text/javascript"></script>
+<script src="/extras/yui/build/dragdrop/dragdrop.js" type="text/javascript"></script>
+<script src="/extras/yui/build/logger/logger.js" type="text/javascript"></script>
+<script src="/extras/textFix.js" type="text/javascript"></script>
+<script src="/extras/tabs/tabs.js" type="text/javascript"></script>
+    <style type="text/css">
+        body * {
+            margin:0px;
+        }
+        table td {
+            font-family:Arial;
+            font-size:10px;
+        }
+        #tabs a {
+            border:solid #F0F0F0 1px;
+            -moz-border-radius-topLeft: 20px;
+            -moz-border-radius-topRight: 20px;
+            font-weight:bold;
+            padding: 2px 15px 0px 15px;
+            text-align;center;
+            background-color:#FBFBFB;
+            border-top:solid #F0F0F0 2px;
+            color:#b0b0b0;
+            text-decoration:none;
+            font-size:10pt;
+            display:block;
+            float:left;
+            margin-right:5px;
+        }
+        #tabs a:hover {
+            color:black;
+        }
+        #tabs .active {
+            background-color:#F0F0F0;
+            color:#404040;
+        }
+        table a {
+            font-size:11px;
+            color:#447BFD;
+        }
+        input, select {
+            font-size:10px;
+            border:gray solid 1px;
+            background-color:#F0F0F0;
+            cursor:pointer;
+        }
+    </style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,10 +4,6 @@ Menu Title  : StockData Default View
 Parent      : root/import/stockdata
 Title       : StockData Default View
 URL         : stockdatatmpl000000001
-==== headBlock ===============================================================
-
-<link rel="stylesheet" type="text/css" href="^Extras;wobject/StockData/tools.css" />
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -106,7 +102,9 @@ URL         : stockdatatmpl000000001
 
 
 ==== extraHeadTags ===========================================================
-~
+
+<link rel="stylesheet" type="text/css" href="^Extras;wobject/StockData/tools.css" />
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

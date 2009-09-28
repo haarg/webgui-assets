@@ -4,8 +4,6 @@ Menu Title  : Default LDAP Account Display Template
 Parent      : root/import/auth/ldap/account
 Title       : Default LDAP Account Display Template
 URL         : default_ldap_account_display_template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

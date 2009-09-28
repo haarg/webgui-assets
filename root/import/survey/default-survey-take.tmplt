@@ -4,10 +4,6 @@ Menu Title  : Default Survey Take
 Parent      : root/import/survey
 Title       : Default Survey Take
 URL         : root/import/survey/default-survey-take
-==== headBlock ===============================================================
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
-<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
-<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/survey.css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -36,7 +32,9 @@ URL         : root/import/survey/default-survey-take
 
 </div>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
+<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/survey.css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

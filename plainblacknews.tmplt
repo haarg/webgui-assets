@@ -4,24 +4,6 @@ Menu Title  : News
 Parent      : root/import/layout
 Title       : News
 URL         : plainblacknews
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-	float: left;
-	width: 50%;
-}
-.secondColumn {
-	float: left;
-	width: auto;
-	max-width: 50%;
-}
-.endFloat {
-	clear: both;
-}
-</style>
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -153,7 +135,23 @@ URL         : plainblacknews
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+	float: left;
+	width: 50%;
+}
+.secondColumn {
+	float: left;
+	width: auto;
+	max-width: 50%;
+}
+.endFloat {
+	clear: both;
+}
+</style>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

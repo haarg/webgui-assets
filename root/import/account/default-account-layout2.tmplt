@@ -4,9 +4,6 @@ Menu Title  : Default Account Layout
 Parent      : root/import/account
 Title       : Default Account Layout
 URL         : root/import/account/default-account-layout2
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -21,7 +18,8 @@ URL         : root/import/account/default-account-layout2
 <!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
 <tmpl_var content>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -4,46 +4,6 @@ Menu Title  : Default Thingy Search Thing
 Parent      : root/import/thingy-templates
 Title       : Default Thingy Search Thing
 URL         : templates/thingy-default-search-thing
-==== headBlock ===============================================================
-<script type="text/javascript">
-	var timer;
-	var tempThing;
-	function showHide(tempThingId) {	
-			tempThing = document.getElementById(tempThingId);
-			var tempVis = tempThing.style.display;			
-			tempChildren = tempThing.childNodes;			
-			for(i=0;i<tempThing.childNodes.length;i++) {
-				if(tempThing.childNodes[i].tagName == "A") {					
-					tempThing.childNodes[i].onmouseout = mouseOutHide;
-					tempThing.childNodes[i].onmouseover = cancelTimer;
-				}
-			}			
-			if(tempVis == "block")
-				tempThing.style.display = "none";
-			else
-				tempThing.style.display = "block";
-	}
-
-	function mouseOutHide() {					
-		var parentVis = this.parentNode.style.display;		
-		timer = setTimeout("tempThing.style.display = 'none'", 125);			
-
-	}
-	function cancelTimer() {						
-		clearTimeout(timer);
-	}	
-</script>
-
-<style type="text/css">
-	@import url(^/(root/import/thingy-templates/thingy.css););
-</style>
-
-<!--[if IE]>
-	<style type="text/css">
-		@import url(^/(root/import/thingy-templates/thingy-ie.css););
-	</style>
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -182,7 +142,45 @@ URL         : templates/thingy-default-search-thing
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript">
+	var timer;
+	var tempThing;
+	function showHide(tempThingId) {	
+			tempThing = document.getElementById(tempThingId);
+			var tempVis = tempThing.style.display;			
+			tempChildren = tempThing.childNodes;			
+			for(i=0;i<tempThing.childNodes.length;i++) {
+				if(tempThing.childNodes[i].tagName == "A") {					
+					tempThing.childNodes[i].onmouseout = mouseOutHide;
+					tempThing.childNodes[i].onmouseover = cancelTimer;
+				}
+			}			
+			if(tempVis == "block")
+				tempThing.style.display = "none";
+			else
+				tempThing.style.display = "block";
+	}
+
+	function mouseOutHide() {					
+		var parentVis = this.parentNode.style.display;		
+		timer = setTimeout("tempThing.style.display = 'none'", 125);			
+
+	}
+	function cancelTimer() {						
+		clearTimeout(timer);
+	}	
+</script>
+
+<style type="text/css">
+	@import url(^/(root/import/thingy-templates/thingy.css););
+</style>
+
+<!--[if IE]>
+	<style type="text/css">
+		@import url(^/(root/import/thingy-templates/thingy-ie.css););
+	</style>
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

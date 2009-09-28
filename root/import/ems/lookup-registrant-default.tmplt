@@ -4,25 +4,6 @@ Menu Title  : Lookup Registrant (Default)
 Parent      : root/import/ems
 Title       : Lookup Registrant (Default)
 URL         : root/import/ems/lookup-registrant-default
-==== headBlock ===============================================================
-<link href="^Extras(/yui/build/reset-fonts-grids/reset-fonts-grids.css);" rel="stylesheet" type="text/css">
-<link href="^Extras(/yui/build/paginator/assets/skins/sam/paginator.css);" rel="stylesheet" type="text/css">
-<link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
-
-
-<script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/paginator/paginator-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datasource/datasource-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datatable/datatable-min.js);" type="text/javascript"></script>
-
-<style type="text/css">
-div.search, p {
-	text-align: left;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -99,7 +80,24 @@ YAHOO.util.Event.onDOMReady(function () {
 </script>
 
 ==== extraHeadTags ===========================================================
-~
+<link href="^Extras(/yui/build/reset-fonts-grids/reset-fonts-grids.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/paginator/assets/skins/sam/paginator.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
+
+
+<script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/paginator/paginator-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-min.js);" type="text/javascript"></script>
+
+<style type="text/css">
+div.search, p {
+	text-align: left;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

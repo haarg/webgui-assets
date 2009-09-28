@@ -4,8 +4,6 @@ Menu Title  : Default SQL Report
 Parent      : root/import/sqlreport
 Title       : Default SQL Report
 URL         : default_sql_report
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

@@ -4,9 +4,6 @@ Menu Title  : Contributions Layout
 Parent      : root/import/account/contributions
 Title       : Contributions Layout
 URL         : root/import/account/contributions/contributions-layout
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -31,7 +28,8 @@ URL         : root/import/account/contributions/contributions-layout
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -4,8 +4,6 @@ Menu Title  : Default UserList
 Parent      : root/import/userlist
 Title       : Default UserList
 URL         : root/import/userlist/default-userlist
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -63,12 +61,25 @@ URL         : root/import/userlist/default-userlist
 </tmpl_if>
 <td class="tableData">   <tmpl_var user_name></td>
 
-<td class="tableData">   <tmpl_var user_profile_firstName_value></td>
-<td class="tableData">   <tmpl_var user_profile_lastName_value></td>
+<td class="tableData">
+<tmpl_if user_profile_firstName_notPublic>
+^International('Field not public message','Asset_UserList');
+<tmpl_else>  
+<tmpl_var user_profile_firstName_value>
+</tmpl_if>
+</td>
 
 <td class="tableData">
-<tmpl_if user_profile_emailNotPublic>
-^International('Email not public message','Asset_UserList');
+<tmpl_if user_profile_lastName_notPublic>
+^International('Field not public message','Asset_UserList');
+<tmpl_else>  
+<tmpl_var user_profile_lastName_value>
+</tmpl_if>
+</td>
+
+<td class="tableData">
+<tmpl_if user_profile_email_notPublic>
+^International('Field not public message','Asset_UserList');
 <tmpl_else>  
 <tmpl_var user_profile_email_value>     
 </tmpl_if>

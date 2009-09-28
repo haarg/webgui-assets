@@ -4,28 +4,6 @@ Menu Title  : Donation (Default)
 Parent      : shopping-cart-collateral-items
 Title       : Donation (Default)
 URL         : root/import/default-donation-template
-==== headBlock ===============================================================
-<style type="text/css">
-	.wgDonation h3.title {
-		background: #000;
-		height:42px;
-		color:white;
-		font-size:18px;
-		font-weight:bold;
-		letter-spacing:1px;			
-		line-height:42px;
-		padding-left:15px;
-		margin-bottom:0px;
-	}
-	.wgDonation .cart {
-		margin:15px 0px 15px 25px;
-	}
-	.wgDonation #price_formId {
-		background-color:white;
-		border:solid black 1px;
-	}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -59,7 +37,27 @@ URL         : root/import/default-donation-template
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	.wgDonation h3.title {
+		background: #000;
+		height:42px;
+		color:white;
+		font-size:18px;
+		font-weight:bold;
+		letter-spacing:1px;			
+		line-height:42px;
+		padding-left:15px;
+		margin-bottom:0px;
+	}
+	.wgDonation .cart {
+		margin:15px 0px 15px 25px;
+	}
+	.wgDonation #price_formId {
+		background-color:white;
+		border:solid black 1px;
+	}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

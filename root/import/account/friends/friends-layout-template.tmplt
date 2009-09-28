@@ -4,9 +4,6 @@ Menu Title  : Friends Layout Template
 Parent      : root/import/account/friends
 Title       : Friends Layout Template
 URL         : root/import/account/friends/friends-layout-template
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -32,7 +29,8 @@ URL         : root/import/account/friends/friends-layout-template
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

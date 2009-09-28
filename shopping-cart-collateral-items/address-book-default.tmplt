@@ -4,7 +4,25 @@ Menu Title  : Address Book (Default)
 Parent      : shopping-cart-collateral-items
 Title       : Address Book (Default)
 URL         : shopping-cart-collateral-items/address-book-default
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgAddressBook">
+	<tmpl_loop addresses>
+		<div class="item<tmpl_if isDefault> default</tmpl_if>">
+			<div class="use"><tmpl_var useButton></div>
+			<div class="label"><tmpl_var label></div>
+			<div class="address"><tmpl_var address></div>
+			<div class="delete"><tmpl_var deleteButton></div>
+			<div class="edit"><tmpl_var editButton></div>
+			<div class="edit"><tmpl_var defaultButton></div>
+		</div>
+	</tmpl_loop>
+
+	<div style="clear: both;"><tmpl_var addButton></div>
+</div>
+
+==== extraHeadTags ===========================================================
 <style>
 	.wgAddressBook .item {
 		float:left;
@@ -52,26 +70,6 @@ URL         : shopping-cart-collateral-items/address-book-default
 	}
 </style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<div class="wgAddressBook">
-	<tmpl_loop addresses>
-		<div class="item<tmpl_if isDefault> default</tmpl_if>">
-			<div class="use"><tmpl_var useButton></div>
-			<div class="label"><tmpl_var label></div>
-			<div class="address"><tmpl_var address></div>
-			<div class="delete"><tmpl_var deleteButton></div>
-			<div class="edit"><tmpl_var editButton></div>
-			<div class="edit"><tmpl_var defaultButton></div>
-		</div>
-	</tmpl_loop>
-
-	<div style="clear: both;"><tmpl_var addButton></div>
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '1'

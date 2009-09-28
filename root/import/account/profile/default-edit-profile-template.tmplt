@@ -4,16 +4,6 @@ Menu Title  : Default Edit Profile Template
 Parent      : root/import/account/profile
 Title       : Default Edit Profile Template
 URL         : root/import/account/profile/default-edit-profile-template
-==== headBlock ===============================================================
-<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/tabview/tabview-min.js);"></script>
-
-<script type="text/javascript">
-YAHOO.util.Event.onDOMReady(function() {
-    var tabView = new YAHOO.widget.TabView('wgAccountTabs');
-});
-</script>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -55,7 +45,15 @@ YAHOO.util.Event.onDOMReady(function() {
 </div>
 </tmpl_loop>
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/tabview/tabview-min.js);"></script>
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function() {
+    var tabView = new YAHOO.widget.TabView('wgAccountTabs');
+});
+</script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

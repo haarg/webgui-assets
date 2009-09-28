@@ -4,24 +4,6 @@ Menu Title  : Right Column
 Parent      : root/import/layout
 Title       : Right Column
 URL         : right_column
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-  float: left;
-  width: 65%;
-}
-.secondColumn {
-        float: left;
-        width: auto;
-        max-width: 33%;
-}
-.endFloat {
- clear: both;
-}
-</style>
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -99,7 +81,23 @@ URL         : right_column
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+  float: left;
+  width: 65%;
+}
+.secondColumn {
+        float: left;
+        width: auto;
+        max-width: 33%;
+}
+.endFloat {
+ clear: both;
+}
+</style>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

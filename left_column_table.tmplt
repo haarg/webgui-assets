@@ -4,16 +4,6 @@ Menu Title  : Left Column (Table)
 Parent      : root/import/layout
 Title       : Left Column (Table)
 URL         : left_column_table
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-  width: 35%;
-}
-.secondColumn {
-        max-width: 65%;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -98,7 +88,15 @@ URL         : left_column_table
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+  width: 35%;
+}
+.secondColumn {
+        max-width: 65%;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,15 +4,6 @@ Menu Title  : Default Inbox Send Message Template
 Parent      : root/import/account/inbox
 Title       : Default Inbox Send Message Template
 URL         : root/import/account/inbox/default-inbox-send-message-template
-==== headBlock ===============================================================
-<link rel="stylesheet" type="text/css" href="^Extras;yui/build/container/assets/skins/sam/container.css" />
-
-<script>
-   var removeText = '^International(remove text,Account_Inbox);';
-</script>
-<script type="text/javascript" src="^Extras;yui/build/yahoo-dom-event/yahoo-dom-event.js"></script>
-<script type="text/javascript" src="^Extras;yui/build/container/container-min.js"></script>
-<script type="text/javascript" src="^Extras;account/inbox.js"></script>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -109,7 +100,14 @@ URL         : root/import/account/inbox/default-inbox-send-message-template
 </tmpl_if>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" type="text/css" href="^Extras;yui/build/container/assets/skins/sam/container.css" />
+
+<script>
+   var removeText = '^International(remove text,Account_Inbox);';
+</script>
+<script type="text/javascript" src="^Extras;yui/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="^Extras;yui/build/container/container-min.js"></script>
+<script type="text/javascript" src="^Extras;account/inbox.js"></script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

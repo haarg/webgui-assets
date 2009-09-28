@@ -4,7 +4,124 @@ Menu Title  : Default Calendar Search
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Search
 URL         : root/import/calendar-templates/default-calendar-search
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if admin>
+    <p><tmpl_var adminControls></p>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+    <h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+    <tmpl_var description>
+</tmpl_if>
+
+
+<tmpl_var form.header>
+<table cellspacing="0" cellpadding="0" width="600" id="mCAL" border="0">
+<tr>
+    <td style="text-align:right">
+        <a class="tab" href="<tmpl_var url>?type=day">^International(label day,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var url>?type=week">^International(label week,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var url>?type=month">^International(label month,Asset_Calendar);</a>
+	<a class="tab" href="<tmpl_var url>?type=list">List</a>
+        <a class="tab active" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        &nbsp;
+    </td>
+</tr>
+<tr>
+    <td style="width:100%">
+        <table width="100%" cellspacing="2" cellpadding="0">
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(keyword,Asset_Calendar);</div>
+            </td>
+            <td class="day"><tmpl_var form.keywords>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(start date,Asset_Calendar);</div>
+            </td>
+            <td class="day"><tmpl_var form.startDate>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(end date,Asset_Calendar);</div>
+            </td>
+            <td class="day"><tmpl_var form.endDate>
+            </td>
+        </tr>
+
+        </table>
+    </td>
+</tr>
+<tr>
+    <td style="text-align:right">
+    <tmpl_var form.submit>
+    </td>
+</tr>
+</table>
+<tmpl_var form.footer>
+
+
+
+<tmpl_if results>
+<table cellspacing="0" cellpadding="0" width="600" id="mCAL">
+<tr>
+    <td>
+        <div  class="curMonth">
+            ^International(search results,Asset_Calendar);
+            <span style="font-size:9px;">^International(page x of x,Asset_Calendar,<tmpl_var pagination.pageNumber>,<tmpl_var pagination.pageCount>);</span>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        <div style="padding:3px 0px;">
+            <tmpl_var pagination.firstPage>
+            <tmpl_var pagination.pageList>
+            <tmpl_var pagination.lastPage> 
+        </div>
+    </td>
+</tr>
+<tr>
+    <td style="width:100%">
+        <table width="100%" cellspacing="2" cellpadding="0">
+        <tmpl_loop results><tr>
+            <td class="heading">
+                <div style="padding:4px;"><tmpl_var startDate></div>
+            </td>
+            <td class="day">
+                <a href="<tmpl_var url>" style="padding-left:10px"><tmpl_var title></a>
+            </td>
+        </tr></tmpl_loop>
+        </table>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        <div style="padding:3px 0px;">
+            <tmpl_var pagination.firstPage>
+            <tmpl_var pagination.pageList>
+            <tmpl_var pagination.lastPage> 
+        </div>
+    </td>
+</tr>
+</table>
+</tmpl_if>
+
+==== extraHeadTags ===========================================================
     <style type="text/css">
         body * {
             margin:0px;
@@ -211,125 +328,6 @@ URL         : root/import/calendar-templates/default-calendar-search
     </style>
 
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<tmpl_if admin>
-    <p><tmpl_var adminControls></p>
-</tmpl_if>
-
-<tmpl_if displayTitle>
-    <h2><tmpl_var title></h2>
-</tmpl_if>
-
-<tmpl_if description>
-    <tmpl_var description>
-</tmpl_if>
-
-
-<tmpl_var form.header>
-<table cellspacing="0" cellpadding="0" width="600" id="mCAL" border="0">
-<tr>
-    <td style="text-align:right">
-        <a class="tab" href="<tmpl_var url>?type=day">^International(label day,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var url>?type=week">^International(label week,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var url>?type=month">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">List</a>
-        <a class="tab active" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        &nbsp;
-    </td>
-</tr>
-<tr>
-    <td style="width:100%">
-        <table width="100%" cellspacing="2" cellpadding="0">
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(keyword,Asset_Calendar);</div>
-            </td>
-            <td class="day"><tmpl_var form.keywords>
-            </td>
-        </tr>
-        
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(start date,Asset_Calendar);</div>
-            </td>
-            <td class="day"><tmpl_var form.startDate>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(end date,Asset_Calendar);</div>
-            </td>
-            <td class="day"><tmpl_var form.endDate>
-            </td>
-        </tr>
-
-        </table>
-    </td>
-</tr>
-<tr>
-    <td style="text-align:right">
-    <tmpl_var form.submit>
-    </td>
-</tr>
-</table>
-<tmpl_var form.footer>
-
-
-
-<tmpl_if results>
-<table cellspacing="0" cellpadding="0" width="600" id="mCAL">
-<tr>
-    <td>
-        <div  class="curMonth">
-            ^International(search results,Asset_Calendar);
-            <span style="font-size:9px;">^International(page x of x,Asset_Calendar,<tmpl_var pagination.pageNumber>,<tmpl_var pagination.pageCount>);</span>
-        </div>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        <div style="padding:3px 0px;">
-            <tmpl_var pagination.firstPage>
-            <tmpl_var pagination.pageList>
-            <tmpl_var pagination.lastPage> 
-        </div>
-    </td>
-</tr>
-<tr>
-    <td style="width:100%">
-        <table width="100%" cellspacing="2" cellpadding="0">
-        <tmpl_loop results><tr>
-            <td class="heading">
-                <div style="padding:4px;"><tmpl_var startDate></div>
-            </td>
-            <td class="day">
-                <a href="<tmpl_var url>" style="padding-left:10px"><tmpl_var title></a>
-            </td>
-        </tr></tmpl_loop>
-        </table>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        <div style="padding:3px 0px;">
-            <tmpl_var pagination.firstPage>
-            <tmpl_var pagination.pageList>
-            <tmpl_var pagination.lastPage> 
-        </div>
-    </td>
-</tr>
-</table>
-</tmpl_if>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

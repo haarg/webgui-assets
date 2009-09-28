@@ -4,7 +4,71 @@ Menu Title  : My Purchases Detail (Default)
 Parent      : shopping-cart-collateral-items
 Title       : My Purchases Detail (Default)
 URL         : shopping-cart-collateral-items/my-purchases-detail-default
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgPurchase">
+	<tmpl_if notice>
+		<div class="message"><tmpl_var notice></div>
+	</tmpl_if>
+
+	<h3 class="title">^International(order number,Shop); <tmpl_var orderNumber></h3>
+	
+	<tmpl_if isRecurring>
+	    <div><a href="<tmpl_var cancelRecurringUrl>">^International(cancel recurring transaction,Shop);</a></div>
+	</tmpl_if>
+
+	<ul class="dataList">
+		<li><span>^International(date,Shop);</span><tmpl_var dateOfPurchase></li>
+		<li><span>^International(amount,Shop);</span><tmpl_var amount></li>
+		<li><span>^International(in shop credit used,Shop);</span><tmpl_var inShopCreditDeduction></li>
+		<li><span>^International(taxes,Shop);</span><tmpl_var taxes></li>
+		<li><span>^International(shipping method,Shop);</span><tmpl_var shippingDriverLabel></li>
+		<li><span>^International(shipping amount,Shop);</span><tmpl_var shippingPrice></li>
+		<li><span>^International(payment method,Shop);</span><tmpl_var paymentDriverLabel></li>
+		<li><span>^International(status message,Shop);</span><tmpl_var statusMessage></li>
+	</ul>
+	
+	<div class="address">
+		<div>^International(payment address,Shop);</div>
+		<div><tmpl_var paymentAddress></div>
+	</div>
+	
+	<div class="address">
+		<div>^International(shipping address,Shop);</div>
+		<div><tmpl_var shippingAddress></div>
+	</div>
+	
+	
+	<table class="transactionItems" cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th>^International(date,Shop);</th>
+			<th>^International(item,Shop);</th>
+			<th>^International(price,Shop);</th>
+			<th>^International(quantity,Shop);</th>
+			<th>^International(shipping address,Shop);</th>
+			<th>^International(order status,Shop);</th>
+			<th>^International(tracking number,Shop);</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tmpl_loop items>
+		<tr>
+			<td><tmpl_var lastUpdated></td>
+			<td><a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a></td>
+			<td><tmpl_var price></td>
+			<td><tmpl_var quantity></td>
+			<td class="smallAddress"><tmpl_var itemShippingAddress></td>
+			<td><tmpl_var orderStatus></td>
+			<td><tmpl_var shippingTrackingNumber></td>
+		</tr>
+	</tmpl_loop>
+	</tbody>
+	</table>
+</div>
+
+==== extraHeadTags ===========================================================
 <style type="text/css">
 	.wgPurchase {
 
@@ -90,72 +154,6 @@ URL         : shopping-cart-collateral-items/my-purchases-detail-default
 	}
 </style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<div class="wgPurchase">
-	<tmpl_if notice>
-		<div class="message"><tmpl_var notice></div>
-	</tmpl_if>
-
-	<h3 class="title">^International(order number,Shop); <tmpl_var orderNumber></h3>
-	
-	<tmpl_if isRecurring>
-	    <div><a href="<tmpl_var cancelRecurringUrl>">^International(cancel recurring transaction,Shop);</a></div>
-	</tmpl_if>
-
-	<ul class="dataList">
-		<li><span>^International(date,Shop);</span><tmpl_var dateOfPurchase></li>
-		<li><span>^International(amount,Shop);</span><tmpl_var amount></li>
-		<li><span>^International(in shop credit used,Shop);</span><tmpl_var inShopCreditDeduction></li>
-		<li><span>^International(taxes,Shop);</span><tmpl_var taxes></li>
-		<li><span>^International(shipping method,Shop);</span><tmpl_var shippingDriverLabel></li>
-		<li><span>^International(shipping amount,Shop);</span><tmpl_var shippingPrice></li>
-		<li><span>^International(payment method,Shop);</span><tmpl_var paymentDriverLabel></li>
-		<li><span>^International(status message,Shop);</span><tmpl_var statusMessage></li>
-	</ul>
-	
-	<div class="address">
-		<div>^International(payment address,Shop);</div>
-		<div><tmpl_var paymentAddress></div>
-	</div>
-	
-	<div class="address">
-		<div>^International(shipping address,Shop);</div>
-		<div><tmpl_var shippingAddress></div>
-	</div>
-	
-	
-	<table class="transactionItems" cellpadding="0" cellspacing="0">
-	<thead>
-		<tr>
-			<th>^International(date,Shop);</th>
-			<th>^International(item,Shop);</th>
-			<th>^International(price,Shop);</th>
-			<th>^International(quantity,Shop);</th>
-			<th>^International(shipping address,Shop);</th>
-			<th>^International(order status,Shop);</th>
-			<th>^International(tracking number,Shop);</th>
-		</tr>
-	</thead>
-	<tbody>
-	<tmpl_loop items>
-		<tr>
-			<td><tmpl_var lastUpdated></td>
-			<td><a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a></td>
-			<td><tmpl_var price></td>
-			<td><tmpl_var quantity></td>
-			<td class="smallAddress"><tmpl_var itemShippingAddress></td>
-			<td><tmpl_var orderStatus></td>
-			<td><tmpl_var shippingTrackingNumber></td>
-		</tr>
-	</tmpl_loop>
-	</tbody>
-	</table>
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '1'

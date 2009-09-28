@@ -4,13 +4,6 @@ Menu Title  : Default Gallery Add Archive
 Parent      : root/import/gallery-templates
 Title       : Default Gallery Add Archive
 URL         : root/import/gallery-templates/default-gallery-add-archive
-==== headBlock ===============================================================
-	<link href="^/(root/import/gallery-templates/admin.css);" rel="stylesheet" type="text/css" />
-
-	<!--[if IE 7]>
-	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
-	<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -60,7 +53,12 @@ URL         : root/import/gallery-templates/default-gallery-add-archive
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+	<link href="^/(root/import/gallery-templates/admin.css);" rel="stylesheet" type="text/css" />
+
+	<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

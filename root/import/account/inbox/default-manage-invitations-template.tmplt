@@ -4,27 +4,6 @@ Menu Title  : Default Manage Invitations Template
 Parent      : root/import/account/inbox
 Title       : Default Manage Invitations Template
 URL         : root/import/account/inbox/default-manage-invitations-template
-==== headBlock ===============================================================
-<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
-
-<script type="text/javascript">
-YAHOO.util.Event.onDOMReady(function(){
-   function isMessageCheckBox( element ) {
-      if(element.name == "inviteId") return true;
-      return false;
-   }
-   
-   function toggleAllChecked(evt) {
-      var allBox     = YAHOO.util.Dom.get("check_all");
-      var checkBoxes = YAHOO.util.Dom.getElementsBy(isMessageCheckBox,"INPUT","inboxTbl");
-      for (var i = 0; i < checkBoxes.length; i++) {
-         checkBoxes[i].checked = allBox.checked;
-      }
-   }
-   
-   YAHOO.util.Event.addListener("check_all","click",toggleAllChecked);
-});
-</script>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -114,7 +93,26 @@ YAHOO.util.Event.onDOMReady(function(){
 </table>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
-~
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function(){
+   function isMessageCheckBox( element ) {
+      if(element.name == "inviteId") return true;
+      return false;
+   }
+   
+   function toggleAllChecked(evt) {
+      var allBox     = YAHOO.util.Dom.get("check_all");
+      var checkBoxes = YAHOO.util.Dom.getElementsBy(isMessageCheckBox,"INPUT","inboxTbl");
+      for (var i = 0; i < checkBoxes.length; i++) {
+         checkBoxes[i].checked = allBox.checked;
+      }
+   }
+   
+   YAHOO.util.Event.addListener("check_all","click",toggleAllChecked);
+});
+</script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

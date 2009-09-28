@@ -4,8 +4,6 @@ Menu Title  : Default LoginToggle
 Parent      : root/import/macro/logintoggle
 Title       : Default LoginToggle
 URL         : default_logintoggle
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

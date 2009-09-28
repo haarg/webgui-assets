@@ -4,8 +4,6 @@ Menu Title  : ' Summary Newsletter'
 Parent      : root/import/newsletter
 Title       : ' Summary Newsletter (default)'
 URL         : newsletterdefaulttemplate
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

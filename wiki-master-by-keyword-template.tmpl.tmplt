@@ -4,8 +4,6 @@ Menu Title  : ' Wiki Pages By Keyword'
 Parent      : root/import/wiki
 Title       : ' Wiki Pages By Keyword (default)'
 URL         : wiki-master-by-keyword-template.tmpl
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

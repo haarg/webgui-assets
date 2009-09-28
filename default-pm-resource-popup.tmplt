@@ -4,8 +4,6 @@ Menu Title  : Default Resource Popup
 Parent      : root/import/projectmanager/resource
 Title       : Default Resource Popup
 URL         : default-pm-resource-popup
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

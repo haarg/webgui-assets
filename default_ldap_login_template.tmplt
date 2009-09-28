@@ -4,8 +4,6 @@ Menu Title  : Default LDAP Login Template
 Parent      : root/import/auth/ldap/login
 Title       : Default LDAP Login Template
 URL         : default_ldap_login_template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

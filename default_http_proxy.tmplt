@@ -4,8 +4,6 @@ Menu Title  : Default HTTP Proxy
 Parent      : root/import/httpproxy
 Title       : Default HTTP Proxy
 URL         : default_http_proxy
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

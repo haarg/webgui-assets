@@ -2,10 +2,8 @@
 Asset ID    : 5A8Hd9zXvByTDy4x-H28qw
 Menu Title  : Default Invitation Confirmation Template
 Parent      : root/import/account/inbox
-Title       : Default Invitation Confirmation Tempalte
+Title       : Default Invitation Confirmation Template
 URL         : root/import/account/inbox/default-invitation-confirmation-template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -19,6 +17,7 @@ URL         : root/import/account/inbox/default-invitation-confirmation-template
     </tbody>
 </table>
 <p><a href="<tmpl_var view_invitations_url>">^International(invitations back label,Account_Inbox);</a></p>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

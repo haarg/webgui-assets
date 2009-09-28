@@ -4,32 +4,6 @@ Menu Title  : Subscription (Default)
 Parent      : shopping-cart-collateral-items
 Title       : Subscription (Default)
 URL         : root/import/subscription-default
-==== headBlock ===============================================================
-<style type="text/css">
-	.wgSubscription {
-
-	}
-	.wgSubscription .controls {
-		background-color:black;
-		padding:3px 10px;
-		color:white;
-		margin:5px 0px;
-	}
-	.wgSubscription h3.title {
-		margin-bottom:3px;
-	}
-	.wgSubscription .description * {
-		margin-top:0px;
-	}
-	.wgSubscription .controls a {
-		color:white;
-	}
-	.wgSubscription .smaller {
-		font-size:10px;
-		margin-bottom:10px;
-	}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -66,7 +40,31 @@ URL         : root/import/subscription-default
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	.wgSubscription {
+
+	}
+	.wgSubscription .controls {
+		background-color:black;
+		padding:3px 10px;
+		color:white;
+		margin:5px 0px;
+	}
+	.wgSubscription h3.title {
+		margin-bottom:3px;
+	}
+	.wgSubscription .description * {
+		margin-top:0px;
+	}
+	.wgSubscription .controls a {
+		color:white;
+	}
+	.wgSubscription .smaller {
+		font-size:10px;
+		margin-bottom:10px;
+	}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

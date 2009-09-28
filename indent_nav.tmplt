@@ -4,7 +4,30 @@ Menu Title  : Indent Nav
 Parent      : root/import/navigation
 Title       : Indent Nav
 URL         : indent_nav
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if displayTitle>
+	<h2><tmpl_var title></h2>
+</tmpl_if>
+		
+<tmpl_if description>
+	<p><tmpl_var description></p>
+</tmpl_if>
+		
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
+		
+<div class="mainNav">
+	<tmpl_loop page_loop>
+		<div class="level<tmpl_var page.relDepth>">
+			<a <tmpl_if page.isCurrent> class="navOn"</tmpl_if><tmpl_if page.isAncestor> class="anAncestor" </tmpl_if><tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
+		</div>
+	</tmpl_loop>
+</div>
+
+==== extraHeadTags ===========================================================
 <style type="text/css">
 .mainNav {
 
@@ -40,31 +63,6 @@ div.level4 a {
 }
 </style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<tmpl_if displayTitle>
-	<h2><tmpl_var title></h2>
-</tmpl_if>
-		
-<tmpl_if description>
-	<p><tmpl_var description></p>
-</tmpl_if>
-		
-<tmpl_if session.var.adminOn>
-	<tmpl_var controls>
-</tmpl_if>
-		
-<div class="mainNav">
-	<tmpl_loop page_loop>
-		<div class="level<tmpl_var page.relDepth>">
-			<a <tmpl_if page.isCurrent> class="navOn"</tmpl_if><tmpl_if page.isAncestor> class="anAncestor" </tmpl_if><tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
-		</div>
-	</tmpl_loop>
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,25 +4,6 @@ Menu Title  : Side By Side
 Parent      : root/import/layout
 Title       : Side By Side
 URL         : side_by_side
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-	float: left;
-	width: 50%;
-}
-
-.secondColumn {
-	float: left;
-	width: auto;
-	max-width: 50%;
-}
-
-.endFloat {
-	clear: both;
-}
-</style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -101,7 +82,24 @@ URL         : side_by_side
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+	float: left;
+	width: 50%;
+}
+
+.secondColumn {
+	float: left;
+	width: auto;
+	max-width: 50%;
+}
+
+.endFloat {
+	clear: both;
+}
+</style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

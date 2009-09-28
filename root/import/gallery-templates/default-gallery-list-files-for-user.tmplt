@@ -4,17 +4,6 @@ Menu Title  : Default Gallery List Files For User
 Parent      : root/import/gallery-templates
 Title       : Default Gallery List Files For User
 URL         : root/import/gallery-templates/default-gallery-list-files-for-user
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -108,7 +97,16 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

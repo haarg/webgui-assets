@@ -4,45 +4,6 @@ Menu Title  : Default Calendar Print Event
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Print Event
 URL         : root/import/calendar-templates/default-calendar-print-event
-==== headBlock ===============================================================
-	<style type="text/css">
-	.calHeader {
-		font-size:22px;
-		font-weight:bold;
-		text-align:right;		
-		border-bottom:double #666 3px;
-		width:65%;
-		font-family:arial;
-	}	
-	#printableCal {
-		font-family:arial;
-		font-size:13px;
-		width:65%;
-		border:solid #aaa 1px;
-		border-top-style:none;
-	}
-	#printableCal .label {
-		font-weight:bold;
-		font-size:13px;
-		vertical-align:top;
-		width:15%;
-	}
-	#printableCal ul {
-		margin:0px;
-		padding:0px;
-		padding-left:16px;
-	}
-	#printableCal .alt {
-		background-color:#eee;
-	}
-	.calFooter {
-		width:65%;
-		text-align:center;
-		font-size:10px;
-		font-family:arial;
-	}
-	</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -101,7 +62,44 @@ URL         : root/import/calendar-templates/default-calendar-print-event
 </table>
 
 ==== extraHeadTags ===========================================================
-~
+	<style type="text/css">
+	.calHeader {
+		font-size:22px;
+		font-weight:bold;
+		text-align:right;		
+		border-bottom:double #666 3px;
+		width:65%;
+		font-family:arial;
+	}	
+	#printableCal {
+		font-family:arial;
+		font-size:13px;
+		width:65%;
+		border:solid #aaa 1px;
+		border-top-style:none;
+	}
+	#printableCal .label {
+		font-weight:bold;
+		font-size:13px;
+		vertical-align:top;
+		width:15%;
+	}
+	#printableCal ul {
+		margin:0px;
+		padding:0px;
+		padding-left:16px;
+	}
+	#printableCal .alt {
+		background-color:#eee;
+	}
+	.calFooter {
+		width:65%;
+		text-align:center;
+		font-size:10px;
+		font-family:arial;
+	}
+	</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

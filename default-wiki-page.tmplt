@@ -4,7 +4,45 @@ Menu Title  : Default Wiki Page
 Parent      : root/import/wiki
 Title       : Default Wiki Page
 URL         : default-wiki-page
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
+<h2><tmpl_var title></h2>
+
+    <div id="wikipage" class="yui-navset">
+        <ul class="yui-nav">
+            <li class="selected"><a href="#wikipagecontent"><em><tmpl_var viewLabel></em></a></li>
+            <tmpl_if canEdit><li><a href="#wikipageedit"><em><tmpl_var editLabel></em></a></li></tmpl_if>
+        </ul>
+        <div class="yui-content">
+            <div id="wikipagecontent">
+                <div><tmpl_var content></div>
+                <p>^International(keywords,Asset);: <tmpl_loop keywordsLoop><a href="<tmpl_var url>"><tmpl_var
+keyword></a> </tmpl_loop></p>
+                <div class="wikipagecomments"><tmpl_var comments></div>
+            </div>
+            <tmpl_if canEdit><div id="wikipageedit"><tmpl_var editContent></div></tmpl_if>
+        </div>
+    </div>
+<script type="text/javascript">
+( function() {
+        var tabView = new YAHOO.widget.TabView('wikipage');
+        tabView.on('contentReady', function() {
+        tabView.addTab(new YAHOO.widget.Tab({
+                    label: '<tmpl_var historyLabel>',
+                    dataSrc: '<tmpl_var historyUrl>',
+                    cacheData: true
+            }));
+    });
+    
+
+})();
+</script>
+<div style="padding: 8px;"><a href="<tmpl_var searchUrl>"><tmpl_var searchLabel></a> | <a href="<tmpl_var
+mostPopularUrl>"><tmpl_var mostPopularLabel></a> | <a href="<tmpl_var recentChangesUrl>"><tmpl_var
+recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
+==== extraHeadTags ===========================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/tabview/assets/tabview.css);" />
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/connection/connection-min.js);"></script>
@@ -54,46 +92,6 @@ URL         : default-wiki-page
 
 </style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
-<h2><tmpl_var title></h2>
-
-    <div id="wikipage" class="yui-navset">
-        <ul class="yui-nav">
-            <li class="selected"><a href="#wikipagecontent"><em><tmpl_var viewLabel></em></a></li>
-            <tmpl_if canEdit><li><a href="#wikipageedit"><em><tmpl_var editLabel></em></a></li></tmpl_if>
-        </ul>
-        <div class="yui-content">
-            <div id="wikipagecontent">
-                <div><tmpl_var content></div>
-                <p>^International(keywords,Asset);: <tmpl_loop keywordsLoop><a href="<tmpl_var url>"><tmpl_var
-keyword></a> </tmpl_loop></p>
-                <div class="wikipagecomments"><tmpl_var comments></div>
-            </div>
-            <tmpl_if canEdit><div id="wikipageedit"><tmpl_var editContent></div></tmpl_if>
-        </div>
-    </div>
-<script type="text/javascript">
-( function() {
-        var tabView = new YAHOO.widget.TabView('wikipage');
-        tabView.on('contentReady', function() {
-        tabView.addTab(new YAHOO.widget.Tab({
-                    label: '<tmpl_var historyLabel>',
-                    dataSrc: '<tmpl_var historyUrl>',
-                    cacheData: true
-            }));
-    });
-    
-
-})();
-</script>
-<div style="padding: 8px;"><a href="<tmpl_var searchUrl>"><tmpl_var searchLabel></a> | <a href="<tmpl_var
-mostPopularUrl>"><tmpl_var mostPopularLabel></a> | <a href="<tmpl_var recentChangesUrl>"><tmpl_var
-recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

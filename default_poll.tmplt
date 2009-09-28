@@ -4,28 +4,6 @@ Menu Title  : Default Poll
 Parent      : root/import/poll
 Title       : Default Poll
 URL         : default_poll
-==== headBlock ===============================================================
-<style type="text/css">
-.fontSettings {
-	font-family:arial;
-	font-size:9pt;
-}
-h2 {
-	font-family:arial;
-	margin-top:3px;
-	margin-bottom:3px;
-}
-.pollQuestion {
-	border-bottom:solid gray 1px;
-	font-family:arial;
-	font-size:10pt;
-	font-weight:bold;				
-}
-.pollColor {
-	background-color:gray;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -76,7 +54,27 @@ h2 {
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.fontSettings {
+	font-family:arial;
+	font-size:9pt;
+}
+h2 {
+	font-family:arial;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.pollQuestion {
+	border-bottom:solid gray 1px;
+	font-family:arial;
+	font-size:10pt;
+	font-weight:bold;				
+}
+.pollColor {
+	background-color:gray;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -4,32 +4,6 @@ Menu Title  : Address (Default)
 Parent      : shopping-cart-collateral-items
 Title       : Address (Default)
 URL         : shopping-cart-collateral-items/address-default
-==== headBlock ===============================================================
-<style type="text/css">
-	.wgAddress h2.title {
-		background: black;
-		padding:5px;
-		padding-left:15px;
-		line-height:32px;
-		color:white;
-		margin:0px;
-		height:32px;
-	}
-	.wgAddress table {
-		margin-top:15px;
-	}
-
-	.wgAddress .label {
-		background:#000;
-		color:white;
-		font-weight:bold;
-		padding-left:5px;
-	}
-	.wgAddress input, .wgAddress select {
-		border:solid #555 1px;
-	}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -108,7 +82,31 @@ URL         : shopping-cart-collateral-items/address-default
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	.wgAddress h2.title {
+		background: black;
+		padding:5px;
+		padding-left:15px;
+		line-height:32px;
+		color:white;
+		margin:0px;
+		height:32px;
+	}
+	.wgAddress table {
+		margin-top:15px;
+	}
+
+	.wgAddress .label {
+		background:#000;
+		color:white;
+		font-weight:bold;
+		padding-left:5px;
+	}
+	.wgAddress input, .wgAddress select {
+		border:solid #555 1px;
+	}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

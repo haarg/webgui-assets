@@ -4,7 +4,25 @@ Menu Title  : MiniCart
 Parent      : shopping-cart-collateral-items
 Title       : MiniCart
 URL         : shopping-cart-collateral-items/minicart
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgMiniCart">
+	<h2 class="title">Cart</h2>
+	<div class="items">
+		<tmpl_loop items>
+			<div class="item"><tmpl_var __COUNTER__>) <tmpl_var name> (<tmpl_var quantity>)</div>
+		</tmpl_loop>
+	</div>
+	<div class="total">
+		<b>^International(total,Shop);: <tmpl_var totalPrice></b>
+	</div>
+	<div class="cart">
+		^ViewCart;
+	</div>
+</div>
+
+==== extraHeadTags ===========================================================
 <style>
 	.wgMiniCart * a:link,
 	.wgMiniCart * a:visited {
@@ -43,26 +61,6 @@ URL         : shopping-cart-collateral-items/minicart
 		margin-top:10px;
 	}
 </style>
-==== synopsis ================================================================
-~
-==== template ================================================================
-<div class="wgMiniCart">
-	<h2 class="title">Cart</h2>
-	<div class="items">
-		<tmpl_loop items>
-			<div class="item"><tmpl_var __COUNTER__>) <tmpl_var name> (<tmpl_var quantity>)</div>
-		</tmpl_loop>
-	</div>
-	<div class="total">
-		<b>^International(total,Shop);: <tmpl_var totalPrice></b>
-	</div>
-	<div class="cart">
-		^ViewCart;
-	</div>
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '1'

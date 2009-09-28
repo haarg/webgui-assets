@@ -4,8 +4,6 @@ Menu Title  : Default Message Confirm Template
 Parent      : root/import/account/inbox
 Title       : Default Message Confirm Template
 URL         : root/import/account/inbox/default-message-confirm-template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

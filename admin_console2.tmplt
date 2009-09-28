@@ -4,10 +4,6 @@ Menu Title  : Admin Console
 Parent      : root/import/adminconsole
 Title       : Admin Console
 URL         : admin_console2
-==== headBlock ===============================================================
-
-<link href="^Extras(adminConsole/adminConsole.css);" type="text/css" rel="stylesheet" />
-<script src="^Extras(adminConsole/adminConsole.js);" type="text/javascript"></script>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -86,7 +82,9 @@ URL         : admin_console2
 
 
 ==== extraHeadTags ===========================================================
-~
+
+<link href="^Extras(adminConsole/adminConsole.css);" type="text/css" rel="stylesheet" />
+<script src="^Extras(adminConsole/adminConsole.js);" type="text/javascript"></script>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

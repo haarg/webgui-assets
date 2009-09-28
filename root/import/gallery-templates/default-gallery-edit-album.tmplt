@@ -4,18 +4,6 @@ Menu Title  : Default Gallery Edit Album
 Parent      : root/import/gallery-templates
 Title       : Default Gallery Edit Album
 URL         : root/import/gallery-templates/default-gallery-edit-album
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-	@import url(^/(root/import/gallery-templates/admin.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -99,7 +87,17 @@ URL         : root/import/gallery-templates/default-gallery-edit-album
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

@@ -4,16 +4,6 @@ Menu Title  : Right Column (Table)
 Parent      : root/import/layout
 Title       : Right Column (Table)
 URL         : right_column_table
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-	width: 65%;
-}
-.secondColumn {
-    width: 35%;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -96,7 +86,15 @@ URL         : right_column_table
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+	width: 65%;
+}
+.secondColumn {
+    width: 35%;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

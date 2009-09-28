@@ -4,8 +4,6 @@ Menu Title  : Default Login Box
 Parent      : root/import/macro/l_loginbox
 Title       : Default Login Box
 URL         : default_login_box
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

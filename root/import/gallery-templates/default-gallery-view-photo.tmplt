@@ -4,31 +4,6 @@ Menu Title  : Default Gallery View Photo
 Parent      : root/import/gallery-templates
 Title       : Default Gallery View Photo
 URL         : root/import/gallery-templates/default-gallery-view-photo
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
-<script type="text/javascript">
-function toggleView( link, first, second, eid ) {
-	var e = document.getElementById( eid );
-	if ( e.style.display == "none" ) {			
-		e.style.display = "block";
-		link.innerHTML = second;
-	}
-	else {			
-		e.style.display = "none";
-		link.innerHTML = first;
-	}
-}
-</script>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -212,7 +187,30 @@ function toggleView( link, first, second, eid ) {
 </script>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<script type="text/javascript">
+function toggleView( link, first, second, eid ) {
+	var e = document.getElementById( eid );
+	if ( e.style.display == "none" ) {			
+		e.style.display = "block";
+		link.innerHTML = second;
+	}
+	else {			
+		e.style.display = "none";
+		link.innerHTML = first;
+	}
+}
+</script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

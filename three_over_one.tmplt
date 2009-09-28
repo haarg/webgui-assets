@@ -4,28 +4,6 @@ Menu Title  : Three Over One
 Parent      : root/import/layout
 Title       : Three Over One
 URL         : three_over_one
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-  float: left;
-  width: 33%;
-}
-.secondColumn {
-        float: left;
-        width: 33%;
-}
-.thirdColumn {
-        float: left;
-        width: auto;
-        max-width: 33%;
-}
-.endFloat {
- clear: both;
-}
-</style>
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -155,7 +133,27 @@ URL         : three_over_one
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+  float: left;
+  width: 33%;
+}
+.secondColumn {
+        float: left;
+        width: 33%;
+}
+.thirdColumn {
+        float: left;
+        width: auto;
+        max-width: 33%;
+}
+.endFloat {
+ clear: both;
+}
+</style>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

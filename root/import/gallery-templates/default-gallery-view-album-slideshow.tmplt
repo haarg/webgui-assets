@@ -4,26 +4,6 @@ Menu Title  : Default Gallery View Album Slideshow
 Parent      : root/import/gallery-templates
 Title       : Default Gallery View Album Slideshow
 URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
-<script src="^Extras(yui/build/yahoo/yahoo-min.js);"></script> 
-<script src="^Extras(yui/build/event/event-min.js);"></script>  
-<script src="^Extras(yui/build/dom/dom-min.js);"></script>  
-<script type="text/javascript" src="^/(root/import/gallery-templates/slideshow.js);"></script>
-
-<script type="text/javascript">
-	var ss  = new WebGUI.Slideshow();
-</script>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -88,7 +68,25 @@ URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<script src="^Extras(yui/build/yahoo/yahoo-min.js);"></script> 
+<script src="^Extras(yui/build/event/event-min.js);"></script>  
+<script src="^Extras(yui/build/dom/dom-min.js);"></script>  
+<script type="text/javascript" src="^/(root/import/gallery-templates/slideshow.js);"></script>
+
+<script type="text/javascript">
+	var ss  = new WebGUI.Slideshow();
+</script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

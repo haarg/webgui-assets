@@ -4,44 +4,6 @@ Menu Title  : Default DataForm
 Parent      : root/import/dataform
 Title       : Default DataForm
 URL         : pbtmpl0000000000000141
-==== headBlock ===============================================================
-<style type="text/css">
-h2{
-	font-family:arial;
-	margin-top:3px;
-	margin-bottom:3px;
-}
-.errors{
-	font-family:arial;
-	font-size:9pt;
-}
-.defaultData td{
-	font-family:arial;
-	font-size:9pt;
-}
-.dataControls
-{
-	-moz-box-sizing:border-box;
-	background:#676767;
-	color:#C0C0C0;
-	width:100%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-	margin-bottom:5px;
-}
-.dataControls a
-{
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-.dataControls a:hover {
-	text-decoration:none;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -124,7 +86,43 @@ h2{
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+h2{
+	font-family:arial;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.errors{
+	font-family:arial;
+	font-size:9pt;
+}
+.defaultData td{
+	font-family:arial;
+	font-size:9pt;
+}
+.dataControls
+{
+	-moz-box-sizing:border-box;
+	background:#676767;
+	color:#C0C0C0;
+	width:100%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+	margin-bottom:5px;
+}
+.dataControls a
+{
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+.dataControls a:hover {
+	text-decoration:none;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

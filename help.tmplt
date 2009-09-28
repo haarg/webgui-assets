@@ -4,18 +4,6 @@ Menu Title  : Help
 Parent      : root/import/adminconsole
 Title       : Help
 URL         : help
-==== headBlock ===============================================================
-<style type="text/css">
-dd {
-	margin-bottom: 15px;
-}
-
-dt {
-	font-weight: bold;	
-}
-</style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -59,7 +47,17 @@ dt {
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+dd {
+	margin-bottom: 15px;
+}
+
+dt {
+	font-weight: bold;	
+}
+</style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

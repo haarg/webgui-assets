@@ -4,9 +4,6 @@ Menu Title  : Default Time Tracking Row Template
 Parent      : root/import/timetracking/row
 Title       : Default Time Tracking Row Template
 URL         : default-tt-template-row
-==== headBlock ===============================================================
-	
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -74,7 +71,8 @@ URL         : default-tt-template-row
 </tmpl_unless>
 
 ==== extraHeadTags ===========================================================
-~
+	
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

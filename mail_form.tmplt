@@ -4,44 +4,6 @@ Menu Title  : Mail Form
 Parent      : root/import/dataform
 Title       : Mail Form
 URL         : mail_form
-==== headBlock ===============================================================
-<style type="text/css">
-h2{
-	font-family:arial;
-	margin-top:3px;
-	margin-bottom:3px;
-}
-.fontSettings{
-	font-family:arial;
-	font-size:9pt;
-}
-.mailForm td{
-	font-family:arial;
-	font-size:9pt;
-}
-.dataControls
-{
-	-moz-box-sizing:border-box;
-	background:#676767;
-	color:#C0C0C0;
-	width:100%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-	margin-bottom:5px;
-}
-.dataControls a
-{
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-.dataControls a:hover {
-	text-decoration:none;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -112,7 +74,43 @@ h2{
 <tmpl_var form.end>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+h2{
+	font-family:arial;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.fontSettings{
+	font-family:arial;
+	font-size:9pt;
+}
+.mailForm td{
+	font-family:arial;
+	font-size:9pt;
+}
+.dataControls
+{
+	-moz-box-sizing:border-box;
+	background:#676767;
+	color:#C0C0C0;
+	width:100%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+	margin-bottom:5px;
+}
+.dataControls a
+{
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+.dataControls a:hover {
+	text-decoration:none;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

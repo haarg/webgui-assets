@@ -4,47 +4,6 @@ Menu Title  : Default Forum Search
 Parent      : root/import/collaboration
 Title       : Default Forum Search
 URL         : default_forum_search
-==== headBlock ===============================================================
-<style type="text/css">
-h2{
-	font-family:arial;
-}
-.searchResults{
-	border:solid silver 1px;
-	margin-top:5px;
-}
-.searchResults td{
-	font-family:arial;
-	font-size:9pt;
-}
-.searchResults td a{
-	color:#29587E;
-}
-.searchResults td.odd{
-	background-color:#DADADA;
-}
-.searchResults td.tableHeader{
-	background-color:gray;
-	color:white;
-	border-bottom:double solid silver 3px;
-	font-weight:bold;
-}
-.pagination
-{
-	background:#C0C0C0;
-	width:95%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-
-.postControls a
-{
-	color:white;
-}
-
-</style>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -87,7 +46,46 @@ h2{
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+h2{
+	font-family:arial;
+}
+.searchResults{
+	border:solid silver 1px;
+	margin-top:5px;
+}
+.searchResults td{
+	font-family:arial;
+	font-size:9pt;
+}
+.searchResults td a{
+	color:#29587E;
+}
+.searchResults td.odd{
+	background-color:#DADADA;
+}
+.searchResults td.tableHeader{
+	background-color:gray;
+	color:white;
+	border-bottom:double solid silver 3px;
+	font-weight:bold;
+}
+.pagination
+{
+	background:#C0C0C0;
+	width:95%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+
+.postControls a
+{
+	color:white;
+}
+
+</style>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

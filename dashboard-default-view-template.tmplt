@@ -4,19 +4,6 @@ Menu Title  : Dashboard Default View
 Parent      : root/import/dashboard
 Title       : Dashboard Default View
 URL         : dashboard-default-view-template
-==== headBlock ===============================================================
-<style type="text/css"> @import "^Extras(wobject/Dashboard/draggable.css);"; </style>
-<style type="text/css"> @import "^Extras(wobject/Dashboard/dashboard.css);"; </style>
-<script src="^Extras(wobject/Dashboard/draggable.js);" type="text/javascript"></script>
-<!--[if IE]>
-<style type="text/css">
-div.dragTitle
-{
-	overflow-x:hidden;
-}
-</style>
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -97,7 +84,18 @@ div.dragTitle
 </td></tr></table></div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css"> @import "^Extras(wobject/Dashboard/draggable.css);"; </style>
+<style type="text/css"> @import "^Extras(wobject/Dashboard/dashboard.css);"; </style>
+<script src="^Extras(wobject/Dashboard/draggable.js);" type="text/javascript"></script>
+<!--[if IE]>
+<style type="text/css">
+div.dragTitle
+{
+	overflow-x:hidden;
+}
+</style>
+<![endif]-->
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

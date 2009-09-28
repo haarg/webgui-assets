@@ -4,30 +4,6 @@ Menu Title  : ' Newsletter Manager'
 Parent      : root/import/newsletter
 Title       : Newsletter Manager (default)
 URL         : newslettercstemplate
-==== headBlock ===============================================================
-<style type="text/css">
-.pagination {
-	-moz-box-sizing:border-box;
-	background:#676767;
-	color:#C0C0C0;
-	width:100%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-.pagination a {
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-
-.pagination a:hover {
-	text-decoration:none;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -71,7 +47,29 @@ URL         : newslettercstemplate
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.pagination {
+	-moz-box-sizing:border-box;
+	background:#676767;
+	color:#C0C0C0;
+	width:100%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+.pagination a {
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+
+.pagination a:hover {
+	text-decoration:none;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

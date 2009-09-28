@@ -4,9 +4,6 @@ Menu Title  : Shop Account Layout
 Parent      : root/import/account/shop
 Title       : Shop Account Layout
 URL         : root/import/account/shop/shop-account-layout
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -36,7 +33,8 @@ URL         : root/import/account/shop/shop-account-layout
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

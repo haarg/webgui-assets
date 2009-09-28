@@ -4,24 +4,6 @@ Menu Title  : Hierarchical Top Nav
 Parent      : root/import/navigation
 Title       : Hierarchical Top Nav
 URL         : import/hierarchical-top-nav
-==== headBlock ===============================================================
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
-<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
-<!-- Page-specific script -->
-<script type="text/javascript">
-    YAHOO.util.Event.onAvailable("webguinavigation", function() {
-        var wgMenuBar = new YAHOO.widget.MenuBar("webguinavigation", {
-            autosubmenudisplay : true,
-            showdelay          : 250,
-            hidedelay          : 750,
-            lazyload           : true
-        });
-        wgMenuBar.render();
-    });
-</script>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -69,7 +51,23 @@ URL         : import/hierarchical-top-nav
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+<!-- Page-specific script -->
+<script type="text/javascript">
+    YAHOO.util.Event.onAvailable("webguinavigation", function() {
+        var wgMenuBar = new YAHOO.widget.MenuBar("webguinavigation", {
+            autosubmenudisplay : true,
+            showdelay          : 250,
+            hidedelay          : 750,
+            lazyload           : true
+        });
+        wgMenuBar.render();
+    });
+</script>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

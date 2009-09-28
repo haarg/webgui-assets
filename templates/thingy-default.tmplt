@@ -4,11 +4,6 @@ Menu Title  : Default Thingy
 Parent      : root/import/thingy-templates
 Title       : Default Thingy
 URL         : templates/thingy-default
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/thingy-templates/thingy.css););
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -18,7 +13,7 @@ URL         : templates/thingy-default
 	</tmpl_if>
 
 	<tmpl_if displayTitle>
-		<h2 class="title"><tmpl_var title><span class="smaller"> &bull; Manage Things</span></h2>
+		<h2 class="title"><tmpl_var title><span class="smaller"> &bull; ^International(manage things label,Asset_Thingy);</span></h2>
 	</tmpl_if>
 
 	<tmpl_if description>
@@ -28,6 +23,7 @@ URL         : templates/thingy-default
 	<tmpl_if canEditThings>
 		<div class="controls">			
 			<a href="<tmpl_var addThing_url>" class="styleButton">^International(add thing label,"Asset_Thingy");</a>
+			<a href="<tmpl_var view_url>" class="styleButton">^International(back to thingy default view,"Asset_Thingy");</a>
 			<div style="clear:both"></div>
 		</div>
 	</tmpl_if>
@@ -42,9 +38,10 @@ URL         : templates/thingy-default
 		</div>
 	</tmpl_if>
 </div>
-
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/thingy-templates/thingy.css););
+</style>
 ==== Properties ==============================================================
 display:
   isHidden: '0'

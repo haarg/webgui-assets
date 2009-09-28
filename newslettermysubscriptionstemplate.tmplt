@@ -4,8 +4,6 @@ Menu Title  : ' My Subscriptions'
 Parent      : root/import/newsletter
 Title       : My Subscriptions (default)
 URL         : newslettermysubscriptionstemplate
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

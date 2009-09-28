@@ -2,16 +2,15 @@
 Asset ID    : ErEzulFiEKDkaCDVmxUavw
 Menu Title  : Default Inbox Error Template
 Parent      : root/import/account/inbox
-Title       : Default Inbox Error Tempalte
+Title       : Default Inbox Error Template
 URL         : root/import/account/inbox/default-inbox-error-template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
 <h2>^International(error label,Account_Inbox);</h2>
 <p><strong><tmpl_var error_message></strong></p>
 <p><a href="<tmpl_var back_url>">^International(back label,Account_Inbox);</a></p>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

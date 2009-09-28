@@ -4,67 +4,6 @@ Menu Title  : Topics
 Parent      : root/import/collaboration
 Title       : Topics
 URL         : topics
-==== headBlock ===============================================================
-<style type="text/css">
-.postControls
-{
-	background:#676767;
-	color:#C0C0C0;
-	width:95%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-.postControls a
-{
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-.postControls a:hover {
-	text-decoration:none;
-}
-.pagination
-{
-	-moz-box-sizing:border-box;
-	background:#676767;
-	width:95%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-.pagination a
-{
-	color:white;
-	font-size:8pt;
-}
-.pagination a:hover {
-	text-decoration:none;
-}
-.topicsTitle
-{
-	-moz-box-sizing:border-box;
-	width:95%;
-	border-bottom:solid silver 1px;
-	margin-bottom:3px;
-	font-family:arial;
-}
-
-.topicContent
-{
-	-moz-box-sizing:border-box;
-	font-family:arial;
-	font-size:9pt;
-	width:95%;
-	display:block;
-	border:solid silver 1px;
-	padding:3px;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -128,7 +67,66 @@ URL         : topics
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.postControls
+{
+	background:#676767;
+	color:#C0C0C0;
+	width:95%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+.postControls a
+{
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+.postControls a:hover {
+	text-decoration:none;
+}
+.pagination
+{
+	-moz-box-sizing:border-box;
+	background:#676767;
+	width:95%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+.pagination a
+{
+	color:white;
+	font-size:8pt;
+}
+.pagination a:hover {
+	text-decoration:none;
+}
+.topicsTitle
+{
+	-moz-box-sizing:border-box;
+	width:95%;
+	border-bottom:solid silver 1px;
+	margin-bottom:3px;
+	font-family:arial;
+}
+
+.topicContent
+{
+	-moz-box-sizing:border-box;
+	font-family:arial;
+	font-size:9pt;
+	width:95%;
+	display:block;
+	border:solid silver 1px;
+	padding:3px;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

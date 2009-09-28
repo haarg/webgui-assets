@@ -4,39 +4,6 @@ Menu Title  : Fail Safe
 Parent      : root/import/style
 Title       : Fail Safe
 URL         : fail_safe
-==== headBlock ===============================================================
-<style type="text/css">
-
-div.topwrapper {
-	position: relative;
-}
-
-.menu {
-	position: absolute;
-	top: 25px;
-	left: 10px;
-	width: 180px;
-	font-family: helvetica, arial;
-	font-size: 12px;
-}
-
-.contentArea {
-	border: 1px solid #cccccc;
-	margin: 25px 10px 10px 190px;
-	padding: 5px;
-	font-family: helvetica, arial;
-	min-height: 400px;
-}
-
-/* Hides from non-ie: the holly hack \*/
-* html .adminConsoleWorkArea {
-	zoom: 1.00;
-	display: inline;
-}
-/* End hide from non-ie */
-
-	</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

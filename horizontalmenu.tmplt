@@ -4,8 +4,6 @@ Menu Title  : horizontalMenu
 Parent      : root/import/navigation
 Title       : horizontalMenu
 URL         : horizontalmenu
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

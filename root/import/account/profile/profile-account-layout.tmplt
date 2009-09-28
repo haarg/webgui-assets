@@ -4,9 +4,6 @@ Menu Title  : Profile Account Layout
 Parent      : root/import/account/profile
 Title       : Profile Account Layout
 URL         : root/import/account/profile/profile-account-layout
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
-<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -45,7 +42,8 @@ URL         : root/import/account/profile/profile-account-layout
 <tmpl_if is_edit><input type="submit" class="bottombutton" value="^International(save changes,Account_Profile);" /><br /></tmpl_if>
 <tmpl_var form_footer>
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
 ==== Properties ==============================================================
 display:
   isHidden: '1'

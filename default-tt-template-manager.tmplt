@@ -4,8 +4,6 @@ Menu Title  : Default Time Tracking Manager View
 Parent      : root/import/timetracking/manager
 Title       : Default Time Tracking Manager View
 URL         : default-tt-template-manager
-==== headBlock ===============================================================
-	
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -14,7 +12,7 @@ This is the Manager's View
 
 
 ==== extraHeadTags ===========================================================
-~
+	
 ==== Properties ==============================================================
 display:
   isHidden: '0'

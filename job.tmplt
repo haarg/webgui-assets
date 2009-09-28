@@ -4,87 +4,6 @@ Menu Title  : Job
 Parent      : root/import/collaboration
 Title       : Job
 URL         : job
-==== headBlock ===============================================================
-<style type="text/css">
-.postBorder {
-	border: 1px solid #cccccc;
-	margin-bottom: 10px;
-}
-.postBorderCurrent {
-	border: 3px dotted black;
-	margin-bottom: 10px;
-}
-.postSubject {
-	border-bottom: 1px solid #cccccc;
-	font-weight: bold;
-	padding: 3px;
-	font-family:arial;
-	font-size:9pt;
-}
-.postData {
-	border-bottom: 1px solid #cccccc;
-	font-family:arial;
-	font-size:9pt;
-	background-color: #eeeeee;
-	color: black;
-	padding: 3px;
-}
-.postControls
-{
-	background:#676767;
-	display:block;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-	margin-top: 1px;	
-}
-.postControls a:link, .postControls a:visited
-{
-	color:white;
-	text-decoration:underline;
-}
-.postControls a:hover {
-	text-decoration:none;
-}
-.postMessage {
-	padding: 3px;
-}
-.currentThread {
-	background-color: #eeeeee;
-}
-.threadHead {
-	font-weight: bold;
-	border-bottom: 1px solid #cccccc;
-	font-family:arial;
-	font-size:9pt;
-	background-color: #eeeeee;
-	color: black;
-	padding: 3px;
-}
-.threadData {
-	font-family:arial;
-	font-size:9pt;
-	padding: 3px;
-}
-
-.tableHeader
-{
-	width:20%;
-	background-color:#DADADA;
-	font-family:arial;
-	font-size:9pt;	
-}
-
-.tableData
-{
-	width:80%;
-	border:solid #DADADA 1px;
-	font-family:arial;
-	font-size:9pt;	
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -358,7 +277,86 @@ URL         : job
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.postBorder {
+	border: 1px solid #cccccc;
+	margin-bottom: 10px;
+}
+.postBorderCurrent {
+	border: 3px dotted black;
+	margin-bottom: 10px;
+}
+.postSubject {
+	border-bottom: 1px solid #cccccc;
+	font-weight: bold;
+	padding: 3px;
+	font-family:arial;
+	font-size:9pt;
+}
+.postData {
+	border-bottom: 1px solid #cccccc;
+	font-family:arial;
+	font-size:9pt;
+	background-color: #eeeeee;
+	color: black;
+	padding: 3px;
+}
+.postControls
+{
+	background:#676767;
+	display:block;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+	margin-top: 1px;	
+}
+.postControls a:link, .postControls a:visited
+{
+	color:white;
+	text-decoration:underline;
+}
+.postControls a:hover {
+	text-decoration:none;
+}
+.postMessage {
+	padding: 3px;
+}
+.currentThread {
+	background-color: #eeeeee;
+}
+.threadHead {
+	font-weight: bold;
+	border-bottom: 1px solid #cccccc;
+	font-family:arial;
+	font-size:9pt;
+	background-color: #eeeeee;
+	color: black;
+	padding: 3px;
+}
+.threadData {
+	font-family:arial;
+	font-size:9pt;
+	padding: 3px;
+}
+
+.tableHeader
+{
+	width:20%;
+	background-color:#DADADA;
+	font-family:arial;
+	font-size:9pt;	
+}
+
+.tableData
+{
+	width:80%;
+	border:solid #DADADA 1px;
+	font-family:arial;
+	font-size:9pt;	
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

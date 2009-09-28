@@ -4,7 +4,33 @@ Menu Title  : My Purchases (Default)
 Parent      : shopping-cart-collateral-items
 Title       : My Purchases (Default)
 URL         : shopping-cart-collateral-items/my-purchases-default
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgPurchase">
+	<h3 class="title">^International(my purchases,Shop); &middot; ^a("Return to Account");</h3>
+
+	<table class="transactionItems" cellpadding="0" cellspacing="0">
+	<thead>
+	<tr>
+		<th>^International(order number,Shop);</th>
+		<th>^International(amount,Shop);</th>
+		<th>^International(date,Shop);</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tmpl_loop transactions>
+	<tr>
+		<td><a href="<tmpl_var viewDetailUrl>"><tmpl_var orderNumber></a></td>
+		<td><tmpl_var amount></td>
+		<td><tmpl_var dateOfPurchase></td>
+	</tr>
+	</tmpl_loop>
+	</tbody>
+	</table>
+</div>
+
+==== extraHeadTags ===========================================================
 <style type="text/css">
 	.wgPurchase h3.title {
 		margin-bottom:0px;
@@ -39,34 +65,6 @@ URL         : shopping-cart-collateral-items/my-purchases-default
 	}
 </style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<div class="wgPurchase">
-	<h3 class="title">^International(my purchases,Shop); &middot; ^a("Return to Account");</h3>
-
-	<table class="transactionItems" cellpadding="0" cellspacing="0">
-	<thead>
-	<tr>
-		<th>^International(order number,Shop);</th>
-		<th>^International(amount,Shop);</th>
-		<th>^International(date,Shop);</th>
-	</tr>
-	</thead>
-	<tbody>
-	<tmpl_loop transactions>
-	<tr>
-		<td><a href="<tmpl_var viewDetailUrl>"><tmpl_var orderNumber></a></td>
-		<td><tmpl_var amount></td>
-		<td><tmpl_var dateOfPurchase></td>
-	</tr>
-	</tmpl_loop>
-	</tbody>
-	</table>
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '1'

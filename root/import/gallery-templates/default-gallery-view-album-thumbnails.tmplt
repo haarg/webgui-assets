@@ -4,24 +4,6 @@ Menu Title  : Default Gallery View Album Thumbnails
 Parent      : root/import/gallery-templates
 Title       : Default Gallery View Album Thumbnails
 URL         : root/import/gallery-templates/default-gallery-view-album-thumbnails
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-<script type="text/javascript" src="^Extras(yui/build/yahoo/yahoo-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/dom/dom-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/event/event-min.js);"></script>
-<script type="text/javascript" src="^/(root/import/gallery-templates/browserdetect.js);"></script>
-<script type="text/javascript" src="^/(root/import/gallery-templates/thumbnails.js);"></script>
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -96,7 +78,23 @@ URL         : root/import/gallery-templates/default-gallery-view-album-thumbnail
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+<script type="text/javascript" src="^Extras(yui/build/yahoo/yahoo-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/dom/dom-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/event/event-min.js);"></script>
+<script type="text/javascript" src="^/(root/import/gallery-templates/browserdetect.js);"></script>
+<script type="text/javascript" src="^/(root/import/gallery-templates/thumbnails.js);"></script>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

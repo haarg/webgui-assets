@@ -4,25 +4,6 @@ Menu Title  : Job Submission Form
 Parent      : root/import/collaboration
 Title       : Job Submission Form
 URL         : job_submission_form
-==== headBlock ===============================================================
-<style type="text/css">
-table.jobSubmissionForm td
-{
-	font-family:arial;
-	font-size:9pt;
-}
-.jobSubmissionFormContent
-{
-	font-family:arial;
-	font-size:9pt;
-}
-h2
-{
-	font-family:arial;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -132,7 +113,24 @@ h2
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+table.jobSubmissionForm td
+{
+	font-family:arial;
+	font-size:9pt;
+}
+.jobSubmissionFormContent
+{
+	font-family:arial;
+	font-size:9pt;
+}
+h2
+{
+	font-family:arial;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

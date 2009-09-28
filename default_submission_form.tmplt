@@ -4,25 +4,6 @@ Menu Title  : Default Submission Form
 Parent      : root/import/collaboration
 Title       : Default Submission Form
 URL         : default_submission_form
-==== headBlock ===============================================================
-<style type="text/css">
-table.defaultSubmissionForm td
-{
-	font-family:arial;
-	font-size:9pt;
-}
-.defaultSubmissionFormContent
-{
-	font-family:arial;
-	font-size:9pt;
-}
-h2
-{
-	font-family:arial;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -118,7 +99,24 @@ h2
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+table.defaultSubmissionForm td
+{
+	font-family:arial;
+	font-size:9pt;
+}
+.defaultSubmissionFormContent
+{
+	font-family:arial;
+	font-size:9pt;
+}
+h2
+{
+	font-family:arial;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

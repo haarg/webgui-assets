@@ -4,53 +4,6 @@ Menu Title  : Default Time Tracking User View
 Parent      : root/import/timetracking/user
 Title       : Default Time Tracking User View
 URL         : default-tt-template-user
-==== headBlock ===============================================================
-
-	<style type="text/css">
-		.timeTracking02 {			
-			width:850px;
-		}
-		.timeTracking02 td {
-			border:solid silver 1px;
-			border-bottom:solid gray 1px;
-			font-size:9pt;
-			font-family:arial;			
-		}
-		tr.tt_title td {
-			font-weight:bold;			
-			background-color:#F0F0F0;
-			border-style:none;
-			font-size:11pt;
-		}
-		tr.tt_header td {
-			font-weight:bold;
-			text-align:center;		
-		}
-		tr.tt_empty td {
-			border-style:none;
-		}
-		
-		a.PM_blueLink {
-			color:#29587E;
-			text-decoration:none;
-			font-weight:bold;
-		}
-		a.PM_blueLink:hover {
-			text-decoration:underline;
-		}	
-		
-		.pt-select {
-	       font-weight: normal;
-	       color: black;
-  	       width: 175px;
-        }
-		.date-select {
-		   font-weight: normal;
-	           color: black;
-  	           width: 110px;
-		}
-	</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -321,7 +274,52 @@ URL         : default-tt-template-user
 
 
 ==== extraHeadTags ===========================================================
-~
+
+	<style type="text/css">
+		.timeTracking02 {			
+			width:850px;
+		}
+		.timeTracking02 td {
+			border:solid silver 1px;
+			border-bottom:solid gray 1px;
+			font-size:9pt;
+			font-family:arial;			
+		}
+		tr.tt_title td {
+			font-weight:bold;			
+			background-color:#F0F0F0;
+			border-style:none;
+			font-size:11pt;
+		}
+		tr.tt_header td {
+			font-weight:bold;
+			text-align:center;		
+		}
+		tr.tt_empty td {
+			border-style:none;
+		}
+		
+		a.PM_blueLink {
+			color:#29587E;
+			text-decoration:none;
+			font-weight:bold;
+		}
+		a.PM_blueLink:hover {
+			text-decoration:underline;
+		}	
+		
+		.pt-select {
+	       font-weight: normal;
+	       color: black;
+  	       width: 175px;
+        }
+		.date-select {
+		   font-weight: normal;
+	           color: black;
+  	           width: 110px;
+		}
+	</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

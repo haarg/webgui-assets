@@ -4,9 +4,6 @@ Menu Title  : Default Gallery Edit Comment
 Parent      : root/import/gallery-templates
 Title       : Default Gallery Edit Comment
 URL         : root/import/gallery-templates/default-gallery-edit-comment
-==== headBlock ===============================================================
-<link rel="stylesheet" href="^/(root/import/gallery-templates/gallery.css);" type="text/css" />
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -55,7 +52,8 @@ URL         : root/import/gallery-templates/default-gallery-edit-comment
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<link rel="stylesheet" href="^/(root/import/gallery-templates/gallery.css);" type="text/css" />
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

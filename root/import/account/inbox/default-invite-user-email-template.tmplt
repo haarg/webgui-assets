@@ -2,15 +2,14 @@
 Asset ID    : XgcsoDrbC0duVla7N7JAdw
 Menu Title  : Default Invite User Email Template
 Parent      : root/import/account/inbox
-Title       : Default Invite User Email Tempalte
+Title       : Default Invite User Email Template
 URL         : root/import/account/inbox/default-invite-user-email-template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
 <p><tmpl_var message></p>
 <p><tmpl_var url></p>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

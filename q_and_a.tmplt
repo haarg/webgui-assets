@@ -4,48 +4,6 @@ Menu Title  : Q and A
 Parent      : root/import/collaboration
 Title       : Q and A
 URL         : q_and_a
-==== headBlock ===============================================================
-<style type="text/css">
-.postControls
-{
-	background:#676767;
-	color:#C0C0C0;
-	width:95%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-
-.postControls a
-{
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-.postControls a:hover {
-	text-decoration:none;
-}
-.posts
-{
-	width:95%;
-	border:solid 1px gray;
-	padding:3px;
-	font-family:arial;
-}
-
-.posts b
-{
-	-moz-box-sizing:border-box;
-	background-color:silver;
-	width:100%;
-	display:block;
-	padding:3px;
-	margin-bottom:3px;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -116,7 +74,47 @@ URL         : q_and_a
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.postControls
+{
+	background:#676767;
+	color:#C0C0C0;
+	width:95%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+
+.postControls a
+{
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+.postControls a:hover {
+	text-decoration:none;
+}
+.posts
+{
+	width:95%;
+	border:solid 1px gray;
+	padding:3px;
+	font-family:arial;
+}
+
+.posts b
+{
+	-moz-box-sizing:border-box;
+	background-color:silver;
+	width:100%;
+	display:block;
+	padding:3px;
+	margin-bottom:3px;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

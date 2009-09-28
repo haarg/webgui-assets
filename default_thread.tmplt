@@ -4,81 +4,6 @@ Menu Title  : Default Thread
 Parent      : root/import/collaboration
 Title       : Default Thread
 URL         : default_thread
-==== headBlock ===============================================================
-<style type="text/css">
-	.postBorder {
-		border: 1px solid #cccccc;
-		margin-bottom: 10px;
-	}
- 	.postBorderCurrent {
-		border: 3px dotted black;
-		margin-bottom: 10px;
-	}
-	.postSubject {
-		border-bottom: 1px solid #cccccc;
-		font-weight: bold;
-		padding: 3px;
-	}
-	.postData {
-		border-bottom: 1px solid #cccccc;
-		font-size: 9pt;
-		background-color: #eeeeee;
-		color: black;
-		padding: 3px;
-	}
-	.postData a {
-		color:#29587E;
-		text-decoration:underline;
-	}
-	.postData a:hover {
-		text-decoration:none;
-	}
-	.postControls {
-		border-top: 1px solid #cccccc;
-		background-color: #676767;
-		color: black;
-		padding: 3px;
-		text-align:right;
-	}
-	.postControls a:link, .postControls a:visited {
-		color:white;
-		text-decoration:underline;
-	}
-	.postControls a:hover {
-		text-decoration:none;
-	}
-	.bottomControls {
-		background-color:#676767;
-		padding: 3px;
-		text-align:right;
-	}
-	.bottomControls a:link, .bottomControls a:visited {
-		color:white;
-		text-decoration:underline;
-	}	
-	.bottomControls a:hover {
-		text-decoration:none;
-	}
-	.postMessage {
-		padding: 3px;
-	}
-	.currentThread {
-		background-color: #eeeeee;
-	}
-	.threadHead {
-		font-weight: bold;
-		border-bottom: 1px solid #cccccc;
-		font-size: 9pt;
-		background-color: #eeeeee;
-		color: black;
-		padding: 3px;
-	}
-	.threadData {
-		font-size: 11px;
-		padding: 3px;
-	}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -208,7 +133,80 @@ URL         : default_thread
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	.postBorder {
+		border: 1px solid #cccccc;
+		margin-bottom: 10px;
+	}
+ 	.postBorderCurrent {
+		border: 3px dotted black;
+		margin-bottom: 10px;
+	}
+	.postSubject {
+		border-bottom: 1px solid #cccccc;
+		font-weight: bold;
+		padding: 3px;
+	}
+	.postData {
+		border-bottom: 1px solid #cccccc;
+		font-size: 9pt;
+		background-color: #eeeeee;
+		color: black;
+		padding: 3px;
+	}
+	.postData a {
+		color:#29587E;
+		text-decoration:underline;
+	}
+	.postData a:hover {
+		text-decoration:none;
+	}
+	.postControls {
+		border-top: 1px solid #cccccc;
+		background-color: #676767;
+		color: black;
+		padding: 3px;
+		text-align:right;
+	}
+	.postControls a:link, .postControls a:visited {
+		color:white;
+		text-decoration:underline;
+	}
+	.postControls a:hover {
+		text-decoration:none;
+	}
+	.bottomControls {
+		background-color:#676767;
+		padding: 3px;
+		text-align:right;
+	}
+	.bottomControls a:link, .bottomControls a:visited {
+		color:white;
+		text-decoration:underline;
+	}	
+	.bottomControls a:hover {
+		text-decoration:none;
+	}
+	.postMessage {
+		padding: 3px;
+	}
+	.currentThread {
+		background-color: #eeeeee;
+	}
+	.threadHead {
+		font-weight: bold;
+		border-bottom: 1px solid #cccccc;
+		font-size: 9pt;
+		background-color: #eeeeee;
+		color: black;
+		padding: 3px;
+	}
+	.threadData {
+		font-size: 11px;
+		padding: 3px;
+	}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

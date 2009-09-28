@@ -4,60 +4,6 @@ Menu Title  : Weblog
 Parent      : root/import/collaboration
 Title       : Weblog
 URL         : weblog
-==== headBlock ===============================================================
-<style type="text/css">
-.pagination {
-	-moz-box-sizing:border-box;
-	background:#676767;
-	color:#C0C0C0;
-	width:100%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-.pagination a {
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-
-.pagination a:hover {
-	text-decoration:none;
-}
-
-.weblogTitleBar {
-	font-weight: bold;
-	font-size: 14px;
-	font-family:arial;
-}
-
-.weblogLegend {
-	font-size: 9px;
-	color: #999999;
-	font-family:arial;
-}
-
-.weblogLegend a
-{
-	color:#29587E;
-}
-
-.weblogReadMore {
-	text-align: right;
-	font-size: 9px;
-	width: 100%;
-	font-family:arial;
-}
-
-.weblogSynopsis {
-	border: 1px solid #bbbbbb;
-	font-size: 13px;
-	padding: 5px;
-	-moz-border-radius: 6px;
-	font-family:arial;
-}
-</style>
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -132,7 +78,59 @@ URL         : weblog
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.pagination {
+	-moz-box-sizing:border-box;
+	background:#676767;
+	color:#C0C0C0;
+	width:100%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+.pagination a {
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+
+.pagination a:hover {
+	text-decoration:none;
+}
+
+.weblogTitleBar {
+	font-weight: bold;
+	font-size: 14px;
+	font-family:arial;
+}
+
+.weblogLegend {
+	font-size: 9px;
+	color: #999999;
+	font-family:arial;
+}
+
+.weblogLegend a
+{
+	color:#29587E;
+}
+
+.weblogReadMore {
+	text-align: right;
+	font-size: 9px;
+	width: 100%;
+	font-family:arial;
+}
+
+.weblogSynopsis {
+	border: 1px solid #bbbbbb;
+	font-size: 13px;
+	padding: 5px;
+	-moz-border-radius: 6px;
+	font-family:arial;
+}
+</style>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

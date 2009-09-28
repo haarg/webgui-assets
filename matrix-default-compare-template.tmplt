@@ -4,21 +4,6 @@ Menu Title  : Matrix Default Compare
 Parent      : root/import/matrix
 Title       : Matrix Default Compare
 URL         : matrix-default-compare-template
-==== headBlock ===============================================================
-<link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
-<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
-<script src="/extras/yui/build/container/container-min.js" type="text/javascript"></script>
-<script src="/extras/hoverhelp.js" type="text/javascript"></script>
-<style type="text/css">
-	.lastUpdated {
-		background-color:#F0F0F0;
-	}
-	.category {
-		font-size:13px;
-	}
-</style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -43,7 +28,20 @@ URL         : matrix-default-compare-template
 </td></tr></table>
 
 ==== extraHeadTags ===========================================================
-~
+<link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
+<link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
+<script src="/extras/yui/build/container/container-min.js" type="text/javascript"></script>
+<script src="/extras/hoverhelp.js" type="text/javascript"></script>
+<style type="text/css">
+	.lastUpdated {
+		background-color:#F0F0F0;
+	}
+	.category {
+		font-size:13px;
+	}
+</style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,26 +4,6 @@ Menu Title  : Photo Gallery
 Parent      : root/import/collaboration
 Title       : Photo Gallery
 URL         : photo_gallery
-==== headBlock ===============================================================
-<style type="text/css">
-.picture {
-	padding: 0px;
-	margin: 10px;
-	float: left;
-	font-size: 12px;
-	width: 150px;
-	height: 100px;
-}
-
-html > body .picture {
-height:auto;
-min-height:150px;
-width:auto;
-min-width:100px;
-}
-</style>
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -78,7 +58,25 @@ min-width:100px;
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.picture {
+	padding: 0px;
+	margin: 10px;
+	float: left;
+	font-size: 12px;
+	width: 150px;
+	height: 100px;
+}
+
+html > body .picture {
+height:auto;
+min-height:150px;
+width:auto;
+min-width:100px;
+}
+</style>
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

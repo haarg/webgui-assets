@@ -4,7 +4,32 @@ Menu Title  : Default Calendar Print Day
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Print Day
 URL         : root/import/calendar-templates/default-calendar-print-day
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="calHeader">
+	<tmpl_var monthName> <tmpl_var dayOfMonth> <tmpl_var year>
+</div>
+
+<table cellspacing="0" cellpadding="4" id="printableCal" border="0">
+<tmpl_loop hours><tmpl_if events>
+<tr>
+	<td class="label"><tmpl_var hour24>:00</td>
+	<td>
+		<ul>
+			<tmpl_loop events><li><tmpl_var eventTitle></li>
+			</tmpl_loop>
+		</ul>
+	</td>
+</tr>
+</tmpl_if></tmpl_loop>
+</table>
+
+<div class="calFooter">
+	&copy; Plain Black 2006
+</div>
+
+==== extraHeadTags ===========================================================
 	<style type="text/css">
 	.calHeader {
 		font-size:22px;
@@ -43,33 +68,6 @@ URL         : root/import/calendar-templates/default-calendar-print-day
 	}
 	</style>
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<div class="calHeader">
-	<tmpl_var monthName> <tmpl_var dayOfMonth> <tmpl_var year>
-</div>
-
-<table cellspacing="0" cellpadding="4" id="printableCal" border="0">
-<tmpl_loop hours><tmpl_if events>
-<tr>
-	<td class="label"><tmpl_var hour24>:00</td>
-	<td>
-		<ul>
-			<tmpl_loop events><li><tmpl_var eventTitle></li>
-			</tmpl_loop>
-		</ul>
-	</td>
-</tr>
-</tmpl_if></tmpl_loop>
-</table>
-
-<div class="calFooter">
-	&copy; Plain Black 2006
-</div>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

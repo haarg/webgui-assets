@@ -4,8 +4,6 @@ Menu Title  : Default WebGUI Account Display Template
 Parent      : root/import/auth/webgui/account
 Title       : Default WebGUI Account Display Template
 URL         : default_webgui_account_display_template
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

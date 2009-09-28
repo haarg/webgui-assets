@@ -4,98 +4,6 @@ Menu Title  : Default Submission
 Parent      : root/import/collaboration
 Title       : Default Submission
 URL         : default_submission
-==== headBlock ===============================================================
-<style type="text/css">
-.defaultSubmissionDetails
-{
-	float: right; 		
-	padding: 2px; 
-	margin: 2px;
-	font-size:9pt;
-	font-family:arial;
-	margin-bottom:20px;
-}
-
-.defaultSubmissionDetails a
-{
-	color:#29587E;
-}
-
-.postBorder {
-	border: 1px solid #cccccc;
-	margin-bottom: 10px;
-}
-.postBorderCurrent {
-	border: 3px dotted black;
-	margin-bottom: 10px;
-}
-.postSubject {
-	border-bottom: 1px solid #cccccc;
-	font-weight: bold;
-	padding: 3px;
-	font-family:arial;
-}
-.postData {
-	border-bottom: 1px solid #cccccc;
-	background-color: #eeeeee;
-	padding: 3px;
-}
-.postData td {
-	font-size: 9pt;
-	color: black;
-	font-family:arial;
-}
-.postControls {
-	border-top: 1px solid #cccccc;
-	background-color: #676767;
-	color: black;
-	padding: 3px;
-	font-family:arial;
-	clear:both;
-	width:100%;
-	display:block;
-	-moz-box-sizing:border-box;
-	text-align:right;
-	margin-top:1px;
-}
-.postControls a:link, .postControls a:visited
-{
-	text-decoration:underline;
-	color:white;
-}
-.postControls a:hover {
-	text-decoration:none;
-}
-.postMessage {
-	padding: 3px;
-}
-.currentThread {
-	background-color: #eeeeee;
-}
-.threadHead {
-	font-weight: bold;
-	border-bottom: 1px solid #cccccc;
-	font-size: 9pt;
-	background-color: #eeeeee;
-	color: black;
-	padding: 3px;
-	font-family:arial;
-}
-.threadData {
-	font-size: 11px;
-	padding: 3px;
-	font-family:arial;
-}
-
-
-.collaborationThreadContent
-{
-	font-family:arial;
-	font-size:9pt;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -387,7 +295,97 @@ URL         : default_submission
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.defaultSubmissionDetails
+{
+	float: right; 		
+	padding: 2px; 
+	margin: 2px;
+	font-size:9pt;
+	font-family:arial;
+	margin-bottom:20px;
+}
+
+.defaultSubmissionDetails a
+{
+	color:#29587E;
+}
+
+.postBorder {
+	border: 1px solid #cccccc;
+	margin-bottom: 10px;
+}
+.postBorderCurrent {
+	border: 3px dotted black;
+	margin-bottom: 10px;
+}
+.postSubject {
+	border-bottom: 1px solid #cccccc;
+	font-weight: bold;
+	padding: 3px;
+	font-family:arial;
+}
+.postData {
+	border-bottom: 1px solid #cccccc;
+	background-color: #eeeeee;
+	padding: 3px;
+}
+.postData td {
+	font-size: 9pt;
+	color: black;
+	font-family:arial;
+}
+.postControls {
+	border-top: 1px solid #cccccc;
+	background-color: #676767;
+	color: black;
+	padding: 3px;
+	font-family:arial;
+	clear:both;
+	width:100%;
+	display:block;
+	-moz-box-sizing:border-box;
+	text-align:right;
+	margin-top:1px;
+}
+.postControls a:link, .postControls a:visited
+{
+	text-decoration:underline;
+	color:white;
+}
+.postControls a:hover {
+	text-decoration:none;
+}
+.postMessage {
+	padding: 3px;
+}
+.currentThread {
+	background-color: #eeeeee;
+}
+.threadHead {
+	font-weight: bold;
+	border-bottom: 1px solid #cccccc;
+	font-size: 9pt;
+	background-color: #eeeeee;
+	color: black;
+	padding: 3px;
+	font-family:arial;
+}
+.threadData {
+	font-size: 11px;
+	padding: 3px;
+	font-family:arial;
+}
+
+
+.collaborationThreadContent
+{
+	font-family:arial;
+	font-size:9pt;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

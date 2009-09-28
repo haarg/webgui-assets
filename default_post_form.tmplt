@@ -4,19 +4,6 @@ Menu Title  : Default Post Form
 Parent      : root/import/collaboration
 Title       : Default Post Form
 URL         : default_post_form
-==== headBlock ===============================================================
-<style type="text/css">
-table.defaultPostForm td
-{
-	font-family:arial;
-	font-size:9pt;
-}
-h2
-{
-	font-family:arial;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -105,7 +92,18 @@ h2
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+table.defaultPostForm td
+{
+	font-family:arial;
+	font-size:9pt;
+}
+h2
+{
+	font-family:arial;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

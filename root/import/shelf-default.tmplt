@@ -4,16 +4,6 @@ Menu Title  : Shelf (Default)
 Parent      : root/import/shelf2
 Title       : Shelf (Default)
 URL         : root/import/shelf-default
-==== headBlock ===============================================================
-<style type="text/css">
-	@import url(^/(root/import/shelf2/shelf.css););
-</style>
-<!--[if IE]>
-	<style type="text/css">
-		@import url(^/(root/import/shelf2/shelf-ie.css););
-	</style>
-<![endif]-->
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -58,12 +48,24 @@ URL         : root/import/shelf-default
 			</div>
 		</div>
 	</tmpl_loop>
-
+    <tmpl_if pagination.pageCount.isMultiple>
+    <div class="Profile_pagination" style="text-align:center;">
+    <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+    <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
+    &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText></a></tmpl_if>
+    </tmpl_if>
+    </div>
 	<div style="clear: both;"></div>
 </div>
-
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	@import url(^/(root/import/shelf2/shelf.css););
+</style>
+<!--[if IE]>
+	<style type="text/css">
+		@import url(^/(root/import/shelf2/shelf-ie.css););
+	</style>
+<![endif]-->
 ==== Properties ==============================================================
 display:
   isHidden: '1'

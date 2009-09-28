@@ -4,7 +4,76 @@ Menu Title  : Default Calendar Day
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Day
 URL         : root/import/calendar-templates/default-calendar-day
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if admin>
+    <p><tmpl_var adminControls></p>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+    <h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+    <p><tmpl_var description></p>
+</tmpl_if>
+
+<table cellspacing="0" cellpadding="0" width="600" id="mCAL">
+<tr>
+    <td style="text-align:right">
+        <a class="tab active" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
+	<a class="tab" href="<tmpl_var url>?type=list">List</a>
+        <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
+	
+
+        <div class="controls"><tmpl_if editor><a href="<tmpl_var urlAdd>">^International(add event,Asset_Calendar);</a></tmpl_if> &bull; <a href="<tmpl_var urlPrint>">^International(print,Asset_Calendar);</a> &bull; <a href="<tmpl_var urlIcal>">^International(iCal,Asset_Calendar); </a>
+            <!--&bull; <a href="#">^International(subscribe,Asset_Calendar);</a>-->
+        </div>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        <div style="padding:3px 0px;">
+            <a href="<tmpl_var pagePrevUrl>" style="font-weight:bold;margin-right:8px;">&laquo; ^International(previous day,Asset_Calendar);
+            </a>&bull;
+            
+            <span style="margin-right:8px;margin-left:8px;" class="monthLink current"><tmpl_var dayAbbr>, <tmpl_var monthAbbr> <tmpl_var dayOfMonth>. <tmpl_var year></span>&bull;
+                <a href="<tmpl_var pageNextUrl>" style="font-weight:bold;padding-left:8px">^International(next day,Asset_Calendar); &raquo;</a> 
+        </div>
+    </td>
+</tr>
+<tr>
+    <td>
+        <div  class="curMonth">
+            <tmpl_var dayName>, <tmpl_var monthName> <tmpl_var dayOfMonth>, <tmpl_var year>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td style="width:100%">
+        <table width="100%" cellspacing="2" cellpadding="0">
+        <tmpl_loop hours><tr>
+            <td class="heading">
+                <div style="padding:4px;"><tmpl_var hour12>:00<tmpl_var hourM></div>
+            </td>
+                                        <td class="day">
+                <ul class="eventList">
+                    <tmpl_loop events><li>
+                    <a href="<tmpl_var eventUrl>"><tmpl_var eventTitle></a>
+                    </tmpl_loop></li>
+                                </ul>
+            </td>
+        </tr></tmpl_loop>
+                </table>
+    </td>
+</tr>
+</table>
+
+
+==== extraHeadTags ===========================================================
     <style type="text/css">
         /* Edited with EditCSS */
 
@@ -209,77 +278,6 @@ URL         : root/import/calendar-templates/default-calendar-day
     </style>
 
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<tmpl_if admin>
-    <p><tmpl_var adminControls></p>
-</tmpl_if>
-
-<tmpl_if displayTitle>
-    <h2><tmpl_var title></h2>
-</tmpl_if>
-
-<tmpl_if description>
-    <p><tmpl_var description></p>
-</tmpl_if>
-
-<table cellspacing="0" cellpadding="0" width="600" id="mCAL">
-<tr>
-    <td style="text-align:right">
-        <a class="tab active" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">List</a>
-        <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
-	
-
-        <div class="controls"><tmpl_if editor><a href="<tmpl_var urlAdd>">^International(add event,Asset_Calendar);</a></tmpl_if> &bull; <a href="<tmpl_var urlPrint>">^International(print,Asset_Calendar);</a> &bull; <a href="<tmpl_var urlIcal>">^International(iCal,Asset_Calendar); </a>
-            <!--&bull; <a href="#">^International(subscribe,Asset_Calendar);</a>-->
-        </div>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        <div style="padding:3px 0px;">
-            <a href="<tmpl_var pagePrevUrl>" style="font-weight:bold;margin-right:8px;">&laquo; ^International(previous day,Asset_Calendar);
-            </a>&bull;
-            
-            <span style="margin-right:8px;margin-left:8px;" class="monthLink current"><tmpl_var dayAbbr>, <tmpl_var monthAbbr> <tmpl_var dayOfMonth>. <tmpl_var year></span>&bull;
-                <a href="<tmpl_var pageNextUrl>" style="font-weight:bold;padding-left:8px">^International(next day,Asset_Calendar); &raquo;</a> 
-        </div>
-    </td>
-</tr>
-<tr>
-    <td>
-        <div  class="curMonth">
-            <tmpl_var dayName>, <tmpl_var monthName> <tmpl_var dayOfMonth>, <tmpl_var year>
-        </div>
-    </td>
-</tr>
-<tr>
-    <td style="width:100%">
-        <table width="100%" cellspacing="2" cellpadding="0">
-        <tmpl_loop hours><tr>
-            <td class="heading">
-                <div style="padding:4px;"><tmpl_var hour12>:00<tmpl_var hourM></div>
-            </td>
-                                        <td class="day">
-                <ul class="eventList">
-                    <tmpl_loop events><li>
-                    <a href="<tmpl_var eventUrl>"><tmpl_var eventTitle></a>
-                    </tmpl_loop></li>
-                                </ul>
-            </td>
-        </tr></tmpl_loop>
-                </table>
-    </td>
-</tr>
-</table>
-
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,60 +4,6 @@ Menu Title  : Default Calendar List View
 Parent      : root/import/calendar-templates
 Title       : Default Calendar List View
 URL         : root/import/calendar-templates/default-calendar-list-view
-==== headBlock ===============================================================
-<style type="text/css">
-	#wgListView * {
-		padding:0px;
-		margin:0px;
-	}	
-	#wgListView a:link,
-	#wgListView a:visited {			
-		font-weight:bold;
-	}
-	#wgListView .newUnit {
-		font-weight:bold;
-	}
-	#wgListView .allEvents {
-		padding-left:20px;
-	}
-	#wgListView .controls {
-		margin-top:20px;
-	}	
-	#wgListView .tab:link,
-	#wgListView .tab:visited {;
-		font-weight: bold;
-		padding: 2px 15px 0px 15px;
-		text-align: center;
-		font-size: 15px;
-		line-height:15px;
-		margin-right: 5px;		
-	}
-	#wgListView .bar {
-		text-align:right;
-	}
-	* html #wgListView .bar {
-		height:1%;
-	}
-	#wgListView .bar a:hover {
-		text-decoration:underline;
-	}
-	#wgListView .allEvents {
-		padding:15px;
-	}
-	#wgListView .event {
-		margin:10px 0px;
-	}
-	#wgListView .event .wgDate {
-		font-size:9px;
-		font-style:italic;
-	}
-	#wgListView h3 a:link,
-	#wgListView h3 a:visited {
-		font-size:16px;
-		margin-bottom:2px;
-	}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -118,7 +64,59 @@ URL         : root/import/calendar-templates/default-calendar-list-view
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+	#wgListView * {
+		padding:0px;
+		margin:0px;
+	}	
+	#wgListView a:link,
+	#wgListView a:visited {			
+		font-weight:bold;
+	}
+	#wgListView .newUnit {
+		font-weight:bold;
+	}
+	#wgListView .allEvents {
+		padding-left:20px;
+	}
+	#wgListView .controls {
+		margin-top:20px;
+	}	
+	#wgListView .tab:link,
+	#wgListView .tab:visited {;
+		font-weight: bold;
+		padding: 2px 15px 0px 15px;
+		text-align: center;
+		font-size: 15px;
+		line-height:15px;
+		margin-right: 5px;		
+	}
+	#wgListView .bar {
+		text-align:right;
+	}
+	* html #wgListView .bar {
+		height:1%;
+	}
+	#wgListView .bar a:hover {
+		text-decoration:underline;
+	}
+	#wgListView .allEvents {
+		padding:15px;
+	}
+	#wgListView .event {
+		margin:10px 0px;
+	}
+	#wgListView .event .wgDate {
+		font-size:9px;
+		font-style:italic;
+	}
+	#wgListView h3 a:link,
+	#wgListView h3 a:visited {
+		font-size:16px;
+		margin-bottom:2px;
+	}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

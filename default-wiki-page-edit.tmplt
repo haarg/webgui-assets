@@ -4,9 +4,6 @@ Menu Title  : Default Wiki Page Edit
 Parent      : root/import/wiki
 Title       : Default Wiki Page Edit
 URL         : default-wiki-page-edit
-==== headBlock ===============================================================
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -37,7 +34,8 @@ formProtect></td></tr>
 </tmpl_unless></tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

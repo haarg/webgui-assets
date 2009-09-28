@@ -4,8 +4,6 @@ Menu Title  : Default WebGUI Yes/No Prompt
 Parent      : root/import/prompt
 Title       : Default WebGUI Yes/No Prompt
 URL         : default_webgui_yes/no_prompt
-==== headBlock ===============================================================
-~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================

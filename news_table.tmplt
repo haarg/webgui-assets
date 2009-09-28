@@ -4,16 +4,6 @@ Menu Title  : News (Table)
 Parent      : root/import/layout
 Title       : News (Table)
 URL         : news_table
-==== headBlock ===============================================================
-<style type="text/css">
-.firstColumn {
-	width: 50%;
-}
-.secondColumn {
-	width: 50%;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -154,7 +144,15 @@ URL         : news_table
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.firstColumn {
+	width: 50%;
+}
+.secondColumn {
+	width: 50%;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

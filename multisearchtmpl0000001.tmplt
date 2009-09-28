@@ -4,19 +4,6 @@ Menu Title  : MultiSearch Default Display
 Parent      : root/import/multisearch
 Title       : MultiSearch Default Display
 URL         : multisearchtmpl0000001
-==== headBlock ===============================================================
-<style type="text/css">
-h2 {
-	font-family:arial;
-	margin-top:3px;
-	margin-bottom:3px;
-}
-.multiSearch {
-	background-color:#DADADA;
-	border:solid gray 1px;	
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -66,7 +53,18 @@ function domultisearch() {
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+h2 {
+	font-family:arial;
+	margin-top:3px;
+	margin-bottom:3px;
+}
+.multiSearch {
+	background-color:#DADADA;
+	border:solid gray 1px;	
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'

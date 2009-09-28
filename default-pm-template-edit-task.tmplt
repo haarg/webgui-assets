@@ -4,17 +4,6 @@ Menu Title  : Default Project Manager Edit Task
 Parent      : root/import/projectmanager/edittask
 Title       : Default Project Manager Edit Task
 URL         : default-pm-template-edit-task
-==== headBlock ===============================================================
-<style type="text/css">
-.PM_small {
-	font-size:8pt;
-}
-tr.clearNoBG a {
-	text-decoration:none;
-	color:navy;
-}
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -107,7 +96,16 @@ tr.clearNoBG a {
 </div>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.PM_small {
+	font-size:8pt;
+}
+tr.clearNoBG a {
+	text-decoration:none;
+	color:navy;
+}
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

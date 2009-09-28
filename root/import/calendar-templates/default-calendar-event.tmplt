@@ -4,7 +4,108 @@ Menu Title  : Default Calendar Event
 Parent      : root/import/calendar-templates
 Title       : Default Calendar Event
 URL         : root/import/calendar-templates/default-calendar-event
-==== headBlock ===============================================================
+==== synopsis ================================================================
+~
+==== template ================================================================
+<table cellspacing="0" cellpadding="0" width="600" id="mCAL" border="0">
+<tr>
+    <td style="text-align:right;border-bottom:solid white 1px;">
+        <a class="tab" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
+        <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
+	<a class="tab" href="<tmpl_var url>?type=list">List</a>
+        <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
+        
+        <div class="controls">
+            <a href="<tmpl_var url>?func=edit">^International(edit,Asset_Event);</a> 
+            &bull; <a href="<tmpl_var url>?func=delete">^International(delete,Asset_Event);</a> 
+            &bull; <a href="<tmpl_var url>?print=1">^International(print,Asset_Event);</a>
+        </div>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        <div style="float: left;"><a href="<tmpl_var prevUrl>">&lt;&lt; ^International(previous event,Asset_Event);</a></div>
+        <div style="float: right;"><a href="<tmpl_var nextUrl>">^International(next event,Asset_Event); &gt;&gt;</a></div>
+    </td>
+</tr>
+<tr>
+    <td class="months">
+        ^International(event details,Asset_Event);
+    </td>
+</tr>
+<tr>
+    <td style="width:100%">
+        <table width="100%" cellspacing="2" cellpadding="0">
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(event title,Asset_Event);</div>
+            </td>
+            <td class="day">    
+                <div class="eventWrapper">
+                    <tmpl_var title>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(location,Asset_Event);</div>
+            </td>
+            <td class="day">    
+                <div class="eventWrapper">
+                    <tmpl_var location>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(description,Asset_Event);</div>
+            </td>
+            <td class="day">                            
+                <div class="eventWrapper"><tmpl_var description></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(scheduled,Asset_Event);</div>
+            </td>
+            <td class="day">                            
+                <div class="eventWrapper">
+                    <tmpl_var dateSpan>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(related material,Asset_Event);</div>
+            </td>
+            <td class="day">
+              <div class="eventWrapper"><tmpl_loop relatedLinks>
+<a href='<tmpl_var linkurl>' target='_blank'>
+<tmpl_var linktext></a><br />
+                </tmpl_loop></div>
+            </td>
+        </tr>
+
+        <tr>
+            <td class="heading">
+                <div style="padding:4px;">^International(attachments,Asset_Event);</div>
+            </td>
+            <td class="day">                                <div class="eventWrapper"><tmpl_loop attachment_loop>
+                <a href="<tmpl_var url>"><tmpl_var filename>&nbsp;<img src="<tmpl_var icon>" /></a><br />
+                </tmpl_loop></div>
+            </td>
+        </tr>
+
+        </table>
+    </td>
+</tr>
+</table>
+
+==== extraHeadTags ===========================================================
     <style type="text/css">
         /* Edited with EditCSS */
 
@@ -129,109 +230,6 @@ URL         : root/import/calendar-templates/default-calendar-event
     </style>
 
 
-==== synopsis ================================================================
-~
-==== template ================================================================
-<table cellspacing="0" cellpadding="0" width="600" id="mCAL" border="0">
-<tr>
-    <td style="text-align:right;border-bottom:solid white 1px;">
-        <a class="tab" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
-        <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">List</a>
-        <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
-        
-        <div class="controls">
-            <a href="<tmpl_var url>?func=edit">^International(edit,Asset_Event);</a> 
-            &bull; <a href="<tmpl_var url>?func=delete">^International(delete,Asset_Event);</a> 
-            &bull; <a href="<tmpl_var url>?print=1">^International(print,Asset_Event);</a>
-        </div>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        <div style="float: left;"><a href="<tmpl_var prevUrl>">&lt;&lt; ^International(previous event,Asset_Event);</a></div>
-        <div style="float: right;"><a href="<tmpl_var nextUrl>">^International(next event,Asset_Event); &gt;&gt;</a></div>
-    </td>
-</tr>
-<tr>
-    <td class="months">
-        ^International(event details,Asset_Event);
-    </td>
-</tr>
-<tr>
-    <td style="width:100%">
-        <table width="100%" cellspacing="2" cellpadding="0">
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(event title,Asset_Event);</div>
-            </td>
-            <td class="day">    
-                <div class="eventWrapper">
-                    <tmpl_var title>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(location,Asset_Event);</div>
-            </td>
-            <td class="day">    
-                <div class="eventWrapper">
-                    <tmpl_var location>
-                </div>
-            </td>
-        </tr>
-        
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(description,Asset_Event);</div>
-            </td>
-            <td class="day">                            
-                <div class="eventWrapper"><tmpl_var description></div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(scheduled,Asset_Event);</div>
-            </td>
-            <td class="day">                            
-                <div class="eventWrapper">
-                    <tmpl_var dateSpan>
-                </div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(related material,Asset_Event);</div>
-            </td>
-            <td class="day">
-              <div class="eventWrapper"><tmpl_loop relatedLinks>
-<a href='<tmpl_var linkurl>' target='_blank'>
-<tmpl_var linktext></a><br />
-                </tmpl_loop></div>
-            </td>
-        </tr>
-
-        <tr>
-            <td class="heading">
-                <div style="padding:4px;">^International(attachments,Asset_Event);</div>
-            </td>
-            <td class="day">                                <div class="eventWrapper"><tmpl_loop attachment_loop>
-                <a href="<tmpl_var url>"><tmpl_var filename>&nbsp;<img src="<tmpl_var icon>" /></a><br />
-                </tmpl_loop></div>
-            </td>
-        </tr>
-
-        </table>
-    </td>
-</tr>
-</table>
-
-==== extraHeadTags ===========================================================
-~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

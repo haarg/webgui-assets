@@ -4,10 +4,6 @@ Menu Title  : Default Wiki Search
 Parent      : root/import/wiki
 Title       : Default Wiki Search
 URL         : default-wiki-search
-==== headBlock ===============================================================
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -35,7 +31,9 @@ URL         : default-wiki-search
 <div style="padding: 8px;"><a href="<tmpl_var mostPopularUrl>"><tmpl_var mostPopularLabel></a> | <a href="<tmpl_var recentChangesUrl>"><tmpl_var recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
 
 ==== extraHeadTags ===========================================================
-~
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

@@ -4,48 +4,6 @@ Menu Title  : Matrix Default View
 Parent      : root/import/matrix
 Title       : Matrix Default View
 URL         : matrix-default-view-template
-==== headBlock ===============================================================
-<style type="text/css">
-h2 {
-	font-family:arial;
-}
-.fontSettings {
-	font-size:9pt;
-	font-family:arial;
-}
-.matrixDefault {
-	
-}
-.matrixDefault td {
-	font-size:9pt;
-	font-family:arial;
-}
-.matrixDefault .leftColumn {
-	width:48%;
-}
-.matrixDefault .grayBox {
-	background-color:#DADADA;
-	padding:3px;
-	-moz-box-sizing:border-box;
-	border-bottom:solid gray 2px;
-}
-.matrixDefault .stats .columnOne{
-	width:30%;
-}
-.matrixDefault .stats .columnTwo{
-	width:20%;
-}
-.matrixDefault .stats .columnThree{
-	width:50%;
-}
-.hrStyle {
-	border-bottom:solid black 1px;
-	height:1px;
-	width:100%;
-}
-
-</style>
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -186,7 +144,47 @@ h2 {
 
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+h2 {
+	font-family:arial;
+}
+.fontSettings {
+	font-size:9pt;
+	font-family:arial;
+}
+.matrixDefault {
+	
+}
+.matrixDefault td {
+	font-size:9pt;
+	font-family:arial;
+}
+.matrixDefault .leftColumn {
+	width:48%;
+}
+.matrixDefault .grayBox {
+	background-color:#DADADA;
+	padding:3px;
+	-moz-box-sizing:border-box;
+	border-bottom:solid gray 2px;
+}
+.matrixDefault .stats .columnOne{
+	width:30%;
+}
+.matrixDefault .stats .columnTwo{
+	width:20%;
+}
+.matrixDefault .stats .columnThree{
+	width:50%;
+}
+.hrStyle {
+	border-bottom:solid black 1px;
+	height:1px;
+	width:100%;
+}
+
+</style>
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

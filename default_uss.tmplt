@@ -4,34 +4,6 @@ Menu Title  : Default USS
 Parent      : root/import/collaboration
 Title       : Default USS
 URL         : default_uss
-==== headBlock ===============================================================
-<style type="text/css">
-
-.forumHead {
-	background-color: #eeeeee;
-	border-bottom: 1px solid #cccccc;
-	padding: 2px;
-	padding-bottom: 4px;
-	font-size: 13px;
-	font-weight: bold;
-}
-
-.oddThread {
-	font-size: 13px;
-	border-bottom: 1px dashed #83cc83;
-	padding-bottom: 4px;
-}
-
-.evenThread {
-	font-size: 13px;
-	border-bottom: 1px dashed #aaaaff;
-	padding-bottom: 4px;
-}
-
-</style>
-
-
-
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -97,7 +69,33 @@ URL         : default_uss
 </tmpl_if>
 
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+
+.forumHead {
+	background-color: #eeeeee;
+	border-bottom: 1px solid #cccccc;
+	padding: 2px;
+	padding-bottom: 4px;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.oddThread {
+	font-size: 13px;
+	border-bottom: 1px dashed #83cc83;
+	padding-bottom: 4px;
+}
+
+.evenThread {
+	font-size: 13px;
+	border-bottom: 1px dashed #aaaaff;
+	padding-bottom: 4px;
+}
+
+</style>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '1'
