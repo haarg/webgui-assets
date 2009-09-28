@@ -1,0 +1,44 @@
+==== Template ================================================================
+Asset ID    : CarouselTmpl0000000002
+Menu Title  : Carousel hidden textareas
+Parent      : root/import/carousel
+Title       : Carousel hidden textareas
+URL         : root/import/carousel/carousel-hidden-textareas
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2 class="title"><tmpl_var title></h2>
+	</tmpl_if>
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>
+
+	<tmpl_loop item_loop>
+		<textarea id="<tmpl_var itemId>" style="visibility: hidden;"><tmpl_var text></textarea>
+	</tmpl_loop>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '1'
+  isPrototype: '0'
+properties:
+  namespace: Carousel
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

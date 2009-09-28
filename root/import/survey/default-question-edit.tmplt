@@ -45,8 +45,8 @@ URL         : root/import/survey/default-question-edit
         </p>
         
         <p>
-            <div>^International('question value','Asset_Survey');
-                <div class="wg-hoverhelp">^International('question value description','Asset_Survey');</div>
+            <div>^International('question score','Asset_Survey');
+                <div class="wg-hoverhelp">^International('question score description','Asset_Survey');</div>
             </div>
             <input maxlength='10' size='6' type='text' value='<tmpl_var value>' name='value'>
         </p>

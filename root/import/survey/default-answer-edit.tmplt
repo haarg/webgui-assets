@@ -33,8 +33,8 @@ URL         : root/import/survey/default-answer-edit
         </p>
     
         <p>
-            <div>^International('answer value','Asset_Survey');
-                <div class="wg-hoverhelp">^International('answer value description','Asset_Survey');</div>
+            <div>^International('answer score','Asset_Survey');
+                <div class="wg-hoverhelp">^International('answer score description','Asset_Survey');</div>
             </div>
             <input maxlength='10' size='6' type='text' value='<tmpl_var value>' name='value'>
         </p>

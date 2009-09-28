@@ -17,7 +17,11 @@ URL         : root/import/survey/default-survey-take
 	    <script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
 	    <script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
 	    <script type="text/javascript" src="^Extras(yui/build/calendar/calendar-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/datasource/datasource-min.js);"></script>
 	    <script type="text/javascript" src="^Extras(yui/build/json/json-min.js);"></script>
+            <script type="text/javascript" src="^Extras(yui/build/charts/charts-experimental-min.js);"></script>
+            <script type="text/javascript" src="^Extras(yui/build/datatable/datatable-min.js);"></script>
 	    <script type="text/javascript" src="^Extras(yui/build/resize/resize-min.js);"></script>
 	    <script type="text/javascript" src="^Extras(yui/build/slider/slider-min.js);"></script>
 

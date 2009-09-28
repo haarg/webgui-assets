@@ -1,0 +1,55 @@
+==== Template ================================================================
+Asset ID    : 7F-BuEHi7t9bPi008H8xZQ
+Menu Title  : Default Survey Summary
+Parent      : root/import
+Title       : Default Survey Summary
+URL         : root/import/survey/default-survey-summary
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="summary" id="summary">
+	<span>
+	<p>
+	<b>Survey Summary</b> Total Sections: <tmpl_var name='totalSections'> Total Questions: <tmpl_var name='totalQuestions'> Total Answers: <tmpl_var name='totalAnswers'>
+	</p>
+ 	<p>
+	<b>Total Correct:</b> <tmpl_var name='totalCorrect'>	<b>Total Incorrect:</b> <tmpl_var name='totalIncorrect'> <span id='totalchart'></span>
+	</p>
+	<p><span id='chart'></span></p>
+	<p><span id='summarychart'></span></p>
+	<p><span id='summarytable'></span></p>
+	<tmpl_loop name='sections'>
+		<hr>
+	        <div class='section'>
+			Section: <tmpl_var name='id'> <b>Correct:</b> <tmpl_var name='correct'> <b>Incorrect:</b> <tmpl_var name='inCorrect'> 
+				<span id='section<tmpl_var name='id'>chart'></span>
+		</div>
+		<div id='section<tmpl_var name='id'>datatable'></div>
+	</tmpl_loop>
+	<form>
+	<form name='surveyForm' onsubmit="return false;">
+	<input type=hidden name=shownsummary value=1>
+	<input type=button id=submitbutton value=Continue></input>
+	</form>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Summary
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

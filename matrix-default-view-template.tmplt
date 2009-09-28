@@ -19,6 +19,11 @@ URL         : matrix-default-view-template
 	</div>
 </tmpl_if>
 
+<script type='text/javascript'>
+var tooManyMessage = '^International('too many message','Asset_Matrix');';
+var tooFewMessage = '^International('too few message','Asset_Matrix');';
+</script>
+
 <div id="matrixLeft">
 	<div class="buttons">
 		<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button></span>

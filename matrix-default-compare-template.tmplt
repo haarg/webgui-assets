@@ -7,6 +7,10 @@ URL         : matrix-default-compare-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<script type='text/javascript'>
+var tooManyMessage = '^International('too many message','Asset_Matrix');';
+var tooFewMessage = '^International('too few message','Asset_Matrix');';
+</script>
 <div>
     <div id="matrixLeft" style="width:25%">
         <div class="buttons">

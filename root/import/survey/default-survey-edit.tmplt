@@ -61,7 +61,10 @@ URL         : root/import/survey/default-survey-edit
     	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
     </div>
     
-    <span id="warnings"></span>
+    <div id="warnings-outer">
+	<h2>^International(warnings,Asset_Survey);</h2>
+        <div id="warnings"></div>
+    </div>
     
     <div class="workarea">
         <table>

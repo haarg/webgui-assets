@@ -99,16 +99,19 @@ URL         : root/import/survey/default-questions
             <tmpl_if name=verticalDisplay>
                 <tmpl_loop name=answers>
                     <tr>
-                        <td align="center"  width=75px>
-                            <tmpl_if name='textInButton'>
-                                <input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var name='recordedAnswer'>">
-                            <tmpl_else>
+                        <tmpl_if textInButton>
+                            <td align="center"">
+                                <input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var name='text'>">
+			<tmpl_else>
+                            <td align="center" width="75px">
                                 <input type=button class='mcbutton' id="<tmpl_var name='id'>button">
-                            </tmpl_if>
+                        </tmpl_if>
                             <input type=hidden name="<tmpl_var name='id'>" id="<tmpl_var name='id'>" value="">
                         </td>
                         <td align="left">
-                            <tmpl_var name='text'>
+			    <tmpl_unless textInButton>
+                                <tmpl_var text>
+			    </tmpl_unless>
                         </td>
                         <tmpl_if name='verbatim'>
                             <td>
@@ -121,19 +124,22 @@ URL         : root/import/survey/default-questions
                 <tr>
                     <tmpl_loop name=answers>
                         <th>
-                            <tmpl_var name='text'>
+                            <tmpl_unless textInButton>
+                                <tmpl_var name='text'>
+                            </tmpl_unless>
                         </th>
                     </tmpl_loop>
                 </tr>
                 <tr>
                     <tmpl_loop name=answers>
-                        <td align="center"  width=75px>
-                <tmpl_if name='textInButton'>
-                    <input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var name='recordedAnswer'>">
-                <tmpl_else>
-                    <input type=button class='mcbutton' id="<tmpl_var name='id'>button">
-                </tmpl_if>
-                <input type=hidden name="<tmpl_var name='id'>" id="<tmpl_var name='id'>" value="">
+                	<tmpl_if textInButton>
+	                        <td align="center">
+                    			<input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var text>">
+			<tmpl_else>
+                        	<td align="center"  width=75px>
+                    			<input type=button class='mcbutton' id="<tmpl_var name='id'>button">
+                	</tmpl_if>
+                	<input type=hidden name="<tmpl_var name='id'>" id="<tmpl_var name='id'>" value="">
                             <tmpl_if name='verbatim'>
                                 <span><input type=text size=50 id='<tmpl_var name='id'>verbatim' name='<tmpl_var name='id'>verbatim'></span>
                             </tmpl_if>  

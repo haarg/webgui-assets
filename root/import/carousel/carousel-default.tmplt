@@ -1,0 +1,73 @@
+==== Template ================================================================
+Asset ID    : CarouselTmpl0000000001
+Menu Title  : Default Carousel
+Parent      : root/import/carousel
+Title       : Default Carousel
+URL         : root/import/carousel/carousel-default
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="yui-skin-sam">
+	<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2 class="title"><tmpl_var title></h2>
+	</tmpl_if>
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>
+
+<tmpl_if item_loop>
+    <div id="<tmpl_var assetId>">
+        <ol>
+	<tmpl_loop item_loop>
+	    <li class="item" id="<tmpl_var itemId>">
+	        <tmpl_var text>
+            </li>
+        </tmpl_loop>
+        </ol>
+    </div>
+
+    <script>        
+        YAHOO.util.Event.onDOMReady(function (ev) {
+            var carousel = new YAHOO.widget.Carousel("<tmpl_var assetId>", {
+                    isCircular: true, 
+                    numVisible: 1,
+                    animation: { speed: 0.5 }
+            });
+            carousel.render(); // get ready for rendering the widget
+            carousel.show();   // display the widget
+        });
+    </script>
+
+</tmpl_if>
+
+</div>
+==== extraHeadTags ===========================================================
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts.css);">
+<link type="text/css" rel="stylesheet" href="^Extras(yui/build/carousel/assets/skins/sam/carousel.css);">
+<script src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script src="^Extras(yui/build/element/element-beta-min.js);"></script>
+<script src="^Extras(yui/build/utilities/utilities.js);"></script>
+<script src="^Extras(yui/build/carousel/carousel-beta-min.js);"></script>
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Carousel
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+
