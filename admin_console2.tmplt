@@ -7,7 +7,8 @@ URL         : admin_console2
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-
+<tmpl_var adminBar>
+<div class="wrapper">
 <div id="application_title" style="height:73px;">
 	<tmpl_var application.title>
 </div>
@@ -80,9 +81,8 @@ URL         : admin_console2
 	initAdminConsole(<tmpl_if application.title>true<tmpl_else>false</tmpl_if>,<tmpl_if submenu_loop>true<tmpl_else>false</tmpl_if>);
 </script>
 
-
+</div>
 ==== extraHeadTags ===========================================================
-
 <link href="^Extras(adminConsole/adminConsole.css);" type="text/css" rel="stylesheet" />
 <script src="^Extras(adminConsole/adminConsole.js);" type="text/javascript"></script>
 ==== Properties ==============================================================

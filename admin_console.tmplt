@@ -16,9 +16,7 @@ URL         : admin_console
 	<tmpl_var head.tags>
 </head>
 <body>
-<div class="wrapper">
 	<tmpl_var body.content>
-</div>
 </body>
 </html>
 ==== extraHeadTags ===========================================================

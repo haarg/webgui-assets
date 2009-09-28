@@ -8,65 +8,74 @@ URL         : root/import/survey/default-survey-edit
 ~
 ==== template ================================================================
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
-<title>WebGUI ^International(assetName,Asset_Survey);</title>
-
-<style type="text/css">
-    body { margin:0; padding:0; }
-</style>
-
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
-<link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
-<link rel="stylesheet" type="text/css" href="^Extras(wobject/Survey/surveyedit.css);" />
-
-<script type="text/javascript" src="^Extras(yui/build/utilities/utilities.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/container/container-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/json/json-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/logger/logger-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/resize/resize-min.js);"></script>
-
-<script type="text/javascript" src="^Extras(wobject/Survey/dd.js);"></script>
-<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey.js);"></script>
-<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/comm.js);"></script>
-<script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/object.js);"></script>
-
-
-<script type="text/javascript" src="^Extras(hoverhelp.js);"></script>
-<link href="^Extras(hoverhelp.css);" rel="stylesheet" type="text/css" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <title>WebGUI ^International(assetName,Asset_Survey);</title>
+    
+    <style type="text/css">
+        body { margin:0; padding:0; }
+    </style>
+    
+    <link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
+    <link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
+    <link rel="stylesheet" type="text/css" href="^Extras(wobject/Survey/surveyedit.css);" />
+    <link rel="stylesheet" type="text/css" href="^Extras(hoverhelp.css);"/>
+    
+    <!-- YUI dependencies: http://developer.yahoo.com/yui/articles/hosting/?autocomplete&button&container&datasource&json&logger&menu&resize&simpleeditor&utilities&MIN&nocombine -->
+    <script type="text/javascript" src="^Extras(yui/build/utilities/utilities.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/datasource/datasource-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/autocomplete/autocomplete-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/container/container-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/json/json-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/logger/logger-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/resize/resize-min.js);"></script>
+    <script type="text/javascript" src="^Extras(yui/build/editor/simpleeditor-min.js);"></script>
+    
+    <script type="text/javascript" src="^Extras(wobject/Survey/dd.js);"></script>
+    <script type="text/javascript" src="^Extras(wobject/Survey/editsurvey.js);"></script>
+    <script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/comm.js);"></script>
+    <script type="text/javascript" src="^Extras(wobject/Survey/editsurvey/object.js);"></script>
+    <script type="text/javascript" src="^Extras(hoverhelp.js);"></script>
 </head>
 
 <body class=" yui-skin-sam">
 
-<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+    <div id="mask-all">
+      <div id="loading-mask"></div>
+      <div id="loading">
+        <div class="loading-indicator">
+          Loading...
+        </div>
+      </div>
+    </div>
 
 
-
-<div>
-	<a href=".">^International(493,WebGUI);</a> |
-	<tmpl_if session.var.adminOn>
+    <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+    
+    <div>
+    	<a href=".">^International(493,WebGUI);</a> |
+    	<tmpl_if session.var.adminOn>
 		<a href="?func=edit">^International(575,WebGUI);</a> |
-	</tmpl_if>
-	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
-</div>
-
-<div class="workarea">
-<table><tr><td>
-
-    <ul id="sections" class="draglist"></ul>
-
-</td></tr>
-<tr><td>
-<div class=buttons>
-<span id=addSection></span>
-<span id=addQuestion></span>
-<span id=addAnswer></span>
-</div>
-</td></tr></table>
-</div>
-<div id="edit">
-</div>
+    	</tmpl_if>
+    	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
+    </div>
+    
+    <div class="workarea">
+        <table>
+            <tr><td>
+                <ul id="sections" class="draglist"></ul>
+            </td></tr>
+            <tr><td>
+            <div class=buttons>
+                <span id=addSection></span>
+                <span id=addQuestion></span>
+                <span id=addAnswer></span>
+            </div>
+            </td></tr>
+        </table>
+    </div>
+    <div id="edit"></div>
 
 </body>
 ==== extraHeadTags ===========================================================
