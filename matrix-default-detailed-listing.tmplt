@@ -7,7 +7,14 @@ URL         : matrix-default-detailed-listing
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
+<tmpl_if revision>
+<script type="text/javascript">
+var revision = '<tmpl_var revision>';
+</script>
+</tmpl_if>
+
 <div id="matrixDetail">
+
 	
     <tmpl_if session.var.adminOn>
         <p><tmpl_var controls></p>
