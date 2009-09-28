@@ -40,8 +40,10 @@ URL         : q_and_a
 	</tmpl_if>
 </p>
 
+<dl class="collab-qa">
 <tmpl_loop post_loop>
-	<tmpl_if user.isPoster>
+	<dt>
+	<div style="float: right"><tmpl_if user.isPoster>
 		<tmpl_unless session.var.adminOn>
 			<a href="<tmpl_var edit.url>"><tmpl_var edit.label></a>
 		</tmpl_unless>
@@ -57,15 +59,15 @@ URL         : q_and_a
 					</tmpl_unless>
 				</tmpl_unless>
 			</tmpl_if>
-			(<a href="<tmpl_var url>"><tmpl_var status></a>)<br />
+			(<a href="<tmpl_var url>"><tmpl_var status></a>)
 
 	</tmpl_if>
-	<p class="posts">
-		<b>Q: <tmpl_var title></b>
-		A: <tmpl_var content>
-	</p>
-	<p />
+	</div>
+	<div class="dropcap">Q</div> <tmpl_var title>
+	</dt>
+	<dd><div class="dropcap">A</div> <tmpl_var content>		
 </tmpl_loop>
+</dl>
 
 <tmpl_if pagination.pageCount.isMultiple>
 	<div class="pagination">
@@ -75,44 +77,11 @@ URL         : q_and_a
 
 ==== extraHeadTags ===========================================================
 <style type="text/css">
-.postControls
-{
-	background:#676767;
-	color:#C0C0C0;
-	width:95%;
-	text-align:right;
-	padding:3px;
-	font-size:9pt;
-	font-family:arial;
-}
-
-.postControls a
-{
-	color:white;
-	font-size:8pt;
-	text-decoration:underline;
-}
-.postControls a:hover {
-	text-decoration:none;
-}
-.posts
-{
-	width:95%;
-	border:solid 1px gray;
-	padding:3px;
-	font-family:arial;
-}
-
-.posts b
-{
-	-moz-box-sizing:border-box;
-	background-color:silver;
-	width:100%;
-	display:block;
-	padding:3px;
-	margin-bottom:3px;
-}
-
+.collab-qa { position: relative; }
+.collab-qa .dropcap { position: absolute; left: -1.5em; top: 0px; width: 1.4em; text-align: center; } 
+.collab-qa dt, .collab-qa dd { margin-left: 1.5em; padding-left: 0.5em; position: relative; }
+.collab-qa dt, .collab-qa dt .dropcap { font-weight: bold; background-color: #ccc; line-height: 2em; height: 2em; vertical-align: bottom; }
+.collab-qa dt p { /* stupid controls */ margin: 0; vertical-align: top !important; }
 </style>
 
 ==== Properties ==============================================================
