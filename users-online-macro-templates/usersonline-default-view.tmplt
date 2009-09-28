@@ -1,0 +1,68 @@
+==== Template ================================================================
+Asset ID    : h_T2xtOxGRQ9QJOR6ebLpQ
+Menu Title  : UsersOnline Default View
+Parent      : users-online-macro-templates
+Title       : UsersOnline Default View
+URL         : users-online-macro-templates/usersonline-default-view
+==== headBlock ===============================================================
+<style type="text/css">
+.UsersOnlineTable { 
+	border-collapse: collapse;
+}
+
+.UsersOnlineTable th, .UsersOnlineTable td {
+	text-align: left;
+	border: 2px ridge;
+}
+
+.UsersOnlineTable img {
+	max-width: 3em;
+	max-height: 3em;
+	float: left;
+}
+</style>
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="UsersOnline">
+	<p>
+		<img src="^Extras(macro/UsersOnline/group-1.gif);"/>&nbsp;<strong><tmpl_var usersOnline_label>:</strong><br/>
+		<img src="^Extras(macro/UsersOnline/members.gif);"/>&nbsp;<tmpl_var members_label>:&nbsp;<tmpl_var members><br/>
+		<img src="^Extras(macro/UsersOnline/visitors.gif);"/>&nbsp;<tmpl_var visitors_label>:&nbsp;<tmpl_var visitors><br/>
+		<img src="^Extras(macro/UsersOnline/total.gif);"/>&nbsp;<tmpl_var total_label>:&nbsp;<tmpl_var total>
+	</p>
+<tmpl_unless isVisitor>
+	<tmpl_if hasMembers>
+	<p>
+		<img src="^Extras(macro/UsersOnline/group-2.gif);"/>&nbsp;<strong><tmpl_var membersOnline_label>:</strong><br/>
+		<tmpl_loop member_loop>
+		<a href="?op=viewProfile&uid=<tmpl_var uid>" title="Link to profile"><tmpl_var username></a><br/>
+		</tmpl_loop>
+	</p>
+	</tmpl_if>
+</tmpl_unless>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/UsersOnline
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -34,6 +34,7 @@ meta:
 properties:
   mailAttachments: '0'
   useCaptcha: '0'
+  workflowIdAddEntry: ~
 security:
   groupIdEdit: '3'
   groupIdView: '7'

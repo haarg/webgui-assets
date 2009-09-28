@@ -23,6 +23,7 @@ URL         : style_03
 	<![endif]-->
 
 	<tmpl_var head.tags>
+
 	<title>^c; - ^Page(title);</title>
 	</head>
 <body>
@@ -45,7 +46,7 @@ URL         : style_03
 		</div>
 	</div>
 	^AssetProxy(style3_coolmenu);
-
+	
 	<div id="mainBody">
 		<div id="contentArea">
 			<tmpl_var body.content>

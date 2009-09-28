@@ -71,9 +71,10 @@ URL         : default-wiki-page
         </ul>
         <div class="yui-content">
             <div id="wikipagecontent">
-                <tmpl_var content>
+                <div><tmpl_var content></div>
                 <p>^International(keywords,Asset);: <tmpl_loop keywordsLoop><a href="<tmpl_var url>"><tmpl_var
 keyword></a> </tmpl_loop></p>
+		<div class="wikipagecomments"><tmpl_var comments></div>
             </div><div id="wikipageedit">
                 <tmpl_var editContent>
             </div></div>

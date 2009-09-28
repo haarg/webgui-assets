@@ -1,0 +1,98 @@
+==== Template ================================================================
+Asset ID    : 4Ekp0kJoJllRRRo_J1Rj6w
+Menu Title  : UsersOnline Detailed View
+Parent      : users-online-macro-templates
+Title       : UsersOnline Detailed View
+URL         : users-online-macro-templates/usersonline-detailed-view
+==== headBlock ===============================================================
+<style type="text/css">
+.UsersOnlineTable { 
+	border-collapse: collapse;
+}
+
+.UsersOnlineTable th, .UsersOnlineTable td {
+	text-align: left;
+	border: 2px ridge;
+}
+
+.UsersOnlineTable img {
+	max-width: 3em;
+	max-height: 3em;
+	float: left;
+}
+</style>
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="UsersOnline">
+	<p>
+		<img src="^Extras(macro/UsersOnline/group-1.gif);"/>&nbsp;<strong><tmpl_var usersOnline_label>:</strong><br/>
+		<img src="^Extras(macro/UsersOnline/members.gif);"/>&nbsp;<tmpl_var members_label>:&nbsp;<tmpl_var members><br/>
+		<img src="^Extras(macro/UsersOnline/visitors.gif);"/>&nbsp;<tmpl_var visitors_label>:&nbsp;<tmpl_var visitors><br/>
+		<img src="^Extras(macro/UsersOnline/total.gif);"/>&nbsp;<tmpl_var total_label>:&nbsp;<tmpl_var total>
+	</p>
+	<p>
+		<img src="^Extras(macro/UsersOnline/group-2.gif);"/>&nbsp;<strong><tmpl_var membersOnline_label>:</strong><br/>
+		<table class="UsersOnlineTable">
+			<tr>
+				<th><tmpl_var avatar_label></th>
+				<th><tmpl_var name_label></th>
+				<th><tmpl_var alias_label></th>
+				<th><tmpl_var session_label></th>
+				<th><tmpl_var ip_label></th>
+				<th><tmpl_var lastActivity_label></th>
+			</tr>
+<tmpl_loop member_loop>
+			<tr>
+				<td><img src="<tmpl_var avatar>" alt="Avatar of <tmpl_var alias>"/></td>
+				<td><tmpl_var firstName> <tmpl_var middleName> <tmpl_var lastName></td>
+				<td><a href="?op=viewProfile&uid=<tmpl_var uid>" title="Link to profile"><tmpl_var alias></a></td>
+				<td><tmpl_var sessionId></td>
+				<td><tmpl_var ip></td>
+				<td><tmpl_var lastActivity></td>
+			</tr>
+</tmpl_loop>
+		</table><br/>
+	</p>
+	<p>
+		<img src="^Extras(macro/UsersOnline/group-2.gif);"/>&nbsp;<strong><tmpl_var visitorsOnline_label>:</strong><br/>
+		<table class="UsersOnlineTable">
+			<tr>
+				<th><tmpl_var session_label></th>
+				<th><tmpl_var ip_label></th>
+				<th><tmpl_var lastActivity_label></th>
+			</tr>
+<tmpl_loop visitor_loop>
+			<tr>
+				<td><tmpl_var sessionId></td>
+				<td><tmpl_var ip></td>
+				<td><tmpl_var lastActivity></td>
+			</tr>
+</tmpl_loop>
+		</table><br/>
+	</p>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/UsersOnline
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -9,18 +9,7 @@ URL         : webgui7/style3/hierarchical-top-nav
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
-<!-- Page-specific script -->
-<script type="text/javascript">
-    YAHOO.util.Event.onAvailable("webguinavigation", function() {
-        var wgMenuBar = new YAHOO.widget.MenuBar("webguinavigation", {
-            autosubmenudisplay : true,
-            showdelay          : 250,
-            hidedelay          : 750,
-            lazyload           : true
-        });
-        wgMenuBar.render();
-    });
-</script>
+
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
@@ -39,7 +28,7 @@ URL         : webgui7/style3/hierarchical-top-nav
 <div class="yui-skin-sam">
 <tmpl_loop page_loop>
   <tmpl_if __FIRST__>
-    <div id="webguinavigation" class="yuimenubar">
+    <div id="navigation-<tmpl_var assetId>" class="yuimenubar">
       <div class="bd">
         <ul class="first-of-type">
   </tmpl_if>
@@ -67,6 +56,17 @@ URL         : webgui7/style3/hierarchical-top-nav
 </tmpl_loop>
 </div>
 
+<script type="text/javascript">
+    YAHOO.util.Event.onAvailable("navigation-<tmpl_var assetId>", function() {
+        var wgMenuBar = new YAHOO.widget.MenuBar("navigation-<tmpl_var assetId>", {
+            autosubmenudisplay : true,
+            showdelay          : 250,
+            hidedelay          : 750,
+            lazyload           : true
+        });
+        wgMenuBar.render();
+    });
+</script>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

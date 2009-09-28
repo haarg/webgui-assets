@@ -7,14 +7,16 @@ URL         : root/import/ems/badge-builder-default
 ==== headBlock ===============================================================
 <link href="^Extras(/yui/build/reset-fonts-grids/reset-fonts-grids.css);" rel="stylesheet" type="text/css">
 <link href="^Extras(/yui/build/tabview/assets/skins/sam/tabview.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/paginator/assets/skins/sam/paginator.css);" rel="stylesheet" type="text/css">
 <link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
 <link href="^Extras(/yui/build/container/assets/skins/sam/container.css);" rel="stylesheet" type="text/css">
 
 
 <script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
 <script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datasource/datasource-beta-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datatable/datatable-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/paginator/paginator-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-min.js);" type="text/javascript"></script>
 <script src="^Extras(/yui/build/container/container-min.js);" type="text/javascript"></script>
 <script src="^Extras(/yui/build/tabview/tabview-min.js);" type="text/javascript"></script>
 <script src="^Extras(/yui-webgui/build/string/string.js);" type="text/javascript"></script>
@@ -100,7 +102,6 @@ URL         : root/import/ems/badge-builder-default
 	<p><tmpl_var ticketInstructions><br />
 		<div id="search"><form id="keywordSearchForm"><input type="text" name="keywords" id="keywordsField" /><input type="submit" value="^International(search,Asset_EventManagementSystem);" /></form></div>
 	</p>
-	<div id="emsTicketPaging"></div>
 	<form><div id="emsTicketList"></div></form>
 
 
@@ -108,16 +109,17 @@ URL         : root/import/ems/badge-builder-default
 YAHOO.util.Event.onDOMReady(function () {
     var DataSource = YAHOO.util.DataSource,
         Dom        = YAHOO.util.Dom,
-        DataTable  = YAHOO.widget.DataTable,
-        Paginator  = YAHOO.widget.Paginator;
+        DataTable  = YAHOO.widget.DataTable;
     
     // the datasource deals with the stuff returned from www_getTicketsAsJson
-    var mySource = new DataSource('<tmpl_var getTicketsUrl>');
+    var mySource = new DataSource('<tmpl_var getTicketsUrl>;');
     mySource.responseType   = DataSource.TYPE_JSON;
     mySource.responseSchema = {
         resultsList : 'records',
-        totalRecords: 'totalRecords',
-        fields      : [ 'location', 'startDate', 'duration', 'eventNumber', 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId']
+        fields      : [ 'location', 'startDate', 'duration', 'eventNumber', 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId'],
+        metaFields: {
+            totalRecords: "totalRecords" // Access to value in the server response
+        }
     };
 
     var buildQueryString = function (state,dt) {
@@ -126,14 +128,6 @@ YAHOO.util.Event.onDOMReady(function () {
                ";results=" + state.pagination.rowsPerPage;
     };
 
-    // paginator in case there are a lot of tickets
-    var myPaginator = new Paginator({
-        containers         : ['emsTicketPaging'],
-        pageLinks          : 5,
-        rowsPerPage        : 25,
-        rowsPerPageOptions : [25,50,100],
-        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
-    });
 
 	// ticket description formatter
 		var formatViewTicketDescription = function(elCell, oRecord, oColumn, title) {
@@ -161,10 +155,10 @@ YAHOO.util.Event.onDOMReady(function () {
 	
     // create the data table
     var myTableConfig = {
-        initialRequest         : ';startIndex=0',
+        initialRequest         : 'startIndex=0',
         generateRequest        : buildQueryString,
-        paginationEventHandler : DataTable.handleDataSourcePagination,
-        paginator              : myPaginator
+        dynamicData		: true,
+        paginator              : new YAHOO.widget.Paginator({ rowsPerPage:25 })
     };
         var myColumnDefs = [
 	<tmpl_if canEdit>
@@ -181,7 +175,10 @@ YAHOO.util.Event.onDOMReady(function () {
 		{key:"duration", label:"^International(duration,Asset_EventManagementSystem);",sortable:true}
     ];
     var myTable = new DataTable('emsTicketList', myColumnDefs, mySource, myTableConfig);
-
+    myTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+        oPayload.totalRecords = oResponse.meta.totalRecords;
+        return oPayload;
+    }
 
 <tmpl_if hasBadge>
 	// buy button in footer
@@ -197,7 +194,9 @@ YAHOO.util.Event.onDOMReady(function () {
 </tmpl_if>
 
 	Dom.get('keywordSearchForm').onsubmit = function () {
-        mySource.sendRequest(';keywords=' + Dom.get('keywordsField').value + ';startIndex=0', myTable.onDataReturnInitializeTable, myTable);
+        var state = myDataTable.getState();
+        state.pagination.recordOffset = 0;
+        mySource.sendRequest('keywords=' + Dom.get('keywordsField').value + ';startIndex=0', {success: myTable.onDataReturnInitializeTable, scope:myTable, argument:state});  
         return false;
     };
 
@@ -228,7 +227,6 @@ YAHOO.util.Event.onDOMReady(function () {
 	<p><a href="<tmpl_var addRibbonUrl>">^International(add a ribbon,Asset_EventManagementSystem);</a></p>
 </tmpl_if>
 	<p><tmpl_var ribbonInstructions></p>
-    <div id="emsRibbonPaging"></div>
     <div id="emsRibbonList"></div>
 
 
@@ -236,26 +234,19 @@ YAHOO.util.Event.onDOMReady(function () {
 YAHOO.util.Event.onDOMReady(function () {
     var DataSource = YAHOO.util.DataSource,
         Dom        = YAHOO.util.Dom,
-        DataTable  = YAHOO.widget.DataTable,
-        Paginator  = YAHOO.widget.Paginator;
+        DataTable  = YAHOO.widget.DataTable;
     
     // the datasource deals with the stuff returned from www_getRibbonsAsJson
     var mySource = new DataSource('<tmpl_var getRibbonsUrl>');
     mySource.responseType   = DataSource.TYPE_JSON;
     mySource.responseSchema = {
         resultsList : 'records',
-        totalRecords: 'totalRecords',
-        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId']
+        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId'],
+        metaFields: {
+            totalRecords: "totalRecords" // Access to value in the server response
+        }
     };
 
-    // paginator in case there are a lot of ribbons
-    var myPaginator = new Paginator({
-        containers         : ['emsRibbonPaging'],
-        pageLinks          : 5,
-        rowsPerPage        : 25,
-        rowsPerPageOptions : [25,50,100],
-        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
-    });
 
 	// ribbon description formatter
 		var formatViewRibbonDescription = function(elCell, oRecord, oColumn, title) {
@@ -279,7 +270,7 @@ YAHOO.util.Event.onDOMReady(function () {
     // create the data table
     var myTableConfig = {
         initialRequest         : '',
-        paginator              : myPaginator 
+        paginator              : new YAHOO.widget.Paginator({ rowsPerPage:25 })
     };
         var myColumnDefs = [
 
@@ -310,7 +301,6 @@ YAHOO.util.Event.onDOMReady(function () {
 	<p><a href="<tmpl_var addTokenUrl>">^International(add a token,Asset_EventManagementSystem);</a></p>
 </tmpl_if>
 	<p><tmpl_var tokenInstructions></p>
-	<div id="emsTokenPaging"></div>
     <div id="emsTokenList"></div>
 
 
@@ -318,26 +308,20 @@ YAHOO.util.Event.onDOMReady(function () {
 YAHOO.util.Event.onDOMReady(function () {
     var DataSource = YAHOO.util.DataSource,
         Dom        = YAHOO.util.Dom,
-        DataTable  = YAHOO.widget.DataTable,
-        Paginator  = YAHOO.widget.Paginator;
+        DataTable  = YAHOO.widget.DataTable;
     
     // the datasource deals with the stuff returned from www_getTokensAsJson
     var mySource = new DataSource('<tmpl_var getTokensUrl>');
     mySource.responseType   = DataSource.TYPE_JSON;
     mySource.responseSchema = {
         resultsList : 'records',
-        totalRecords: 'totalRecords',
-        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId']
+        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId'],
+        metaFields: {
+            totalRecords: "totalRecords" // Access to value in the server response
+        }
     };
 
-    // paginator in case there are a lot of tokens
-    var myPaginator = new Paginator({
-        containers         : ['emsTokenPaging'],
-        pageLinks          : 5,
-        rowsPerPage        : 25,
-        rowsPerPageOptions : [25,50,100],
-        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
-    });
+  
 
 	// token description formatter
 		var formatViewTokenDescription = function(elCell, oRecord, oColumn, title) {
@@ -373,7 +357,7 @@ YAHOO.util.Event.onDOMReady(function () {
     // create the data table
     var myTableConfig = {
         initialRequest         : '',
-        paginator              : myPaginator 
+        paginator              : new YAHOO.widget.Paginator({ rowsPerPage:25 })
     };
         var myColumnDefs = [
 <tmpl_if canEdit>

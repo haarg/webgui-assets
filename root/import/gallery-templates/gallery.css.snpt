@@ -257,6 +257,7 @@ URL         : root/import/gallery-templates/gallery.css
 	margin:0px;
 	border-left:solid black 1px;
 
+
 	border-right:solid black 1px;
 }
 .wgPicture .thumbnail a {

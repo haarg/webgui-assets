@@ -1,0 +1,42 @@
+==== Snippet =================================================================
+Asset ID    : THQhn1C-ooj-TLlEP7aIJQ
+Menu Title  : gallery-ie.css
+Parent      : root/import
+Title       : gallery-ie.css
+URL         : root/import/gallery-templates/gallery-ie.css
+==== snippet =================================================================
+.wgPicture {
+	float:left;
+}
+.wgAlbum {
+	float:left;
+}
+.wgGallery .pagination li, 
+.wgGallery .pagination a {
+	float:left;
+}
+.wgGallery .container {
+	display:inline-block;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/html
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

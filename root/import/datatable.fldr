@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : UL-ItI4L1Z6-WSuhuXVvsQ
+Menu Title  : DataTable
+Parent      : root/import
+Title       : DataTable
+URL         : root/import/datatable
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

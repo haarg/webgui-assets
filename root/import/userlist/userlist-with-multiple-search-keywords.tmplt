@@ -1,5 +1,5 @@
 ==== Template ================================================================
-Asset ID    : UserListTmpl0000003
+Asset ID    : UserListTmpl0000000003
 Menu Title  : UserList with multiple search keywords
 Parent      : root/import/userlist
 Title       : UserList with multiple search keywords
@@ -31,10 +31,10 @@ URL         : root/import/userlist/userlist-with-multiple-search-keywords
 <table cellpadding="1" cellspacing="1" border="0" width="100%">
 <tr>
 <tmpl_if session.var.adminOn>
-<td class="tableData">^International(id label,Asset_UserList);</td>
+<td class="tableData">^International('id label','Asset_UserList');</td>
 </tmpl_if>
 
-<td class="tableData">^International(username label,Asset_UserList);</td>
+<td class="tableData">^International('username label','Asset_UserList');</td>
 
 <td class="tableData">
 <a href="<tmpl_var profileField_firstName_sortByURL>"><tmpl_var profileField_firstName_label></a></td>
@@ -60,8 +60,8 @@ URL         : root/import/userlist/userlist-with-multiple-search-keywords
 <td class="tableData">   <tmpl_var user_profile_lastName_value></td>
 
 <td class="tableData">
-<tmpl_if profile_emailNotPublic>
-^International(Email not public message,Asset_UserList);
+<tmpl_if user_profile_emailNotPublic>
+^International('Email not public message','Asset_UserList');
 <tmpl_else>  
 <tmpl_var user_profile_email_value>     
 </tmpl_if>
@@ -72,16 +72,15 @@ URL         : root/import/userlist/userlist-with-multiple-search-keywords
 </tr>
 </tmpl_loop>
 <tmpl_else>
-<tr><td>^International(No users message,Asset_UserList);</td></tr>
+<tr><td>^International('No users message','Asset_UserList');</td></tr>
 </tmpl_if>
 
 </table>
-<tmpl_if multiplePages>
+<tmpl_if pagination.pageCount.isMultiple>
 <div class="pagination">
-<tmpl_var previousPage>  &middot; <tmpl_var pageList> &middot; <tmpl_var nextPage>
+<tmpl_var pagination.previousPage>  &middot; <tmpl_var pagination.pageList> &middot; <tmpl_var pagination.nextPage>
 </div>
 </tmpl_if>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

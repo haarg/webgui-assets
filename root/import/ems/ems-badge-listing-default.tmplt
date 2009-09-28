@@ -5,14 +5,16 @@ Parent      : root/import/ems
 Title       : EMS Badge Listing (default)
 URL         : root/import/ems/ems-badge-listing-default
 ==== headBlock ===============================================================
-<link href="^Extras(/yui/build/reset-fonts-grids/fonts-min.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/fonts/fonts-min.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/paginator/assets/skins/sam/paginator.css);" rel="stylesheet" type="text/css">
 <link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
 <link href="^Extras(/yui/build/container/assets/skins/sam/container.css);" rel="stylesheet" type="text/css">
 
 <script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
 <script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datasource/datasource-beta-min.js);" type="text/javascript"></script>
-<script src="^Extras(/yui/build/datatable/datatable-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/paginator/paginator-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-min.js);" type="text/javascript"></script>
 <script src="^Extras(/yui/build/container/container-min.js);" type="text/javascript"></script>
 
 		<style type="text/css">
@@ -60,7 +62,6 @@ URL         : root/import/ems/ems-badge-listing-default
 </tmpl_if>
 	</p>
 	<p><tmpl_var badgeInstructions></p>
-    <div id="emsBadgePaging"></div>
     <div id="emsBadgeList"></div>
 </div>
 
@@ -69,26 +70,20 @@ URL         : root/import/ems/ems-badge-listing-default
 YAHOO.util.Event.onDOMReady(function () {
     var DataSource = YAHOO.util.DataSource,
         Dom        = YAHOO.util.Dom,
-        DataTable  = YAHOO.widget.DataTable,
-        Paginator  = YAHOO.widget.Paginator;
+        DataTable  = YAHOO.widget.DataTable;
     
     // the datasource deals with the stuff returned from www_getBadgesAsJson
    var mySource = new DataSource('<tmpl_var getBadgesUrl>');
     mySource.responseType   = DataSource.TYPE_JSON;
     mySource.responseSchema = {
         resultsList : 'records',
-        totalRecords: 'totalRecords',
-        fields      : [ 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId']
+        fields      : [ 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId'],
+        metaFields: {
+            totalRecords: "totalRecords" // Access to value in the server response
+        }
     };
 
-    // paginator in case there are a lot of badges
-    var myPaginator = new Paginator({
-        containers         : ['emsBadgePaging'],
-        pageLinks          : 5,
-        rowsPerPage        : 25,
-        rowsPerPageOptions : [25,50,100],
-        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
-    });
+ 
 
 	// badge description formatter
 		var formatViewBadgeDescription = function(elCell, oRecord, oColumn, title) {
@@ -117,7 +112,7 @@ YAHOO.util.Event.onDOMReady(function () {
     // create the data table
     var myTableConfig = {
         initialRequest         : '',
-        paginator              : myPaginator 
+        paginator              : new YAHOO.widget.Paginator({ rowsPerPage:25 }) 
     };
         var myColumnDefs = [
 	<tmpl_if canEdit>
@@ -129,7 +124,14 @@ YAHOO.util.Event.onDOMReady(function () {
     {key:"quantityAvailable",sortable:true,label:"^International(quantity available,Asset_EventManagementSystem);", formatter:formatQuantityAvailable}
     ];
     var myTable = new DataTable('emsBadgeList', myColumnDefs, mySource, myTableConfig);
-
+    myTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+        oPayload.totalRecords = oResponse.meta.totalRecords;
+        return oPayload;
+    }
+     return {
+        ds: mySource,
+        dt: myTable
+    };
 });
 </script>
 

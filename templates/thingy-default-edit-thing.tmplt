@@ -89,6 +89,11 @@ URL         : templates/thingy-default-edit-thing
 						<tmpl_var field_label>
 					</td>
 					<td class="<tmpl_if __ODD__>wgRowOne<tmpl_else>wgRowTwo</tmpl_if>" valign="top" colspan="2">
+						<tmpl_if field_pretext>
+						<span class="formPretext">
+							<tmpl_var field_pretext>
+						</span><br />
+						</tmpl_if>
 						<tmpl_if field_isVisible>
 							<tmpl_var field_value>
 						<tmpl_else>

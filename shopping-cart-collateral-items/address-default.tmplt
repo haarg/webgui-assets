@@ -57,6 +57,10 @@ URL         : shopping-cart-collateral-items/address-default
 			<td><tmpl_var lastNameField></td>
 		</tr>
 
+		<tr>
+			<td class="label"><label for="organization_formId">^International(organization,Shop);</label></td>
+			<td><tmpl_var organizationField></td>
+		</tr>
 
 		<tr>
 			<td class="label"><label for="address1_formId">^International(address,Shop);</label></td>
@@ -89,6 +93,10 @@ URL         : shopping-cart-collateral-items/address-default
 		<tr>
 			<td class="label"><label for="phoneNumber_formId">^International(phone number,Shop);</label></td>
 			<td><tmpl_var phoneNumberField></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="email_formId">^International(email,Shop);</label></td>
+			<td><tmpl_var emailField></td>
 		</tr>
 		<tr>
 			<td></td>

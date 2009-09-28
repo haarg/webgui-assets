@@ -1,20 +1,35 @@
 ==== Template ================================================================
-Asset ID    : default_post_received1
-Menu Title  : Default Post Received
-Parent      : root/import/collaboration
-Title       : Default Post Received
-URL         : default_post_received
+Asset ID    : TuYPpHx7TUyk08639Pc8Bg
+Menu Title  : Default DataTable Template (HTML)
+Parent      : root/import/datatable
+Title       : Default DataTable Template (HTML)
+URL         : root/import/datatable/default-datatable-template-html
 ==== headBlock ===============================================================
 ~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<p>Your post has been received and is being processed so it can be added to the site. Please be patient.</p><p><a href="<tmpl_var url>">Back to site.</a></p>
+<tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+
+<tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+
+<tmpl_var description>
+
+<table>
+	<thead><tmpl_loop columns>
+		<th><tmpl_var key></th></tmpl_loop>
+	</thead>
+	<tbody><tmpl_loop rows>
+		<tr><tmpl_loop row_columns>
+		<td><tmpl_var value></td>
+		</tmpl_loop></tr>
+	</tmpl_loop></tbody>
+</table>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
 display:
-  isHidden: '0'
+  isHidden: '1'
   newWindow: '0'
 meta:
   inheritUrlFromParent: '0'
@@ -22,11 +37,11 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 properties:
-  namespace: Collaboration/PostReceived
+  namespace: DataTable
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
 security:
-  groupIdEdit: '4'
+  groupIdEdit: '3'
   groupIdView: '7'
   ownerUserId: '3'
 

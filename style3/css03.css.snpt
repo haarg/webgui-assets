@@ -158,7 +158,7 @@ html #main #mainBody #contentArea {
         left:30px;
         font-size:8pt;
 }
-#webguinavigation {
+#main .yui-skin-sam {
 	font-family:verdana;
         font-size:9pt;
         font-weight:normal;
