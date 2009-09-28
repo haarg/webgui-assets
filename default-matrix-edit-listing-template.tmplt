@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : matrixtmpl000000000004
+Menu Title  : Matrix Default Edit Listing
+Parent      : root/import/matrix
+Title       : Matrix Default Edit Listing
+URL         : default-matrix-edit-listing-template
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>^International('edit matrix listing title','Asset_MatrixListing');</h2>
+<tmpl_var form>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Matrix/EditListing
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+
