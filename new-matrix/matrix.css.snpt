@@ -8,10 +8,12 @@ URL         : new-matrix/matrix.css
 .wg-clear {
 	display: inline;
 	clear: both;
+	font-size:0px;
+	line-height:0px;
 }
 
 /* COLUMN STYLES */
-.matrixLeft {
+#matrixLeft {
 	float:left;
 	width:65%;
 	padding:1%;
@@ -20,7 +22,7 @@ URL         : new-matrix/matrix.css
 	-moz-border-radius:4px;
 	-webkit-border-radius: 4px;	
 }
-.matrixRight {
+#matrixRight {
 	float:left;
 	width:25%;
 	padding:0px;
@@ -35,7 +37,7 @@ URL         : new-matrix/matrix.css
 
 
 /* DROPSHADOW BUTTONS */
-.matrixLeft .buttons span {
+#matrixLeft .buttons span {
 	background-color:#888;
 	position:relative;
 	padding:5px 0px 0px 0px;
@@ -43,8 +45,8 @@ URL         : new-matrix/matrix.css
 	-webkit-border-radius: 4px;
 
 }
-.matrixLeft .buttons button,
-.matrixLeft .buttons a#return {
+#matrixLeft .buttons button,
+#matrixLeft .buttons a#return {
 	border:solid #2f495e 2px;
 	position:relative;
 	background-color:#e1e1e1;
@@ -63,12 +65,12 @@ URL         : new-matrix/matrix.css
 	text-decoration:none;
 	color:#333;
 }
-.matrixLeft .buttons a#return {
+#matrixLeft .buttons a#return {
 	font-size:10px;
 	padding:3px 10px 2px 10px;
 }
-.matrixLeft .buttons button:hover,
-.matrixLeft .buttons a#return:hover {
+#matrixLeft .buttons button:hover,
+#matrixLeft .buttons a#return:hover {
 	border-color:black;
 	color:white;
 	background-color:#444;
@@ -77,38 +79,38 @@ URL         : new-matrix/matrix.css
 
 
 /* WHITE AREA FOR THE LISTING OF OBJECTS TO COMPARE */
-.matrixLeft .matrixListing {
+#matrixLeft .matrixListing {
 	background-color:white;
-	height:300px;
-	overflow:auto;
+	_height:300px;
+	min-height:300px;
 	-moz-border-radius:4px;
 	-webkit-border-radius: 4px;	
 	margin:10px 2px 20px 2px;
 	padding:auto 10px;
 }
-.matrixLeft .matrixListing table {
+#matrixLeft .matrixListing table {
 	border-collapse:collapse;
 	margin:0px;
 	padding:0px;
 	display:block;
 }
-.matrixLeft .matrixListing table a:link {
+#matrixLeft .matrixListing table a:link {
 	font-size:12px;
 	color:#111;
 }
-.matrixLeft .matrixListing table a:visited {
+#matrixLeft .matrixListing table a:visited {
 	color:#333;
 	font-size:12px;
 	text-decoration:none;
 }
-.matrixLeft .matrixListing table a:hover {
+#matrixLeft .matrixListing table a:hover {
 	text-decoration:none;
 }
 
 
 
 /* GRAY BAR THAT HOLDS THE SORT BUTTONS */
-.matrixLeft .matrixListing .sortButtons {
+#matrixLeft .matrixListing .sortButtons {
 	background-color:#f1f1f1;
 	border:solid silver 1px;
 	-moz-border-radius-topLeft:4px;
@@ -146,14 +148,13 @@ URL         : new-matrix/matrix.css
 
 
 /* MATRIX STATISTICS */
-.matrixRight .mainTitle {
+#matrixRight .mainTitle {
 	font-size:20px;
 	padding:5px 10px;
 	border-bottom: solid gray 1px;
 	background-color:#d2d2d2;
-	line-height:20px;
 }
-.matrixRight .textBox {
+#matrixRight .textBox {
 	border-top:solid silver 1px;
 	padding:10px 5px;
 }
@@ -210,7 +211,6 @@ URL         : new-matrix/matrix.css
 .adminLinks a.newLink:visited {
 	background-color:#3498d1;
 	color:white;
-	border-top-style:none;
 	display:block;
 }
 .adminLinks a.newLink:hover {
@@ -387,7 +387,7 @@ URL         : new-matrix/matrix.css
 	color:#333;
 }
 #matrixRatings .formDescription a:before {
-	content: "Ãƒâ€šÃ‚Â» ";
+	content: "� ";
 	text-decoration:none;
 }
 #matrixRatings .formDescription a {
@@ -404,12 +404,16 @@ URL         : new-matrix/matrix.css
 
 #matrixAttributes {
 	float:left;
-	width:20%;
+	_width:40%;
+	min-width:20%;
+	max-width:45%;
 	margin-right:20px;
 }
 #rightDetails {
 	float:left;
-	width:70%
+	_width:20%;
+	min-width:20%;
+	max-width:45%;
 }
 
 

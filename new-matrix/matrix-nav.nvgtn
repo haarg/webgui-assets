@@ -28,7 +28,7 @@ properties:
   descendantEndPoint: '55'
   mimeType: text/html
   reversePageLoop: '0'
-  showHiddenPages: '0'
+  showHiddenPages: '1'
   showSystemPages: '0'
   showUnprivilegedPages: '0'
   startPoint: '0'

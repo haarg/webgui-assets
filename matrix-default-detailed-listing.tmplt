@@ -18,9 +18,9 @@ URL         : matrix-default-detailed-listing
         <span class="editBtns"> 
         [
         	^AssetProxy(new-matrix/matrix-nav);
-        	<span style="display:<tmpl_if user.canEdit>block<tmpl_else><tmpl_if user.canApprove>block<tmpl_else><!--none-->block</tmpl_if></tmpl_if>">
-                <tmpl_if user.canEdit>
-                    &bull; <a href="<tmpl_var edit.url>">Edit</a>
+        	<span style="display:<tmpl_if canEdit>block<tmpl_else><tmpl_if user.canApprove>block<tmpl_else><!--none-->block</tmpl_if></tmpl_if>">
+                <tmpl_if canEdit>
+                    &bull; <a href="<tmpl_var editUrl>">Edit</a>
                 </tmpl_if>
                 <tmpl_if user.canApprove>
                     <tmpl_if isPending>

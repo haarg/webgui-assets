@@ -19,7 +19,7 @@ URL         : matrix-default-view-template
 	</div>
 </tmpl_if>
 
-<div class="matrixLeft">
+<div id="matrixLeft">
 	<div class="buttons">
 		<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button></span>
         <span id="search"><button type="button" >^International('search label','Asset_Matrix');</button></span>    
@@ -41,29 +41,30 @@ URL         : matrix-default-view-template
     <div style="clear:both"></div>
 </div>
 
-<div class="matrixRight">
+<div id="matrixRight">
     <div class="buttons">
         <div class="mainTitle">
-            ^International('expand the matrix label','Asset_Matrix');
+            
         </div>
-        <div class="adminLinks">
-            <tmpl_if isLoggedIn>
-	            <a href="<tmpl_var addMatrixListing_url>" class="newLink">^International('add new listing label','Asset_Matrix');</a>
-            <tmpl_else>
-            	<a href="^a(linkonly);" class="newLink">^International('create account label','Asset_Matrix');</a>
-            </tmpl_if>      
-			<tmpl_if session.var.adminOn>
-      			<a href="<tmpl_var listAttributes_url>">^International('list attributes label','Asset_Matrix');</a> 
-				<a href="<tmpl_var exportAttributes_url>">^International('export attributes label','Asset_Matrix');</a>               
-            </tmpl_if>
-        </div>
-        <div class="textBox">
+		<div class="textBox">
             <tmpl_if isLoggedIn>
                ^International('add new listing text','Asset_Matrix');
             <tmpl_else>
                 ^International('create account part1 text','Asset_Matrix');  ^International('create account part2 text','Asset_Matrix');
             </tmpl_if>
+        </div>        
+        <div class="adminLinks">
+            <tmpl_if isLoggedIn>
+	            <a href="<tmpl_var addMatrixListing_url>" class="newLink">^International('add new listing label','Asset_Matrix');</a>
+                <a href="<tmpl_var exportAttributes_url>">^International('export attributes label','Asset_Matrix');</a>               
+            <tmpl_else>
+            	<a href="^a(linkonly);" class="newLink">^International('create account label','Asset_Matrix');</a>
+            </tmpl_if>      
+		<tmpl_if session.var.adminOn>
+      			<a href="<tmpl_var listAttributes_url>">^International('list attributes label','Asset_Matrix');</a> 				
+            </tmpl_if>
         </div>
+        
     </div>
     
     <div class="matrixStatistics">
@@ -138,6 +139,8 @@ URL         : matrix-default-view-template
     <div style="clear:both"></div>
 </div>
 <div style="clear:both"></div>
+
+
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 @import url(^/(new-matrix/matrix.css););
@@ -148,6 +151,11 @@ URL         : matrix-default-view-template
 @import url(^/(new-matrix/matrix-ie.css););
 </style>
 <![endif]-->
+
+<script src="^/(matrix/equal-cols.js);" type="text/javascript"></script>
+
+
+
 ==== Properties ==============================================================
 display:
   isHidden: '0'

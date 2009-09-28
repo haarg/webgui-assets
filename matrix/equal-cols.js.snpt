@@ -1,0 +1,39 @@
+==== Snippet =================================================================
+Asset ID    : wrq7hMxb1ewQqZ46xmd8Gg
+Menu Title  : equal-cols.js
+Parent      : root/import
+Title       : equal-cols.js
+URL         : matrix/equal-cols.js
+==== snippet =================================================================
+function equalCol() {
+	var colOne = document.getElementById('compareForm');
+	var colTwo = document.getElementById('matrixRight');	
+	var colOneH = colOne.offsetHeight;
+	var colTwoH = colTwo.offsetHeight;	
+	
+	//alert(colOneH + ", " + colTwoH);
+	colOne.style.overflow = "scroll";
+	colOne.style.height = (colTwoH - 150) + "px";
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/javascript
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -9,9 +9,11 @@ URL         : new-matrix/matrix-nav-tmpl
 ==== template ================================================================
 <tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
 
+<tmpl_if page_loop>
 <tmpl_loop page_loop>
 	<a href="<tmpl_var page.url>">Return to Matrix</a>
 </tmpl_loop>
+</tmpl_if>
 
 ==== extraHeadTags ===========================================================
 ~
