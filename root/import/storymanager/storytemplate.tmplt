@@ -31,17 +31,17 @@ URL         : root/import/storymanager/storytemplate
     <span class="storyPhoto" id="photoContainer">
     <tmpl_if singlePhoto>
         <tmpl_loop photo_loop>
-            <tmpl_if imgCaption><span class="photoCaption"><tmpl_var imgCaption></span></tmpl_if>
+            <tmpl_if imageCaption><span class="photoCaption"><tmpl_var imageCaption></span></tmpl_if>
             <tmpl_if imageLink><a href="<tmpl_var imageLink>"></tmpl_if><img src="<tmpl_var imageUrl>" <tmpl_if imageAlt>alt="<tmpl_var imageAlt>"</tmpl_if> <tmpl_if imageTitle>title="<tmpl_var imageTitle>"</tmpl_if> /><tmpl_if imageLink></a></tmpl_if>
-            <tmpl_if imgByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imgByline></span></tmpl_if>
+            <tmpl_if imageByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imageByline></span></tmpl_if>
         </tmpl_loop>
     <tmpl_else>
         <ol id="photoCarousel">
         <tmpl_loop photo_loop>
             <li>
-            <tmpl_if imgCaption><span class="photoCaption"><tmpl_var imgCaption></span></tmpl_if>
+            <tmpl_if imageCaption><span class="photoCaption"><tmpl_var imageCaption></span></tmpl_if>
             <tmpl_if imageLink><a href="<tmpl_var imageLink>"></tmpl_if><img src="<tmpl_var imageUrl>" <tmpl_if imageAlt>alt="<tmpl_var imageAlt>"</tmpl_if> <tmpl_if imageTitle>title="<tmpl_var imageTitle>"</tmpl_if> /><tmpl_if imageLink></a></tmpl_if>
-            <tmpl_if imgByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imgByline></span></tmpl_if>
+            <tmpl_if imageByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imageByline></span></tmpl_if>
             </li>
         </tmpl_loop>
         </ol>

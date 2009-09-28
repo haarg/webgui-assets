@@ -12,6 +12,7 @@ URL         : root/import/storymanager/storyarchive
 <tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
 
 <tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+<tmpl_if description><div><tmpl_var description></div></tmpl_if>
 <p><tmpl_if canPostStories><a href="<tmpl_var addStoryUrl>">^International(add a story,Asset_StoryArchive);</a><br /></tmpl_if>
 <tmpl_var searchHeader><tmpl_var searchForm><tmpl_var searchButton><tmpl_var searchFooter>
 </p>

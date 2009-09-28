@@ -34,7 +34,7 @@ properties:
   showUnprivilegedPages: '0'
   startPoint: '1'
   startType: relativeToRoot
-  templateId: PBtmpl0000000000000048
+  templateId: PBnav00000000000bullet
 security:
   groupIdEdit: '12'
   groupIdView: '7'

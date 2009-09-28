@@ -59,6 +59,17 @@ URL         : root/import/shelf-default
     &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText></a></tmpl_if>
     </div>
     </tmpl_if>
+    <tmpl_if emptyShelf>
+    <div>
+        ^International(this shelf is empty,Asset_Shelf);
+    </div>
+    <tmpl_else>
+      <tmpl_if noViewableSkus>
+        <div>
+        ^International(You do not have permission to view the products on this shelf,Asset_Shelf);
+        </div>
+      </tmpl_if>
+    </tmpl_if>
 	<div style="clear: both;"></div>
 </div>
 ==== extraHeadTags ===========================================================
