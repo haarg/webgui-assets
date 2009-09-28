@@ -19,7 +19,7 @@ URL         : root/import/account/profile/profile-account-layout
 <!--[if gt IE 6]> <div class="WGcleartab"></div> <![endif]-->
 <!--[if !IE]>--><div class="WGcleartab"></div><!--<![endif]-->
 <tmpl_unless is_edit><a href="<tmpl_var edit_profile_url>" class="WGprofile_displayView">^International('back to profile label','Account_Profile');</a></tmpl_unless>
-<div class="<tmpl_if is_edit>WGsubContent<tmpl_else>WGprofile_displaySubContent</tmpl_if>">
+<div class="WGsubContent">
     <div class="yui-skin-sam">
         <div id="wgAccountTabs" class="yui-navset">
             <div class="wg-clear">

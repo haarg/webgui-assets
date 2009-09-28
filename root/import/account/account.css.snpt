@@ -797,15 +797,15 @@ version: 2.6.0
 /* yui tabs color settings below */
 
 /* .yui-navset defaults to .yui-navset-top */
-.yui-skin-sam .yui-navset .yui-nav,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-nav { /* protect nested tabviews from other orientations */
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-nav { /* protect nested tabviews from other orientations */
     border:solid #eef2fd; /* color between tab list and content */
     border-width:0 0 5px;
     Xposition:relative;
     zoom:1;
 }
-.yui-skin-sam .yui-navset .yui-nav a,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav a,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-nav a {
     	background:#ffffff;  /* tab background */
     	border:solid #ffffff;
     	border-width:0 1px;
@@ -817,8 +817,8 @@ version: 2.6.0
 		font-weight: bold;
 }
 
-.yui-skin-sam .yui-navset .yui-nav a em,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav a em,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-nav a em {
     border:solid #eef2fd;
     border-width:1px 0 0;
     cursor:hand;
@@ -828,9 +828,9 @@ version: 2.6.0
     position:relative;
 }
 
-.yui-skin-sam .yui-navset .yui-nav .selected a,
-.yui-skin-sam .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
-.yui-skin-sam .yui-navset .yui-nav .selected a:hover { /* no hover effect for selected */
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a:focus, /* no focus effect for selected */
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a:hover { /* no hover effect for selected */
     	background: #eef2fd; /* selected tab background */
     	color: #3e4f77;
     	font-size:12px;
@@ -838,13 +838,13 @@ version: 2.6.0
 		text-decoration:none;
 		font-weight: bold;
 }
-.yui-skin-sam .yui-navset .yui-nav .selected a,
-.yui-skin-sam .yui-navset .yui-nav .selected a em {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a em {
     border-color:#eef2fd; /* selected tab border color */
 }
 
-.yui-skin-sam .yui-navset .yui-nav a:hover,
-.yui-skin-sam .yui-navset .yui-nav a:focus {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav a:hover,
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav a:focus {
     	background: #eef2fd; /* hover tab background */
     	color: #3e4f77;
     	outline:0;
@@ -854,115 +854,115 @@ version: 2.6.0
 		font-weight: bold;
 
 }
-.yui-skin-sam .yui-navset .yui-content {
+.WGsubContent .yui-skin-sam .yui-navset .yui-content {
     background: #eef2fd; /* content background color */
 }
 
-.yui-skin-sam .yui-navset .yui-content,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-content {
+.WGsubContent .yui-skin-sam .yui-navset .yui-content,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-content {
     border:5px solid #eef2fd; /* content border */
     padding:0.75em 1em; /* content padding */
 }
 
 /* left and right orientations */
-.yui-skin-sam .yui-navset-left .yui-nav,
-.yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
-.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
-.yui-skin-sam .yui-navset-right .yui-nav {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav {
     border-width:0 5px 0 0;
     Xposition:absolute; /* from tabview-core; have to reiterate for skin-sam due to pos:rel on skin-sam yui-nav */
     top:0; bottom:0; /* stretch to fill content height */
 }
 
-.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
-.yui-skin-sam .yui-navset-right .yui-nav {
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-right .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav {
     border-width:0 0 0 5px;
 }
 
-.yui-skin-sam .yui-navset-left .yui-nav li,
-.yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
-.yui-skin-sam .yui-navset-right .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav li {
     margin:0 0 0.3em; /* space between tabs */
     padding:0 0 0 1px; /* gecko: make room for overflow */
 }
 
-.yui-skin-sam .yui-navset-right .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav li {
     padding:0 1px 0 0; /* gecko: make room for overflow */
 }
 
-.yui-skin-sam .yui-navset-left .yui-nav .selected,
-.yui-skin-sam .yui-navset .yui-navset-left .yui-nav .selected { 
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav .selected,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-left .yui-nav .selected { 
     margin:0 -1px 0.16em 0;
 }
 
-.yui-skin-sam .yui-navset-right .yui-nav .selected { 
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav .selected { 
     margin:0 0 0.16em -1px;
 }
 
-.yui-skin-sam .yui-navset-left .yui-nav a,
-.yui-skin-sam .yui-navset-right .yui-nav a {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a {
     border-width:1px 0;
 }
 
-.yui-skin-sam .yui-navset-left .yui-nav a em,
-.yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,
-.yui-skin-sam .yui-navset-right .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a em,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a em {
     border-width:0 0 0 1px;
     padding:0.2em .75em;
     top:auto;
     left:-1px; /* for 1px rounded corners */
 }
 
-.yui-skin-sam .yui-navset-right .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a em {
     border-width:0 1px 0 0;
     left:auto;
     right:-1px; /* for 1px rounded corners */
 }
-.yui-skin-sam .yui-navset-left .yui-nav a,
-.yui-skin-sam .yui-navset-left .yui-nav .selected a,
-.yui-skin-sam .yui-navset-left .yui-nav a:hover,
-.yui-skin-sam .yui-navset-right .yui-nav a,
-.yui-skin-sam .yui-navset-right .yui-nav .selected a,
-.yui-skin-sam .yui-navset-right .yui-nav a:hover,
-.yui-skin-sam .yui-navset-bottom .yui-nav a,
-.yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
-.yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a,
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a:hover,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a:hover,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav a,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
     background-image:none; /* no left-right or bottom-top gradient */
 }
-.yui-skin-sam .yui-navset-left .yui-content {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-content {
     border:1px solid #d8dee8; /* content border */
 }
 /* bottom orientation */
-.yui-skin-sam .yui-navset-bottom .yui-nav,
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav {
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav {
     border-width:5px 0 0; /* color between tab list and content */
 }
 
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
-.yui-skin-sam .yui-navset-bottom .yui-nav .selected { 
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav .selected { 
     margin:-1px 0.3em 0 0; /* for overlap */
 }
 
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
-.yui-skin-sam .yui-navset-bottom .yui-nav li { 
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav li { 
     padding:0 0 1px 0; /* gecko: make room for overflow */
     vertical-align:top;
 }
 
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li a,
-.yui-skin-sam .yui-navset-bottom .yui-nav li a { 
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li a,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav li a { 
 }
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav a em,
-.yui-skin-sam .yui-navset-bottom .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav a em,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav a em {
     border-width:0 0 1px;
     top:auto;
     bottom:-1px; /* for 1px rounded corners */
 }
-.yui-skin-sam .yui-navset-bottom .yui-content,
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-content {
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-content,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-content {
     border:1px solid #f2f5fa; /* content border */
 }
-.yui-skin-sam {
+.WGsubContent .yui-skin-sam {
 	background-color: #d8dee8;
 	padding: 10px 5 5 5px;
 	display:block;
@@ -970,61 +970,61 @@ version: 2.6.0
 
 /* yui tab placement settings below */
 
-.yui-skin-sam .yui-navset .yui-nav li,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-nav li {
     margin:0 0.3em 0 0; /* space between tabs */
     padding:5px 0 0; /* gecko: make room for overflow */
     zoom:1;
 }
 
-.yui-skin-sam .yui-navset .yui-nav .selected,
-.yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected { 
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-top .yui-nav .selected { 
     margin:0 0.3em -1px 0; /* for overlap */
 }
 
-.yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
+.WGsubContent .yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
+.WGsubContent .yui-navset .yui-navset-bottom .yui-nav li {
 	margin:0 0.5em 0 0;
 }
-.yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
+.WGsubContent .yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
 	margin:0 0 0.5em;
 }
-.yui-navset .yui-content .yui-hidden {
+.WGsubContent .yui-navset .yui-content .yui-hidden {
 	display:none;
 }
-.yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
+.WGsubContent .yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
 .yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
 	width:6em;
 }
-.yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
+.WGsubContent .yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
 	width:auto;
 }
-.yui-navset .yui-navset-left,.yui-navset-left {
+.WGsubContent .yui-navset .yui-navset-left,.yui-navset-left {
 	padding:0 0 0 6em;
 }
-.yui-navset-right {
+.WGsubContent .yui-navset-right {
 	padding:0 6em 0 0;
 }
-.yui-navset-top,.yui-navset-bottom {
+.WGsubContent .yui-navset-top,.yui-navset-bottom {
 	padding:auto;
 }
-.yui-nav,.yui-nav li {
+.WGsubContent .yui-nav,.yui-nav li {
 	list-style:none;
 	margin:0;
 	padding:0;	
 }
-.yui-navset li em {
+.WGsubContent .yui-navset li em {
 	font-style:normal;
 }
-.yui-navset {
+.WGsubContent .yui-navset {
 	position:relative;
 	zoom:1;
 }
-.yui-navset .yui-content {
+.WGsubContent .yui-navset .yui-content {
 	zoom:1;
 }
-.yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
-.yui-navset .yui-navset-bottom .yui-nav li {
+.WGsubContent .yui-navset .yui-nav li,.yui-navset .yui-navset-top .yui-nav li,
+.WGsubContent .yui-navset .yui-navset-bottom .yui-nav li {
 	display:inline-block;
 	display:-moz-inline-stack;
 	*display:inline;
@@ -1032,95 +1032,95 @@ version: 2.6.0
 	cursor:pointer;
 	zoom:1;
 }
-.yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
+.WGsubContent .yui-navset-left .yui-nav li,.yui-navset-right .yui-nav li {
 	display:block;
 }
-.yui-navset .yui-nav a {
+.WGsubContent .yui-navset .yui-nav a {
 	position:relative;
 }
-.yui-navset .yui-nav li a,.yui-navset-top .yui-nav li a,
-.yui-navset-bottom .yui-nav li a {
+.WGsubContent .yui-navset .yui-nav li a,.yui-navset-top .yui-nav li a,
+.WGsubContent .yui-navset-bottom .yui-nav li a {
 	display:block;
 	display:inline-block;
 	vertical-align:bottom;
 	zoom:1;
 }
-.yui-navset-left .yui-nav li a,.yui-navset-right .yui-nav li a {
+.WGsubContent .yui-navset-left .yui-nav li a,.yui-navset-right .yui-nav li a {
 	display:block;
 }
-.yui-navset-bottom .yui-nav li a {
+.WGsubContent .yui-navset-bottom .yui-nav li a {
 	vertical-align:text-top;
 }
-.yui-navset .yui-nav li a em,.yui-navset-top .yui-nav li a em,
-.yui-navset-bottom .yui-nav li a em {
+.WGsubContent .yui-navset .yui-nav li a em,.yui-navset-top .yui-nav li a em,
+.WGsubContent .yui-navset-bottom .yui-nav li a em {
 	display:block;
 }
-.yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
-.yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
+.WGsubContent .yui-navset .yui-navset-left .yui-nav,.yui-navset .yui-navset-right .yui-nav,
+.WGsubContent .yui-navset-left .yui-nav,.yui-navset-right .yui-nav {
 	position:absolute;
 	z-index:1;
 }
-.yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
+.WGsubContent .yui-navset-top .yui-nav,.yui-navset-bottom .yui-nav {
 	position:static;
 }
-.yui-navset .yui-navset-left .yui-nav,.yui-navset-left .yui-nav {
+.WGsubContent .yui-navset .yui-navset-left .yui-nav,.yui-navset-left .yui-nav {
 	left:0;
 	right:auto;
 }
-.yui-navset .yui-navset-right .yui-nav,.yui-navset-right .yui-nav {
+.WGsubContent .yui-navset .yui-navset-right .yui-nav,.yui-navset-right .yui-nav {
 	left:auto;
 	right:0;
 }
-.yui-skin-sam .yui-navset .yui-nav .selected a em {
+.WGsubContent .yui-skin-sam .yui-navset .yui-nav .selected a em {
 	padding:0.35em 0.75em;
 }
-.yui-skin-sam .yui-navset-left .yui-nav,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
-.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav,
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
 	border-width:0 5px 0 0;
 	bottom:0;
 	top:0;
 	Xposition:absolute;
 }
-.yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-right .yui-nav,.yui-skin-sam .yui-navset-right .yui-nav {
 	border-width:0 0 0 5px;
 }
-.yui-skin-sam .yui-navset-left .yui-nav li,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
-.yui-skin-sam .yui-navset-right .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav li,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav li {
 	margin:0 0 0.16em;
 	padding:0 0 0 1px;
 }
-.yui-skin-sam .yui-navset-right .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav li {
 	padding:0 1px 0 0;
 }
-.yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav a {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav a {
 	border-width:1px 0;
 }
-.yui-skin-sam .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset-right .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset .yui-navset-left .yui-nav a em,.yui-skin-sam .yui-navset-right .yui-nav a em {
 	border-width:0 0 0 1px;
 	left:-1px;
 	padding:0.2em .75em;
 	top:auto;
 }
-.yui-skin-sam .yui-navset-right .yui-nav a em {
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a em {
 	border-width:0 1px 0 0;
 	left:auto;
 	right:-1px;
 }
 
-.yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-left .yui-nav .selected a,.yui-skin-sam .yui-navset-left .yui-nav a:hover,
-.yui-skin-sam .yui-navset-right .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav .selected a,.yui-skin-sam .yui-navset-right .yui-nav a:hover,
-.yui-skin-sam .yui-navset-bottom .yui-nav a,.yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
-.yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
+.WGsubContent .yui-skin-sam .yui-navset-left .yui-nav a,.yui-skin-sam .yui-navset-left .yui-nav .selected a,.yui-skin-sam .yui-navset-left .yui-nav a:hover,
+.WGsubContent .yui-skin-sam .yui-navset-right .yui-nav a,.yui-skin-sam .yui-navset-right .yui-nav .selected a,.yui-skin-sam .yui-navset-right .yui-nav a:hover,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav a,.yui-skin-sam .yui-navset-bottom .yui-nav .selected a,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav a:hover {
 	background-image:none;
 }
 
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
-.yui-skin-sam .yui-navset-bottom .yui-nav .selected {
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav .selected,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav .selected {
 	margin:-1px 0.16em 0 0;
 }
 
-.yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
-.yui-skin-sam .yui-navset-bottom .yui-nav li {
+.WGsubContent .yui-skin-sam .yui-navset .yui-navset-bottom .yui-nav li,
+.WGsubContent .yui-skin-sam .yui-navset-bottom .yui-nav li {
 	padding:0 0 1px 0;
 	vertical-align:top;
 }
