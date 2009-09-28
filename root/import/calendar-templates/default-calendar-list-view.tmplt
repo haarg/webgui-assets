@@ -34,13 +34,13 @@ URL         : root/import/calendar-templates/default-calendar-list-view
 		<tmpl_loop events>
 			<div class="newUnit">
 				<tmpl_if new_year>
-					^D("%y",<tmpl_var startEpoch>);
+					^D("%y",<tmpl_var eventStartDateEpoch>);
 				</tmpl_if>
 				<tmpl_if new_month>
-					^D("%c %y",<tmpl_var startEpoch>);
+					^D("%c %y",<tmpl_var eventStartDateEpoch>);
 				</tmpl_if>
 				<tmpl_if new_day>
-					^D("%w, %c %d %y",<tmpl_var startEpoch>);
+					^D("%w, %c %d %y",<tmpl_var eventStartDateEpoch>);
 				</tmpl_if>
 			</div>
 

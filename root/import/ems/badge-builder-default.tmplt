@@ -130,7 +130,7 @@ YAHOO.util.Event.onDOMReady(function () {
 </tmpl_if>
 
 	Dom.get('keywordSearchForm').onsubmit = function () {
-        var state = myDataTable.getState();
+        var state = myTable.getState();
         state.pagination.recordOffset = 0;
         mySource.sendRequest('keywords=' + Dom.get('keywordsField').value + ';startIndex=0', {success: myTable.onDataReturnInitializeTable, scope:myTable, argument:state});  
         return false;
@@ -141,10 +141,17 @@ YAHOO.util.Event.onDOMReady(function () {
 	function submitTicketsToBadge (form)  {
 		var field = form.assetId;
 		var assetIds = new Array();
-		for (i = 0; i < field.length; i++) {
-			if (field[i].checked == true) {
-				assetIds.push(field[i].value)
-			}
+                if (typeof field.length == "undefined") { // deal with only a single element in the list
+                       if (field.checked == true) {
+                                assetIds.push(field.value);
+                       }
+                }
+                else {
+		        for (i = 0; i < field.length; i++) {
+			        if (field[i].checked == true) {
+				       assetIds.push(field[i].value)
+			        }
+                        }
 		}
 		populateRegistrantBadge({func:'addTicketsToBadge',assetIds: assetIds});
 	}
