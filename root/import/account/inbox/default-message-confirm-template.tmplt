@@ -1,23 +1,22 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0userInviteEmail
-Menu Title  : Default User Invite Email Template
-Parent      : root/import/messaging
-Title       : Default User Invite Email Template
-URL         : userinviteemailtemplate
+Asset ID    : DUoxlTBXhVS-Zl3CFDpt9g
+Menu Title  : Default Message Confirm Template
+Parent      : root/import/account/inbox
+Title       : Default Message Confirm Template
+URL         : root/import/account/inbox/default-message-confirm-template
 ==== headBlock ===============================================================
 ~
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<tmpl_var invitationMessage>
-<tmpl_var registrationUrl>
-
-
+<h2>^International(message sent label,Account_Inbox);</h2>
+<p>^International(message sent text,Account_Inbox);</p>
+<p><a href="<tmpl_var view_inbox_url>">^International(back label,Account_Inbox);</a></p>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
 display:
-  isHidden: '0'
+  isHidden: '1'
   newWindow: '0'
 meta:
   inheritUrlFromParent: '0'
@@ -25,11 +24,11 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 properties:
-  namespace: userInvite/Email
+  namespace: Account/Inbox/Confirm
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
 security:
-  groupIdEdit: '3'
+  groupIdEdit: '12'
   groupIdView: '7'
   ownerUserId: '3'
 

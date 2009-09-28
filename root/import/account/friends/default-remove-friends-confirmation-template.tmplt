@@ -1,0 +1,39 @@
+==== Template ================================================================
+Asset ID    : G5V6neXIDiFXN05oL-U3AQ
+Menu Title  : Default Remove Friends Confirmation Template
+Parent      : root/import/account/friends
+Title       : Default Remove Friends Confirmation Template
+URL         : root/import/account/friends/default-remove-friends-confirmation-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p>
+    <h2>^International(remove confirm label,Account_Friends);</h2>
+    <p>^International(remove confirm message,Account_Friends,<tmpl_var user_full_name>);</p>
+    <p>
+        <a href="<tmpl_var no_url>">^International(remove confirm no,Account_Friends);</a>&nbsp;&middot;&nbsp;
+        <a href="<tmpl_var yes_url>">^International(remove confirm yes,Account_Friends);</a>
+    </p>
+</p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Friends/Confirm
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

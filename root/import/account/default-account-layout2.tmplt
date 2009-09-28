@@ -1,0 +1,42 @@
+==== Template ================================================================
+Asset ID    : N716tpSna0iIQTKxS4gTWA
+Menu Title  : Default Account Layout
+Parent      : root/import/account
+Title       : Default Account Layout
+URL         : root/import/account/default-account-layout2
+==== headBlock ===============================================================
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="divclear">
+    <ul class="topTabs">
+        <tmpl_loop account_loop>
+        <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
+        </tmpl_loop>
+    </ul>
+</div>
+<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
+<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<tmpl_var content>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Layout
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

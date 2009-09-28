@@ -1,0 +1,53 @@
+==== Template ================================================================
+Asset ID    : zrNpGbT3odfIkg6nFSUy8Q
+Menu Title  : Friends Layout Template
+Parent      : root/import/account/friends
+Title       : Friends Layout Template
+URL         : root/import/account/friends/friends-layout-template
+==== headBlock ===============================================================
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="divclear">
+    <ul class="topTabs">
+        <tmpl_loop account_loop>
+        <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
+        </tmpl_loop>
+    </ul>
+</div>
+<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
+<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<tmpl_if is_edit><a href="<tmpl_var view_friends_url>" class="profile_displayView">^International('friends as others label','Account_Friends');</a><tmpl_else><tmpl_if can_edit_friends><a href="<tmpl_var edit_friends_url>" class="profile_displayView">^International('edit my friends','Account_Friends');</a><tmpl_else><a href="<tmpl_var back_url>" class="profile_displayView">^International('back label','Account_Friends');</a></tmpl_if></tmpl_if>
+<div class="profile_displaySubContent">
+<div class="yui-skin-sam">
+    <div id="wgAccountTabs" class="yui-navset">
+        <div class="yui-content">
+            <div id="tab1">
+                <tmpl_var content>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Layout
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

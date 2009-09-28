@@ -1,0 +1,34 @@
+==== Template ================================================================
+Asset ID    : SVIhz68689hwUGgcDM-gWw
+Menu Title  : Default Invite User Confirm Template
+Parent      : root/import/account/inbox
+Title       : Default Invite User Confirm Template
+URL         : root/import/account/inbox/default-invite-user-confirm-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>^International(invitation sent label,Account_Inbox);</h2>
+<p>^International(invitation sent text,Account_Inbox);</p>
+<p><a href="<tmpl_var view_inbox_url>">^International(back label,Account_Inbox);</a></p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Inbox/InviteUserConfirm
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -9,12 +9,15 @@ URL         : shopping-cart-collateral-items/address-book-default
 	.wgAddressBook .item {
 		float:left;
 		margin:15px;
-		width:200px;
+		width:210px;
 		background-color:white;
 		border:solid black 1px;
 	}
+	.wgAddressBook .default {
+		border:double black 3px;
+	}
 	.wgAddressBook .use input {
-		width:200px;
+		width:210px;
 		background-color:white;
 		font-size:10px;
 		cursor:pointer;
@@ -35,7 +38,7 @@ URL         : shopping-cart-collateral-items/address-book-default
 	.wgAddressBook .delete input,
 	.wgAddressBook .edit input {
 		float:left;
-		width:100px;
+		width:70px;
 		font-size:10px;
 		border:gray outset 1px;
 		background-color:white;
@@ -54,12 +57,13 @@ URL         : shopping-cart-collateral-items/address-book-default
 ==== template ================================================================
 <div class="wgAddressBook">
 	<tmpl_loop addresses>
-		<div class="item">
+		<div class="item<tmpl_if isDefault> default</tmpl_if>">
 			<div class="use"><tmpl_var useButton></div>
 			<div class="label"><tmpl_var label></div>
 			<div class="address"><tmpl_var address></div>
 			<div class="delete"><tmpl_var deleteButton></div>
 			<div class="edit"><tmpl_var editButton></div>
+			<div class="edit"><tmpl_var defaultButton></div>
 		</div>
 	</tmpl_loop>
 

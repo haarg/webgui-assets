@@ -82,7 +82,7 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 properties:
-  namespace: Collaboration
+  namespace: newsletter
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
 security:

@@ -1,0 +1,59 @@
+==== Template ================================================================
+Asset ID    : AjhlNO3wZvN5k4i4qioWcg
+Menu Title  : Default Answer Edit
+Parent      : root/import/survey
+Title       : Default Answer Edit
+URL         : root/import/survey/default-answer-edit
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id='answer'>
+<div class='hd'>^International('please enter answer information','Asset_Survey');</div>
+<div class='bd'>
+
+<form name='form' method='POST' action='?func=submitObjectEdit'>
+
+    <p>^International('answer number','Asset_Survey'); <tmpl_var displayed_id>
+    <input type='hidden' name='id' value='<tmpl_var id>'>
+    <input type='hidden' name='delete' id='delete' value=0>
+
+    <p>^International('answer text','Asset_Survey');<textarea name='text'><tmpl_var text></textArea>
+    <p>^International('recorded answer','Asset_Survey');<textarea name='recordedAnswer'><tmpl_var recordedAnswer></textArea>
+    <p>^International('jump to','Asset_Survey');<input type=text value='<tmpl_var goto>' name=goto size=4>
+    <span id='textParams'><p><tmpl_var 'text answer'> <tmpl_var 'cols'><input type=text size=2 value='<tmpl_var textCols>' name=textCols> <tmpl_var 'rows'>                   
+    <input type=text size=2 value='<tmpl_var textRows>' name=textRows> </p></span>
+    <p>^International('is this the correct answer','Asset_Survey');
+        <input type='radio' name='isCorrect' value=1 <tmpl_if isCorrect>checked</tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='isCorrect' value=0 <tmpl_unless isCorrect>checked</tmpl_unless>>^International('no','Asset_Survey');
+    <p>^International('min','Asset_Survey');<input type=text value='<tmpl_var min>' name=min size=2>
+    <p>^International('max','Asset_Survey');<input type=text value='<tmpl_var max>' name=max size=2>
+    <p>^International('step','Asset_Survey');<input type=text value='<tmpl_var step>' name=step size=2>
+    <p>^International('verbatim','Asset_Survey');
+        <input type='radio' name='verbatim' value=1 <tmpl_if verbatim>^International('checked','Asset_Survey');</tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='verbatim' value=0 <tmpl_unless verbatim>^International('checked','Asset_Survey');</tmpl_unless>>^International('no','Asset_Survey');
+    <p>^International('answer value','Asset_Survey');<input maxlength=10 size=6 type=text value='<tmpl_var value>' name=value></p>
+</form>
+</div>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

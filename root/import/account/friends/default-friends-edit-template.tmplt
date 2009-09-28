@@ -1,0 +1,122 @@
+==== Template ================================================================
+Asset ID    : AZFU33p0jpPJ-E6qLSWZng
+Menu Title  : Default Friends Edit Template
+Parent      : root/import/account/friends
+Title       : Default Friends Edit Template
+URL         : root/import/account/friends/default-friends-edit-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p>
+<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+    <tr>
+        <td class="yourselfBG">	
+            <table cellspacing="5" cellpadding="1" border="0" width="100%">
+                <tbody>
+                <tr>
+                    <td class="bar">
+                        <tmpl_var user_full_name> <br />
+                        <span class="member">^International(member since,Account_Friends);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </td>
+                </tr>
+                <tmpl_if display_message>
+                <tr>
+                    <td id="profileErrors"><tmpl_var display_message></td>
+                </tr>
+                </tmpl_if>
+                <tr>
+                    <td class="bar" style="font-size:10px;">
+                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
+                            <tbody>
+                            <tr>
+                                <td style="font-size:10px;text-align:left;width:20%"> <tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></td>
+                                <td style="text-align:center;width=20%">
+                                    <tmpl_if pagination.pageCount.isMultiple>
+                                    <div class="Profile_pagination" style="text-align:center;">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                        <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
+                                    </div>
+                                    </tmpl_if>
+                                </td>
+                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tmpl_loop friends_loop>
+                <tr >
+                    <td <tmpl_unless __LAST__> class="bordered"</tmpl_unless>>
+                        <table width="100%" cellpadding="0" cellspacing="0" >
+                            <tbody>
+                            <tr>
+                                <td width="10%"><tmpl_if isViewable><a href="<tmpl_var friend_profile_url>"></tmpl_if><img style="height: 50px; width: 50px;" alt="" src="<tmpl_if friend_photo_url_thumb><tmpl_var friend_photo_url_thumb><tmpl_else>^Extras(account/images/no_photo.gif);</tmpl_if>"/><tmpl_if isViewable></a></tmpl_if><br /><span class="member"><tmpl_if friend_isOnline>^International(online,Friends);<tmpl_else>^International(offline,Friends);</tmpl_if></span></td>
+                                <td width="40%" valign="top">
+                                    <strong><tmpl_if isViewable><a href="<tmpl_var friend_profile_url>"><tmpl_var friend_full_name></a><tmpl_else><tmpl_var friend_full_name></tmpl_if></strong><br />
+                                    <span class="member">
+                                        ^International(member since,Account_Friends);&nbsp;^D(%z,<tmpl_var friend_member_since>);<br />
+                                        ^User(homeCountry,<tmpl_var friend_id>);
+                                    </span>
+                                </td>
+                                <td width="50%" align="right">
+                                    <tmpL_if acceptsPrivateMessages><div style="padding-bottom: 5px;"><button type="button" onclick="location.href='^PageUrl(,op=account;module=inbox;do=sendMessage;userId=<tmpl_var friend_id>);'">^International(send private message label,Account_Friends);</button></div></tmpl_if>
+                                    <div><button type="button" onclick="location.href='<tmpl_var remove_url>'">^International(remove from friends label,Account_Friends);</button></div>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tmpl_loop>
+                <tr>
+                    <td class="bar" style="font-size:10px;">
+                        <table width="100%" cellpadding="2" cellspacing="0" border="0">
+                            <tbody>
+                            <tr>
+                                <td style="font-size:10px;text-align:left;width:20%"> <tmpl_if has_messages><tmpl_var form_accept> <tmpl_var form_deny></tmpl_if></td>
+                                <td style="text-align:center;width=20%">
+                                    <tmpl_if pagination.pageCount.isMultiple>
+                                    <div class="Profile_pagination" style="text-align:center;">
+                                        <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
+                                        <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
+                                        &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="" style="vertical-align:middle;margin-top:2px;border:none;" /></a></tmpl_if>
+                                    </div>
+                                    </tmpl_if>
+                                </td>
+                                <td style="font-size:10px;text-align:right;width:20%"><tmpl_var message_rpp></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+</p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Friends/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

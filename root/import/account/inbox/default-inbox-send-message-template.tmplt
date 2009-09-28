@@ -1,0 +1,130 @@
+==== Template ================================================================
+Asset ID    : 6uQEULvXFgCYlRWnYzZsuA
+Menu Title  : Default Inbox Send Message Template
+Parent      : root/import/account/inbox
+Title       : Default Inbox Send Message Template
+URL         : root/import/account/inbox/default-inbox-send-message-template
+==== headBlock ===============================================================
+<link rel="stylesheet" type="text/css" href="^Extras;yui/build/container/assets/skins/sam/container.css" />
+
+<script>
+   var removeText = '^International(remove text,Account_Inbox);';
+</script>
+<script type="text/javascript" src="^Extras;yui/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript" src="^Extras;yui/build/container/container-min.js"></script>
+<script type="text/javascript" src="^Extras;account/inbox.js"></script>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var form_header>  
+<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+    <tr>
+        <td class="yourselfBG">	
+            <table cellspacing="5" cellpadding="1" border="0" width="100%">
+                <tbody>
+                <tr>
+                    <td class="bar">
+                        <tmpl_var user_full_name> <br />
+                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </td>
+                </tr>	
+                <tr class="bar">
+                    <td>^International(<tmpl_if isReply>reply message label<tmpl_else>compose message label</tmpl_if>,Account_Inbox);</td>
+                </tr>
+                <tmpl_if message_display_error>
+                <tr>
+                    <td style="font-weight:bold;color:red;text-align:center;"><tmpl_var message_display_error></td>
+                </tr>
+                </tmpl_if>
+                <tr>
+                    <td align="center">
+                        <table border="0" cellpadding="1" cellspacing="5">
+                            <tbody>
+                            <tr>
+                                <tmpl_if isNew><td width="100px" align="right"><a href="#" id="show_friends">^International(recipients label,Account_Inbox);</a></td></tmpl_if>
+                                <td width="50px" align="right"><strong>^International(to label,Account_Inbox);:</strong></td>
+                                <td align="left" id="messageTo"><div <tmpl_if isNew>class="inbox_messageTo"</tmpl_if>><tmpl_if message_to><tmpl_var message_to><tmpl_else><tmpl_loop checked_fiends_loop><tmpl_var friend_name><tmpl_if friend_wholeName> [<tmpl_var friend_wholeName>]</tmpl_if>; </tmpl_loop></tmpl_if></div></td>
+                            </tr>
+                            <tr>
+                                <tmpl_if isNew><td></td></tmpl_if>
+                                <td width="50px" align="right"><strong>^International(subject label,Account_Inbox);:</strong></td>
+                                <td align="left"><tmpl_var form_subject></td>
+                            </tr>
+                            <tr>
+                                <tmpl_if isNew><td></td></tmpl_if>
+                                <td colspan="2"><tmpl_var form_message_rich></td>
+                            </tr>
+                            <tr>
+                                <td align="right" colspan="<tmpl_if isNew>3<tmpl_else>2</tmpl_if>" class="send">
+                                    <input type="submit" name="send" value="^International(send label,Account_Inbox);" />&nbsp;&nbsp;
+                                    <input type="button" name="cancel" value="^International(cancel label,Account_Inbox);" onclick="location.href='<tmpl_var back_url>'" />
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<tmpl_if isNew>
+<div id="friends"> 
+    <table width="100%" class="inbox_contactsTbl">
+        <tbody>
+        <tr class="bar">
+            <td>
+                <input type="button" name="update" id="update_top" value="^International(update label,Account_Inbox);" />
+                <input type="button" name="cancel" id="cancel_top" value="^International(cancel label,Account_Inbox);" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div id="contacts">
+                    <table width="100%">
+                        <tbody>
+                        <tmpl_loop friends_loop>
+                        <tr>
+                            <td class="datacells"><tmpl_var friend_checkbox></td>
+                            <td class="datacells" id="friend_<tmpl_var friend_id>_name"><tmpl_var friend_name><tmpl_if friend_wholeName> [<tmpl_var friend_wholeName>]</tmpl_if></td>
+                        </tr>
+                        </tmpl_loop>
+                        </tbody>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr class="bar">
+            <td>
+                <input type="button" name="update" id="update_bottom" value="^International(update label,Account_Inbox);" />
+                <input type="button" name="cancel" id="cancel_bottom" value="^International(cancel label,Account_Inbox);" />
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</tmpl_if>
+<tmpl_var form_footer>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Inbox/SendMessage
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

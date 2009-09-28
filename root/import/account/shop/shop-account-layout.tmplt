@@ -1,0 +1,57 @@
+==== Template ================================================================
+Asset ID    : aUDsJ-vB9RgP-AYvPOy8FQ
+Menu Title  : Shop Account Layout
+Parent      : root/import/account/shop
+Title       : Shop Account Layout
+URL         : root/import/account/shop/shop-account-layout
+==== headBlock ===============================================================
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="divclear">
+    <ul class="topTabs">
+        <tmpl_loop account_loop>
+        <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
+        </tmpl_loop>
+    </ul>
+</div>
+<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
+<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<div class="subContent">
+<div class="yui-skin-sam">
+    <div id="wgAccountTabs" class="yui-navset">
+        <div class="cleardiv">
+            <ul class="yui-nav">
+                <li <tmpl_if managesPurchasesIsActive>class="selected"</tmpl_if>><a href="<tmpl_var manage_purchases_url>" title="^International(manage purchases label,Account_Shop);"><em>^International(manage purchases label,Account_Shop);</em></a></li>
+            </ul>
+        </div>
+        <div class="yui-content">
+            <div id="tab1">
+                <tmpl_var content>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Layout
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

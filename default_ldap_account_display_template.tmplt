@@ -29,13 +29,13 @@ URL         : default_ldap_account_display_template
 </tmpl_if>
 
 <div class="accountOptions">
-	<ul>
-		<tmpl_loop account.options>
-			<li><tmpl_var options.display></li>
-		</tmpl_loop>
-	</ul>
+    <ul>
+        ^If(^AdminToggle;,<li>%s</li>,);
+        <li>^LoginToggle;</li>
+	^If(^DeactivateAccount;,<li>%s</li>,);
+	<li><a href="^BackToSite;">^International(493,WebGUI);</a></li>
+    </ul>
 </div>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

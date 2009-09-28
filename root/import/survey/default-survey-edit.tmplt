@@ -1,0 +1,90 @@
+==== Template ================================================================
+Asset ID    : GRUNFctldUgop-qRLuo_DA
+Menu Title  : Default Survey Edit
+Parent      : root/import/survey
+Title       : Default Survey Edit
+URL         : root/import/survey/default-survey-edit
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+<title>WebGUI Survey Alpha</title>
+
+<head>
+<style type="text/css">
+    body { margin:0; padding:0; }
+</style>
+
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
+<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/surveyedit.css" />
+
+<script type="text/javascript" src="/extras/yui/build/utilities/utilities.js"></script>
+<script type="text/javascript" src="/extras/yui/build/container/container-min.js"></script>
+<script type="text/javascript" src="/extras/yui/build/menu/menu-min.js"></script>
+<script type="text/javascript" src="/extras/yui/build/button/button-min.js"></script>
+<script type="text/javascript" src="/extras/yui/build/json/json-min.js"></script>
+<script type="text/javascript" src="/extras/yui/build/logger/logger-min.js"></script>
+<script type="text/javascript" src="/extras/yui/build/resize/resize-min.js"></script>
+
+<script type="text/javascript" src="/extras/wobject/Survey/dd.js"></script>
+<script type="text/javascript" src="/extras/wobject/Survey/editsurvey.js"></script>
+<script type="text/javascript" src="/extras/wobject/Survey/editsurvey/comm.js"></script>
+<script type="text/javascript" src="/extras/wobject/Survey/editsurvey/object.js"></script>
+
+</head>
+
+<body class=" yui-skin-sam">
+
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+
+
+<div>
+	<a href=".">Back to Site</a> |
+	<tmpl_if session.var.adminOn>
+		<a href="?func=edit">Edit</a> |
+	</tmpl_if>
+	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
+</div>
+
+<div class="workarea">
+<table><tr><td>
+
+    <ul id="sections" class="draglist"></ul>
+
+</td></tr>
+<tr><td>
+<div class=buttons>
+<span id=addSection></span>
+<span id=addQuestion></span>
+<span id=addAnswer></span>
+</div>
+</td></tr></table>
+</div>
+<div id="edit">
+</div>
+
+</body>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

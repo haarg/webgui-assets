@@ -1,0 +1,98 @@
+==== Template ================================================================
+Asset ID    : 1oBRscNIcFOI-pETrCOspA
+Menu Title  : Default Section Edit
+Parent      : root/import/survey
+Title       : Default Section Edit
+URL         : root/import/survey/default-section-edit
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id='section'>
+<div class='hd'>^International('please enter section information','Asset_Survey');</div>
+<div class='bd'>
+    <form name='form' method='POST' action='?func=submitObjectEdit'>
+<table>
+<tr><td>
+    <p>^International('section number','Asset_Survey'); <tmpl_var displayed_id>
+    <input type='hidden' name='id' value='<tmpl_var id>'>
+    <input type='hidden' id='delete' name='delete' value=0>
+    <input type='hidden' id='copy' name='copy' value=0>
+    <p>^International('section name','Asset_Survey'); <input name='title' value='<tmpl_var title>' type=text>
+    <hr>
+    <p>^International('randomize questions','Asset_Survey');
+
+        <input type='radio' name='randomizeQuestions' value=1 <tmpl_if randomizeQuestions> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='randomizeQuestions' value=0 <tmpl_unless randomizeQuestions> checked </tmpl_unless>>^International('no','Asset_Survey');
+
+    <p>^International('section custom variable name','Asset_Survey');<input maxlength=35 size=10 type=text value='<tmpl_var variable>' name=variable size=2></p>
+    <p>^International('section branch goto variable name','Asset_Survey');<input maxlength=35 size=10 type=text value='<tmpl_var goto>' name=goto size=2></p>
+    <p>^International('questions per page','Asset_Survey');
+    <select name='questionsPerPage'>
+        <tmpl_loop questionsPerPage>
+            <option value='<tmpl_var index>' <tmpl_if selected>selected=1</tmpl_if>><tmpl_var index></option>
+        </tmpl_loop>
+    </select>
+</td><td>
+    <p>^International('questions on section page','Asset_Survey');<p>
+    <tmpl_if questionsOnSectionPage>
+        <input type='radio' name='questionsOnSectionPage' value=1  checked >^International('yes','Asset_Survey');
+        <input type='radio' name='questionsOnSectionPage' value=0>^International('no','Asset_Survey');
+    <tmpl_else>
+        <input type='radio' name='questionsOnSectionPage' value=1>^International('yes','Asset_Survey');
+        <input type='radio' name='questionsOnSectionPage' value=0  checked >^International('no','Asset_Survey');
+    </tmpl_if>
+    <hr>
+
+    <p>^International('title on every page','Asset_Survey');
+    <tmpl_if everyPageTitle>
+        <input type='radio' name='everyPageTitle' value=1  checked >^International('yes','Asset_Survey');
+        <input type='radio' name='everyPageTitle' value=0>^International('no','Asset_Survey');
+    <tmpl_else>
+        <input type='radio' name='everyPageTitle' value=1>^International('yes','Asset_Survey');
+        <input type='radio' name='everyPageTitle' value=0  checked >^International('no','Asset_Survey');
+    </tmpl_if>
+    <p>^International('text on every page','Asset_Survey');
+    <tmpl_if everyPageText>
+        <input type='radio' name='everyPageText' value=1  checked >^International('yes','Asset_Survey');
+        <input type='radio' name='everyPageText' value=0>^International('no','Asset_Survey');
+    <tmpl_else>
+        <input type='radio' name='everyPageText' value=1>^International('yes','Asset_Survey');
+        <input type='radio' name='everyPageText' value=0  checked >^International('no','Asset_Survey');
+    </tmpl_if>
+    <p>^International('terminal section','Asset_Survey');
+    <tmpl_if terminal>
+        <input type='radio' name='terminal' value=1  checked >^International('yes','Asset_Survey');
+        <input type='radio' name='terminal' value=0>^International('no','Asset_Survey');
+    <tmpl_else>
+        <input type='radio' name='terminal' value=1>^International('yes','Asset_Survey');
+        <input type='radio' name='terminal' value=0  checked >^International('no','Asset_Survey');
+    </tmpl_if>
+    <p>^International('terminal section url','Asset_Survey'); <input type=text name=terminalUrl value='<tmpl_var terminalUrl>'>
+</td></table>
+<p>^International('section text','Asset_Survey');</p> <textarea name=text maxlength=2056 cols=55 rows=4><tmpl_var text></textarea>
+</div>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

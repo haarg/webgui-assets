@@ -54,66 +54,36 @@ h2 {
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<h2>Search The Matrix</h2>
+<h2>^International('search label','Asset_Matrix');</h2>
 
-<tmpl_if isTooFew>
-	<p class="fontSettings">Your search returned no results. Try specifying a few less criteria.</p>
-</tmpl_if>
 
-<tmpl_if isTooMany>
-<p class="fontSettings">
-	Your search returned too many results. Either select up to <tmpl_var maxCompares> products from the list below, or specify more critera.
-</p>
-</tmpl_if>
 
 
 <table width="100%" class="matrixSearch" border="0">
 <tr>
 	<td valign="top">
-		<tmpl_var compare.form>
+		<span id="compare"><button type="button">^International('compare button label','Asset_Matrix');</button>
+</span><br />
+		<tmpl_var compareForm>
 	</td>
 	<td valign="top">
-		<tmpl_var form.header>
-		<tmpl_var form.submit>
 		<table width="100%"  class="content">
+<tmpl_loop category_loop>
 		<tr>
-			<td valign="top" style="width:50%;">
-				<span class="category">Features</span>
+			<td valign="top">
+				<span class="category"><tmpl_var categoryLabel></span>
 				<table class="content" width="180">
-				<tmpl_if features_loop>
-					<tmpl_loop features_loop>
+					<tmpl_loop attribute_loop>
 					<tr<tmpl_if __ODD__> class="odd"<tmpl_else> class="even"</tmpl_if>>
 						<td><tmpl_var label><div class="wg-hoverhelp"><tmpl_var description></div></td>
 						<td><tmpl_var form></td>
 					</tr>
 					</tmpl_loop>
-				<tmpl_else>
-					<tr><td>&#160;</td></tr>
-				</tmpl_if>
-				</table>
-			</td>
-			<td valign="top" style="width:50%;">
-				<span class="category">Benefits</span>
-				<table class="content">
-				<tmpl_if benefits_loop>
-					<tmpl_loop benefits_loop>
-					<tr<tmpl_if __ODD__> class="odd"<tmpl_else> class="even"</tmpl_if>>
-						<td><tmpl_var label><div class="wg-hoverhelp"><tmpl_var description></div></td>
-						<td><tmpl_var form></td>
-					</tr>
-					</tmpl_loop>
-				<tmpl_else>
-					<tr><td>&#160;</td></tr>
-				</tmpl_if>
 				</table>
 			</td>
 		</tr>
+</tmpl_loop>
 </table>
-
-<tmpl_var form.submit>
-</div>
-<tmpl_var form.footer>
-
 
 </td></tr></table>
 

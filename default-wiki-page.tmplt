@@ -6,9 +6,7 @@ Title       : Default Wiki Page
 URL         : default-wiki-page
 ==== headBlock ===============================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/tabview/assets/tabview.css);" />
-<script type="text/javascript" src="^Extras(yui/build/yahoo/yahoo-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/event/event-min.js);"></script>
-<script type="text/javascript" src="^Extras(yui/build/dom/dom-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/connection/connection-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/tabview/tabview-min.js);"></script>
@@ -54,9 +52,7 @@ URL         : default-wiki-page
     display:none;
 }
 
-
 </style>
-
 
 ==== synopsis ================================================================
 ~
@@ -67,17 +63,17 @@ URL         : default-wiki-page
     <div id="wikipage" class="yui-navset">
         <ul class="yui-nav">
             <li class="selected"><a href="#wikipagecontent"><em><tmpl_var viewLabel></em></a></li>
-            <li><a href="#wikipageedit"><em><tmpl_var editLabel></em></a></li>
+            <tmpl_if canEdit><li><a href="#wikipageedit"><em><tmpl_var editLabel></em></a></li></tmpl_if>
         </ul>
         <div class="yui-content">
             <div id="wikipagecontent">
                 <div><tmpl_var content></div>
                 <p>^International(keywords,Asset);: <tmpl_loop keywordsLoop><a href="<tmpl_var url>"><tmpl_var
 keyword></a> </tmpl_loop></p>
-		<div class="wikipagecomments"><tmpl_var comments></div>
-            </div><div id="wikipageedit">
-                <tmpl_var editContent>
-            </div></div>
+                <div class="wikipagecomments"><tmpl_var comments></div>
+            </div>
+            <tmpl_if canEdit><div id="wikipageedit"><tmpl_var editContent></div></tmpl_if>
+        </div>
     </div>
 <script type="text/javascript">
 ( function() {
@@ -96,7 +92,6 @@ keyword></a> </tmpl_loop></p>
 <div style="padding: 8px;"><a href="<tmpl_var searchUrl>"><tmpl_var searchLabel></a> | <a href="<tmpl_var
 mostPopularUrl>"><tmpl_var mostPopularLabel></a> | <a href="<tmpl_var recentChangesUrl>"><tmpl_var
 recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

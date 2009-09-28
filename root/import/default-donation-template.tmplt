@@ -37,7 +37,7 @@ URL         : root/import/default-donation-template
 	</tmpl_if>
 
 	<tmpl_if displayTitle>
-		<h3 class="title"><tmpl_var title></h2>
+		<h3 class="title"><tmpl_var title></h3>
 	</tmpl_if>
 
 

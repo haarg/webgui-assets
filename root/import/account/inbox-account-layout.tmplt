@@ -1,0 +1,59 @@
+==== Template ================================================================
+Asset ID    : gfZOwaTWYjbSoVaQtHBBEw
+Menu Title  : Inbox Account Layout
+Parent      : root/import/account/inbox
+Title       : Inbox Account Layout
+URL         : root/import/account/inbox-account-layout
+==== headBlock ===============================================================
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="divclear">
+    <ul class="topTabs">
+        <tmpl_loop account_loop>
+        <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
+        </tmpl_loop>
+    </ul>
+</div>
+<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
+<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<div class="subContent">
+<div class="yui-skin-sam">
+    <div id="wgAccountTabs" class="yui-navset">
+        <div class="cleardiv">
+            <tmpl_if user_invitations_enabled><a href="<tmpl_var invite_friend_url>" class="view">^International(invite a friend,Account_Inbox);</a></tmpl_if>
+            <ul class="yui-nav">
+                <li <tmpl_if is_tab_inbox>class="selected"</tmpl_if>><a href="<tmpl_var view_inbox_url>" title="^International(messages label,Account_Inbox);"><em>^International(messages label,Account_Inbox); (<tmpl_var unread_message_count>)</em></a></li>
+                <tmpl_if invitations_enabled><li <tmpl_if is_tab_invitations>class="selected"</tmpl_if>><a href="<tmpl_var view_invitations_url>" title="^International(invitations label,Account_Inbox);"><em>^International(invitations label,Account_Inbox); (<tmpl_var invitation_count>)</em></a></li></tmpl_if>
+            </ul>
+        </div>
+        <div class="yui-content">
+            <div id="tab1">
+                <tmpl_var content>
+            </div>
+        </div> 
+    </div>
+</div>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Layout
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

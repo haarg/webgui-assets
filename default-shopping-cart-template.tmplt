@@ -22,12 +22,9 @@ URL         : default-shopping-cart-template
 				padding:3px 5px;
 			}
 
-			#shoppingCart input, #shoppingCart .summary select {
-				text-align:right;
-				border:solid gray 1px;
-				background: url(^FileUrl(shopping-cart-collateral-items/input_bg.jpg);) repeat-x top left;
-				padding-right:2px;
-				font-size:10px;
+			#chooseAddressButton, #checkoutButton {
+				color: white;
+				background-color: green;					
 			}
 			#shoppingCart tr.alt td {
 				background-color:#F0F0F0;
@@ -185,6 +182,15 @@ URL         : default-shopping-cart-template
 <tr>
 	<td>&nbsp;</td>
 </tr>
+<tmpl_if isCashier>
+<tr>
+	<td><b>^International(order for,Shop);</b></td>
+	<td colspan="5"><tmpl_if posUserId><tmpl_var posUsername><br /></tmpl_if><tmpl_var posLookupForm></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+</tmpl_if>
 <tr>
 	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_var checkoutButton><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
 </tr>

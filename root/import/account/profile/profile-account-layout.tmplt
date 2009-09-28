@@ -1,0 +1,66 @@
+==== Template ================================================================
+Asset ID    : FJbUTvZ2nUTn65LpW6gjsA
+Menu Title  : Profile Account Layout
+Parent      : root/import/account/profile
+Title       : Profile Account Layout
+URL         : root/import/account/profile/profile-account-layout
+==== headBlock ===============================================================
+<link rel="stylesheet" href="^Extras(yui/build/tabview/assets/skins/sam/tabview.css);" type="text/css">
+<link rel="stylesheet" href="^Extras(account/account.css);" type="text/css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var form_header>
+<div class="divclear">
+    <tmpl_if is_edit><input type="submit" class="topbutton" value="^International(save changes,Account_Profile);" /></tmpl_if>
+    <ul class="topTabs">
+        <tmpl_loop account_loop>
+        <li><a href="<tmpl_var url>" title="<tmpl_var title>" <tmpl_if isActive>class="selected"</tmpl_if>><b><tmpl_var title></b></a></li>
+        </tmpl_loop>
+    </ul>
+</div>
+<!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
+<!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
+<tmpl_unless is_edit><a href="<tmpl_var edit_profile_url>" class="profile_displayView">^International('back to profile label','Account_Profile');</a></tmpl_unless>
+<div class="<tmpl_if is_edit>subContent<tmpl_else>profile_displaySubContent</tmpl_if>">
+    <div class="yui-skin-sam">
+        <div id="wgAccountTabs" class="yui-navset">
+            <div class="cleardiv">
+                <tmpl_if is_edit>
+                <a href="<tmpl_var view_profile_url>" class="view">^International(profile as others label,Account_Profile);</a>
+                <ul class="yui-nav">
+                    <tmpl_loop profile_category_loop>
+                    <li <tmpl_if profile_category_isActive>class="selected"</tmpl_if>><a href="#tab<tmpl_var profile_category_index>" title="<tmpl_var profile_category_label>"><em><tmpl_var profile_category_shortLabel></em></a></li>
+                    </tmpl_loop>
+                </ul>
+                </tmpl_if>
+            </div>
+            <div class="yui-content">
+                <tmpl_var content>
+                <tmpl_if is_edit><div>*&nbsp;-&nbsp;&nbsp;^International('required field',Account_Profile);<br />&dagger;&nbsp;-&nbsp;^International('set by admin',Account_Profile);</div></tmpl_if>
+            </div> 
+        </div>
+    </div>
+</div>
+<tmpl_if is_edit><input type="submit" class="bottombutton" value="^International(save changes,Account_Profile);" /><br /></tmpl_if>
+<tmpl_var form_footer>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Layout
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,76 @@
+==== Template ================================================================
+Asset ID    : 75CmQgpcCSkdsL-oawdn3Q
+Menu Title  : Default Edit Profile Template
+Parent      : root/import/account/profile
+Title       : Default Edit Profile Template
+URL         : root/import/account/profile/default-edit-profile-template
+==== headBlock ===============================================================
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/tabview/tabview-min.js);"></script>
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function() {
+    var tabView = new YAHOO.widget.TabView('wgAccountTabs');
+});
+</script>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_loop profile_category_loop>
+<div id="tab<tmpl_var profile_category_index>">
+<table class="Profile_registration" border="0" cellspacing="0" cellpadding="0" width="100%">
+    <tbody>
+    <tr>
+        <td class="yourselfBG">	
+            <table cellspacing="5" cellpadding="1" border="0" width="100%" id="inboxTbl">
+                <tbody>
+                <tr>
+                    <td class="bar">
+                        <tmpl_var user_full_name> <br />
+                        <span class="member">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
+                    </td>
+                </tr>
+                <tmpl_if profile_errors>
+                <tr>
+                    <td id="profileErrors"><tmpl_loop profile_errors><tmpl_var error_message><br /></tmpl_loop></td>
+                </tr>
+                </tmpl_if>
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="2" cellspacing="0">
+                            <tbody>
+                                <tmpl_loop profile_fields_loop>
+                                <tr><td><tmpl_var profile_field_label><tmpl_if profile_field_required>*</tmpl_if></td><td><tmpl_var profile_field_form></td><td><tmpl_var profile_field_privacy_form><tmpl_unless profile_field_viewable>&dagger;</tmpl_unless></td></tr>
+                                </tmpl_loop>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>
+</div>
+</tmpl_loop>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Profile/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,57 @@
+==== Template ================================================================
+Asset ID    : d8jMMMRddSQ7twP4l1ZSIw
+Menu Title  : Default Survey Take
+Parent      : root/import/survey
+Title       : Default Survey Take
+URL         : root/import/survey/default-survey-take
+==== headBlock ===============================================================
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/fonts/fonts-min.css" />
+<link rel="stylesheet" type="text/css" href="/extras/yui/build/assets/skins/sam/skin.css" />
+<link rel="stylesheet" type="text/css" href="/extras/wobject/Survey/survey.css" />
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="yui-skin-sam">
+    <div class="spacer"><p></p></div>
+
+    <tmpl_if user_canTakeSurvey></tmpl_if>
+
+	    <script type="text/javascript" src="/extras/yui/build/utilities/utilities.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/container/container-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/menu/menu-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/button/button-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/calendar/calendar-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/json/json-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/logger/logger-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/resize/resize-min.js"></script>
+	    <script type="text/javascript" src="/extras/yui/build/slider/slider-min.js"></script>
+	
+	    <script type="text/javascript" src="/extras/wobject/Survey/administersurvey/comm.js"></script>
+	    <script type="text/javascript" src="/extras/wobject/Survey/administersurvey.js"></script>
+	
+	    <div class="survey-header"></div>
+	    <div id="survey"></div>
+	            
+	    <input type=hidden id=assetPath value=<tmpl_var url>>
+
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Take
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

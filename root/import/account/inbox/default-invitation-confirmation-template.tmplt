@@ -1,0 +1,41 @@
+==== Template ================================================================
+Asset ID    : 5A8Hd9zXvByTDy4x-H28qw
+Menu Title  : Default Invitation Confirmation Template
+Parent      : root/import/account/inbox
+Title       : Default Invitation Confirmation Tempalte
+URL         : root/import/account/inbox/default-invitation-confirmation-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>^International(invitation confirm label,Account_Inbox);</h2>
+<p>^International(invitation confirm message,Account_Inbox);</p>
+<table cellpadding="3" cellspacing="0" border="0">
+    <tbody>
+        <tmpl_loop friends_loop>
+        <tr><td><tmpl_if is_denied>^International('you have not been added','Friends',<tmpl_var friend_name>);<tmpl_else>^International('you have been added','Friends',<tmpl_var friend_name>);</tmpl_if></td></tr>
+        </tmpl_loop>
+    </tbody>
+</table>
+<p><a href="<tmpl_var view_invitations_url>">^International(invitations back label,Account_Inbox);</a></p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Inbox/Confirm
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

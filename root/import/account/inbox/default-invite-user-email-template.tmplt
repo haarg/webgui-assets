@@ -1,0 +1,33 @@
+==== Template ================================================================
+Asset ID    : XgcsoDrbC0duVla7N7JAdw
+Menu Title  : Default Invite User Email Template
+Parent      : root/import/account/inbox
+Title       : Default Invite User Email Tempalte
+URL         : root/import/account/inbox/default-invite-user-email-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p><tmpl_var message></p>
+<p><tmpl_var url></p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Inbox/InviteUserMessage
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

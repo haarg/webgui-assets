@@ -1,0 +1,74 @@
+==== Template ================================================================
+Asset ID    : wAc4azJViVTpo-2NYOXWvg
+Menu Title  : Default Question Edit
+Parent      : root/import/survey
+Title       : Default Question Edit
+URL         : root/import/survey/default-question-edit
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id='question'>
+<div class='hd'>^International('please enter question information','Asset_Survey');</div>
+<div class='bd'>
+    <form name='form' method='POST' action='?func=submitObjectEdit'>
+    <p>^International('question number','Asset_Survey'); <tmpl_var displayed_id>
+    <input type='hidden' name='id' value='<tmpl_var id>'>
+    <input type='hidden' name='delete' id='delete' value=0>
+    <input type='hidden' name='copy' id='copy' value=0>
+    <p>^International('question text','Asset_Survey');
+    <textarea name='text'><tmpl_var text></textArea>
+    <p>^International('question variable name','Asset_Survey');<input maxlength=35 size=10 type=text value='<tmpl_var variable>' name=variable size=2></p>
+    <p>^International('randomize answers','Asset_Survey');
+        <input type='radio' name='randomizeAnswers' value=1 <tmpl_if randomizeAnswers> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='randomizeAnswers' value=0 <tmpl_unless randomizeAnswers> checked </tmpl_unless>>^International('no','Asset_Survey');
+    <p>^International('question type','Asset_Survey');
+    <select name='questionType'>
+    <tmpl_loop questionType>
+        <option value='<tmpl_var text>' <tmpl_if selected>selected</tmpl_if>><tmpl_var text></option>
+    </tmpl_loop>
+    </select>
+    <p>^International('randomized words','Asset_Survey');
+    <textarea name=randomWords><tmpl_var randomWords></textArea>
+    <p>^International('vertical display','Asset_Survey');
+        <input type='radio' name='verticalDisplay' value=1 <tmpl_if 'verticalDisplay'> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='verticalDisplay' value=0 <tmpl_unless 'verticalDisplay'> checked </tmpl_unless>>^International('no','Asset_Survey');
+
+    <p>^International('show text in button','Asset_Survey');
+        <input type='radio' name='textInButton' value=1 <tmpl_if textInButton> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='textInButton' value=0 <tmpl_unless textInButton> checked </tmpl_unless>>^International('no','Asset_Survey');
+
+    <p>^International('allow comment','Asset_Survey');
+        <input type='radio' name='allowComment' value=1 <tmpl_if allowComment> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='allowComment' value=0 <tmpl_unless allowComment> checked </tmpl_unless>>^International('no','Asset_Survey');
+    <span id='commentParams'><p>&nbsp;&nbsp; Cols:<input type=text size=2 value='<tmpl_var commentCols>' name=commentCols> Rows:
+            <input type=text size=2 value='<tmpl_var commentRows>' name=commentRows> </p></span>
+    <p>^International('maximum number of answers','Asset_Survey');<input type=text value='<tmpl_var maxAnswers>' name=maxAnswers size=2>
+    <p>^International('required','Asset_Survey');
+        <input type='radio' name='required' value=1 <tmpl_if required> checked </tmpl_if>>^International('yes','Asset_Survey');
+        <input type='radio' name='required' value=0 <tmpl_unless required> checked </tmpl_unless>>^International('no','Asset_Survey');
+    <p>^International('question value','Asset_Survey');<input maxlength=10 size=6 type=text value='<tmpl_var value>' name=value></p>
+</form>
+</div>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

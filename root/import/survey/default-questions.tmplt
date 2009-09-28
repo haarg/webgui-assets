@@ -1,0 +1,245 @@
+==== Template ================================================================
+Asset ID    : CxMpE_UPauZA3p8jdrOABw
+Menu Title  : Default Questions
+Parent      : root/import/survey
+Title       : Default Questions
+URL         : root/import/survey/default-questions
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id="survey-header">
+        <div id=headertitle><tmpl_var name='title'></div>
+        <div id=headertext><tmpl_var name='text'></div>
+</div>
+<tmpl_if name="showProgress">
+	<div id="progress">
+		<tmpl_var name='questionsAnswered'> out of <tmpl_var name='totalQuestions'>
+	</div>
+</tmpl_if>
+<tmpl_if name="showTimeLimit">
+	<div id="progress">
+		<tmpl_var name="minutesLeft"> minutes left
+	</div>
+</tmpl_if>
+<div id='questions'>
+
+<form name='surveyForm' onsubmit="return false;">
+
+<tmpl_loop name='questions'>
+    <div class='question'>
+<p><span id='<tmpl_var name='id'>required'></span><tmpl_var name='text'></p></div>
+
+    
+<tmpl_if name='multipleChoice'>
+        <tmpl_if name='maxMoreOne'>
+<!--            <div>selections left: <span id='<tmpl_var name='id'>max'><tmpl_var name='maxAnswers'></div>-->
+        </tmpl_if>
+    </tmpl_if>
+
+
+    
+    <tmpl_if name='fileLoader'>
+        <tmpl_loop name='answers'>
+            <tmpl_var name='verts'>
+            <span class=answer>
+                <input type='file' name='<tmpl_var name="id">' id='<tmpl_var name=id>' size='50' />
+            </span>
+            <tmpl_if name='verbatim'>
+                <span> <input type=text size=50 name= '<tmpl_var name='id'>verbatim' ></span>
+            </tmpl_if>  
+            <tmpl_var name='verte'>
+        </tmpl_loop>
+    </tmpl_if>
+
+    <tmpl_if name='hidden'>
+    <tmpl_loop name='answers'>
+            <input type='hidden' name='<tmpl_var name="id">' value='<tmpl_var name='recordedAnswer'>'>
+    </tmpl_loop>
+    </tmpl_if>
+
+    <tmpl_if name='textType'>
+        <tmpl_loop name=answers>
+            <tmpl_var name='verts'>
+            <span class=answer>
+        <tmpl_var name="text">
+                <textarea name="<tmpl_var name="id">" id="<tmpl_var name="id">" rows="<tmpl_var name="textRows">" cols="<tmpl_var name="textCols">"></textarea><br />
+            </span>
+            <tmpl_if name='verbatim'>
+                <span><input type=text size=50 name='<tmpl_var name='id'>verbatim'></span>
+            </tmpl_if>  
+            <tmpl_var name='verte'>
+        </tmpl_loop>
+    </tmpl_if>
+
+
+    <tmpl_if name='multipleChoice'>
+        <table class="scale">
+            <tmpl_if name=verticalDisplay>
+                <tmpl_loop name=answers>
+                    <tr>
+                        <td align="center"  width=75px>
+                            <tmpl_if name='textInButton'>
+                                <input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var name='recordedAnswer'>">
+                            <tmpl_else>
+                                <input type=button class='mcbutton' id="<tmpl_var name='id'>button">
+                            </tmpl_if>
+                            <input type=hidden name="<tmpl_var name='id'>" id="<tmpl_var name='id'>" value="">
+                        </td>
+                        <td align="left">
+                            <tmpl_var name='text'>
+                        </td>
+                        <tmpl_if name='verbatim'>
+                            <td>
+                                <input type=text size=50 id='<tmpl_var name='id'>verbatim' name='<tmpl_var name='id'>verbatim'>
+                            </td>
+                        </tmpl_if>  
+                    </tr>
+                </tmpl_loop>
+            <tmpl_else>
+                <tr>
+                    <tmpl_loop name=answers>
+                        <th>
+                            <tmpl_var name='text'>
+                        </th>
+                    </tmpl_loop>
+                </tr>
+                <tr>
+                    <tmpl_loop name=answers>
+                        <td align="center"  width=75px>
+                <tmpl_if name='textInButton'>
+                    <input type=button class='mcbutton' id="<tmpl_var name='id'>button" value="<tmpl_var name='recordedAnswer'>">
+                <tmpl_else>
+                    <input type=button class='mcbutton' id="<tmpl_var name='id'>button">
+                </tmpl_if>
+                <input type=hidden name="<tmpl_var name='id'>" id="<tmpl_var name='id'>" value="">
+                            <tmpl_if name='verbatim'>
+                                <span><input type=text size=50 id='<tmpl_var name='id'>verbatim' name='<tmpl_var name='id'>verbatim'></span>
+                            </tmpl_if>  
+                        </td>
+                    </tmpl_loop>
+                </tr>
+            </tmpl_if>
+        </table>
+    </tmpl_if>
+
+     
+    <tmpl_if name='dateType'>
+        <tmpl_loop name=answers>
+            <tmpl_var name='verts'>
+            <span class=dateanswer>
+                    <table><tr><td/><td><tmpl_var name='text'></td><td/></tr>
+                    <div id='<tmpl_var name='id'>container'></div>
+                    <input name='<tmpl_var name='id'>' id='<tmpl_var name='id'>' type=text></input>
+                <span id='<tmpl_var name='id'>button'></span>
+            <tmpl_if name='verbatim'>
+                <span><input size=50 type=text name='<tmpl_var name='id'>verbatim'></span>
+            </tmpl_if>  
+            <tmpl_var name='verte'>
+        </tmpl_loop>    
+    </tmpl_if>
+
+    <tmpl_if name='slider'>
+        <tmpl_if name='dualSlider'>
+
+            <tmpl_loop name='a1'>
+                <input type=hidden id='<tmpl_var name='id'>' name='<tmpl_var name='id'>' value=0>
+            </tmpl_loop>
+            <tmpl_loop name='a2'>
+                <input type=hidden id='<tmpl_var name='id'>' name='<tmpl_var name='id'>' value="<tmpl_var name='max'>">
+            </tmpl_loop>
+
+            <span class=answer>
+            <p><table><tr><td>
+            <tmpl_loop name='a1'>
+                <span id='<tmpl_var name='id'>show'>0</span>
+            </tmpl_loop>
+            </td><td></td><td>
+            <tmpl_loop name='a2'>
+                <span id='<tmpl_var name='id'>show'><tmpl_var name='max'></span>
+            </tmpl_loop>
+            </td></tr>
+            <tr><td>0&nbsp;&nbsp;</td><td>
+            <div id='<tmpl_var name='id'>slider-bg' tabindex='-1' title='Slider' class=slider-bg>
+            <tmpl_loop name='a1'>
+                <div id='<tmpl_var name='id'>slider-min-thumb' class=slider-min-thumb>
+            </tmpl_loop>
+            <img src='/extras/wobject/Survey/thumb-n.gif'></div>
+            <tmpl_loop name='a2'>
+                <div id='<tmpl_var name='id'>slider-max-thumb' class=slider-max-thumb>
+            </tmpl_loop>
+            <img src='/extras/wobject/Survey/thumb-n.gif'></div>
+            </div>
+            </div>
+            <tmpl_loop name='a2'>
+                <td><tmpl_var name='max'></td><td>
+            </tmpl_loop>
+            </table>
+
+            </span>
+
+        <tmpl_else>
+            <tmpl_loop name=answers>
+                <tmpl_var name='verts'>
+
+                      <span class=answer>
+                        <p><table><tr><td></td><td>
+                        |&nbsp;<input type=text id='<tmpl_var name='id'>' name='<tmpl_var name='id'>'>&nbsp;|&nbsp;
+            <span><tmpl_var name='text'></span>                        
+                        </td><td></td></tr>
+                        <tr><td>0&nbsp;&nbsp;</td><td>
+                        <div id='<tmpl_var name='id'>slider-bg' tabindex='-1' title='Slider' class=slider-bg>
+                        <div id='<tmpl_var name='id'>slider-thumb' class=slider-thumb>
+                                    <img src='/extras/wobject/Survey/thumb-n.gif'>
+                            </div>
+                                </div>
+                        <td><tmpl_var name='max'></td><td>
+                        </table>
+                        </span>
+
+                <tmpl_var name='verte'>
+            </tmpl_loop>    
+        </tmpl_if>
+    </tmpl_if>
+
+    <tmpl_if name='allowComment'>
+    
+        <p>Comment: <textarea name='<tmpl_var name="id">comment' rows='<tmpl_var name="commentRows">'  cols='<tmpl_var name="commentCols">'></textarea></p>
+    </tmpl_if>
+
+
+</tmpl_loop>
+<hr><input type=button id=submitbutton value=continue></input>
+</form>
+
+</div>
+
+<div id="survey-footer"></div>
+
+
+
+
+
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Survey/Take
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

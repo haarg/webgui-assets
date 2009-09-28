@@ -160,7 +160,7 @@ URL         : templates/thingy-default-search-thing
 						<td>													
 							<tmpl_if __FIRST__>
 								<tmpl_if canEditThingData>
-									<tmpl_var searchResult_delete_icon><tmpl_var searchResult_edit_icon>
+									<tmpl_var searchResult_delete_icon><tmpl_var searchResult_edit_icon><tmpl_var searchResult_copy_icon>
 								</tmpl_if>							
 								<a href="<tmpl_var searchResult_view_url>"><tmpl_var field_value></a>
 							<tmpl_else>

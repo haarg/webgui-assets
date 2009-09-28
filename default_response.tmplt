@@ -9,15 +9,14 @@ URL         : default_response
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-
 <h2><tmpl_var title></h2>
 
 <tmpl_if user.canViewReports>
-	<a href="<tmpl_var survey.url>"><tmpl_var survey.label></a> 
-	&bull;
-	<a href="<tmpl_var report.overview.url>"><tmpl_var report.overview.label></a> 
-	&bull;
-	<a href="<tmpl_var report.gradebook.url>"><tmpl_var report.gradebook.label></a> 
+    <a href="<tmpl_var survey.url>"><tmpl_var survey.label></a> 
+    &bull;
+    <a href="<tmpl_var report.overview.url>"><tmpl_var report.overview.label></a> 
+    &bull;
+    <a href="<tmpl_var report.gradebook.url>"><tmpl_var report.gradebook.label></a> 
 </tmpl_if>
 <a href="<tmpl_var delete.url>"><tmpl_var delete.label></a><p/>
 <b><tmpl_var start.date.label>:</b> <tmpl_var start.date.human> <tmpl_var start.time.human><br />

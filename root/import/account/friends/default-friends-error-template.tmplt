@@ -1,0 +1,37 @@
+==== Template ================================================================
+Asset ID    : 7Ijdd8SW32lVgg2H8R-Aqw
+Menu Title  : Default Friends Error Template
+Parent      : root/import/account/friends
+Title       : Default Friends Error Template
+URL         : root/import/account/friends/default-friends-error-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p>
+    <h2>^International(error label,Account_Friends);</h2>
+    <p><strong><tmpl_var error_message></strong></p>
+    <p><a href="<tmpl_var back_url>">^International(back label,Account_Inbox);</a></p>
+</p>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Account/Friends/Error
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

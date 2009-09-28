@@ -25,34 +25,43 @@ URL         : matrix-default-detailed-listing
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<h2><tmpl_var productName></h2>
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
 
+<h2><tmpl_var title></h2>
 
 <table class="content" border="0" cellspacing="5">
-<tr><td valign="top">
+<tr>
+	<td valign="top">
+	<span id="stickied"><button type="button">^International('hide stickied button label','Asset_Matrix');</button>
+</span><br />
+	<div id="attributes"></div>
+	</td>
+	<td valign="top">
 		<table class="content">
-		<tr><td><b>Web Site</b></td><td><a onclick="window.open('<tmpl_var productUrl.click>')" href="#"><tmpl_var productUrl></a></td></tr>
-		<tr><td><b>Version Number</b></td><td><tmpl_var versionNumber></td></tr>
-		<tr><td><b>Manufacturer</b></td><td><a onclick="window.open('<tmpl_var manufacturerUrl.click>')" href="#"><tmpl_var manufacturerName></a></td></tr>
-		<tr><td><b>Last Updated</b></td><td><tmpl_var lastUpdated.date></td></tr>
-		<tr><td><b>Clicks</b></td><td><tmpl_var clicks></td></tr>
-		<tr><td><b>Views</b></td><td><tmpl_var views></td></tr>
-		<tr><td><b>Compares</b></td><td><tmpl_var compares></td></tr>
-		<tr><td><b>Screenshot</b></td><td><a href="<tmpl_var screenshot>"><img src="<tmpl_var thumbnail>" alt="Screenshot"`></a></td></tr>
+		<tr><td><b>^International('web site label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></td></tr>
+		<tr><td><b>^International('verion label','Asset_MatrixListing');</b></td><td><tmpl_var version></td></tr>
+		<tr><td><b>^International('manufacturer label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a></td></tr>
+		<tr><td><b>^International('last updated label','Asset_MatrixListing');</b></td><td><tmpl_var lastUpdated_date></td></tr>
+		<tr><td><b>^International('clicks label','Asset_Matrix');</b></td><td><tmpl_var clicks></td></tr>
+		<tr><td><b>^International('views label','Asset_Matrix');</b></td><td><tmpl_var views></td></tr>
+		<tr><td><b>^International('compares label','Asset_Matrix');</b></td><td><tmpl_var compares></td></tr>
+		<tr><td><b>^International('screenshots label','Asset_MatrixListing');</b></td><td><tmpl_var screenshots></a></td></tr>
 		</table>
 	</td>
 	<td valign="top" style="background-color:silver;">&nbsp;</td>
 	<td valign="top">
 		<tmpl_if description>
-			<b>Description</b><br />
+			<b>^International('description label','Asset_MatrixListing');</b><br />
 			<tmpl_var description><br /><br />
 		</tmpl_if>
 
-		<b>Contact Maintainer</b><br />
-		<tmpl_if email.wasSent>
-			<div style="color: green;">Message sent.<br /></div>
+		<b>^International('contact maintainer label','Asset_MatrixListing');</b><br />
+		<tmpl_if emailSent>
+			<div style="color: green;">^International('message sent message','Asset_MatrixListing');<br /></div>
 		</tmpl_if>
-		<tmpl_var email.form>
+		<tmpl_var emailForm>
 	</td>
 	<td valign="top" style="background-color:silver;">&nbsp;</td>
 	<td valign="top">
@@ -63,48 +72,8 @@ URL         : matrix-default-detailed-listing
 
 <p />
 
-<table width="100%"  class="content">
-<tr>
-	<td valign="top" style="width:50%">
-		<span class="category">Features</span>
-		<table class="content" width="180">
 
-		<tmpl_loop features_loop>
-		<tr<tmpl_if __ODD__> class="odd"<tmpl_else> class="even"</tmpl_if>>
-			<td><tmpl_var label><div class="wg-hoverhelp"><tmpl_var description></div></td>
-			<td><tmpl_var value></td>
-		</tr>
-		</tmpl_loop>
-		<tr>
-			<td>&#160;</td>
-			<td>&#160;</td>
-		</tr>
-		</table>
-		
-		<p />
-	</td>
-	<td valign="top" style="width:50%;">
-		<span class="category">Benefits</span>
-		<table class="content" width="180">
-
-		<tmpl_loop benefits_loop>
-		<tr<tmpl_if __ODD__> class="odd"<tmpl_else> class="even"</tmpl_if>>
-			<td><tmpl_var label><div class="wg-hoverhelp"><tmpl_var description></div></td>
-			<td class="<tmpl_var class>"><tmpl_var value></td>
-		</tr>
-		</tmpl_loop>
-		<tr>
-			<td>&#160;</td>
-			<td>&#160;</td>
-		</tr>
-		</table>
-	</td>
-</tr>
-</table>
-
-<p />
-
-<tmpl_var discussion>
+<tmpl_var comments>
 
 <tmpl_if user.canEdit>
   <br /> <hr /><a href="<tmpl_var edit.url>">Edit this listing.</a> <br />
