@@ -11,11 +11,11 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 	<div class="firstBar">	
 		<div class="buttons">
 			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
-            <a href="<tmpl_var url>?func=search">^International(template url_search,Asset_Gallery);</a>^M
-            <a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>^M
+            <a href="<tmpl_var url>?func=search">^International(template url_search,Asset_Gallery);</a>
+            <a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
 			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
 		</div>	
-		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
+		<div class="title"><tmpl_if displayTitle><a href="<tmpl_var url>"><tmpl_var title></a><tmpl_else>&nbsp;</tmpl_if></div>			
 	</div>	
 	
 	<div class="secondBar">	

@@ -25,7 +25,7 @@ URL         : root/import/account/inbox/default-inbox-view-template
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </span>
                                     </tmpl_if>
-                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+                                <span class="WGinbox_messagerpp"><tmpl_var message_rpp></span>
 			</p>
                     
                 <table class="WGProfileFields">

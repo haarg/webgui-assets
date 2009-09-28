@@ -52,18 +52,18 @@ URL         : faq_submission_form
 				<td><tmpl_var subscribe.form></td>
 			</tr>
 		</tmpl_unless>
-		<tmpl_if isNewThread>
-			<tmpl_if user.isModerator>
-				<tr>
-					<td><tmpl_var lock.label></td>
-					<td><tmpl_var lock.form></td>
-				</tr>
-				<tr>
-					<td><tmpl_var stick.label></td>
-					<td><tmpl_var sticky.form></td>
-				</tr>
-			</tmpl_if>
-		</tmpl_if>
+	</tmpl_if>
+    <tmpl_if user.isModerator>
+        <tr>
+            <td><tmpl_var lock.label></td>
+            <td><tmpl_var lock.form></td>
+        </tr>
+        <tr>
+            <td><tmpl_var stick.label></td>
+            <td><tmpl_var sticky.form></td>
+        </tr>
+    </tmpl_if>
+	<tmpl_if isNewPost>
         <tmpl_if useCaptcha>
             <tr>
                 <td><tmpl_var captcha_label></td>

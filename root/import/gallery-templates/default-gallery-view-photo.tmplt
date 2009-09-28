@@ -23,7 +23,7 @@ URL         : root/import/gallery-templates/default-gallery-view-photo
 			<a href="<tmpl_var gallery_url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
 			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>
 		</div>
-		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>
+		<div class="title"><tmpl_if gallery_displayTitle><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a><tmpl_else>&nbsp;</tmpl_if></div>
 	</div>
 
 	<div class="secondBar">

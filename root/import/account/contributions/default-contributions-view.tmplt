@@ -15,15 +15,15 @@ URL         : root/import/account/contributions/default-contributions-view
                         <span class="WGmember">^International(member since,Account_Inbox);&nbsp;^D(%z,<tmpl_var user_member_since>);</span>
                     </p>
 					
-                    <p class="bar">
+                    <p class="barRight">
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="WGProfile_pagination">
+                                    <span class="WGProfile_pagination">
                                         <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
-                                    </div>
+                                    </span>
                                     </tmpl_if>
-                                    <span class="WGmessagerpp"><tmpl_var contributions_rpp></span>
+                                    <span class="WGProfile_messagerpp"><tmpl_var contributions_rpp></span>
                     </p>
                        
 			<table class="WGProfileFields">
@@ -53,11 +53,11 @@ URL         : root/import/account/contributions/default-contributions-view
             
             <p class="bar">
                                     <tmpl_if pagination.pageCount.isMultiple>
-                                    <div class="WGProfile_pagination">
+                                    <span class="WGProfile_pagination">
                                         <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
                                         <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
-                                    </div>
+                                    </span>
                                     </tmpl_if>
                                     <span class="WGmessagerpp"><tmpl_var contributions_rpp></span>
                     </p>

@@ -70,7 +70,7 @@ security:
   filterCode: javascript
   groupIdEdit: '12'
   groupIdView: '7'
-  groupToEditPost: ''
+  groupToEditPost: '12'
   ownerUserId: '3'
   postGroupId: '2'
   subscriptionGroupId: ~

@@ -26,7 +26,7 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />									
 			</form>
 		</div>	
-		<tmpl_var title>
+		<tmpl_if displayTitle><tmpl_var title></tmpl_if>
 	</div>	
 
 	<tmpl_var description>			

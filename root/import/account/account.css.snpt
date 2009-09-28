@@ -289,7 +289,7 @@ ol.WGProfile_interests span {
 }
 .WGinbox_pagination {
 	display:inline;
-	text-align:center;
+	text-align:right;
 	width:20%;
 }
 .WGinbox_messagerpp {
@@ -335,12 +335,12 @@ ol.WGProfile_interests span {
 /* pagination */
 .WGProfile_pagination {
 	font-size:10px;
-	text-align:;
+	text-align:right;
+    width:20%;
 }
 .WGProfile_messagerpp {
 	font-size:10px;
 	display:inline;
-	float:right;
 	text-align:right;
 	width:20%;
 }
@@ -448,7 +448,7 @@ ol.WGProfile_interests span {
 	padding: 2px;
 }
 
-.WGProfile_registration .bar {
+.WGProfile_registration .bar, .WGProfile_registration .barRight {
 	background-color:#f2f5fa;
 	border: solid #d8dee8 1px;
 	color:#3e4f77;
@@ -457,8 +457,13 @@ ol.WGProfile_interests span {
 	margin:10px 0px 10px 0px;
 	min-height:25px;
 	padding:4px 4px 0px 4px;
-	text-align:center;
 	vertical-align:middle;
+}
+.WGProfile_registration .bar {
+    text-align: center;
+}
+.WGProfile_registration .barRight {
+    text-align: right;
 }
 .WGProfile_registration .bar a {
     color:#0B2259;
