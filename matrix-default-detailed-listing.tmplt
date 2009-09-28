@@ -18,15 +18,12 @@ URL         : matrix-default-detailed-listing
         <span class="editBtns"> 
         [
         	^AssetProxy(new-matrix/matrix-nav);
-        	<span style="display:<tmpl_if canEdit>block<tmpl_else><tmpl_if user.canApprove>block<tmpl_else><!--none-->block</tmpl_if></tmpl_if>">
+        	<span style="display:<tmpl_if canEdit>block<tmpl_else><tmpl_if canApprove>block<tmpl_else><!--none-->block</tmpl_if></tmpl_if>">
                 <tmpl_if canEdit>
-                    &bull; <a href="<tmpl_var editUrl>">Edit</a>
+                    &bull; <a href="<tmpl_var editUrl>">^International('edit label','Asset_MatrixListing');</a>
                 </tmpl_if>
-                <tmpl_if user.canApprove>
-                    <tmpl_if isPending>
-                        &bull; <a href="<tmpl_var approve.url>">Approve</a>
-                    </tmpl_if>
-                    &bull; <a href="<tmpl_var delete.url>">Delete</a>
+                <tmpl_if canApprove>
+                        &bull; <a href="<tmpl_var approveOrDenyUrl>">^International('approve or deny label','Asset_Matrix');</a>
                 </tmpl_if>
             </span>
         ]
@@ -44,21 +41,15 @@ URL         : matrix-default-detailed-listing
     
     <div id="rightDetails">
         <div class="description">
-            <tmpl_if description>
                 <strong>^International('description label','Asset_MatrixListing');</strong>
                 <tmpl_var description>
-            <tmpl_else>
-                <tmpl_if user.canEdit> 
-                    <a href="?func=edit">Add a Description</a>
-                <tmpl_else>
-                    No Description
-                </tmpl_if>
-            </tmpl_if>
         </div>
-        <div class="stats">
+        <tmpl_if screenshotThumbnail>
             <div class="screenshot">
-                <tmpl_var screenshots>
+                <a href="<tmpl_var screenshotsUrl>" target="_blank"><img src="<tmpl_var screenshotThumbnail>" border=0 /></a>
             </div>
+        </tmpl_if>
+        <div class="stats">
             <ul>
                 <li><strong>^International('web site label','Asset_MatrixListing');</strong><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></li>
                 <li><strong>^International('version label','Asset_MatrixListing');</strong><tmpl_var version></li>

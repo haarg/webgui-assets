@@ -121,21 +121,24 @@ URL         : matrix-default-view-template
             <td class="data"><tmpl_var listingCount></td>
         </tr>
         </table> 
-    </div>
-    
-    
     	
 
     <tmpl_if session.var.adminOn>
-		<tmpl_if pending_loop>
-            <div>^International('pending listings label','Asset_Matrix');:</div>
-        </tmpl_if>
-        <ul>
-            <tmpl_loop pending_loop>
-                <li><a href="<tmpl_var url>"><tmpl_var name></a></li>
+            <div class="title">^International('pending listings label','Asset_Matrix');:</div>
+	<tmpl_if pending_loop>
+        <table border="0" cellspacing="0" cellpadding="3" class="statistics">
+        <tmpl_loop pending_loop>
+                <tr>
+                <td class="label"></td>	
+                <td class="data"><a href="<tmpl_var url>"><tmpl_var name></a></td>
+                </tr>
             </tmpl_loop>
-        </ul>
+        </table>
+        </tmpl_if>
     </tmpl_if>
+
+    </div>
+
     <div style="clear:both"></div>
 </div>
 <div style="clear:both"></div>
