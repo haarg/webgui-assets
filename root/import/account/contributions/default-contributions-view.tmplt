@@ -59,7 +59,7 @@ URL         : root/import/account/contributions/default-contributions-view
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </span>
                                     </tmpl_if>
-                                    <span class="WGmessagerpp"><tmpl_var contributions_rpp></span>
+                                    <span class="WGProfile_messagerpp"><tmpl_var contributions_rpp></span>
                     </p>
                   
            

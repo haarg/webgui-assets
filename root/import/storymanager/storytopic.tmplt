@@ -19,7 +19,7 @@ URL         : root/import/storymanager/storytopic
 <div class="storyList">
 <ul>
 <tmpl_loop story_loop>
-<li><a href="<tmpl_var url>"><tmpl_var title></a></li>
+<li><tmpl_var deleteIcon><tmpl_var editIcon> <a href="<tmpl_var url>"><tmpl_var title></a></li>
 </tmpl_loop>
 </ul>
 </div>

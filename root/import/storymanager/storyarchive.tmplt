@@ -19,7 +19,7 @@ URL         : root/import/storymanager/storyarchive
 ^D(%z,<tmpl_var epochDate>);<br />
 <ul>
     <tmpl_loop story_loop>
-        ^D(%Z,<tmpl_var creationDate>); <a href="<tmpl_var url>"><tmpl_var title></a> <br/>
+        ^D(%Z,<tmpl_var creationDate>); <tmpl_var deleteIcon><tmpl_var editIcon> <a href="<tmpl_var url>"><tmpl_var title></a> <br/>
     </tmpl_loop>
 </ul>
 </tmpl_loop>
