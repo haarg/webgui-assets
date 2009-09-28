@@ -8,6 +8,8 @@ URL         : request-tracker-prototype
 ~
 ==== extraHeadTags ===========================================================
 ~
+==== feedDescription =========================================================
+
 ==== description =============================================================
 ~
 ==== Properties ==============================================================
@@ -23,9 +25,6 @@ display:
   postsPerPage: '10'
   printableStyleTemplateId: ''
   richEditor: PBrichedit000000000002
-  rssCapableRssEnabled: '0'
-  rssCapableRssLimit: 10
-  rssCapableRssTemplateId: PBtmpl0000000000000142
   searchTemplateId: ''
   sortBy: assetData.revisionDate
   sortOrder: desc
@@ -62,6 +61,14 @@ properties:
   karmaRatingMultiplier: '0'
   karmaSpentToRate: '0'
   usePreview: '0'
+rss:
+  feedCopyright: ''
+  feedHeaderLinks: ''
+  feedImage: ~
+  feedImageDescription: ''
+  feedImageLink: ''
+  feedTitle: ''
+  itemsPerFeed: '25'
 security:
   addEditStampToPosts: '0'
   allowReplies: '1'

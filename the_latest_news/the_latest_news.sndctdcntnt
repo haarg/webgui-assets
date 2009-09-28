@@ -10,6 +10,8 @@ URL         : the_latest_news/the_latest_news
 http://www.plainblack.com/news/news?func=viewRSS
 ==== extraHeadTags ===========================================================
 ~
+==== feedDescription =========================================================
+
 ==== description =============================================================
 This is the latest news from Plain Black and WebGUI pulled directly from the site every hour.
 ==== Properties ==============================================================
@@ -30,6 +32,16 @@ meta:
 properties:
   hasTerms: ''
   processMacroInRssUrl: '0'
+rss:
+  feedCopyright: ''
+  feedHeaderLinks: 'rss
+
+    atom'
+  feedImage: ~
+  feedImageDescription: ''
+  feedImageLink: ''
+  feedTitle: ''
+  itemsPerFeed: '25'
 security:
   groupIdEdit: '3'
   groupIdView: '7'

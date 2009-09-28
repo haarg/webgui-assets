@@ -46,6 +46,10 @@ URL         : root/import/shelf-default
 				<tmpl_var synopsis>
 				<span class="price">(<tmpl_var price>)</span>
 			</div>
+			
+			<div class="synopsis">
+				<tmpl_var addToCartForm>
+			</div>
 		</div>
 	</tmpl_loop>
     <tmpl_if pagination.pageCount.isMultiple>
