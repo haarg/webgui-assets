@@ -23,7 +23,7 @@ URL         : matrix-default-detailed-listing
 	<td valign="top">
 		<table class="content">
 		<tr><td><b>^International('web site label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></td></tr>
-		<tr><td><b>^International('verion label','Asset_MatrixListing');</b></td><td><tmpl_var version></td></tr>
+		<tr><td><b>^International('version label','Asset_MatrixListing');</b></td><td><tmpl_var version></td></tr>
 		<tr><td><b>^International('manufacturer label','Asset_MatrixListing');</b></td><td><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a></td></tr>
 		<tr><td><b>^International('last updated label','Asset_MatrixListing');</b></td><td><tmpl_var lastUpdated_date></td></tr>
 		<tr><td><b>^International('clicks label','Asset_Matrix');</b></td><td><tmpl_var clicks></td></tr>
@@ -67,7 +67,6 @@ URL         : matrix-default-detailed-listing
    <a href="<tmpl_var delete.url>">Delete this listing.</a><br />
   
 </tmpl_if>
-
 ==== extraHeadTags ===========================================================
 <link href="/extras/yui/build/container/assets/container.css" rel="stylesheet" type="text/css" />
 <link href="/extras/hoverhelp.css" rel="stylesheet" type="text/css" />
@@ -84,8 +83,6 @@ URL         : matrix-default-detailed-listing
 	width:100%;
 }
 </style>
-
-
 ==== Properties ==============================================================
 display:
   isHidden: '0'

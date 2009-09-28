@@ -56,17 +56,6 @@ URL         : linked_image_with_caption
 &#183;
 <tmpl_var pagination.nextPage>
 </tmpl_if>
-
-<tmpl_if pagination.isLastPage>
-<tmpl_if allowDiscussion>
-	<p />
-	<table width="100%" cellspacing="2" cellpadding="1" border="0">
-	<tr><td align="center" style="width:50%;" class="tableMenu"><a href="<tmpl_var replies.URL>"><tmpl_var replies.label> (<tmpl_var replies.count>)</a></td>
-	<td align="center" style="width:50%;" class="tableMenu"><a href="<tmpl_var post.url>"><tmpl_var post.label></a></td></tr>
-	</table>
-</tmpl_if>
-</tmpl_if>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

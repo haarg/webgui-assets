@@ -35,8 +35,8 @@ URL         : default-tt-template-row
       <td colspan="6" style="border-top:solid gray 2px;">
 	     <table width="100%" cellpadding="2" cellspacing="0">
 			<tr>
-				<td align="left"><a href="<tmpl_var report.lastWeek.url>" class="PM_blueLink"><b>&lsaquo;</b> Last Week</a></td>
-				<td align="right"><a href="<tmpl_var report.nextWeek.url>" class="PM_blueLink">Next Week <b>&rsaquo;</b></a></td>
+				<td align="left"><a href="<tmpl_var report.lastWeek.url>" class="PM_blueLink"><b>&lsaquo;</b> ^International(last week,Asset_TimeTracking);</a></td>
+				<td align="right"><a href="<tmpl_var report.nextWeek.url>" class="PM_blueLink">^International(next week,Asset_TimeTracking); <b>&rsaquo;</b></a></td>
 			</tr>
 			<tr>
 				<td colspan="2" style="border-bottom:solid #F0F0F0 1px;">&nbsp;</td>
@@ -69,10 +69,8 @@ URL         : default-tt-template-row
    </tbody>
 </table>
 </tmpl_unless>
-
 ==== extraHeadTags ===========================================================
-	
-
+~
 ==== Properties ==============================================================
 display:
   isHidden: '0'

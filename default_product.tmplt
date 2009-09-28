@@ -125,7 +125,7 @@ URL         : default_product
 		<ul>
 			<strong>^International(33,Asset_Product);</strong>
 			<tmpl_loop relatedproduct_loop>
-				<li><a href="<tmpl_var relatedproduct_url>"><tmpl_var relatedproduct_title></a></li>
+				<li><tmpl_if session.var.adminOn><tmpl_var relatedproduct_controls></tmpl_if><a href="<tmpl_var relatedproduct_url>"><tmpl_var relatedproduct_title></a></li>
 			</tmpl_loop>		
 		</ul>
 		</tmpl_if>			

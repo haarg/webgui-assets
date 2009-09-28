@@ -53,8 +53,8 @@ URL         : root/import/shelf-default
     <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
     <tmpl_loop pagination.pageLoop.upTo10><tmpl_if pagination.activePage><span class="active"><tmpl_var pagination.text></span><tmpl_else><a href="<tmpl_var pagination.url>"><tmpl_var pagination.text></a></tmpl_if> </tmpl_loop>
     &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText></a></tmpl_if>
-    </tmpl_if>
     </div>
+    </tmpl_if>
 	<div style="clear: both;"></div>
 </div>
 ==== extraHeadTags ===========================================================

@@ -12,13 +12,13 @@ URL         : root/import/calendar-templates/default-calendar-print-list-view
 <tmpl_loop events>
 	<p>
 	<tmpl_if new_year>
-		New Year,
+		^International(New Year,Asset_Calendar);,
 	</tmpl_if>
 	<tmpl_if new_month>
-		New Month,
+		^International(New Month,Asset_Calendar);,
 	</tmpl_if>
 	<tmpl_if new_day>
-		New Day>
+		^International(New Day,Asset_Calendar);
 	</tmpl_if>
 	</p>
 
@@ -34,8 +34,6 @@ URL         : root/import/calendar-templates/default-calendar-print-list-view
 <tmpl_if url_nextPage>
 	<a href="<tmpl_var url_nextPage>">^International(next page,Asset_Calendar); &gt;&gt;</a>
 </tmpl_if>
-
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

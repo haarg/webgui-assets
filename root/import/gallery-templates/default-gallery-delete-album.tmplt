@@ -11,8 +11,8 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 	<div class="firstBar">	
 		<div class="buttons">
 			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
-			<a href="<tmpl_var url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+            <a href="<tmpl_var url>?func=search">^International(template url_search,Asset_Gallery);</a>^M
+            <a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>^M
 			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
 		</div>	
 		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
@@ -26,7 +26,7 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
 			</form>
 		</div>	
-		Delete Album
+^International(template url_delete,Asset_Photo);
 	</div>		
 
 	<br /><br />
@@ -44,7 +44,6 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 	</div>
 
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 	@import url(^/(root/import/gallery-templates/gallery.css););
@@ -60,7 +59,6 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 <!--[if IE 7]>
 	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
 <![endif]-->
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'
