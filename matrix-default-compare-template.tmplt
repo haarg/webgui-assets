@@ -15,14 +15,14 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
     <div id="matrixLeft" style="width:25%">
         <div class="buttons">
             <script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
-            <span id="compare">
+            <span id="compare3">
                 <button type="button">^International('compare button label','Asset_Matrix');</button>
             </span>
             <span id="search">  
                 <button type="button" >^International('search label','Asset_Matrix');</button>
             </span>        
             <span class="yui-button yui-push-button">
-                <button type="button" onclick="javascript:location.replace('^/(<tmpl_var url>);')">Return to Matrix</a>
+                <button type="button" onclick="javascript:location.replace('^/(<tmpl_var url>);')">Return to Matrix</button>
             </span>
         </div>        
        
@@ -81,10 +81,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Matrix/Compare
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

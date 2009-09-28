@@ -10,8 +10,6 @@ style="border-style:none;" alt="pagination_bg.jpg"
 ~
 ==== extraHeadTags ===========================================================
 ~
-==== annotations =============================================================
-
 ==== Properties ==============================================================
 display:
   cacheTimeout: '0'
@@ -22,6 +20,7 @@ meta:
   isExportable: '0'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   templateId: PBtmpl0000000000000088
   thumbnailSize: '50'

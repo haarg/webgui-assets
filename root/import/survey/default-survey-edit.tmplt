@@ -71,6 +71,7 @@ URL         : root/import/survey/default-survey-edit
     	</div>
     </div>
     <div id="edit"></div>
+    <div id="editor"></div>
 
 </body>
 ==== extraHeadTags ===========================================================
@@ -84,10 +85,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Survey/Edit
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

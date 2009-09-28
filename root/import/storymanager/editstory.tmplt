@@ -1,0 +1,125 @@
+==== Template ================================================================
+Asset ID    : E3tzZjzhmYoNlAyP2VW33Q
+Menu Title  : Edit Story
+Parent      : root/import/storymanager
+Title       : Edit Story
+URL         : root/import/storymanager/editstory
+==== synopsis ================================================================
+~
+==== template ================================================================
+<fieldset class="editStory">
+<legend><tmpl_var formTitle></legend>
+<tmpl_var formHeader>
+<div>
+<span><tmpl_var saveButton> <tmpl_var cancelButton> <tmpl_var saveAndAddButton> </span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(99,WebGUI);</label>
+<span><tmpl_var titleForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(headline,Asset_Story);</label>
+<span><tmpl_var headlineForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(subtitle,Asset_Story);</label>
+<span><tmpl_var subtitleForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(byline,Asset_Story);</label>
+<span><tmpl_var bylineForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(location,Asset_Story);</label>
+<span><tmpl_var locationForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(keywords,Asset);</label>
+<span><tmpl_var keywordsForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(highlights,Asset_Story);</label>
+<span><tmpl_var highlightsForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(story,Asset_Story);</label>
+<span><tmpl_var storyForm></span>
+<div style="clear: both;"></div>
+</div>
+<tmpl_loop photo_form_loop>
+<div>
+<label>^International(photo,WebGUI);</label>
+<span><tmpl_var imgUploadForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(photo caption,Asset_Story);</label>
+<span><tmpl_var imgCaptionForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(photo byline,Asset_Story);</label>
+<span><tmpl_var imgBylineForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(photo alt,Asset_Story);</label>
+<span><tmpl_var imgAltForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(photo title,Asset_Story);</label>
+<span><tmpl_var imgTitleForm></span>
+<div style="clear: both;"></div>
+</div>
+<div>
+<label>^International(photo url,Asset_Story);</label>
+<span><tmpl_var imgUrlForm></span>
+<div style="clear: both;"></div>
+</div>
+<tmpl_if imgDeleteForm>
+<div>
+<label>^International(photo delete,Asset_Story);</label>
+<span><tmpl_var imgDeleteForm></span>
+<div style="clear: both;"></div>
+</div>
+</tmpl_if>
+<hr>
+</tmpl_loop>
+<div>
+<span><tmpl_var saveButton> <tmpl_var cancelButton> <tmpl_var saveAndAddButton> </span>
+<div style="clear: both;"></div>
+</div>
+<tmpl_var formFooter>
+</fieldset>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '1'
+properties:
+  namespace: Story/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

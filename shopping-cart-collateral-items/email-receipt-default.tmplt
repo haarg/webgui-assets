@@ -86,10 +86,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Shop/EmailReceipt
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '3'
   groupIdView: '7'

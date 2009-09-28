@@ -10,8 +10,6 @@ style="border-style:none;"
 ~
 ==== extraHeadTags ===========================================================
 ~
-==== annotations =============================================================
-
 ==== Properties ==============================================================
 display:
   cacheTimeout: '3600'
@@ -22,6 +20,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   templateId: PBtmpl0000000000000088
   thumbnailSize: '50'

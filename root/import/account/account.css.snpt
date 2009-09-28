@@ -1139,9 +1139,11 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   mimeType: text/css
   processAsTemplate: '0'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

@@ -13,13 +13,13 @@ URL         : root/import/calendar-templates/default-calendar-event
         <a class="tab" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
         <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
         <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">^International(486,WebGUI);</a>
+	<a class="tab" href="<tmpl_var urlList>">^International(486,WebGUI);</a>
         <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
         
         <div class="controls">
-            <a href="<tmpl_var url>?func=edit">^International(edit,Asset_Event);</a> 
-            &bull; <a href="<tmpl_var url>?func=delete">^International(delete,Asset_Event);</a> 
-            &bull; <a href="<tmpl_var url>?print=1">^International(print,Asset_Event);</a>
+            <a href="<tmpl_var urlEdit>">^International(edit,Asset_Event);</a> 
+            &bull; <a href="<tmpl_var urlDelete>">^International(delete,Asset_Event);</a> 
+            &bull; <a href="<tmpl_var urlPrint>">^International(print,Asset_Event);</a>
         </div>
     </td>
 </tr>
@@ -236,10 +236,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Calendar/Event
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

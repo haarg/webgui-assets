@@ -1,0 +1,51 @@
+==== Template ================================================================
+Asset ID    : yxD5ka7XHebPLD-LXBwJqw
+Menu Title  : StoryArchive
+Parent      : root/import/storymanager
+Title       : StoryArchive
+URL         : root/import/storymanager/storyarchive
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
+
+<tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+<p><tmpl_if canPostStories><a href="<tmpl_var addStoryUrl>">^International(add a story,Asset_StoryArchive);</a><br /></tmpl_if>
+<tmpl_var searchHeader><tmpl_var searchForm><tmpl_var searchButton><tmpl_var searchFooter>
+</p>
+<tmpl_loop date_loop>
+^D(%z,<tmpl_var epochDate>);<br />
+<ul>
+    <tmpl_loop story_loop>
+        ^D(%Z,<tmpl_var creationDate>); <a href="<tmpl_var url>"><tmpl_var title></a> <br/>
+    </tmpl_loop>
+</ul>
+</tmpl_loop>
+<p><tmpl_var pagination.pageList.upTo10></p>
+<p><a href="<tmpl_var rssUrl>">^International(rss,WebGUI');</a> &bull;
+<a href="<tmpl_var atomUrl>">Atom</a></p>
+<tmpl_var keywordCloud>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '1'
+properties:
+  namespace: StoryArchive
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

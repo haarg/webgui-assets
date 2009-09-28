@@ -24,6 +24,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   linkTitle: ~
   linkURL: http://

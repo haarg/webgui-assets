@@ -36,18 +36,7 @@ URL         : root/import/survey/default-section-edit
             </div>
             <input maxlength='35' size='10' type='text' value='<tmpl_var variable>' name='variable' size='2'>
         </p>
-       
-
-        <p>
-            <div>^International('questions per page','Asset_Survey');
-                <div class="wg-hoverhelp">^International('questions per page description','Asset_Survey');</div>
-            </div>
-    	    <select name='questionsPerPage'>
-            <tmpl_loop questionsPerPage>
-                <option value='<tmpl_var index>' <tmpl_if selected>selected=1</tmpl_if>><tmpl_var index></option>
-            </tmpl_loop>
-            </select>
-        </p>
+ 
 	
 	<p>
                     <div style="height: 40px">
@@ -80,7 +69,18 @@ URL         : root/import/survey/default-section-edit
             <input type='radio' name='randomizeQuestions' value=1 <tmpl_if randomizeQuestions> checked </tmpl_if>>^International('yes','Asset_Survey');
             <input type='radio' name='randomizeQuestions' value=0 <tmpl_unless randomizeQuestions> checked </tmpl_unless>>^International('no','Asset_Survey');
         </p>
-	
+	      
+
+        <p>
+            <div>^International('questions per page','Asset_Survey');
+                <div class="wg-hoverhelp">^International('questions per page description','Asset_Survey');</div>
+            </div>
+    	    <select name='questionsPerPage'>
+            <tmpl_loop questionsPerPage>
+                <option value='<tmpl_var index>' <tmpl_if selected>selected=1</tmpl_if>><tmpl_var index></option>
+            </tmpl_loop>
+            </select>
+        </p>
         <p>
             <div>^International('questions on section page','Asset_Survey');
                 <div class="wg-hoverhelp">^International('questions on section page description','Asset_Survey');</div>
@@ -140,6 +140,19 @@ URL         : root/import/survey/default-section-edit
             </div>
             <input type=text name=terminalUrl value='<tmpl_var terminalUrl>'>
         </p>
+
+	<p>
+	    <div>^International('logical section','Asset_Survey');
+		<div class="wg-hoverhelp">^International('logical section help','Asset_Survey');</div>
+	    </div>
+    	    <tmpl_if logical>
+    	        <input type='radio' name='logical' value=1  checked >^International('yes','Asset_Survey');
+    	        <input type='radio' name='logical' value=0>^International('no','Asset_Survey');
+    	    <tmpl_else>
+    	        <input type='radio' name='logical' value=1>^International('yes','Asset_Survey');
+    	        <input type='radio' name='logical' value=0  checked >^International('no','Asset_Survey');
+            </tmpl_if>
+	</p>
         
     </td></table>
     
@@ -148,7 +161,7 @@ URL         : root/import/survey/default-section-edit
             <div class="wg-hoverhelp">^International('section text description','Asset_Survey');</div>
         </div>
     </p> 
-    <textarea name="text" maxlength="2056" style="width:450px;height:100px;" id="sectionText"><tmpl_var text></textarea>
+    <textarea name="text" maxlength="2056" style="width:450px;height:150px;" id="texteditortarget"><tmpl_var text></textarea>
     
     </form>
 </div>
@@ -164,10 +177,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Survey/Edit
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

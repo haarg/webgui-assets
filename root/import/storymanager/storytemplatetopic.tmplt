@@ -1,0 +1,53 @@
+==== Template ================================================================
+Asset ID    : TbDcVLbbznPi0I0rxQf2CQ
+Menu Title  : Story Template Topic
+Parent      : root/import/storymanager
+Title       : Story Template Topic
+URL         : root/import/storymanager/storytemplatetopic
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
+<div class="viewStory">
+<p><span class="crumb">
+<tmpl_loop crumb_loop>
+<tmpl_if __LAST__>
+<tmpl_var title>
+<tmpl_else>
+<a href="<tmpl_var url>"><tmpl_var title></a>
+</tmpl_if>
+<tmpl_unless __LAST__>&gt;</tmpl_unless>
+</tmpl_loop>
+</span></p>
+<p><span class="storyTitle"><tmpl_var title><br /></span>
+<tmpl_if subtitle><span class="storySummary"><tmpl_var subtitle></span></tmpl_if>
+<tmpl_if highlights><div class="storyHighlights"><ul><tmpl_loop highlights_loop><li><tmpl_var highlight></li></tmpl_loop></ul></div></tmpl_if>
+</p>
+<p class="storyUpdated">^International(last updated,Asset); <tmpl_var updatedTime> ^International(ago,Asset_Story);</p>
+<p class="storyByline">^International(by,Asset_Collaboration); <tmpl_var byline></p>
+<p class="story"><tmpl_if location><span class="storyLocation"><tmpl_var location> &mdash; </span></tmpl_if><tmpl_var story></p>
+<p class="storyKeywords">^International(keywords,Asset); <tmpl_loop keyword_loop><a href="<tmpl_var url>"><tmpl_var keyword></a> </tmpl_loop></p>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '1'
+properties:
+  namespace: Story
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,36 @@
+==== Template ================================================================
+Asset ID    : 0EAJ9EYb9ap2XwfrcXfdLQ
+Menu Title  : Story Archive Asset List
+Parent      : root/import/storymanager
+Title       : Story Archive Asset List
+URL         : root/import/storymanager/keywordlist
+==== synopsis ================================================================
+~
+==== template ================================================================
+<ul class="keywordAssetList">
+<tmpl_loop asset_loop>
+<li><a href="<tmpl_var url>"><tmpl_var title></a>
+</tmpl_loop>
+</ul>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '1'
+properties:
+  namespace: StoryArchive/KeywordList
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

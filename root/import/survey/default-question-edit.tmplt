@@ -52,30 +52,6 @@ URL         : root/import/survey/default-question-edit
         </p>
         
 	<p>
-                    <div style="height: 40px">
-                <div>^International('jump to','Asset_Survey');
-                    <div class="wg-hoverhelp">^International('jump to description','Asset_Survey');</div>
-                </div>
-                        <div id="goto-yui-ac" style="float:left">
-                            <input id="goto" type="text" name="goto" value="<tmpl_var goto>">
-                            <div id="goto-yui-ac-container"></div>
-                        </div>
-                    </div>
-            </p>
-
-            <p>
-               <div>^International('jump expression','Asset_Survey');
-                <div class="wg-hoverhelp">^International('jump expression description','Asset_Survey');</div>
-            </div>
-            <div id="resize_gotoExpression_formId" style="width: 206px; height: 106px; overflow: hidden">
-                <textarea name="gotoExpression" id="gotoExpression_formId" style="width: 200px; height: 100px;"><tmpl_var gotoExpression></textarea>
-            </div>
-        </p>
-
-	    
-    </td><td>
-		
-        <p>
             <div>^International('required label','Asset_Survey');
                 <div class="wg-hoverhelp">^International('required description','Asset_Survey');</div>
             </div>
@@ -98,6 +74,10 @@ URL         : root/import/survey/default-question-edit
             <input type='radio' name='verticalDisplay' value='0' <tmpl_unless 'verticalDisplay'> checked </tmpl_unless>>^International('no','Asset_Survey');
         </p>
         
+
+
+    </td><td>
+
         <p>
             <div>^International('show text in button','Asset_Survey');
                 <div class="wg-hoverhelp">^International('show text in button description','Asset_Survey');</div>
@@ -135,6 +115,30 @@ URL         : root/import/survey/default-question-edit
             <input type=text value='<tmpl_var maxAnswers>' name='maxAnswers' size='2'>
         </p>
 
+
+    </td><td>
+
+	<p>
+                    <div style="height: 40px">
+                <div>^International('jump to','Asset_Survey');
+                    <div class="wg-hoverhelp">^International('jump to description','Asset_Survey');</div>
+                </div>
+                        <div id="goto-yui-ac" style="float:left">
+                            <input id="goto" type="text" name="goto" value="<tmpl_var goto>">
+                            <div id="goto-yui-ac-container"></div>
+                        </div>
+                    </div>
+            </p>
+
+            <p>
+               <div>^International('jump expression','Asset_Survey');
+                <div class="wg-hoverhelp">^International('jump expression description','Asset_Survey');</div>
+            </div>
+            <div id="resize_gotoExpression_formId" style="width: 206px; height: 106px; overflow: hidden">
+                <textarea name="gotoExpression" id="gotoExpression_formId" style="width: 200px; height: 100px;"><tmpl_var gotoExpression></textarea>
+            </div>
+        </p>
+
         
     </td></tr></table>
     
@@ -143,7 +147,7 @@ URL         : root/import/survey/default-question-edit
             <div class="wg-hoverhelp">^International('question text description','Asset_Survey');</div>
         </div>
     </p>
-    <textarea name='text' style="width:450px;height:100px;" id="questionText"><tmpl_var text></textarea>
+    <textarea name='text' style="width:450px;height:150px;" id="texteditortarget"><tmpl_var text></textarea>
     </form>
 </div>
 </div>
@@ -159,10 +163,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
+  usePackedHeadTags: '1'
 properties:
   namespace: Survey/Edit
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
+  usePacked: '1'
 security:
   groupIdEdit: '12'
   groupIdView: '7'
