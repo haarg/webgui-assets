@@ -22,7 +22,6 @@ URL         : matrix-default-view-template
 <script type='text/javascript'>
 var tooManyMessage = '^International('too many message','Asset_Matrix');';
 var tooFewMessage = '^International('too few message','Asset_Matrix');';
-
 </script>
 
 <div id="matrixLeft">
@@ -37,6 +36,7 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
         	<td><tmpl_var bestViews_sortButton></td>
             <td><tmpl_var bestCompares_sortButton></td>
             <td><tmpl_var lastUpdated_sortButton></td>
+            <td><tmpl_var alphanumeric_sortButton></td>
         </tr>
         </table>
         <tmpl_var compareForm>
@@ -161,7 +161,7 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
 </style>
 <![endif]-->
 
-
+<script src="^/(matrix/equal-cols.js);" type="text/javascript"></script>
 
 
 
