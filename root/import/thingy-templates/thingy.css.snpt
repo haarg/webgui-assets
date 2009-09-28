@@ -39,7 +39,7 @@ URL         : root/import/thingy-templates/thingy.css
 }
 .wgThingsWrapper img {	
 	display:block;
-	vertical-align:center;
+	vertical-align:middle;
 	float:left;
 }
 .wgThingsWrapper .label {
