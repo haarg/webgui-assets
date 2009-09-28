@@ -19,7 +19,7 @@ display:
   maxImageSize: '0'
   newWindow: '0'
   postFormTemplateId: PBtmpl0000000000000210
-  postReceivedTemplateId: default-post-received
+  postReceivedTemplateId: default_post_received1
   postsPerPage: '10'
   printableStyleTemplateId: ''
   richEditor: PBrichedit000000000002
