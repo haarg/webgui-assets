@@ -66,16 +66,14 @@ URL         : default-pm-template-dashboard
 			 <tmpl_if canEditProjects>
 	            <td>
 			        <!-- <a href="#"><img src="<tmpl_var extras>/add.gif" style="border-style:none;" alt="" /></a>&nbsp; -->
-				   <a href="<tmpl_var project.edit.url>"><img src="<tmpl_var extras>/edit.gif" style="border-style:none;" title="<tmpl_var project.edit.title>" alt="edit" /></a>&nbsp;
-				   <a href="javascript:void(doDelete('<tmpl_var project.delete.url>'));"><img src="<tmpl_var extras>/delete.gif" style="border-style:none;" title="<tmpl_var project.delete.title>" alt="delete" /></a>
+				   <a href="<tmpl_var project.edit.url>"><img src="<tmpl_var extras>/edit.gif" style="border-style:none;" title="<tmpl_var project.edit.title>" alt="^International(edit,Asset);" /></a>&nbsp;
+				   <a href="javascript:void(doDelete('<tmpl_var project.delete.url>'));"><img src="<tmpl_var extras>/delete.gif" style="border-style:none;" title="<tmpl_var project.delete.title>" alt="^International(delete,Asset);" /></a>
 			    </td>
              </tmpl_if>
 		  </tr>
 	   </tmpl_loop>
 	</tmpl_if>
 </table>
-
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 .fontSettings {
@@ -142,7 +140,6 @@ div.completeText {
 	z-index:2;
 }
 </style>
-
 ==== Properties ==============================================================
 display:
   isHidden: '0'

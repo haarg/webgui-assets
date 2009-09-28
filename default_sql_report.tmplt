@@ -23,7 +23,7 @@ URL         : default_sql_report
 </tmpl_if>
 
 <tmpl_if canDownload>
-	<a href="<tmpl_var downloadLink>">Download this data</a>
+	<a href="<tmpl_var downloadLink>">^International(Download this data,Asset_SQLReport);</a>
 </tmpl_if>
 
 <tmpl_if debugMode>
@@ -166,8 +166,6 @@ URL         : default_sql_report
 		<tmpl_var pagination.previousPage> <tmpl_var pagination.pageList.upTo20> <tmpl_var pagination.nextPage>
 	</div>
 </tmpl_if>
-
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

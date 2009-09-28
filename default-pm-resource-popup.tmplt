@@ -60,13 +60,12 @@ html, body {
 <input type="hidden" name="exclude" value="<tmpl_var exclude>" />
 <div class="grayArea">
 <b><tmpl_var searchText></b><br /><input type="text" name="search" value="<tmpl_var previousSearch>" size="20" class="inputBox" />
-<input type="submit" value="Search" class="searchBtn" /></form>
+<input type="submit" value="^International(364,WebGUI);" class="searchBtn" /></form>
 </div>
 
 <tmpl_if doingSearch><tmpl_if foundResults><p><tmpl_var foundMessage></p><tmpl_var resourceDiv>
 <tmpl_else><p><tmpl_var notFoundMessage></p></tmpl_if></tmpl_if>
 </body></html>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

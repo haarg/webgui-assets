@@ -7,7 +7,7 @@ URL         : default_post_received
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<p>Your post has been received and is being processed so it can be added to the site. Please be patient.</p><p><a href="<tmpl_var url>">Back to site.</a></p>
+<p>^International(post received,Asset_Post);</p><p><a href="<tmpl_var url>">^International(493,WebGUI);</a></p>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

@@ -11,8 +11,8 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 	<div class="firstBar">	
 		<div class="buttons">
 			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
-			<a href="<tmpl_var url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url>?func=search">^International(template search title,Asset_Gallery);</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
 			<a href="<tmpl_var url_rss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
 		</div>	
 		<div class="title"><a href="<tmpl_var url>">^International('template listFilesForUser title','Asset_Gallery',<tmpl_var username>);</a></div>			
@@ -23,7 +23,7 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
 				<input type="hidden" name="func" value="search"  />				
 				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />									
 			</form>
 		</div>	
 		<tmpl_var title>
@@ -31,7 +31,7 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 
 	<tmpl_var description>			
 
-	<h2>My Albums</h2>
+	<h2>^International(template listFilesForUser albums title,Asset_Gallery);</h2>
 	
 	<tmpl_loop user_albums>
 		<div class="wgAlbum">
@@ -55,7 +55,7 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 	
 	<div style="clear:both"></div>
 	
-	<h2>My Pictures</h2>
+	<h2>^International(template listFilesForUser pictures title,Asset_Gallery);</h2>
 	
 	<tmpl_loop user_files>
 		<div class="wgPicture">
@@ -73,8 +73,8 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 				</div>	
 			</tmpl_if>
 			<div class="details">
-				<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> Comments</a></div>
-				<div class="date">^D("%M/%d/%Y", Created ^International('template file creationDate','Asset_GalleryAlbum'););</div>
+				<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> ^International(template file creationDate,Asset_GalleryAlbum);</a></div>
+				<div class="date">^International('template file creationDate','Asset_GalleryAlbum'); ^D("%z", <tmpl_var creationDate> );</div>
 				<div style="clear:both"></div>
 			</div>
 			<div style="clear:both"></div>
@@ -95,7 +95,6 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 		</del>	
 	</div>	
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 	@import url(^/(root/import/gallery-templates/gallery.css););
@@ -106,7 +105,6 @@ URL         : root/import/gallery-templates/default-gallery-list-files-for-user
 		@import url(^/(root/import/gallery-templates/gallery-ie.css););
 	</style>
 <![endif]-->
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

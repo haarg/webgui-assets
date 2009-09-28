@@ -23,7 +23,7 @@ URL         : root/import/gallery-templates/default-gallery-delete-album
 			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
 				<input type="hidden" name="func" value="search"  />				
 				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />									
 			</form>
 		</div>	
 ^International(template url_delete,Asset_Photo);

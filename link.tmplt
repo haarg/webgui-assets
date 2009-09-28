@@ -23,10 +23,10 @@ URL         : link
 
 <tmpl_if content>
 	<div class="linkContent">
-	<b>Link Description</b><br /><br />
+	<b>^International(Link Description,Asset_Collaboration);</b><br /><br />
 	<tmpl_var content><br />
 	
-	<b>Link URL</b><br /><br />
+	<b>^International(Link URL,Asset_Collaboration);</b><br /><br />
 	<a href="<tmpl_var userDefined1>"><tmpl_var userDefined1></a><br /><br />
 	</div>
 </tmpl_if>
@@ -220,7 +220,7 @@ URL         : link
 		<a href="<tmpl_var previous.url>"><tmpl_var previous.label></a> 
 		&bull;
 	</tmpl_if>	
-	<a href="<tmpl_var collaboration.url>">List All Links</a>
+	<a href="<tmpl_var collaboration.url>">^International(List All Links,Asset_Collaboration);</a>
 	<tmpl_if next.url>
 		&bull;
 		<a href="<tmpl_var next.url>"><tmpl_var next.label></a> 
@@ -254,7 +254,6 @@ URL         : link
 		</tmpl_if>
 	</tmpl_unless>
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 .postBorder {

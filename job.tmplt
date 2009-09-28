@@ -22,30 +22,30 @@ URL         : job
 </tmpl_if>	
 
 <tmpl_if content>
-	<b>Job Description</b><br />
+	<b>^International(job description,Asset_Collaboration);</b><br />
 	<p><tmpl_var content></p>
 </tmpl_if>
 
 <tmpl_if userDefined3>
-	<b>Job Requirements</b><br />
+	<b>^International(job requirements,Asset_Collaboration);</b><br />
 	<p><tmpl_var userDefined3></p>
 </tmpl_if>
 
 <table width="100%">
 <tr>
-	<td class="tableHeader">Date Posted</td>
+	<td class="tableHeader">^International(date posted,Asset_Collaboration);</td>
 	<td class="tableData"><tmpl_var dateSubmitted.human>&#160;</td>
 </tr>
 <tr>
-	<td class="tableHeader">Location</td>
+	<td class="tableHeader">^International(location,Asset_Collaboration);</td>
 	<td class="tableData"><tmpl_var userDefined2>&#160;</td>
 </tr>
 <tr>
-	<td class="tableHeader">Compensation</td>
+	<td class="tableHeader">^International(compensation,Asset_Collaboration);</td>
 	<td class="tableData"><tmpl_var userDefined1>&#160;</td>
 </tr>
 <tr>
-	<td class="tableHeader">Views</td>
+	<td class="tableHeader">^International(views,Asset_Collaboration);</td>
 	<td class="tableData"><tmpl_var views>&#160;</td>
 </tr>
 </table>
@@ -275,7 +275,6 @@ URL         : job
 		</tmpl_if>
 	</tmpl_unless>
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 .postBorder {
@@ -356,7 +355,6 @@ URL         : job
 	font-size:9pt;	
 }
 </style>
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

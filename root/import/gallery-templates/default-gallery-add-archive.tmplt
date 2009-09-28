@@ -51,14 +51,12 @@ URL         : root/import/gallery-templates/default-gallery-add-archive
 	<tmpl_var form_end>
 
 </div>
-
 ==== extraHeadTags ===========================================================
 	<link href="^/(root/import/gallery-templates/admin.css);" rel="stylesheet" type="text/css" />
 
 	<!--[if IE 7]>
 	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
 	<![endif]-->
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

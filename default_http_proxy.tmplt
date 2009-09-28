@@ -28,7 +28,7 @@ URL         : default_http_proxy
 		<tmpl_var search.for>
 	<tmpl_else>
 		<!-- Error: Starting point not found -->
-		<b>Error: Search string <i><tmpl_var search.for></i> not found in content.</b>
+		<b>^International(Error: Search string,Asset_HttpProxy); <i><tmpl_var search.for></i> ^International(not found in content,Asset_HttpProxy);.</b>
 	</tmpl_if>
 </tmpl_if>
 
@@ -40,10 +40,9 @@ URL         : default_http_proxy
 		<tmpl_var stop.at>
 	<tmpl_else>
 		<!-- Warning: End point not found -->
-		<b>Warning: Ending search point <i><tmpl_var stop.at></i> not found in content.</b>
+		<b>^International(Warning: Ending search point,Asset_HttpProxy); <i><tmpl_var stop.at></i> ^International(not found in content,Asset_HttpProxy);.</b>
 	</tmpl_if>
 </tmpl_if>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

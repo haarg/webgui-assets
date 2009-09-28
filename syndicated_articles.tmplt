@@ -41,12 +41,11 @@ URL         : syndicated_articles
 	</tmpl_if>
 	<tmpl_if link>
 		<br />
-		<a href="<tmpl_var link>" style="font-size: 9px;">Read More...</a>
+		<a href="<tmpl_var link>" style="font-size: 9px;">^International(read more,WebGUI);...</a>
 	</tmpl_if>
 	<br />
 	<br />
 </tmpl_loop>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

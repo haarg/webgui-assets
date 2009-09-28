@@ -11,100 +11,100 @@ URL         : root/import/gallery-templates/default-gallery-view-photo
 	<tmpl_var controls>
 </tmpl_if>
 
-<div class="wgGallery">	
-	<div class="firstBar">	
-		<div class="buttons">			
+<div class="wgGallery">
+	<div class="firstBar">
+		<div class="buttons">
 			<tmpl_if canEdit>
 				<a href="<tmpl_var url_edit>">^International('template url_edit','Asset_Photo');</a>
 				<a href="<tmpl_var url_delete>">^International('template url_delete','Asset_Photo');</a>
 				<a href="<tmpl_var url_makeShortcut>">^International('template url_makeShortcut','Asset_Photo');</a>
-			</tmpl_if>			
-			<a href="<tmpl_var gallery_url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var gallery_url>?func=listFilesForUser">My Gallery</a>
-			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
-		</div>	
+			</tmpl_if>
+			<a href="<tmpl_var gallery_url>?func=search">^International(template search title,Asset_Gallery);</a>
+			<a href="<tmpl_var gallery_url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>
+		</div>
 		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>
-	</div>	
-	
-	<div class="secondBar">	
+	</div>
+
+	<div class="secondBar">
 		<div class="searchArea">
 			<a href="<tmpl_var url_album>">^International('template url_album','Asset_Photo');</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
 			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
-				<input type="hidden" name="func" value="search"  />				
-				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+				<input type="hidden" name="func" value="search"  />
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />
 			</form>
-		</div>	
+		</div>
 		<tmpl_var album_title> &middot;
-		<span class="author">^International('template by','Asset_Gallery');: <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a></span>		
-	</div>	
+		<span class="author">^International('template by','Asset_Gallery');: <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a></span>
+	</div>
 
 	<div class="wgSnapshot">
 		<fieldset>
-			<legend><tmpl_var title></legend>					
-			<a href="<tmpl_var fileUrl>" class="thumbnail"><img src="<tmpl_var thumbnailUrl>" alt="Image" /></a>						
+			<legend><p><tmpl_var title></p></legend>
+			<a href="<tmpl_var fileUrl>" class="thumbnail"><img src="<tmpl_var thumbnailUrl>" alt="Image" /></a>
 			<tmpl_if synopsis>
 				<div class="description">
 					<tmpl_var synopsis>
 				</div>
 			</tmpl_if>
-			<a href="<tmpl_var fileUrl>" class="fullSize">^International('template fileUrl','Asset_Photo');</a>			
+			<a href="<tmpl_var fileUrl>" class="fullSize">^International('template fileUrl','Asset_Photo');</a>
 			<div style="clear:both"></div>
 		</fieldset>
 	</div>
 	<div class="wgPictureDetails">
 		<fieldset>
-			<legend>Details</legend>
+			<legend>^International(template view details,Asset_Photo);</legend>
 			<div class="rowOne">
 				<div class="label">
 					^International('template creationDate','Asset_Photo');:
 				</div>
 				<div class="data">
-					^D("%z %Z", <tmpl_var revisionDate>); 
-				</div>				
+					^D("%z %Z", <tmpl_var revisionDate>);
+				</div>
 			</div>
 			<div class="rowTwo">
 				<div class="label">
 					^International('template views','Asset_Photo');:
-				</div>		
+				</div>
 				<div class="data">
 					<tmpl_var views>
-				</div>			
+				</div>
 			</div>
 			<div class="rowOne">
 				<div class="label">
 					^International('template by','Asset_Gallery');:
 				</div>
 				<div class="data">
-					<a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a> 
-				</div>				
+					<a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a>
+				</div>
 			</div>
 			<div class="rowTwo">
 				<div class="label">
 					^International('template friendsOnly label','Asset_Photo');:
-				</div>		
+				</div>
 				<div class="data">
 					<span style="color:green"><tmpl_if friendsOnly>^International('template friendsOnly yes','Asset_Photo');<tmpl_else>^International('template friendsOnly no','Asset_Photo');</tmpl_if></span>
-				</div>			
-			</div>	
+				</div>
+			</div>
 			<div class="rowOne">
 				<div class="label">
 					^International('template location','Asset_Photo');:
 				</div>
 				<div class="data">
-					<tmpl_var location> 
-				</div>				
+					<tmpl_var location>
+				</div>
 			</div>
 			<div class="rowTwo">
 				<div class="label">
-					Available Resolutions
-				</div>		
+					^International(template view available resolutions,Asset_Photo);
+				</div>
 				<div class="data">
 					<tmpl_loop resolutions_loop>
 						<a href="<tmpl_var url_download>"><tmpl_var resolution></a>
 					</tmpl_loop>
-				</div>			
-			</div>			
+				</div>
+			</div>
 		</fieldset>
 		<tmpl_if keywords>
 			<fieldset>
@@ -115,7 +115,7 @@ URL         : root/import/gallery-templates/default-gallery-view-photo
 			</fieldset>
 		</tmpl_if>
 		<fieldset>
-			<legend>More Details</legend>
+			<legend>^International(more details,Asset_Photo);</legend>
 			<div>
 				<tmpl_loop exifLoop>
 					<div class="<tmpl_if __ODD__>rowOne<tmpl_else>rowTwo</tmpl_if>">
@@ -123,28 +123,28 @@ URL         : root/import/gallery-templates/default-gallery-view-photo
 							<tmpl_var tag>:
 						</div>
 						<div class="data">
-							<tmpl_var value> 
-						</div>				
+							<tmpl_var value>
+						</div>
 					</div>
 				</tmpl_loop>
 			</div>
-		</fieldset>		
+		</fieldset>
 	</div>
 	<div style="clear:both"></div>
 	<div class="wgComments">
 		<div class="title">
-			^International('template comments title','Asset_Photo'); <tmpl_if canComment>[<a href="#" onclick="javascript:toggleView(this,'Post','Hide', 'postComments');">Post</a>]</tmpl_if>
+			^International('template comments title','Asset_Photo'); <tmpl_if canComment>[<a href="#" onclick="javascript:toggleView(this,'^International(post,Asset_Collaboration);','^International(hide,Asset_Photo);', 'postComments');">^International(post,Asset_Collaboration);</a>]</tmpl_if>
 		</div>
 		<tmpl_if canComment>
-			<div id="postComments" style="display:none">					
+			<div id="postComments" style="display:none">
 				<tmpl_var commentForm_start>
 					<div>
 						<tmpl_var commentForm_bodyText>
 						<br /><tmpl_var commentForm_submit>
 					</div>
-				<tmpl_var commentForm_end>														
+				<tmpl_var commentForm_end>
 			</div>
-		</tmpl_if>		
+		</tmpl_if>
 		<tmpl_loop commentLoop>
 			<div class="comment<tmpl_if __ODD__>Alt</tmpl_if>">
 				<div class="number"><tmpl_var __COUNTER__></div>
@@ -152,45 +152,19 @@ URL         : root/import/gallery-templates/default-gallery-view-photo
 					<tmpl_var bodyText>
 					<div class="posted">
 						^International('template by','Asset_Gallery'); <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var username></a> on <tmpl_var creationDate>
-						<tmpl_if canEdit>&bull; [<a href="<tmpl_var url_editComment>">Edit</a>] [<a href="<tmpl_var url_deleteComment>" onclick="return confirm('^International('template comment delete confirm','Asset_Photo');');">^International('template url_deleteComment','Asset_Photo');</a>]</tmpl_if>
+						<tmpl_if canEdit>&bull; [<a href="<tmpl_var url_editComment>">^International(Edit,Icon);</a>] [<a href="<tmpl_var url_deleteComment>" onclick="return confirm('^International('template comment delete confirm','Asset_Photo');');">^International('template url_deleteComment','Asset_Photo');</a>]</tmpl_if>
 					</div>
 				</div>
 				<div style="clear:both"></div>
 			</div>
-		</tmpl_loop>						
-	</div>	
+		</tmpl_loop>
+	</div>
 </div>
-
-~~
-<style type="text/css">
-	@import url(^/(root/import/gallery-templates/gallery.css););
-</style>
-	
-<!--[if IE ]>
-	<style type="text/css">
-		@import url(^/(root/import/gallery-templates/gallery-ie.css););
-	</style>
-<![endif]-->
-
-<script type="text/javascript">
-function toggleView( link, first, second, eid ) {
-	var e = document.getElementById( eid );
-	if ( e.style.display == "none" ) {			
-		e.style.display = "block";
-		link.innerHTML = second;
-	}
-	else {			
-		e.style.display = "none";
-		link.innerHTML = first;
-	}
-}
-</script>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 	@import url(^/(root/import/gallery-templates/gallery.css););
 </style>
-	
+
 <!--[if IE ]>
 	<style type="text/css">
 		@import url(^/(root/import/gallery-templates/gallery-ie.css););
@@ -200,17 +174,16 @@ function toggleView( link, first, second, eid ) {
 <script type="text/javascript">
 function toggleView( link, first, second, eid ) {
 	var e = document.getElementById( eid );
-	if ( e.style.display == "none" ) {			
+	if ( e.style.display == "none" ) {
 		e.style.display = "block";
 		link.innerHTML = second;
 	}
-	else {			
+	else {
 		e.style.display = "none";
 		link.innerHTML = first;
 	}
 }
 </script>
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

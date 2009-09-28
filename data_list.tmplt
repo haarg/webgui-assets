@@ -27,13 +27,13 @@ URL         : data_list
 
 <table width="100%">
 <tr>
-<td class="tableHeader">Entry ID</td>
+<td class="tableHeader">^International(Entry ID,Asset_DataForm);</td>
 <tmpl_loop field_loop>
   <tmpl_unless field.isMailField>
     <td class="tableHeader"><tmpl_var field.label></td>
   </tmpl_unless field.isMailField>
 </tmpl_loop field_loop>
-<td class="tableHeader">Submission Date</td>
+<td class="tableHeader">^International(Submission Date,Asset_DataForm);</td>
 </tr>
 <tmpl_loop record_loop>
 <tr>
@@ -47,8 +47,6 @@ URL         : data_list
 </tr>
 </tmpl_loop record_loop>
 </table>
-
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 h2{

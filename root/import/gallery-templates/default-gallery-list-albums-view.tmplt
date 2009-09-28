@@ -15,8 +15,8 @@ URL         : root/import/gallery-templates/default-gallery-list-albums-view
 	<div class="firstBar">	
 		<div class="buttons">
 			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
-			<a href="<tmpl_var url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url>?func=search">^International(template search title,Asset_Gallery);</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
 			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
 		</div>	
 		<div class="title"><tmpl_var title></div>			
@@ -27,7 +27,7 @@ URL         : root/import/gallery-templates/default-gallery-list-albums-view
 			<form action="<tmpl_var url>" enctype="multipart/form-data" method="GET" class="searchBox">
 				<input type="hidden" name="func" value="search"  />				
 				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />								
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />								
 			</form>
 		</div>	
 		<div class="desc"><tmpl_var description></div>
@@ -71,7 +71,6 @@ URL         : root/import/gallery-templates/default-gallery-list-albums-view
 	</div>
 	
 </div>
-
 ==== extraHeadTags ===========================================================
 	<style type="text/css">
 		@import url(^/(root/import/gallery-templates/gallery.css););
@@ -82,7 +81,6 @@ URL         : root/import/gallery-templates/default-gallery-list-albums-view
 			@import url(^/(root/import/gallery-templates/gallery-ie.css););
 		</style>
 	<![endif]-->
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

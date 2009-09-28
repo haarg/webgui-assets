@@ -19,8 +19,8 @@ URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
 				<a href="<tmpl_var url_edit>">^International(template url_edit,Asset_GalleryAlbum);</a>
 				<a href="<tmpl_var url_delete>">^International(template url_delete,Asset_GalleryAlbum);</a>
 			</tmpl_if>			
-			<a href="<tmpl_var gallery_url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var gallery_url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var gallery_url>?func=search">^International(template search title,Asset_Gallery);</a>
+			<a href="<tmpl_var gallery_url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
 			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
 		</div>	
 		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>			
@@ -34,7 +34,7 @@ URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
 			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
 				<input type="hidden" name="func" value="search"  />				
 				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />									
 			</form>
 		</div>	
 		<tmpl_var title> &middot;
@@ -65,8 +65,6 @@ URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
 	
 	<div style="clear:both"></div>
 </div>
-
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 	@import url(^/(root/import/gallery-templates/gallery.css););
@@ -86,7 +84,6 @@ URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
 <script type="text/javascript">
 	var ss  = new WebGUI.Slideshow();
 </script>
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

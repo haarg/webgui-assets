@@ -29,14 +29,13 @@ function go(formObj) {
 <tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
 <p style="margin:0px;">
 <select name="chooser" size="1" onchange="go(this.form)">
-<option value="none">Where do you want to go?</option>
+<option value="none">^International("Where do you want to go?","Asset_Navigation");</option>
 <tmpl_loop page_loop>
 	<option value="<tmpl_var page.url>"><tmpl_loop page.indent_loop>&nbsp;&nbsp;</tmpl_loop>- <tmpl_var page.menuTitle></option>
 </tmpl_loop>
 </select>
 </p>
 </form>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

@@ -116,44 +116,44 @@ a:hover {
 				  <td align="center" style="width:30%">
 				     <table cellpadding="2" cellspacing="0" border="0" width="95%">
 					    <tr class="qmmt_main">
-						   <td class="qmmt_text">Last Price</td>
+						   <td class="qmmt_text">^International(stocks.last,Asset_StockData);</td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.last></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Market Cap </td>
+						   <td class="qmmt_text"> ^International(Market Cap,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.cap></td>
 						</tr>
-						<tr class="qmmt_main"><td class="qmmt_text"> Change </td>
+						<tr class="qmmt_main"><td class="qmmt_text"> ^International(Change,Asset_StockData); </td>
 						   <td class="qmmt_text<tmpl_if stocks.net.isUp>_up<tmpl_else><tmpl_if stocks.net.isDown>_down</tmpl_if></tmpl_if>" style="text-align: right; font-weight: bold;">
 						      <img style="vertical-align:center;" src='<tmpl_var extrasFolder>/<tmpl_var stocks.net.icon>' alt="" /> <tmpl_var stocks.net>
 						   </td>
                         </tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Open </td>
+						   <td class="qmmt_text"> ^International(Open,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.open></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> Day High </td>
+						   <td class="qmmt_text"> ^International(Day High,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.high></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text">Bid</td>
+						   <td class="qmmt_text">^International(stocks.bid,Asset_StockData);</td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.bid></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> 52 Wk High </td>
+						   <td class="qmmt_text"> ^International(52 Wk High,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.year_high></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> E.P.S. </td>
+						   <td class="qmmt_text"> ^International(EPS,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.eps></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> Ex-Div Date </td>
+						   <td class="qmmt_text"> ^International(stocks.ex_div,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.ex_div></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Yield </td>
+						   <td class="qmmt_text"> ^International(Yield,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.yield></td>
 						</tr>
 				     </table>
@@ -161,43 +161,43 @@ a:hover {
 				  <td align="center" style="width:30%;">
 				     <table cellpadding="2" cellspacing="0" border="0" width="95%">
 					    <tr class="qmmt_main">
-						   <td class="qmmt_text"> Last Trade </td>
+						   <td class="qmmt_text"> ^International(Last Trade,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var lastUpdate.us></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Volume </td>
+						   <td class="qmmt_text"> ^International(Volume,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.volume.millions> m</td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text">% Change </td>
+						   <td class="qmmt_text">^International(% Change,Asset_StockData); </td>
 						   <td class="qmmt_text<tmpl_if stocks.net.isUp>_up<tmpl_else><tmpl_if stocks.net.isDown>_down</tmpl_if></tmpl_if>"  style="text-align: right; font-weight: bold;"><tmpl_var stocks.p_change>%</td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Prev Close </td>
+						   <td class="qmmt_text"> ^International(Prev Close,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.close></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> Day Low </td>
+						   <td class="qmmt_text"> ^International(Day Low,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.low></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Ask </td>
+						   <td class="qmmt_text"> ^International(stocks.ask,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.ask></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> 52 Wk Low </td>
+						   <td class="qmmt_text"> ^International(52 Wk Low,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.year_low></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> P/E Ratio </td>
+						   <td class="qmmt_text"> ^International(stocks.pe,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.pe></td>
 						</tr>
 						<tr class="qmmt_main">
-						   <td class="qmmt_text"> Dividend </td>
+						   <td class="qmmt_text"> ^International(Dividend,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.div></td>
 						</tr>
 						<tr class="qmmt_cycle">
-						   <td class="qmmt_text"> Exchange </td>
+						   <td class="qmmt_text"> ^International(Exchange,Asset_StockData); </td>
 						   <td class="qmmt_text" style="text-align: right; font-weight: bold;"><tmpl_var stocks.exchange></td>
 						</tr>
 				     </table>
@@ -212,14 +212,13 @@ a:hover {
 <table cellpadding="0" cellspacing="0" border="0" width="650">
 <tr>
    <td>
-      <div class="qmmt_text" style="text-align:right;"><br /><a href="javascript:window.close()" style="color:#0000cc">CLOSE</a></div>
+      <div class="qmmt_text" style="text-align:right;"><br /><a href="javascript:window.close()" style="color:#0000cc">^International(Close,Asset_StockData);</a></div>
    </td>
 </tr>
 </table>
 </div>
 </body>
 </html>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

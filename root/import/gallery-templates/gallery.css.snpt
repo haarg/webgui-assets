@@ -258,6 +258,9 @@ URL         : root/import/gallery-templates/gallery.css
 	border-left:solid black 1px;
 
 
+
+
+
 	border-right:solid black 1px;
 }
 .wgPicture .thumbnail a {
@@ -322,10 +325,14 @@ URL         : root/import/gallery-templates/gallery.css
 	background-color:#f9f9f9;
 	text-align:center;
 }
+.wgSnapshot p {
+	max-width:230px;
+}
 .wgSnapshot legend {
 	color:#333;
 	font-size:15px;
-	font-weight:bold;	
+	font-weight:bold;
+       max-width:250px;
 }
 .wgSnapshot a.thumbnail img {
 	width:200px;

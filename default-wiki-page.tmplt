@@ -44,6 +44,7 @@ mostPopularUrl>"><tmpl_var mostPopularLabel></a> | <a href="<tmpl_var recentChan
 recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/tabview/assets/tabview.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/tabview/assets/tabview-core.css);" />
 <script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/connection/connection-min.js);"></script>
 <script type="text/javascript" src="^Extras(yui/build/element/element-beta-min.js);"></script>

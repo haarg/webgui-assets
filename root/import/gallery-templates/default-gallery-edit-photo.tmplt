@@ -7,32 +7,31 @@ URL         : root/import/gallery-templates/default-gallery-edit-photo
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div class="wgGallery">	
-	<div class="firstBar">	
+<div class="wgGallery">
+	<div class="firstBar">
 		<div class="buttons">
 			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
-			<a href="<tmpl_var url>?func=search">Advanced Search</a>
-			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
-			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
-		</div>	
-		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
-	</div>	
-	
-	<div class="secondBar">	
-		<div class="searchArea">			
+			<a href="<tmpl_var url>?func=search">^International(template search title,Asset_Gallery);</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">^International(template url_listFilesForCurrentUser,Asset_Gallery);</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>
+		</div>
+		<div class="title"><a href="<tmpl_var url>"><tmpl_var title>&nbsp;</a></div>
+	</div>
+
+	<div class="secondBar">
+		<div class="searchArea">
 			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
-				<input type="hidden" name="func" value="search"  />				
-				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
-				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />							
+				<input type="hidden" name="func" value="search"  />
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />
+				<input type="submit" name="submit" id="submit_formId" value="^International(364,WebGUI);" class="searchBtn" />
 			</form>
-		</div>	
+		</div>
 		<tmpl_if isNewPhoto>
 			^International('template add','Asset_GalleryAlbum');
 		<tmpl_else>
 			^International('template edit','Asset_GalleryAlbum');
-		</tmpl_if> 
-		^International('template assetName','Asset_Photo');
-	</div>		
+		</tmpl_if>
+	</div>
 
 	<br /><br />
 
@@ -96,21 +95,20 @@ URL         : root/import/gallery-templates/default-gallery-edit-photo
 		</td>
 	</tr>
 	</table>
-	
-	<div style="text-align:right;width:350px;margin-top:5px">	
+
+	<div style="text-align:right;width:350px;margin-top:5px">
 		<a href="<tmpl_var url_album>" class="adminButton" onclick="history.go(-1); return false">^International('editForm cancel','Asset_Photo');</a> <input type="submit" value="^International('editForm save','Asset_Photo');" class="adminButton" />
 	</div>
-	
+
 	</div></form>
 
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 	@import url(^/(root/import/gallery-templates/gallery.css););
 	@import url(^/(root/import/gallery-templates/admin.css););
 </style>
-	
+
 <!--[if IE ]>
 	<style type="text/css">
 		@import url(^/(root/import/gallery-templates/gallery-ie.css););
@@ -120,7 +118,6 @@ URL         : root/import/gallery-templates/default-gallery-edit-photo
 <!--[if IE 7]>
 	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
 <![endif]-->
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'

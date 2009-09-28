@@ -58,13 +58,13 @@ URL         : matrix-default-detailed-listing
 <tmpl_var comments>
 
 <tmpl_if user.canEdit>
-  <br /> <hr /><a href="<tmpl_var edit.url>">Edit this listing.</a> <br />
+  <br /> <hr /><a href="<tmpl_var edit.url>">^International(Edit this listing.,Asset_MatrixListing);</a> <br />
 </tmpl_if>
 <tmpl_if user.canApprove>
  <tmpl_if isPending>
-   <a href="<tmpl_var approve.url>">Approve this listing.</a><br />
+   <a href="<tmpl_var approve.url>">^International(Approve this listing.,Asset_MatrixListing);</a><br />
  </tmpl_if>
-   <a href="<tmpl_var delete.url>">Delete this listing.</a><br />
+   <a href="<tmpl_var delete.url>">^International(Delete this listing.,Asset_MatrixListing);</a><br />
   
 </tmpl_if>
 ==== extraHeadTags ===========================================================

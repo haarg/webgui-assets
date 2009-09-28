@@ -13,7 +13,7 @@ URL         : default_forum_notification
         <td>&nbsp;</td>
 </tr>
 <tr>
-        <td bgcolor="black" style="background-color:black;"><font color="white"><b style="color:white;"><tmpl_var username> has posted to one of your subscriptions</b></font></td>
+        <td bgcolor="black" style="background-color:black;"><font color="white"><b style="color:white;"><tmpl_var username> ^International(has posted to one of your subscriptions,Asset_Collaboration);</b></font></td>
 </tr>
 <tr>
         <td bgcolor="#DFDFDF" style="background-color:#DFDFDF;"><a href="<tmpl_var url>"><font color="black"><tmpl_var url></a></td>
@@ -53,7 +53,6 @@ URL         : default_forum_notification
 </tbody>
 </table>
 <p><a href="<tmpl_var unsubscribeUrl>"><tmpl_var unsubscribeLinkText></a></p>
-
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

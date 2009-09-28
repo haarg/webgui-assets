@@ -25,7 +25,7 @@ URL         : root/import/calendar-templates/default-calendar-day
         <a class="tab active" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
         <a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
         <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">List</a>
+	<a class="tab" href="<tmpl_var url>?type=list">^International(486,WebGUI);</a>
         <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
 	
 
@@ -71,8 +71,6 @@ URL         : root/import/calendar-templates/default-calendar-day
     </td>
 </tr>
 </table>
-
-
 ==== extraHeadTags ===========================================================
     <style type="text/css">
         /* Edited with EditCSS */
@@ -276,8 +274,6 @@ URL         : root/import/calendar-templates/default-calendar-day
             color:#526896;
         }
     </style>
-
-
 ==== Properties ==============================================================
 display:
   isHidden: '0'

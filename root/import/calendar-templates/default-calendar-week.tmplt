@@ -25,7 +25,7 @@ URL         : root/import/calendar-templates/default-calendar-week
         <a class="tab" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
         <a class="tab active" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
         <a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
-	<a class="tab" href="<tmpl_var url>?type=list">List</a>
+	<a class="tab" href="<tmpl_var url>?type=list">^International(486,WebGUI);</a>
         <a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>
 
         <div class="controls"><tmpl_if editor><a href="<tmpl_var urlAdd>">^International(add event,Asset_Calendar);</a></tmpl_if> &bull; <a href="<tmpl_var urlPrint>">^International(print,Asset_Calendar);</a> &bull; <a href="<tmpl_var urlIcal>">^International(iCal,Asset_Calendar); </a>
@@ -62,7 +62,7 @@ URL         : root/import/calendar-templates/default-calendar-week
 				<span class="border"><tmpl_var dayOfMonth></span>
 				<ul class="eventList"><tmpl_loop events><li>
 				<tmpl_if iconCallbackUp><tmpl_var iconCallbackUP><tmpl_var iconCallbackDOWN> <tmpl_else>
-				<tmpl_if callbackUP><a href='?<tmpl_var callbackUP>'>UP</a> | <a href='?<tmpl_var callbackDOWN>'>DN</a></tmpl_if></tmpl_if>
+				<tmpl_if callbackUP><a href='?<tmpl_var callbackUP>'>^International(UP,Asset_Calendar);</a> | <a href='?<tmpl_var callbackDOWN>'>^International(DN,Asset_Calendar);</a></tmpl_if></tmpl_if>
 				<a href="<tmpl_var eventUrl>"><tmpl_var eventTitle></a>
 				</li></tmpl_loop></ul>
 				<br />
@@ -72,8 +72,6 @@ URL         : root/import/calendar-templates/default-calendar-week
 	</td>
 </tr>
 </table>
-
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 		#mCAL * {
@@ -278,7 +276,6 @@ URL         : root/import/calendar-templates/default-calendar-week
 
 
 </style>
-
 ==== Properties ==============================================================
 display:
   isHidden: '0'

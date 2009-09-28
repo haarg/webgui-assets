@@ -32,7 +32,7 @@ function domultisearch() {
 <form id="multisearchform" onsubmit="return domultisearch();" action="">
 <table cellpadding="2" cellspacing="0" class="multiSearch" border="0">
 <tr>
-	<td align="right">Search:</td>
+	<td align="right">^International(364,WebGUI);:</td>
 	<td>
 		<select name="sengines">
 			<option value="http://www.google.com/search?q=" selected="selected">Google</option>
@@ -45,13 +45,12 @@ function domultisearch() {
 	</td>
 </tr>
 <tr>
-	<td align="right">For:</td>
-	<td><input type="text" name="searchterms" />&#160;<input type="submit" name="SearchSubmit" value="Search" /></td>
+	<td align="right">^International(For,WebGUI);:</td>
+	<td><input type="text" name="searchterms" />&#160;<input type="submit" name="SearchSubmit" value="^International(364,WebGUI);" /></td>
 </tr>
 </table>
 </form>
 </div>
-
 ==== extraHeadTags ===========================================================
 <style type="text/css">
 h2 {
@@ -64,7 +63,6 @@ h2 {
 	border:solid gray 1px;	
 }
 </style>
-
 ==== Properties ==============================================================
 display:
   isHidden: '1'
