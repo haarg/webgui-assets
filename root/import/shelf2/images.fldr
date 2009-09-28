@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : 6tK47xsaIH-ELw0IBo0uRQ
+Menu Title  : images
+Parent      : root/import/shelf2
+Title       : images
+URL         : root/import/shelf2/images
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: PBtmpl0000000000000060
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,42 @@
+==== Wobject::DataForm =======================================================
+Asset ID    : Szs5eev3OMssmnsyLRZmWA
+Menu Title  : Tell A Friend
+Parent      : tell_a_friend
+Title       : Tell A Friend
+URL         : tell_a_friend/tell_a_friend
+==== acknowledgement =========================================================
+Thank you for telling your friends about WebGUI!
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+Tell a friend about WebGUI.
+==== Properties ==============================================================
+display:
+  acknowlegementTemplateId: PBtmpl0000000000000104
+  defaultView: '0'
+  displayTitle: '0'
+  emailTemplateId: PBtmpl0000000000000085
+  isHidden: '1'
+  listTemplateId: PBtmpl0000000000000021
+  mailData: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  storeData: '1'
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000020
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mailAttachments: '0'
+  useCaptcha: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  groupToViewEntries: '7'
+  ownerUserId: '3'
+

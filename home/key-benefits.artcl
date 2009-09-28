@@ -1,0 +1,51 @@
+==== Wobject::Article ========================================================
+Asset ID    : IWFxZDyGhQ3-SLZhELa3qw
+Menu Title  : Key Benefits
+Parent      : home
+Title       : Key Benefits
+URL         : home/key-benefits
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+
+<p>
+<b>Easy To Use</b> - WebGUI is absolutely easy to use. WebGUI 7 has a completely revamped user interface to make it even easier to use. There are lots of visual cues, consistent icons, helper apps, and a huge repository of built-in help files.
+</p>
+<p>
+<b>Workflow &amp; Versioning</b> - Never again worry about content getting put on your site that you don't want there. Never again lose your old content after making an edit. And never again push out new changes until you're absolutely ready to release them. WebGUI's workflow and versioning system is fast, flexible, powerful, and easy to use.
+</p>
+<p>
+<b>Everything's a Template</b> - Worry nevermore about your CMS forcing you into a mould that doesn't suit you. With WebGUI everything a site visitor can see is a customizable template, so you can make it look exactly how you want. Moreover if you're the type that strives for excellence rest in the knowledge that all the templates that come with WebGUI are XHTML 1.0 strict compliant.
+</p>
+<p>
+<b>Localization</b> - WebGUI's entire user interface is set up to be internationalized. Visit one of the WebGUI Worldwide member sites to get translations for your language. Stay there to get support and services in your native language. Feel confident in the knowledge that WebGUI will work with your native characters because it's UTF-8 compliant. On top of that WebGUI allows you to customize dates, currency, and weights to match your locale. 
+</p>
+<p>
+<b>Pluggable By Design</b> - With WebGUI 7 you have many plug-in points to add your own functionality. And best of all, the API is stable and standardized. Write it today and it will still work years from now and survive all upgrades.
+</p>
+
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: BS9OtDY_8oUnmzStD-wPmg
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

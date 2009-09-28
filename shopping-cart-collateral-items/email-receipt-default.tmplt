@@ -1,0 +1,99 @@
+==== Template ================================================================
+Asset ID    : bPz1yk6Y9uwMDMBcmMsSCg
+Menu Title  : Email Receipt (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Email Receipt (Default)
+URL         : shopping-cart-collateral-items/email-receipt-default
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p>^International(thank you message,Shop);</p>
+
+
+<h1><a href="<tmpl_var viewDetailUrl>">^International(order number,Shop); <tmpl_var orderNumber></a></h1>
+
+        <table>
+            <tr>
+            <tr>
+             <tr>
+                <th>^International(date,Shop);</th><td><tmpl_var dateOfPurchase></td>
+            </tr>
+            <tr>
+                <th>^International(amount,Shop);</th><td><b><tmpl_var amount></b></td>
+            </tr>
+            <tr>
+                <th>^International(in shop credit used,Shop);</th><td><tmpl_var inShopCreditDeduction></td>
+            </tr>
+            <tr>
+                <th>^International(taxes,Shop);</th><td><tmpl_var taxes></td>
+            </tr>
+            <tr>
+                <th>^International(shipping method,Shop);</th><td><tmpl_var shippingDriverLabel></td>
+            </tr>
+            <tr>
+                <th>^International(shipping amount,Shop);</th><td><tmpl_var shippingPrice></td>
+            </tr>
+            <tr>
+                <th>^International(shipping address,Shop);</th><td><tmpl_var shippingAddress></td>
+            </tr>
+            <tr>
+                <th>^International(payment method,Shop);</th><td><tmpl_var paymentDriverLabel></td>
+            </tr>
+            <tr>
+                <th>^International(status message,Shop);</th><td><tmpl_var statusMessage></td>
+            </tr>
+            <tr>
+                <th>^International(payment address,Shop);</th><td><tmpl_var paymentAddress></td>
+            </tr>
+        </table>
+        <div style="clear:both;"></div>
+
+ <table>
+     <thead>
+            <tr>
+            <th>^International(date,Shop);</th>
+            <th>^International(item,Shop);</th>
+            <th>^International(price,Shop);</th>
+            <th>^International(quantity,Shop);</th>
+            <th>^International(shipping address,Shop);</th>
+            <th>^International(order status,Shop);</th>
+            <th>^International(tracking number,Shop);</th>
+            </tr>
+     </thead>
+     <tbody>
+<tmpl_loop items>
+            <tr>
+            <td><tmpl_var lastUpdated></td>
+            <td><a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a></td>
+            <td><tmpl_var price></td>
+            <td><tmpl_var quantity></td>
+            <td class="smallAddress"><tmpl_var itemShippingAddress></td>
+	    <td><tmpl_var orderStatus></td>
+            <td><tmpl_var shippingTrackingNumber></td>
+            </tr>
+</tmpl_loop>
+     </tbody>
+</table>
+    
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/EmailReceipt
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

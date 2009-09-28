@@ -1,0 +1,176 @@
+==== Template ================================================================
+Asset ID    : g8W53Pd71uHB9pxaXhWf_A
+Menu Title  : My Purchases Detail (Default)
+Parent      : shopping-cart-collateral-items
+Title       : My Purchases Detail (Default)
+URL         : shopping-cart-collateral-items/my-purchases-detail-default
+==== headBlock ===============================================================
+<style type="text/css">
+	.wgPurchase {
+
+	}
+
+	.wgPurchase h3.title {
+		font-size:14px;
+		background-color:black;
+		color:white;
+		padding:3px;
+	}
+
+	.wgPurchase ul.dataList,
+	.wgPurchase ul.dataList li {
+		margin:0px;
+		padding:0px;
+		list-style-type:none;
+		font-size:10px;
+	}
+	.wgPurchase ul.dataList li {
+		background-color:#F1F1F1;
+		margin:6px;
+		line-height:20px;
+	}
+	.wgPurchase ul.dataList span {
+		background-color:#E0E0E0;
+		font-weight:bold;
+		width:200px;
+		display:block;
+		float:left;
+		margin-right:5px;
+		padding-right:5px;
+		text-align:right;
+		border-right:solid white 1px;
+	}
+	.wgPurchase .address {
+		float:left;
+		margin:6px;
+	}
+	.wgPurchase .address {
+		background-color:#f1f1f1;
+		-moz-border-radius:15px;
+		width:48%;
+	}
+	.wgPurchase .address div:first-child {
+		font-weight:bold;
+		background-color:#E0E0E0;
+		-moz-border-radius-topLeft:15px;
+		-moz-border-radius-topRight:15px;
+		padding:5px;
+	}
+	.wgPurchase .address div:last-child {
+		padding:10px;
+	}
+
+	.wgPurchase .transactionItems {
+		clear:both;
+		width:98%;
+		margin-top:15px;
+	}
+	.wgPurchase .transactionItems th {
+		background-color:#E0E0E0;
+		padding:3px;
+		text-align:left;
+		border-left:solid #AAAAAA 1px;
+		border-right:solid #f1f1f1 1px;
+	}
+	.wgPurchase .transactionItems th:first-child {
+		-moz-border-radius-topLeft: 15px;
+		border-left-style:none;
+	}
+	.wgPurchase .transactionItems th:last-child {
+		-moz-border-radius-topRight: 15px;
+		border-right-style:none;
+	}
+	.wgPurchase .transactionItems td {
+		background-color:#F1F1F1;
+		border-bottom:solid #E0E0E0 1PX;
+		border-top:solid #fff 1px;
+		border-left:solid #e0e0e0 1px;
+		border-right:solid white 1px;
+		padding:3px;		
+	}
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgPurchase">
+	<tmpl_if notice>
+		<div class="message"><tmpl_var notice></div>
+	</tmpl_if>
+
+	<h3 class="title">^International(order number,Shop); <tmpl_var orderNumber></h3>
+	
+	<tmpl_if isRecurring>
+	    <div><a href="<tmpl_var cancelRecurringUrl>">^International(cancel recurring transaction,Shop);</a></div>
+	</tmpl_if>
+
+	<ul class="dataList">
+		<li><span>^International(date,Shop);</span><tmpl_var dateOfPurchase></li>
+		<li><span>^International(amount,Shop);</span><tmpl_var amount></li>
+		<li><span>^International(in shop credit used,Shop);</span><tmpl_var inShopCreditDeduction></li>
+		<li><span>^International(taxes,Shop);</span><tmpl_var taxes></li>
+		<li><span>^International(shipping method,Shop);</span><tmpl_var shippingDriverLabel></li>
+		<li><span>^International(shipping amount,Shop);</span><tmpl_var shippingPrice></li>
+		<li><span>^International(payment method,Shop);</span><tmpl_var paymentDriverLabel></li>
+		<li><span>^International(status message,Shop);</span><tmpl_var statusMessage></li>
+	</ul>
+	
+	<div class="address">
+		<div>^International(payment address,Shop);</div>
+		<div><tmpl_var paymentAddress></div>
+	</div>
+	
+	<div class="address">
+		<div>^International(shipping address,Shop);</div>
+		<div><tmpl_var shippingAddress></div>
+	</div>
+	
+	
+	<table class="transactionItems" cellpadding="0" cellspacing="0">
+	<thead>
+		<tr>
+			<th>^International(date,Shop);</th>
+			<th>^International(item,Shop);</th>
+			<th>^International(price,Shop);</th>
+			<th>^International(quantity,Shop);</th>
+			<th>^International(shipping address,Shop);</th>
+			<th>^International(order status,Shop);</th>
+			<th>^International(tracking number,Shop);</th>
+		</tr>
+	</thead>
+	<tbody>
+	<tmpl_loop items>
+		<tr>
+			<td><tmpl_var lastUpdated></td>
+			<td><a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a></td>
+			<td><tmpl_var price></td>
+			<td><tmpl_var quantity></td>
+			<td class="smallAddress"><tmpl_var itemShippingAddress></td>
+			<td><tmpl_var orderStatus></td>
+			<td><tmpl_var shippingTrackingNumber></td>
+		</tr>
+	</tmpl_loop>
+	</tbody>
+	</table>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/MyPurchasesDetail
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

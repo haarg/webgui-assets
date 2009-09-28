@@ -1,0 +1,81 @@
+==== Template ================================================================
+Asset ID    : 0X4Q3tBWUb_thsVbsYz9xQ
+Menu Title  : Default Gallery Add Archive
+Parent      : root/import/gallery-templates
+Title       : Default Gallery Add Archive
+URL         : root/import/gallery-templates/default-gallery-add-archive
+==== headBlock ===============================================================
+	<link href="^/(root/import/gallery-templates/admin.css);" rel="stylesheet" type="text/css" />
+
+	<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id="adminWrapper">
+	<h2>^International('template addArchive title','Asset_GalleryAlbum');</h2>
+
+	<p>^International('template addArchive body','Asset_GalleryAlbum');</p>	
+
+	<tmpl_if error>
+	<p class="error"><tmpl_var error></p>
+	</tmpl_if>
+
+	
+	<tmpl_var form_start>
+	<table class="adminTable" style="width:350px" cellpadding="5">
+	<tr>
+		<td class="label">^International('template upload type','Asset_GalleryAlbum');</td>
+		<td>
+			<a href="<tmpl_var url_addPhoto>" class="adminButton">^International('template upload single','Asset_GalleryAlbum');</a>
+			<span class="adminButton">^International('template upload archive','Asset_GalleryAlbum');</span>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('addArchive file','Asset_GalleryAlbum');</td>
+		<td>
+			<tmpl_var form_archive>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('addArchive keywords','Asset_GalleryAlbum');</td>
+		<td>
+			<tmpl_var form_keywords>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('addArchive friendsOnly','Asset_GalleryAlbum');</td>
+		<td><tmpl_var form_friendsOnly></td>
+	</tr>
+	</table>
+	
+	<div style="text-align:right;width:350px;margin-top:5px">	
+		<tmpl_var form_submit>
+	</div>
+	
+	<tmpl_var form_end>
+
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryAlbum/AddArchive
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

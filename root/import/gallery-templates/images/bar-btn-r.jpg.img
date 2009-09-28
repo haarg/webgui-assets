@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : hIB-z34r8Xl-vYVYCkKr-w
+Menu Title  : bar-btn-r.jpg
+Parent      : root/import/gallery-templates/images
+Title       : bar-btn-r.jpg
+URL         : root/import/gallery-templates/images/bar-btn-r.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="bar-btn-r.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

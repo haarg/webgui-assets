@@ -1,0 +1,306 @@
+==== Snippet =================================================================
+Asset ID    : 1oGhfj00KkCzP1ez01AfKA
+Menu Title  : slideshow.js
+Parent      : root/import/gallery-templates
+Title       : slideshow.js
+URL         : root/import/gallery-templates/slideshow.js
+==== snippet =================================================================
+if ( typeof WebGUI == "undefined" ) {
+    WebGUI  = {};
+}
+
+/**
+    WebGUI.Slideshow ( config ) 
+    Configure and return a new Slideshow object. 
+    config is an object with the following properties:
+        containerId         - The ID of the element that contains the Slideshow 
+                              items. Defaults to "slideshow-container"
+        currentIndex        - The index of the first item in the Slideshow. 
+                              Defaults to 0
+        isPlaying           - If true, the slideshow will begin immediately
+        itemClassName       - The class name of the slideshow items. Defaults to 
+                              "slideshow-item"
+        nextButtonId        - The id of the button to go to the next item
+        pauseImageSrc       - The URL to the pause button image
+        playDelay           - The delay (in milliseconds) between slides. Defaults 
+                              to 5000
+        playImageSrc        - The URL to the play button image
+        playPauseButtonId   - The id of the button to toggle between play and pause
+	previousButtonId    - The id of the button to go to the previous item
+        wrap                - If true, the slideshow will wrap around
+
+
+    *** Control the slideshow
+    To control the slideshow, you can use the following methods:
+        next()          - Pause the slideshow and go to the next slide
+        previous()      - Pause the slideshow and go to the previous slide
+        play()          - Play the slideshow
+        pause()         - Pause the slideshow
+        togglePlay()    - If it's playing, pause it. If it's paused, play it.
+
+*/
+WebGUI.Slideshow 
+= function ( config ) {
+    this.containerId        = config && config.containerId   ? config.containerId       : "slideshow-container";
+    this.currentIndex       = config && config.currentIndex  ? config.currentIndex      : 0;
+    this.isPlaying          = config && config.isPlaying     ? config.isPlaying         : false;
+    this.itemClassName      = config && config.itemClassName ? config.itemClassName     : "slideshow-item";
+    this.nextButtonId       = config                         ? config.nextButtonId      : undefined;
+    this.pauseImageSrc      = config                         ? config.pauseImageSrc     : undefined;
+    this.playDelay          = config && config.playDelay     ? config.playDelay         : 5000;
+    this.playImageSrc       = config                         ? config.playImageSrc      : undefined;
+    this.playPauseButtonId  = config                         ? config.playPauseButtonId : undefined;
+    this.previousButtonId   = config                         ? config.previousButtonId  : undefined;
+    this.wrap               = config && config.wrap          ? config.wrap              : false;
+
+    YAHOO.util.Event.onDOMReady( this.init, this, true );
+};
+
+/**
+    clearPlayTimeout ( )
+    Clears the timeout to move to the next slide
+*/
+WebGUI.Slideshow.prototype.clearPlayTimeout
+= function () {
+    clearTimeout( this.playTimeout );
+    this.playTimeout    = undefined;
+}
+
+/**
+    doPlayTick ( self )
+    Performs the action to move to the next slide and start a new timeout.
+    self is a new reference to the object to get around the scoping issues
+    with setTimeout()
+*/
+WebGUI.Slideshow.prototype.doPlayTick
+= function (self) {
+    self.showNext();
+    self.setPlayTimeout();
+}
+
+/**
+    getSlideshowContainer ( )
+    Returns the HTMLElement for the Slideshow container.
+*/
+WebGUI.Slideshow.prototype.getSlideshowContainer 
+= function () {
+    return document.getElementById( this.containerId );
+};
+
+/**
+    getSlideshowItems ( )
+    Returns an array of HTMLElements for the Slideshow's items.
+*/
+WebGUI.Slideshow.prototype.getSlideshowItems
+= function () {
+    var items  
+        = YAHOO.util.Dom.getElementsByClassName( 
+            this.itemClassName, 
+            undefined, 
+            this.getSlideshowContainer() 
+        );
+    return items;
+};
+
+/**
+    init ( )
+    Initialize the slideshow. Performed after the DOM is ready.
+*/
+WebGUI.Slideshow.prototype.init
+= function () {
+
+
+    
+    // Add handlers to buttons
+    if ( this.playPauseButtonId ) {
+        YAHOO.util.Event.addListener( this.playPauseButtonId, "click", this.togglePlay, this, true );
+    }
+    if ( this.nextButtonId ) {
+        YAHOO.util.Event.addListener( this.nextButtonId, "click", this.next, this, true );
+    }
+    if ( this.previousButtonId ) {
+        YAHOO.util.Event.addListener( this.previousButtonId, "click", this.previous, this, true );
+    }
+    
+    // Hide all but the currentIndex
+    var items   = this.getSlideshowItems();
+    for ( var i = 0; i < items.length; i++ ) {
+        if ( i != this.currentIndex ) {
+            items[ i ].style.display = "none";
+        }
+        else {
+            items[ i ].style.display = "block";
+        }
+    }
+
+    // Start it off if necessary
+    if ( this.isPlaying ) {
+        this.setPlayTimeout();
+        this.updatePlayPauseButton();
+    }
+};
+
+/**
+    next ( )
+    Pause the slideshow and go to the next slide
+*/
+WebGUI.Slideshow.prototype.next
+= function () {
+    this.pause();
+    this.showNext();
+}
+
+/**
+    play ( )
+    Start the slideshow
+*/
+WebGUI.Slideshow.prototype.play
+= function () {
+    if ( !this.isPlaying ) {
+        this.isPlaying  = true;
+        this.setPlayTimeout();
+        this.updatePlayPauseButton();
+    }
+}
+
+/**
+    previous ( )
+    Pause the slideshow and show the previous slide
+*/
+WebGUI.Slideshow.prototype.previous 
+= function () {
+    this.pause();
+    this.showPrevious();
+}
+
+/**
+    pause ( )
+    Pause the slideshow
+*/
+WebGUI.Slideshow.prototype.pause
+= function () {
+    if ( this.isPlaying ) {
+        this.isPlaying  = false;
+        this.clearPlayTimeout();
+        this.updatePlayPauseButton();
+    }
+}
+
+/**
+    setPlayTimeout ( )
+    Sets the timeout to move to the next slide
+*/
+WebGUI.Slideshow.prototype.setPlayTimeout
+= function () {
+    var self    = this;
+    this.playTimeout = setTimeout( function () { self.doPlayTick(self) }, this.playDelay );
+}
+
+/**
+    showNext ( )
+    Show the next slide.
+*/
+WebGUI.Slideshow.prototype.showNext
+= function () {
+    var items       = this.getSlideshowItems();
+    
+    var hideIndex   = this.currentIndex;
+    var showIndex   = this.currentIndex + 1;
+
+    // Wrap around
+    if ( this.wrap && showIndex >= items.length ) {
+        showIndex   = 0;
+    }
+    // Don't allow going past the last item
+    else if ( showIndex >= items.length ) { 
+        return;
+    }
+
+    // Do the switch
+    if ( items[ hideIndex ] )
+        items[ hideIndex ].style.display  = "none";
+    if ( items[ showIndex ] ) {
+        items[ showIndex ].style.display  = "block";
+        this.currentIndex   = showIndex;
+    }
+};
+
+/**
+    showPrevious ( )
+    Show the previous slide
+*/
+WebGUI.Slideshow.prototype.showPrevious
+= function () {
+    var items       = this.getSlideshowItems();
+    
+    var hideIndex   = this.currentIndex;
+    var showIndex   = this.currentIndex - 1;
+
+    // Wrap around
+    if ( this.wrap && showIndex < 0 ) {
+        showIndex   = items.length - 1;
+    }
+    // Don't allow going past the last item
+    else if ( showIndex < 0 ) { 
+        return;
+    }
+
+    // Do the switch
+    items[ hideIndex ].style.display  = "none";
+    items[ showIndex ].style.display  = "block";
+    this.currentIndex   = showIndex;
+};
+
+/**
+    togglePlay ( )
+    If it's paused, play it. If it's playing, pause it.
+    Return true if the slideshow is now playing.
+*/
+WebGUI.Slideshow.prototype.togglePlay
+= function () {
+    if ( this.isPlaying  == false ) {
+        this.play();
+        return true;
+    }
+    else {
+        this.pause();
+    }
+};
+
+/**
+    updatePlayPauseButton ( )
+    Update the Play/Pause button to have the correct image
+*/
+WebGUI.Slideshow.prototype.updatePlayPauseButton
+= function () {
+    if ( this.playPauseButtonId ) {
+        if ( this.isPlaying && this.playImageSrc ) {
+            document.getElementById( this.playPauseButtonId ).src = this.pauseImageSrc;
+        }
+        else if ( this.pauseImageSrc ) {
+            document.getElementById( this.playPauseButtonId ).src = this.playImageSrc;
+        }
+    }
+};
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/javascript
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

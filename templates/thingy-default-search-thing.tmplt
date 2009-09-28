@@ -1,0 +1,203 @@
+==== Template ================================================================
+Asset ID    : ThingyTmpl000000000004
+Menu Title  : Default Thingy Search Thing
+Parent      : root/import/thingy-templates
+Title       : Default Thingy Search Thing
+URL         : templates/thingy-default-search-thing
+==== headBlock ===============================================================
+<script type="text/javascript">
+	var timer;
+	var tempThing;
+	function showHide(tempThingId) {	
+			tempThing = document.getElementById(tempThingId);
+			var tempVis = tempThing.style.display;			
+			tempChildren = tempThing.childNodes;			
+			for(i=0;i<tempThing.childNodes.length;i++) {
+				if(tempThing.childNodes[i].tagName == "A") {					
+					tempThing.childNodes[i].onmouseout = mouseOutHide;
+					tempThing.childNodes[i].onmouseover = cancelTimer;
+				}
+			}			
+			if(tempVis == "block")
+				tempThing.style.display = "none";
+			else
+				tempThing.style.display = "block";
+	}
+
+	function mouseOutHide() {					
+		var parentVis = this.parentNode.style.display;		
+		timer = setTimeout("tempThing.style.display = 'none'", 125);			
+
+	}
+	function cancelTimer() {						
+		clearTimeout(timer);
+	}	
+</script>
+
+<style type="text/css">
+	@import url(^/(root/import/thingy-templates/thingy.css););
+</style>
+
+<!--[if IE]>
+	<style type="text/css">
+		@import url(^/(root/import/thingy-templates/thingy-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgThingy">
+	<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2 class="title"><tmpl_var title><tmpl_if searchScreenTitle> <span class="smaller">&bull; <tmpl_var searchScreenTitle></span></tmpl_if></h2>
+	</tmpl_if>	
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>	
+	
+
+	<div class="controls">
+		<tmpl_if canEditThings>
+			<a href="<tmpl_var manage_url>" class="styleButton">^International(manage things label,"Asset_Thingy");</a>
+		</tmpl_if>
+		<tmpl_if import_url>
+			<a href="<tmpl_var import_url>" class="styleButton">^International(import label,"Asset_Thingy");</a>
+		</tmpl_if>
+		<tmpl_if export_url>
+			<a href="<tmpl_var export_url>" class="styleButton">^International(export label,"Asset_Thingy"); <tmpl_var thing_label></a>
+		</tmpl_if>
+		<tmpl_if add_url>
+			<a href="<tmpl_var add_url>" class="styleButton">^International(add label,"Asset_Thingy"); <tmpl_var thing_label></a>
+		</tmpl_if>	
+		<tmpl_if listOfThings>			
+			<div id="thingyList">				
+				<tmpl_loop listOfThings>
+					<tmpl_if isCurrent>
+						<a href="javascript:showHide('<tmpl_var assetId>_things')" class="goButton"><tmpl_var name></a>
+					</tmpl_if>
+				</tmpl_loop>
+				<div id="<tmpl_var assetId>_things" style="display:none" class="things">
+					<tmpl_loop listOfThings>					
+						<tmpl_unless isCurrent>
+							<tmpl_if canView><a href="<tmpl_var search_url>"><tmpl_var name></a></tmpl_if>							
+						</tmpl_unless>					
+					</tmpl_loop>			
+				</div>				
+			</div>				
+		</tmpl_if>
+			
+
+		<div style="clear:both"></div>
+	</div>
+	
+	<tmpl_if searchDescription>
+		<tmpl_var searchDescription>
+	</tmpl_if>
+
+	<div style="clear:both"><br /></div>
+	
+	<tmpl_if searchFields_loop>
+		<tmpl_var form_start>
+			<table class="searchTable" border="0" cellspacing="1">
+			<tr>
+				<tmpl_loop searchFields_loop>
+					<td class="label">
+						<tmpl_var searchFields_label>
+					</td>					
+				</tmpl_loop>
+			</tr>
+			<tr>
+				<tmpl_loop searchFields_loop>
+				<td>
+					<tmpl_if searchFields_isOtherThing>
+						<tmpl_var searchFields_form>
+					<tmpl_else>
+						<tmpl_var searchFields_textForm>
+					</tmpl_if>
+				</td>
+				</tmpl_loop>
+			</tr>
+			<tmpl_loop searchFields_loop>
+				<tmpl_if __LAST__>
+					<tr>
+						<td colspan="<tmpl_var __COUNTER__>"><tmpl_var form_submit></td>
+					</tr>
+				</tmpl_if>
+			</tmpl_loop>
+			</table>			
+		<tmpl_var form_end>
+	</tmpl_if>
+
+	<tmpl_if searchResult_loop>
+		<br /><br />
+		
+		<tmpl_if displayInSearchFields_loop>
+			<table border="0">
+			<tr>
+				<tmpl_loop displayInSearchFields_loop>
+					<tmpl_if __LAST__>
+						<td colspan="<tmpl_var __COUNTER__>">
+							<h2 class="title"><span class="smaller">Search Results</span></h2>
+						</td>
+					</tmpl_if>
+				</tmpl_loop>
+			</tr>
+			<tr>
+				<tmpl_loop displayInSearchFields_loop>
+					<td class="label">
+						<a href="<tmpl_var displayInSearchFields_orderByUrl>"><tmpl_var displayInSearchFields_label></a>
+					</td>
+				</tmpl_loop>
+			</tr>
+			<tmpl_loop searchResult_loop>
+				<tr class="<tmpl_if __ODD__>wgRowOne<tmpl_else>wgRowTwo</tmpl_if>">
+					<tmpl_loop searchResult_field_loop>
+						<td>													
+							<tmpl_if __FIRST__>
+								<tmpl_if canEditThingData>
+									<tmpl_var searchResult_delete_icon><tmpl_var searchResult_edit_icon>
+								</tmpl_if>							
+								<a href="<tmpl_var searchResult_view_url>"><tmpl_var field_value></a>
+							<tmpl_else>
+								<tmpl_var field_value>
+							</tmpl_if>
+						</td>
+					</tmpl_loop>
+				</tr>
+			</tmpl_loop>
+			</table>
+		</tmpl_if>
+	</tmpl_if>
+	
+	<tmpl_if pagination.pageCount.isMultiple>
+	    <div class="pagination">
+	        <tmpl_var pagination.previousPage> &#183; <tmpl_var pagination.pageList.upTo10> &#183; <tmpl_var pagination.nextPage>
+	    </div>
+	</tmpl_if>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Thingy/SearchThing
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

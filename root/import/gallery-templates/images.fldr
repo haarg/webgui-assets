@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : kaPRSaf8UKiskiGEgJgLAw
+Menu Title  : images
+Parent      : root/import/gallery-templates
+Title       : images
+URL         : root/import/gallery-templates/images
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: 2p9ygcqH_Z11qOUvQ1uBvw
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

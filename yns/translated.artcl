@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : LBuiKzg2mWwmOPS9AgV3bg
+Menu Title  : Get Translated
+Parent      : your_next_step
+Title       : Get Translated
+URL         : yns/translated
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Let our team of professional translators bring your site to new customers by <a href="http://www.plainblack.com/services/translation">translating your content</a> into additional languages. Our translation services are never machine automated. They're always done by professional translators that have years of experience reading, writing, and speaking many languages.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: UYaT3bhIk9HXmX1io5MdlQ
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

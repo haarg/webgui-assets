@@ -1,0 +1,47 @@
+==== Template ================================================================
+Asset ID    : ProjectManagerTMPL0006
+Menu Title  : Default Resource List
+Parent      : root/import/projectmanager/resource
+Title       : Default Resource List
+URL         : default-pm-resource-list
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<table border="0" cellpadding="2" cellspacing="0" width="100%">
+<tmpl_loop resourceLoop>
+  <tr <tmpl_if odd>class="odd"</tmpl_if>>
+    <td><img src="<tmpl_var assetExtras>/<tmpl_var resourceIcon>"></td>
+    <td><tmpl_if hiddenFields>
+          <input type="hidden" class="taskEdit_resourceList_hidden"
+                 name="resources" value="<tmpl_var resourceKind> <tmpl_var resourceId>" />
+        </tmpl_if><tmpl_var resourceName></td>
+    <td><tmpl_if opCallbackJs>
+          <a href="javascript:<tmpl_var opCallbackJs>('<tmpl_var resourceKind>', '<tmpl_var resourceId>')"><img src="<tmpl_var assetExtras>/<tmpl_var opIcon>" style="border-style:none;" alt="<tmpl_var opTitle>" title="<tmpl_var opTitle>" /></a>
+        </tmpl_if></td>
+  </tr>
+</tmpl_loop>
+</table>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: ProjectManager_resourceList
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

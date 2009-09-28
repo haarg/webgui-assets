@@ -1,0 +1,48 @@
+==== Template ================================================================
+Asset ID    : newslettersubscrip0001
+Menu Title  : ' My Subscriptions'
+Parent      : root/import/newsletter
+Title       : My Subscriptions (default)
+URL         : newslettermysubscriptionstemplate
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<h1>^International(my subscriptions,Asset_Newsletter);</h1>
+
+<tmpl_var formHeader>
+<h2>^International(newsletter categories,Asset_Newsletter);</h2>
+<tmpl_loop categoriesLoop>
+    <p><b><tmpl_var categoryName></b><br />
+    <blockquote>
+        <tmpl_loop optionsLoop>
+            <label><tmpl_var optionForm> <tmpl_var optionName></label><br /> 
+        </tmpl_loop>
+    </blockquote></p>
+</tmpl_loop>
+<tmpl_var formSubmit>
+<tmpl_var formFooter>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: newsletter/mysubscriptions
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,65 @@
+==== Template ================================================================
+Asset ID    : ThingyTmpl000000000001
+Menu Title  : Default Thingy
+Parent      : root/import/thingy-templates
+Title       : Default Thingy
+URL         : templates/thingy-default
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/thingy-templates/thingy.css););
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgThingy">
+	<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2 class="title"><tmpl_var title><span class="smaller"> &bull; Manage Things</span></h2>
+	</tmpl_if>
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>
+
+	<tmpl_if canEditThings>
+		<div class="controls">			
+			<a href="<tmpl_var addThing_url>" class="styleButton">^International(add thing label,"Asset_Thingy");</a>
+			<div style="clear:both"></div>
+		</div>
+	</tmpl_if>
+
+	<tmpl_if things_loop>
+		<div class="wgThingsWrapper">
+			<tmpl_loop things_loop>
+				<div class="<tmpl_if __ODD__>rowOne<tmpl_else>rowTwo</tmpl_if>">
+					<tmpl_var thing_editIcon><tmpl_var thing_viewIcon> <tmpl_var thing_deleteIcon> <span class="spacerOne"><tmpl_var thing_label><span>
+				</div>
+			</tmpl_loop>
+		</div>
+	</tmpl_if>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Thingy
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

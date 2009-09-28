@@ -1,0 +1,117 @@
+==== Template ================================================================
+Asset ID    : q5O62aH4pjUXsrQR3Pq4lw
+Menu Title  : Default Gallery View Album Thumbnails
+Parent      : root/import/gallery-templates
+Title       : Default Gallery View Album Thumbnails
+URL         : root/import/gallery-templates/default-gallery-view-album-thumbnails
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+<script type="text/javascript" src="^Extras(yui/build/yahoo/yahoo-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/dom/dom-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/event/event-min.js);"></script>
+<script type="text/javascript" src="^/(root/import/gallery-templates/browserdetect.js);"></script>
+<script type="text/javascript" src="^/(root/import/gallery-templates/thumbnails.js);"></script>
+
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
+
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addPhoto>">^International(template url_addPhoto,Asset_GalleryAlbum);</a></tmpl_if>
+			<tmpl_if canEdit>
+				<a href="<tmpl_var url_edit>">^International(template url_edit,Asset_GalleryAlbum);</a>
+				<a href="<tmpl_var url_delete>">^International(template url_delete,Asset_GalleryAlbum);</a>
+			</tmpl_if>			
+			<a href="<tmpl_var gallery_url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var gallery_url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">
+			<a href="<tmpl_var url_thumbnails>" class="current">^International(template url_thumbnails,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url_slideshow>">^International(template url_slideshow,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url>">^International(template url,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+			</form>
+		</div>	
+		<tmpl_var title> &middot;
+		<span class="author">^International(template by,Asset_Gallery);: <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a></span>		
+	</div>	
+
+	<tmpl_var description>
+
+	<div class="wgPicture thumbView">
+		<a href="<tmpl_var file_url>" class="title">
+			<tmpl_var file_title>
+		</a>
+		<div class="thumbnail">		
+			<a href="<tmpl_var file_fileUrl>"><img src="<tmpl_var file_fileUrl>" alt="Image" /></a>
+		</div>
+		<tmpl_if file_synopsis>
+			<div class="pictureDesc">
+				<div class="description">
+					<tmpl_var file_synopsis>
+				</div>	
+			</div>	
+		</tmpl_if>
+		<div class="details">
+			<div class="comments"><a href="<tmpl_var file_url>"><tmpl_var file_numberOfComments> ^International(template file numberOfComments,Asset_GalleryAlbum);</a></div>
+			<div class="date">^D("%z %Z",<tmpl_var file_creationDate>);</div>
+			<div style="clear:both"></div>
+		</div>
+		<div style="clear:both"></div>
+	</div>	
+		
+	<div id="galleryThumbnails">
+		<tmpl_loop file_loop>
+			<a href="<tmpl_var url_albumViewThumbnails>" title="<tmpl_var synopsis_textonly escape="html">" class="thumb">
+				<img src="<tmpl_var thumbnailUrl>" />
+			</a>
+		</tmpl_loop>	
+		<div style="clear:both"></div>
+	</div>	
+	<div style="clear:both"></div>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryAlbum/ViewThumbnails
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

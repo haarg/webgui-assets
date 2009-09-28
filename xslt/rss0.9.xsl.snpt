@@ -1,0 +1,107 @@
+==== Snippet =================================================================
+Asset ID    : SynConXSLT000000000001
+Menu Title  : RSS 0.9 XSLT
+Parent      : root/import/syndicatedcontent
+Title       : RSS 0.9 XSLT Stylesheet
+URL         : xslt/rss0.9.xsl
+==== snippet =================================================================
+<?xml version="1.0"?>
+<!--
+  Based on XSLT stylesheets originally designed by Rich Manalang (http://manalang.com)
+  This XSLT sheet will convert any valid RSS 0.9 feed into basic HTML.
+-->
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:foo="http://my.netscape.com/rdf/simple/0.9/">
+  <xsl:output method="html"/>
+  <xsl:template match="/">
+    <style>
+      <xsl:comment>
+        .syndication-content-area {
+        }
+        .syndication-title {
+        font-size: 1.1em;
+        font-weight: bold;
+        }
+        .syndication-description {
+        font-size: .9em;
+        margin: 0 0 10px 0;
+        }
+        .syndication-list {
+        font-size: .8em;
+        margin:0 0 0 20px;
+        }
+        .syndication-list-item {
+        margin: 0 0 5px 0;
+        }
+        .syndication-list-item a,
+        .syndication-list-item a:link {
+        color: blue;
+        }
+        .syndication-list-item a:active,
+        .syndication-list-item a:hover {
+        color: red;
+        }
+        li.syndication-list-item{
+        padding-bottom: .2em;
+        background-color: #e4e4e4;
+        }
+        .syndication-list-item a:visited {
+        color: black;
+        text-decoration: none;
+        }
+        .syndication-list-item-date {
+        font-size: .8em;
+        }
+        .syndication-list-item-description {
+        font-size: .9em;
+        }
+      </xsl:comment>
+    </style>
+    <xsl:apply-templates select="/rdf:RDF/foo:channel"/>
+  </xsl:template>
+  <xsl:template match="/rdf:RDF/foo:channel">
+You're viewing an <a href="http://www.purplepages.ie/RSS/netscape/rss0.90.html">RSS version 0.9 feed</a>. Please use an RSS feed reader to view this content as intended.
+    <div class="syndication-content-area">
+      <div class="syndication-title">
+        <xsl:value-of select="foo:title"/>
+      </div>
+      <div class="syndication-description">
+        <xsl:value-of select="foo:description"/>
+      </div>
+      <ul class="syndication-list">
+        <xsl:apply-templates select="/rdf:RDF/foo:item"/>
+      </ul>
+    </div>
+  </xsl:template>
+  <xsl:template match="/rdf:RDF/foo:item">
+    <li class="syndication-list-item">
+      <a href="{foo:link}" title="{foo:description}">
+        <xsl:value-of select="foo:title"/>
+      </a>
+    </li>
+  </xsl:template>
+</xsl:stylesheet>
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: application/xml
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

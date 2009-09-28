@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : jTNggl7AoVSUc_ZzrvuCmw
+Menu Title  : Get Promoted
+Parent      : your_next_step
+Title       : Get Promoted
+URL         : yns/promotion
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Now that you have a brilliant WebGUI site, you need to get people to visit it. We can help there too. Our marketing specialists can work with you to develop and execute the right combination of search engine placement, advertising buys, and affilliate programs to <a href="http://www.plainblack.com/services/promotion">ensure your site gets the traffic it needs</a>.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: NWhmkoojuu9dA4_zv3a4pg
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

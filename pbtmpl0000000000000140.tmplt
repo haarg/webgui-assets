@@ -1,0 +1,48 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000140
+Menu Title  : Default Shortcut
+Parent      : root/import/shortcut
+Title       : Default Shortcut
+URL         : pbtmpl0000000000000140
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+	<div style="width: 100%; border: 1px groove black;">
+		<div style="width: 100%; background-image: url(<tmpl_var session.config.extrasURL>/opaque.gif);">
+			<div style="text-align: center; font-weight: bold;"><a href="<tmpl_var originalURL>"><tmpl_var shortcut.label></a></div>
+		</div>
+</tmpl_if>
+<tmpl_var shortcut.content>
+<tmpl_if session.var.adminOn>
+		<div style="width: 100%; background-image: url(<tmpl_var session.config.extrasURL>/opaque.gif);">
+			<div style="text-align: center; font-weight: bold;"><a href="<tmpl_var originalURL>"><tmpl_var shortcut.label></a></div>
+		</div>
+	</div>
+</tmpl_if>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shortcut
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

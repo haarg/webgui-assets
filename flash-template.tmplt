@@ -1,0 +1,43 @@
+==== Template ================================================================
+Asset ID    : pbtmpl0000000000000220
+Menu Title  : Flash Template
+Parent      : root/import/fileasset
+Title       : Flash Template
+URL         : flash-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<tmpl_if controls>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+</tmpl_if>
+
+
+<div>
+	<object type="application/x-shockwave-flash" data="<tmpl_var fileUrl>" style="height:auto;min-height:100px;width:100%;display:block;">
+		<param name="movie" value="<tmpl_var fileUrl>" />		
+	</object>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: FileAsset
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

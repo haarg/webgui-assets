@@ -1,0 +1,58 @@
+==== RichEdit ================================================================
+Asset ID    : PBrichedit000000000002
+Menu Title  : Forum Rich Edit
+Parent      : root/import/richedit
+Title       : Forum Rich Edit
+URL         : forum_rich_edit
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== validElements ===========================================================
+a[name|href|target|title],strong/b[class],em/i[class],strike[class],u[class],p[dir|class|align],ol,ul,li,br,img[class|src|border=0|alt|title|hspace|vspace|width|height|align],sub,sup,blockquote[dir|style],table[border=0|cellspacing|cellpadding|width|height|class|align],tr[class|rowspan|width|height|align|valign],td[dir|class|colspan|rowspan|width|height|align|valign],div[dir|class|align],span[class|align],pre[class|align],address[class|align],h1[dir|class|align],h2[dir|class|align],h3[dir|class|align],h4[dir|class|align],h5[dir|class|align],h6[dir|class|align],hr
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  allowMedia: 0
+  askAboutRichEdit: '0'
+  cssFile: ~
+  directionality: ltr
+  disableRichEditor: '0'
+  editorHeight: '0'
+  editorWidth: '0'
+  enableContextMenu: '0'
+  inlinePopups: '0'
+  nowrap: '0'
+  preformatted: '0'
+  removeLineBreaks: '0'
+  sourceEditorHeight: '0'
+  sourceEditorWidth: '0'
+  toolbarLocation: bottom
+  toolbarRow1: 'bold
+
+    italic
+
+    bullist
+
+    numlist
+
+    link
+
+    unlink
+
+    emotions'
+  toolbarRow2: ~
+  toolbarRow3: ~
+  useBr: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,33 @@
+==== Snippet =================================================================
+Asset ID    : usuxw9V3jN4d4pujRiEYxg
+Menu Title  : css03-ie.css
+Parent      : root/import/webgui-7-style-3
+Title       : css03-ie.css
+URL         : style3/css03-ie.css
+==== snippet =================================================================
+#contentArea {
+	height:500px;
+	padding-bottom:300px;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '1'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

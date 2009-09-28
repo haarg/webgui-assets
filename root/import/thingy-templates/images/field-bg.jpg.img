@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : 8hxfkrJPeFVRWF5piCNJ1A
+Menu Title  : field-bg.jpg
+Parent      : root/import/thingy-templates/images
+Title       : field-bg.jpg
+URL         : root/import/thingy-templates/images/field-bg.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="field-bg.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

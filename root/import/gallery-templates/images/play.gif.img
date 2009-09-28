@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : BpisgHl4ZDcSECJp6oib1w
+Menu Title  : play.gif
+Parent      : root/import/gallery-templates/images
+Title       : play.gif
+URL         : root/import/gallery-templates/images/play.gif
+==== parameters ==============================================================
+style="border-style:none;" alt="play.gif"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

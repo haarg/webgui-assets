@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : BFfNj5wA9bDw8H3cnr8pTw
+Menu Title  : Navigation
+Parent      : root/import
+Title       : Navigation
+URL         : root/import/navigation
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: ''
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: PBtmpl0000000000000060
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,35 @@
+==== Template ================================================================
+Asset ID    : TimeTrackingTMPL000002
+Menu Title  : Default Time Tracking Manager View
+Parent      : root/import/timetracking/manager
+Title       : Default Time Tracking Manager View
+URL         : default-tt-template-manager
+==== headBlock ===============================================================
+	
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+This is the Manager's View
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: TimeTracking_manager
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

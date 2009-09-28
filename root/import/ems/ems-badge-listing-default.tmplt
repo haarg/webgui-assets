@@ -1,0 +1,155 @@
+==== Template ================================================================
+Asset ID    : 2rC4ErZ3c77OJzJm7O5s3w
+Menu Title  : EMS Badge Listing (default)
+Parent      : root/import/ems
+Title       : EMS Badge Listing (default)
+URL         : root/import/ems/ems-badge-listing-default
+==== headBlock ===============================================================
+<link href="^Extras(/yui/build/reset-fonts-grids/fonts-min.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/container/assets/skins/sam/container.css);" rel="stylesheet" type="text/css">
+
+<script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/container/container-min.js);" type="text/javascript"></script>
+
+		<style type="text/css">
+		.badgeDescription {
+		background-color: white;
+		max-width: 400px;
+		border:1px solid #000;
+		padding:10px;
+		}
+		.forwardButton {
+			background-color: green;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+		.backwardButton {
+			background-color: red;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+		</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
+<tmpl_if displayTitle>
+ 	<h2><tmpl_var title></h2>
+</tmpl_if>
+<tmpl_if description>
+	<p><tmpl_var description></p>
+</tmpl_if>
+
+<div class=" yui-skin-sam">
+	<p>
+	<a href="<tmpl_var buildBadgeUrl>">^International(view tickets,Asset_EventManagementSystem);</a>
+	&bull; ^ViewCart;
+<tmpl_if canEdit>
+	&bull; <a href="<tmpl_var addBadgeUrl>">^International(add a badge,Asset_EventManagementSystem);</a>
+	&bull; <a href="<tmpl_var manageBadgeGroupsUrl>">^International(badge groups,Asset_EventManagementSystem);</a>
+	&bull; <a href="<tmpl_var lookupRegistrantUrl>">^International(lookup badge,Asset_EventManagementSystem);</a>
+</tmpl_if>
+	</p>
+	<p><tmpl_var badgeInstructions></p>
+    <div id="emsBadgePaging"></div>
+    <div id="emsBadgeList"></div>
+</div>
+
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function () {
+    var DataSource = YAHOO.util.DataSource,
+        Dom        = YAHOO.util.Dom,
+        DataTable  = YAHOO.widget.DataTable,
+        Paginator  = YAHOO.widget.Paginator;
+    
+    // the datasource deals with the stuff returned from www_getBadgesAsJson
+   var mySource = new DataSource('<tmpl_var getBadgesUrl>');
+    mySource.responseType   = DataSource.TYPE_JSON;
+    mySource.responseSchema = {
+        resultsList : 'records',
+        totalRecords: 'totalRecords',
+        fields      : [ 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId']
+    };
+
+    // paginator in case there are a lot of badges
+    var myPaginator = new Paginator({
+        containers         : ['emsBadgePaging'],
+        pageLinks          : 5,
+        rowsPerPage        : 25,
+        rowsPerPageOptions : [25,50,100],
+        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+    });
+
+	// badge description formatter
+		var formatViewBadgeDescription = function(elCell, oRecord, oColumn, title) {
+			elCell.innerHTML = title;
+			elCell.id = 'cell_' + oRecord.getData('assetId');
+			elCell.tooltip = new YAHOO.widget.Tooltip("tt_" + oRecord.getData('assetId'), 
+				{ context:elCell.id, autodismissdelay:250000,
+				text:'<div class="badgeDescription">'+oRecord.getData('description')+'</div>' });
+        }; 
+
+	// add to cart formatter
+		var formatAddToCart = function(elCell, oRecord, oColumn, url) {
+			elCell.innerHTML = (oRecord.getData('quantityAvailable') < 1) ? '' : '<a href="' + url + '" class="forwardButton">^International(buy,Asset_EventManagementSystem);</a>'; 
+        }; 
+	
+	// manage badge formatter
+		var formatManageBadge = function(elCell, oRecord, oColumn, editUrl) {
+			elCell.innerHTML = '<a href="' + oRecord.getData('deleteUrl') + '">^International(delete,Asset_EventManagementSystem);</a> / <a href="' + editUrl + '">^International(edit,Asset_EventManagementSystem);</a>'; 
+        }; 
+	
+	// quantity available formatter
+		var formatQuantityAvailable = function(elCell, oRecord, oColumn, quantityAvailable) {
+			elCell.innerHTML = (quantityAvailable < 1) ? '<strong>^International(sold out,Asset_EventManagementSystem);!</strong>' : quantityAvailable;
+        }; 
+	
+    // create the data table
+    var myTableConfig = {
+        initialRequest         : '',
+        paginator              : myPaginator 
+    };
+        var myColumnDefs = [
+	<tmpl_if canEdit>
+	    {key:"editUrl", label:"^International(manage,Asset_EventManagementSystem);", formatter:formatManageBadge},
+	</tmpl_if>
+    {key:"url", label:"^International(buy,Asset_EventManagementSystem);", formatter:formatAddToCart},
+    {key:"title", label:"^International(992,WebGUI);",sortable:true,formatter:formatViewBadgeDescription},
+    {key:"price", label:"^International(price,Asset_EventManagementSystem);",sortable:true,formatter:YAHOO.widget.DataTable.formatCurrency},
+    {key:"quantityAvailable",sortable:true,label:"^International(quantity available,Asset_EventManagementSystem);", formatter:formatQuantityAvailable}
+    ];
+    var myTable = new DataTable('emsBadgeList', myColumnDefs, mySource, myTableConfig);
+
+});
+</script>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: EMS
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

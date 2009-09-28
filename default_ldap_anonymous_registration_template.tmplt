@@ -1,0 +1,131 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000005
+Menu Title  : Default LDAP Anonymous Registration Template
+Parent      : root/import/auth/ldap/create
+Title       : Default LDAP Anonymous Registration Template
+URL         : default_ldap_anonymous_registration_template
+==== headBlock ===============================================================
+<style type="text/css">
+    .submitData {
+        text-align:right;
+        border-top:solid gray 1px;
+    }
+    .authfield_required_off {
+        background-color: #FFFFFF;
+    }
+    .authfield_required {
+        background-color: #FFFFBB;
+    }
+    .authfield_error {
+        background-color: #FF9494;
+    }
+</style>
+<script type="text/javascript" src="^Extras;yui/build/yahoo-dom-event/yahoo-dom-event.js"></script>
+<script type="text/javascript">
+   YAHOO.util.Event.onDOMReady(function () {
+        var setFieldColor = function ( evt, obj ) {
+            var field     = obj.field;
+            var hasError  = obj.hasError;
+            var origClass = field.className;
+            YAHOO.util.Dom.removeClass(field,origClass);
+            if(field.value == "") {
+                var newClass  = hasError?"authfield_error":"authfield_required";
+                YAHOO.util.Dom.replaceClass(field,origClass,newClass);
+            }
+            else {
+                YAHOO.util.Dom.replaceClass(field,origClass,"authfield_required_off");
+            }
+        }
+
+        var rFields = YAHOO.util.Dom.getElementsByClassName("authfield_required");
+        var eFields = YAHOO.util.Dom.getElementsByClassName("authfield_error");
+        var oFields = YAHOO.util.Dom.getElementsByClassName("authfield_required_off");
+
+        for (var i = 0; i < rFields.length; i++) {
+            YAHOO.util.Event.addListener(rFields[i],"change",setFieldColor, {
+                field   : rFields[i],
+                hasError: (eFields.length > 0)
+            });
+        }
+
+        for (var i = 0; i < eFields.length; i++) {
+            YAHOO.util.Event.addListener(eFields[i],"change",setFieldColor, {
+                field   : eFields[i],
+                hasError: (eFields.length > 0)
+            });
+        }
+
+        for (var i = 0; i < oFields.length; i++) {
+            YAHOO.util.Event.addListener(oFields[i],"change",setFieldColor, {
+                field   : oFields[i],
+                hasError: (oFields.length > 0)
+            });
+        }
+       
+   });
+</script>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>
+   <tmpl_var title>
+</h2>
+<tmpl_if create.message>
+   <tmpl_var create.message>
+</tmpl_if>
+
+<tmpl_var create.form.header>
+<table>
+<tmpl_var create.form.hidden>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var create.form.ldapConnection.label></td>
+   <td class="tableData"><tmpl_var create.form.ldapConnection></td>
+</tr>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var create.form.ldapId.label></td>
+   <td class="tableData"><tmpl_var create.form.ldapId></td>
+</tr>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var create.form.password.label></td>
+   <td class="tableData"><tmpl_var create.form.password></td>
+</tr>
+<tmpl_loop create.form.profile>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var profile.formElement.label></td>
+   <td class="tableData"><tmpl_var profile.formElement></td>
+</tr>
+</tmpl_loop>
+<tr>
+   <td class="formDescription" valign="top"></td>
+   <td class="tableData"><tmpl_var create.form.submit></td>
+</tr>
+</table>
+<tmpl_var create.form.footer>
+
+
+<div class="accountOptions">
+   <ul>
+     <li><a href="<tmpl_var login.url>"><tmpl_var login.label></a></li>
+ 
+  </ul>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Auth/LDAP/Create
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

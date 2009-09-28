@@ -1,0 +1,60 @@
+==== Template ================================================================
+Asset ID    : uRL9qtk7Rb0YRJ41LmHOJw
+Menu Title  : Default Calendar Print List View
+Parent      : root/import/calendar-templates
+Title       : Default Calendar Print List View
+URL         : root/import/calendar-templates/default-calendar-print-list-view
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>Calendar</h2>
+
+<tmpl_loop events>
+	<p>
+	<tmpl_if new_year>
+		New Year,
+	</tmpl_if>
+	<tmpl_if new_month>
+		New Month,
+	</tmpl_if>
+	<tmpl_if new_day>
+		New Day>
+	</tmpl_if>
+	</p>
+
+	<h3><a href="<tmpl_var eventUrl>"><tmpl_var eventTitle></a></h3>
+	<tmpl_var eventDescription>
+	<p><tmpl_var eventDateSpan></p>
+
+</tmpl_loop>
+
+<tmpl_if url_previousPage>
+	<a href="<tmpl_var url_previousPage>">&lt;&lt; ^International(previous page,Asset_Calendar);</a>
+</tmpl_if>
+<tmpl_if url_nextPage>
+	<a href="<tmpl_var url_nextPage>">^International(next page,Asset_Calendar); &gt;&gt;</a>
+</tmpl_if>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Calendar/Print/List
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

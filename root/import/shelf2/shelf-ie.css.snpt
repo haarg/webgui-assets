@@ -1,0 +1,50 @@
+==== Snippet =================================================================
+Asset ID    : 4e-_rNs6mSWedZhQ_V5kJA
+Menu Title  : shelf-ie.css
+Parent      : root/import/shelf2
+Title       : shelf-ie.css
+URL         : root/import/shelf2/shelf-ie.css
+==== snippet =================================================================
+.wgShelf .product {
+	margin:15px;
+	margin-left:0px;		
+	float:left;
+	text-align:left;
+	background-color:#f1f1f1;
+	border:solid #e1e1e1 1px;
+	min-height:100px;
+	min-width:200px;
+	width:200px;
+	height:100px;
+}
+.wgShelf .product .link {
+	background: url(^FileUrl(root/import/shelf2/images/shelf-titles.jpg);) no-repeat top right;
+	height:30px;
+	padding:3px;
+	line-height:24px;
+	margin-bottom:5px;	
+	text-align:left;
+	display:block;		
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

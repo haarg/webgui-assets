@@ -1,0 +1,181 @@
+==== Template ================================================================
+Asset ID    : jME5BEDYVDlBZ8jIQA9-jQ
+Menu Title  : Default Gallery Search
+Parent      : root/import/gallery-templates
+Title       : Default Gallery Search
+URL         : root/import/gallery-templates/default-gallery-search
+==== headBlock ===============================================================
+
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
+			<a href="<tmpl_var url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">			
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />						
+			</form>
+		</div>	
+		^International('template search title','Asset_Gallery');
+	</div>	
+
+	<tmpl_var description>	
+
+	<tmpl_var searchForm_start>
+		<div id="adminWrapper" style="text-align:left">
+			<table class="adminTable" border="0">
+			<tr>
+				<td class="label">^International('template search field title','Asset_Gallery');</td>
+				<td colspan="3" class="data"><tmpl_var searchForm_title></td>
+			</tr>
+			<tr>
+				<td class="label">^International('template search field description','Asset_Gallery');</td>
+				<td colspan="3" class="data"><tmpl_var searchForm_description></td>
+			</tr>
+			<tr>
+				<td class="label">^International('template search field keywords','Asset_Gallery');</td>
+				<td colspan="3" class="data"><tmpl_var searchForm_keywords></td>
+			</tr>
+			<tr>
+				<td class="label">^International('template search field className','Asset_Gallery');</td>
+				<td colspan="3" class="data radio">
+					<tmpl_var searchForm_className>
+				</td>
+			</tr>	
+			<tr>
+				<td class="label">^International('template search field creationDate','Asset_Gallery');</td>
+				<td class="data"><tmpl_var searchForm_creationDate_after></td>
+				<td class="label">^International('template search to','Asset_Gallery');</td>
+				<td class="data"><tmpl_var searchForm_creationDate_before></td>
+			</tr>
+			<tr>
+				<td colspan="3">&nbsp;</td>
+				<td>
+					<tmpl_var searchForm_submit>
+				</td>
+			</tr>
+			</table>
+		</div>
+	<tmpl_var searchForm_end>
+
+	<br /><br />
+
+	<tmpl_if search_results>
+		<hr />
+	
+		<div style="margin-left:15px;font-weight:bold;margin-bottom:25px">
+			<i><tmpl_var rowCount></i> ^International('template search results for','Asset_Gallery'); "<i><tmpl_var keywords></i>".
+		</div>
+
+		<h2>Albums</h2>
+		<tmpl_loop search_results>				
+			<tmpl_unless fileUrl>					
+				<div class="wgAlbum">
+					<a href="<tmpl_var url>" class="albumTitle">
+						<tmpl_var title>
+					</a>
+					<div class="albumImage">		
+						<tmpl_if thumbnailUrl><a href="<tmpl_var url>"><img src="<tmpl_var thumbnailUrl>" alt="" /><tmpl_else><a href="<tmpl_var url_addPhoto>"><img src="^FileUrl(root/import/gallery-templates/images/blank-image.jpg);" alt="Start Adding Images!" /></tmpl_if></a>
+					</div>
+					<div class="albumDesc">
+						<div class="description">	
+							<tmpl_if description>
+								<tmpl_var description>
+							<tmpl_else>
+								<a href="<tmpl_var url>?func=edit">Add a Description</a>
+							</tmpl_if>
+						</div>	
+					</div>	
+				</div>			
+			</tmpl_unless>				
+		</tmpl_loop>			
+	
+		<div style="clear:both"></div>
+		
+		<h2>Pictures</h2>
+		<tmpl_loop search_results>				
+			<tmpl_if fileUrl>					
+				<div class="wgPicture">
+					<a href="<tmpl_var url>" class="title">
+						<tmpl_var title>
+					</a>
+					<div class="thumbnail">		
+						<a href="<tmpl_var url>"><img src="<tmpl_var thumbnailUrl>" alt="Image" /></a>
+					</div>
+					<tmpl_if synopsis>
+						<div class="pictureDesc">
+							<div class="description">
+								<tmpl_var synopsis>
+							</div>	
+						</div>	
+					</tmpl_if>
+					<div class="details">
+						<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> Comments</a></div>
+						<div class="date"> Created ^D("%M/%d/%Y",^International('template file creationDate','Asset_GalleryAlbum'););</div>
+						<div style="clear:both"></div>
+					</div>
+					<div style="clear:both"></div>
+				</div>					
+			</tmpl_if>				
+		</tmpl_loop>
+
+		<div style="clear:both"></div>
+			
+		<div style="text-align:center;background: url(^FileUrl(root/import/gallery-templates/images/pagination_bg.jpg);) repeat-x;">	
+			<del class="container">
+				<ul class="pagination">
+					<li><a href="<tmpl_var pagination.previousPageUrl>"<tmpl_unless pagination.isFirstPage> class="current"</tmpl_unless>>&laquo;</a></li>
+					<tmpl_loop pagination.pageLoop.upTo10>
+					<li><a href="<tmpl_var pagination.url>"<tmpl_if pagination.url> class="current"</tmpl_if>><tmpl_var pagination.text></a></li>
+					</tmpl_loop>
+					<li><a href="<tmpl_var pagination.nextPageUrl>"<tmpl_unless pagination.isLastPage> class="current"</tmpl_unless>>&raquo;</a></li>
+				</ul>		
+			</del>	
+		</div>
+	</tmpl_if>
+
+	<div style="clear:both"></div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Gallery/Search
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

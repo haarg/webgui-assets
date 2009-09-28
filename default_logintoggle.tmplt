@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000043
+Menu Title  : Default LoginToggle
+Parent      : root/import/macro/logintoggle
+Title       : Default LoginToggle
+URL         : default_logintoggle
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a class="loginToggleLink" href="<tmpl_var toggle.url>"><tmpl_var toggle.text></a>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/LoginToggle
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

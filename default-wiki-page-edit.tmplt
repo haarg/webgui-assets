@@ -1,0 +1,58 @@
+==== Template ================================================================
+Asset ID    : WikiPageEditTmpl000001
+Menu Title  : Default Wiki Page Edit
+Parent      : root/import/wiki
+Title       : Default Wiki Page Edit
+URL         : default-wiki-page-edit
+==== headBlock ===============================================================
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var formHeader>
+<table>
+<tbody>
+<tr><td><label for="title_formId"><tmpl_var titleLabel></label></td><td><tmpl_var formTitle></td></tr>
+<tmpl_if allowsAttachments>
+        <tr><td><label for="storageId_formId"><tmpl_var attachmentLabel></label></td>
+        <td><tmpl_var formAttachment></td></tr>
+</tmpl_if>
+<tr><td><label for="content_formId"><tmpl_var contentLabel></label></td><td><tmpl_var formContent></td></tr>
+<tr><td><label for="keywords_formId">^International(keywords,Asset);</label></td><td><tmpl_var formKeywords></td></tr>
+<tmpl_if canAdminister>
+        <tr><td><label for="isProtected_formId"><tmpl_var protectQuestionLabel></label></td><td><tmpl_var
+formProtect></td></tr>
+</tmpl_if>
+</tbody>
+</table>
+<tmpl_var formSubmit>
+<tmpl_var formFooter>
+
+<tmpl_if canAdminister><tmpl_unless isNew>
+   <ul>
+        <li><a href="<tmpl_var deleteUrl>" 
+        onclick="return confirm('<tmpl_var deleteConfirm ESCAPE="JS">');"><tmpl_var deleteLabel></a></li>
+    </ul>
+</tmpl_unless></tmpl_if>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: WikiPage_edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

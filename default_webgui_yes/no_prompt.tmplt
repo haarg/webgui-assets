@@ -1,0 +1,47 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000057
+Menu Title  : Default WebGUI Yes/No Prompt
+Parent      : root/import/prompt
+Title       : Default WebGUI Yes/No Prompt
+URL         : default_webgui_yes/no_prompt
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2><tmpl_var title></h2>
+
+<p>
+<tmpl_var question>
+</p>
+
+<div style="text-align:center">
+
+<a href="<tmpl_var yes.url>"><tmpl_var yes.label></a>
+
+&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; 
+
+<a href="<tmpl_var no.url>"><tmpl_var no.label></a>
+
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: prompt
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

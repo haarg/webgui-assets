@@ -1,0 +1,33 @@
+==== Wobject::Layout =========================================================
+Asset ID    : 8Bb8gu-me2mhL3ljFyiWLg
+Menu Title  : Your Next Step
+Parent      : home
+Title       : What should you do next?
+URL         : your_next_step
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  assetOrder: asc
+  assetsToHide: ~
+  templateId: PBtmpl0000000000000094
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

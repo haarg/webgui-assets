@@ -1,0 +1,137 @@
+==== Template ================================================================
+Asset ID    : ThingyTmpl000000000003
+Menu Title  : Default Thingy Edit Thing
+Parent      : root/import/thingy-templates
+Title       : Default Thingy Edit Thing
+URL         : templates/thingy-default-edit-thing
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/thingy-templates/thingy.css););
+</style>
+
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/thingy-templates/thingy-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgThingy">
+	<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2 class="title"><tmpl_var title><tmpl_if editScreenTitle> <span class="smaller">&bull; <tmpl_var editScreenTitle></span></tmpl_if></h2>
+	</tmpl_if>	
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>
+
+	
+	<div class="controls">
+		<tmpl_if canEditThings>
+			<a href="<tmpl_var manage_url>" class="styleButton">^International(manage things label,"Asset_Thingy");</a>					
+		</tmpl_if>
+		<tmpl_if delete_url>
+			<a href="<tmpl_var delete_url>" <tmpl_var delete_confirm> class="styleButton">^International(delete label,"Asset_Thingy");</a>
+		</tmpl_if>
+		<tmpl_if search_url>
+			<a href="<tmpl_var search_url>" class="styleButton">^International(search label,"Asset_Thingy"); <tmpl_var thing_label></a>
+		</tmpl_if>
+		<tmpl_if add_url>
+			<a href="<tmpl_var add_url>" class="styleButton">^International(add label,"Asset_Thingy"); <tmpl_var thing_label></a>
+		</tmpl_if>		
+		<tmpl_if listOfThings>			
+			<div id="thingyList">				
+				<tmpl_loop listOfThings>
+					<tmpl_if isCurrent>
+						<a href="javascript:showHide('<tmpl_var assetId>_things')" class="goButton"><tmpl_var name></a>
+					</tmpl_if>
+				</tmpl_loop>
+				<div id="<tmpl_var assetId>_things" style="display:none" class="things">
+					<tmpl_loop listOfThings>					
+						<tmpl_unless isCurrent>
+							<tmpl_if canView><a href="<tmpl_var search_url>"><tmpl_var name></a></tmpl_if>							
+						</tmpl_unless>					
+					</tmpl_loop>			
+				</div>				
+			</div>				
+		</tmpl_if>
+		<div style="clear:both"></div>
+	</div>
+
+	<tmpl_if error_loop>
+	    <ul class="fontSettings">
+	        <tmpl_loop error_loop>
+	            <li><b><tmpl_var error_message></b></li>
+	        </tmpl_loop>
+	    </ul>
+	</tmpl_if>
+
+	<tmpl_var editInstructions>
+
+	<tmpl_if field_loop>
+		<tmpl_var form_start>
+		<table class="editThing">
+		<tmpl_loop field_loop>
+			<tmpl_unless field_isHidden>
+				<tr>
+					<td class="<tmpl_if __ODD__>wgRowOne<tmpl_else>wgRowTwo</tmpl_if> label" valign="top">
+						<tmpl_if session.var.adminOn>
+							<tmpl_if canEdit>
+								<tmpl_var field.controls>
+							</tmpl_if>
+						</tmpl_if>
+						<tmpl_var field_label>
+					</td>
+					<td class="<tmpl_if __ODD__>wgRowOne<tmpl_else>wgRowTwo</tmpl_if>" valign="top" colspan="2">
+						<tmpl_if field_isVisible>
+							<tmpl_var field_value>
+						<tmpl_else>
+							<tmpl_var field_form>
+						</tmpl_if>
+						<tmpl_if field_isRequired>*</tmpl_if>
+						<tmpl_if field_subtext>
+						<span class="formSubtext">
+							<br /><tmpl_var field_subtext>
+						</span>
+						</tmpl_if>
+					</td>
+				</tr>
+			</tmpl_unless>
+		</tmpl_loop>
+		<tr>
+			<td></td>
+			<td></td>
+			<td style="width:1px"><tmpl_var form_submit></td>
+		</tr>
+		</table>
+		<tmpl_var form_end>
+	</tmpl_if>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Thingy/EditThing
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

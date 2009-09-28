@@ -1,0 +1,43 @@
+==== Wobject::Navigation =====================================================
+Asset ID    : PBnav00000000000000011
+Menu Title  : dtree
+Parent      : root/import/navigation
+Title       : dtree
+URL         : dtree
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: PBtmpl0000000000000060
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  ancestorEndPoint: '55'
+  assetsToInclude: 'self
+
+    descendants'
+  descendantEndPoint: '55'
+  mimeType: text/html
+  reversePageLoop: '0'
+  showHiddenPages: '0'
+  showSystemPages: '0'
+  showUnprivilegedPages: '0'
+  startPoint: '1'
+  startType: relativeToRoot
+  templateId: PBtmpl0000000000000130
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

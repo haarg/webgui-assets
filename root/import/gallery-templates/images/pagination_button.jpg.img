@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : POVcY79vIqAHR8OfGt36aw
+Menu Title  : pagination_button.jpg
+Parent      : root/import/gallery-templates/images
+Title       : pagination_button.jpg
+URL         : root/import/gallery-templates/images/pagination_button.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="pagination_button.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

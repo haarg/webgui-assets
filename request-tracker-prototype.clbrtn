@@ -1,0 +1,79 @@
+==== Wobject::Collaboration ==================================================
+Asset ID    : pbproto000000000000002
+Menu Title  : Request Tracker
+Parent      : root/import
+Title       : Request Tracker
+URL         : request-tracker-prototype
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  collaborationTemplateId: PBtmpl0000000000000208
+  displayLastReply: '0'
+  displayTitle: '1'
+  isHidden: '0'
+  maxImageSize: '0'
+  newWindow: '0'
+  postFormTemplateId: PBtmpl0000000000000210
+  postReceivedTemplateId: default-post-received
+  postsPerPage: '10'
+  printableStyleTemplateId: ''
+  richEditor: PBrichedit000000000002
+  rssCapableRssEnabled: '0'
+  rssCapableRssTemplateId: PBtmpl0000000000000142
+  searchTemplateId: ''
+  sortBy: assetData.revisionDate
+  sortOrder: desc
+  styleTemplateId: PBtmpl0000000000000060
+  threadTemplateId: PBtmpl0000000000000209
+  threadsPerPage: '30'
+  thumbnailSize: '0'
+  useContentFilter: '1'
+  visitorCacheTimeout: '3600'
+mail:
+  autoSubscribeToThread: '1'
+  getMail: '0'
+  getMailInterval: '300'
+  mailAccount: ~
+  mailAddress: ~
+  mailPassword: ~
+  mailPrefix: ~
+  mailServer: ~
+  notificationTemplateId: ''
+  requireSubscriptionForEmailPosting: '1'
+meta:
+  enablePostMetaData: '0'
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '1'
+properties:
+  archiveAfter: '2592000'
+  archiveEnabled: '1'
+  attachmentsPerPost: '10'
+  avatarsEnabled: '0'
+  defaultKarmaScale: '100'
+  karmaPerPost: '0'
+  karmaRatingMultiplier: '0'
+  karmaSpentToRate: '0'
+  usePreview: '0'
+security:
+  addEditStampToPosts: '0'
+  allowReplies: '1'
+  approvalWorkflow: pbworkflow000000000003
+  canStartThreadGroupId: '2'
+  editTimeout: '3600'
+  filterCode: javascript
+  groupIdEdit: '12'
+  groupIdView: '7'
+  groupToEditPost: ''
+  ownerUserId: '3'
+  postGroupId: '2'
+  subscriptionGroupId: ~
+  threadApprovalWorkflow: pbworkflow000000000003
+  useCaptcha: '0'
+

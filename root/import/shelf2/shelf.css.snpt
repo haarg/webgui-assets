@@ -1,0 +1,90 @@
+==== Snippet =================================================================
+Asset ID    : 1XOJDcg_ITRYwVM-QnIcPw
+Menu Title  : shelf.css
+Parent      : root/import/shelf2
+Title       : shelf.css
+URL         : root/import/shelf2/shelf.css
+==== snippet =================================================================
+	.wgShelf {
+		font-size:12px;
+		font-family:arial, verdana;		
+		margin:15px 0px;
+	}
+	.wgShelf h2 {
+		background: black;
+		padding:5px;
+		padding-left:15px;
+		line-height:32px;
+		color:white;
+		margin:0px;
+		height:32px;
+	}
+	.wgShelf .wgShelves {
+		background: #F1F1F1;
+		height:29px;
+		padding:3px;
+		line-height:29px;
+		padding-left:30px;
+	}
+	.wgShelf .product {
+		margin:15px;
+		margin-left:0px;		
+		text-align:left;
+		background-color:#f1f1f1;
+		border:solid #e1e1e1 1px;
+		width: 200px;
+		display: -moz-inline-box; /* Moz */
+		display: inline-block; /* Op, Saf, IE \*/
+		vertical-align: top; /* IE Mac non capisce e a volte crea extra v space */
+	}
+	.wgShelf .product .thumbnail {
+		display:block;
+		text-align:left;
+		margin:3px;
+		float:left;
+	}
+	.wgShelf .product .link {
+		background: #e1e1e1;
+		height:30px;
+		padding:3px;
+		line-height:24px;
+		margin-bottom:5px;	
+		text-align:left;
+		display:block;
+	}
+	.wgShelf .product .link a:link,
+	.wgShelf .product .link a:visited	{
+		color:#000;		
+		display:block;
+	}
+	.wgShelf .product .link a:hover {
+		text-decoration:underline;
+	}
+	.wgShelf .product .price {
+		display:block;
+		text-align:right;
+		font-size:18px;
+		font-weight:bold;
+	}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

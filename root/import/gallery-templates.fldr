@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : gI_TxK-5S4DNuv42wpImmw
+Menu Title  : Gallery Templates
+Parent      : root/import
+Title       : Gallery Templates
+URL         : root/import/gallery-templates
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>&nbsp;</p>
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: PBtmpl0000000000000060
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

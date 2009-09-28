@@ -1,0 +1,119 @@
+==== Snippet =================================================================
+Asset ID    : SynConXSLT000000000003
+Menu Title  : RSS 1.0 XSLT
+Parent      : root/import/syndicatedcontent
+Title       : RSS 1.0 XSLT Stylesheet
+URL         : xslt/rss1.0.xsl
+==== snippet =================================================================
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Title: RSS 1.0 XSL Template
+  Author: Rich Manalang (http://manalang.com)
+  Description: This sample XSLT will convert any valid RSS 1.0 feed to HTML.
+-->
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:foo="http://purl.org/rss/1.0/">
+  	<xsl:output method="html"/>
+	<xsl:template match="/">
+		<style>
+			<xsl:comment>
+			.syndication-content-area {
+			}
+			.syndication-title {
+				font-size: 1.1em;
+				font-weight: bold;
+			}
+			.syndication-description {
+				font-size: .9em;
+				margin: 0 0 10px 0;
+			}
+			.syndication-list {
+				font-size: .8em;
+				margin:0 0 0 20px;
+			}
+			.syndication-list-item {
+				margin: 0 0 5px 0;
+			}
+                        li.syndication-list-item{
+                        padding-bottom: .2em;
+                        background-color: #e4e4e4;
+                        }
+			.syndication-list-item a,
+			.syndication-list-item a:link {
+				color: blue;
+			}
+			.syndication-list-item a:active,
+			.syndication-list-item a:hover {
+				color: red;
+			}
+			.syndication-list-item a:visited {
+				color: black;
+				text-decoration: none;
+			}
+			.syndication-list-item-date {
+				font-size: .8em;
+			}
+			.syndication-list-item-description {
+				font-size: .9em;
+			}
+			</xsl:comment>
+		</style>
+		<xsl:apply-templates select="/rdf:RDF/foo:channel"/>
+	</xsl:template>
+	<xsl:template match="/rdf:RDF/foo:channel">
+		<div class="syndication-content-area">
+You're viewing an <a href="http://web.resource.org/rss/1.0/">RSS version 1.0 feed</a>. Please use an RSS feed reader to view this content as intended.
+			<div class="syndication-title">
+				<xsl:value-of select="foo:title"/>
+			</div>
+			<div class="syndication-description">
+				<xsl:value-of select="foo:description"/>
+			</div>
+			<ul class="syndication-list">
+				<xsl:apply-templates select="/rdf:RDF/foo:item"/>
+			</ul>
+
+		</div>
+	</xsl:template>
+	<xsl:template match="/rdf:RDF/foo:item">
+		<li class="syndication-list-item">
+			<a href="{foo:link}" title="{foo:description}">
+				<xsl:value-of select="foo:title"/>
+			</a>
+			<span class="syndication-list-item-date">
+						(
+				<xsl:value-of select="dc:date"/>)
+			</span>
+
+			<div class="syndication-list-item-description">
+				<xsl:value-of select="foo:description"/>
+			</div>
+		</li>
+	</xsl:template>
+</xsl:stylesheet>
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: application/xml
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000040
+Menu Title  : Default Group Add Macro
+Parent      : root/import/macro/groupadd
+Title       : Default Group Add Macro
+URL         : default_group_add_macro
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a href="<tmpl_var group.url>"><tmpl_var group.text></a>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/GroupAdd
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

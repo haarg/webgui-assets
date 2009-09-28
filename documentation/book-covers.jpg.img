@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : o_pq_e4vRyhMOKFzs61eag
+Menu Title  : book-covers.jpg
+Parent      : documentation
+Title       : book-covers.jpg
+URL         : documentation/book-covers.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="book-covers.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

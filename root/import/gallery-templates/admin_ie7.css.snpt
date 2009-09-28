@@ -1,0 +1,33 @@
+==== Snippet =================================================================
+Asset ID    : MBZK_LPVzqhb4TV4mMRTJg
+Menu Title  : admin_ie7.css
+Parent      : root/import/gallery-templates
+Title       : admin_ie7.css
+URL         : root/import/gallery-templates/admin_ie7.css
+==== snippet =================================================================
+input.captionEnter {
+	margin-left:		-5px;
+	width:			92px;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

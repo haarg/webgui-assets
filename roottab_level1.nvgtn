@@ -1,0 +1,41 @@
+==== Wobject::Navigation =====================================================
+Asset ID    : 7.0-style0000000000026
+Menu Title  : RootTab Level 1
+Parent      : root/import/webgui-7-style-1
+Title       : RootTab Level 1
+URL         : roottab_level1
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: ''
+  styleTemplateId: PBtmpl0000000000000060
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  ancestorEndPoint: '55'
+  assetsToInclude: descendants
+  descendantEndPoint: '1'
+  mimeType: text/html
+  reversePageLoop: '0'
+  showHiddenPages: '0'
+  showSystemPages: '0'
+  showUnprivilegedPages: '0'
+  startPoint: '2'
+  startType: relativeToRoot
+  templateId: PBnav000000style01lvl2
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

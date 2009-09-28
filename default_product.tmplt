@@ -1,0 +1,510 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000056
+Menu Title  : Default Product
+Parent      : root/import/product
+Title       : Default Product
+URL         : default_product
+==== headBlock ===============================================================
+<style type="text/css">
+	.wgProduct {
+
+	}
+	.wgProduct h3.title {
+		margin-bottom:2px;
+		padding-bottom:0px;
+	}
+	.wgProduct .images {
+		float:left;
+		min-width:1%;
+		margin:10px;
+	}
+	.wgProduct .images ul, 
+	.wgProduct .images li {
+		padding:0px;
+		margin:0px;
+		margin-left:15px;
+		color:#787878;
+	}	
+	.wgProduct .images .controls .title {
+		background-color:#E0E0E0;
+		padding:2px;
+		font-weight:bold;
+		margin-bottom:5px;
+	}	
+	.wgProduct .images .controls {
+		margin-top:10px;
+		display:block;
+		background-color:#F1F1F1;
+		padding-bottom:5px;
+		border:1px ridge #E0E0E0;		
+	}
+	.wgProduct .images .controls a {
+		font-size:10px;
+		letter-spacing:0px;
+		display:block;
+		padding:0px 3px;
+		color:#787878;
+	}	
+	.wgProduct .images .buttons {
+		margin:10px 0px;
+	}
+	.wgProduct .images .buttons a {
+		background-color:#F1F1F1;
+		padding:2px 5px;
+		color:#787878;
+		text-decoration:none;
+		border:1px ridge #E0E0E0;
+		font-size:10px;
+		display:block;
+		margin:1px 0px;
+	}
+	
+	
+	
+	
+	.wgProduct .product {
+		float:left;
+		margin-left:40px;
+		padding:0px 10px 10px 0px;
+	}
+	.wgProduct .product .description {
+		margin-left:-20px;
+	}
+	.wgProduct .product form {
+		margin:20px 0px;
+	}	
+	.wgProduct .product ul,
+	.wgProduct .product li {
+		margin:0px;
+		padding:0px;
+	}
+	.wgProduct .product ul {
+		margin-bottom:15px;
+	}
+	.wgProduct .product li {
+		margin-left:15px;
+	}
+
+.hoverbox {
+	cursor: default;
+	list-style: none;
+}
+
+.hoverbox a {
+	cursor: default;
+}
+
+.hoverbox a .bigImage {
+	display: none;
+}
+
+.hoverbox a:hover .bigImage {
+	display: block;
+	position: absolute;
+	top: -33px;
+	left: -45px;
+	z-index: 1;
+}
+
+.hoverbox img {
+	background: #fff;
+	border: 1px solid #000000;
+	color: inherit;
+	padding: 2px;
+	vertical-align: top;
+}
+
+.hoverbox li
+{
+	background: #eee;
+	border: 1px solid #000000;
+	color: inherit;
+	display: inline;
+	float: left;
+	margin: 3px;
+	padding: 5px;
+	position: relative;
+}
+
+
+
+.hoverbox .bigImage {
+	border-color: #000;
+	max-width: 600px;
+	max-height: 480px;
+}		
+</style>
+l_var addSpecification_label></a></li>
+				<li><a href="<tmpl_var addaccessory_url>"><tmpl_var addaccessory_label></a></li>
+				<li><a href="<tmpl_var addRelatedProduct_url>"><tmpl_var addRelatedProduct_label></a></li>
+				</ul>
+			</div>
+		</tmpl_if>
+	</div>
+	
+	<div class="product">		
+                <tmpl_if hasAddedToCart>
+                        <tmpl_var thankYouMessage><p />
+                        ^ViewCart();<br />
+                        <a href="<tmpl_var continueShoppingUrl>">^International(continue shopping button,Shop);</a>
+                <tmpl_else>
+			^ViewCart(); (^CartItemCount;)
+                        <tmpl_if description><div class="description"><tmpl_var description></div></tmpl_if>
+                        <tmpl_if in_stock>
+                                <tmpl_var buy_form_header>
+                                <tmpl_var buy_options>
+                                <tmpl_var buy_button>
+                                <tmpl_var buy_form_footer>
+                        <tmpl_else>
+                                <tmpl_var no_stock_message>
+                        </tmpl_if>
+                </tmpl_if>
+
+		
+		<tmpl_if variant_loop>
+		<tmpl_if session.var.adminOn>
+		<ul>
+			<strong>^International(variants,Asset_Product);</strong>
+			<tmpl_loop variant_loop>
+				<li><tmpl_var variant_controls><tmpl_var variant_title> <tmpl_var variant_price></li>
+			</tmpl_loop>
+		</ul>
+		<tmpl_else>
+			<tmpl_loop variant_loop>
+			</tmpl_loop>
+		</tmpl_if>
+		</tmpl_if>
+		
+		
+		
+			
+		<tmpl_if feature_loop>
+		<ul>
+			<strong>^International(30,Asset_Product);</strong>
+			<tmpl_loop feature_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var feature_controls></tmpl_if><tmpl_var feature_feature></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>		
+		
+		<tmpl_if benefit_loop>
+		<ul>
+			<strong>^International(54,Asset_Product);</strong>
+			<tmpl_loop benefit_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var benefit_controls></tmpl_if><tmpl_var benefit_benefit></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>	
+
+		<tmpl_if specification_loop>
+		<ul>
+			<strong>^International(31,Asset_Product);</strong>
+			<tmpl_loop specification_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var specification_controls></tmpl_if><tmpl_var specification_label>: <tmpl_var specification_specification> <tmpl_var specification_units></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>		
+		
+		<tmpl_if accessory_loop>
+		<ul>
+			<strong>^International(32,Asset_Product);</strong>
+			<tmpl_loop accessory_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var accessory_controls></tmpl_if><a href="<tmpl_var accessory_url>"><tmpl_var accessory_title></a></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>	
+		
+		<tmpl_if relatedproduct_loop>
+		<ul>
+			<strong>^International(33,Asset_Product);</strong>
+			<tmpl_loop relatedproduct_loop>
+				<li><a href="<tmpl_var relatedproduct_url>"><tmpl_var relatedproduct_title></a></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>			
+	</div>	
+	
+	<div style="clear:both"></div>
+</div>
+
+<style type="text/css">
+	.wgProduct {
+
+	}
+	.wgProduct h3.title {
+		margin-bottom:2px;
+		padding-bottom:0px;
+	}
+	.wgProduct .images {
+		float:left;
+		min-width:1%;
+		margin:10px;
+	}
+	.wgProduct .images ul, 
+	.wgProduct .images li {
+		padding:0px;
+		margin:0px;
+		margin-left:15px;
+		color:#787878;
+	}	
+	.wgProduct .images .controls .title {
+		background-color:#E0E0E0;
+		padding:2px;
+		font-weight:bold;
+		margin-bottom:5px;
+	}	
+	.wgProduct .images .controls {
+		margin-top:10px;
+		display:block;
+		background-color:#F1F1F1;
+		padding-bottom:5px;
+		border:1px ridge #E0E0E0;		
+	}
+	.wgProduct .images .controls a {
+		font-size:10px;
+		letter-spacing:0px;
+		display:block;
+		padding:0px 3px;
+		color:#787878;
+	}	
+	.wgProduct .images .buttons {
+		margin:10px 0px;
+	}
+	.wgProduct .images .buttons a {
+		background-color:#F1F1F1;
+		padding:2px 5px;
+		color:#787878;
+		text-decoration:none;
+		border:1px ridge #E0E0E0;
+		font-size:10px;
+		display:block;
+		margin:1px 0px;
+	}
+	
+	
+	
+	
+	.wgProduct .product {
+		float:left;
+		margin-left:40px;
+		padding:0px 10px 10px 0px;
+	}
+	.wgProduct .product .description {
+		margin-left:-20px;
+	}
+	.wgProduct .product form {
+		margin:20px 0px;
+	}	
+	.wgProduct .product ul,
+	.wgProduct .product li {
+		margin:0px;
+		padding:0px;
+	}
+	.wgProduct .product ul {
+		margin-bottom:15px;
+	}
+	.wgProduct .product li {
+		margin-left:15px;
+	}
+
+.hoverbox {
+	cursor: default;
+	list-style: none;
+}
+
+.hoverbox a {
+	cursor: default;
+}
+
+.hoverbox a .bigImage {
+	display: none;
+}
+
+.hoverbox a:hover .bigImage {
+	display: block;
+	position: absolute;
+	top: -33px;
+	left: -45px;
+	z-index: 1;
+}
+
+.hoverbox img {
+	background: #fff;
+	border: 1px solid #000000;
+	color: inherit;
+	padding: 2px;
+	vertical-align: top;
+}
+
+.hoverbox li
+{
+	background: #eee;
+	border: 1px solid #000000;
+	color: inherit;
+	display: inline;
+	float: left;
+	margin: 3px;
+	padding: 5px;
+	position: relative;
+}
+
+
+
+.hoverbox .bigImage {
+	border-color: #000;
+	max-width: 600px;
+	max-height: 480px;
+}		
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgProduct">
+	<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+	<tmpl_if session.var.adminOn>
+		<div><tmpl_var controls></div>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h3 class="title"><tmpl_var title></h3>
+	</tmpl_if>
+
+	<div class="images">
+	<ul class="hoverbox">
+		<tmpl_if thumbnail1><li><a class="thumbpic" href="#"><img src="<tmpl_var thumbnail1>" alt="<tmpl_var thumbnail1>" /><img class="bigImage" src="<tmpl_var image1>" alt="<tmpl_var image1>" /></a></li></tmpl_if>
+		<tmpl_if thumbnail2><li><a class="thumbpic" href="#"><img src="<tmpl_var thumbnail2>" alt="<tmpl_var thumbnail2>" /><img class="bigImage" src="<tmpl_var image2>" alt="<tmpl_var image2>" /></a></li></tmpl_if>
+		<tmpl_if thumbnail3><li><a class="thumbpic" href="#"><img src="<tmpl_var thumbnail3>" alt="<tmpl_var thumbnail3>" /><img class="bigImage" src="<tmpl_var image3>" alt="<tmpl_var image3>" /></a></li></tmpl_if>
+	</ul>
+
+		<div class="buttons">
+			<tmpl_if brochure_url><a href="<tmpl_var brochure_url>"  target="_blank"><tmpl_var brochure_label></a></tmpl_if>
+			<tmpl_if manual_url><a href="<tmpl_var manual_url>" target="_blank"><tmpl_var manual_label></a></tmpl_if>
+			<tmpl_if warranty_url><a href="<tmpl_var warranty_url>" target="_blank"><tmpl_var warranty_label></a></tmpl_if>
+		</div>			
+		<tmpl_if session.var.adminOn>
+			<div class="controls">
+				<div class="title">Controls</div>
+				<ul>
+				<tmpl_unless variant_loop>
+					<li><a href="<tmpl_var addvariant_url>">Set Product price and SKU</a></li>
+				<tmpl_else>
+					<li><a href="<tmpl_var addvariant_url>">Add a Variant</a></li>	
+				</tmpl_unless>								
+				<li><a href="<tmpl_var addfeature_url>"><tmpl_var addfeature_label></a></li>
+				<li><a href="<tmpl_var addBenefit_url>"><tmpl_var addBenefit_label></a></li>
+				<li><a href="<tmpl_var addSpecification_url>"><tmpl_var addSpecification_label></a></li>
+				<li><a href="<tmpl_var addaccessory_url>"><tmpl_var addaccessory_label></a></li>
+				<li><a href="<tmpl_var addRelatedProduct_url>"><tmpl_var addRelatedProduct_label></a></li>
+				</ul>
+			</div>
+		</tmpl_if>
+	</div>
+	
+	<div class="product">		
+                <tmpl_if hasAddedToCart>
+                        <tmpl_var thankYouMessage><p />
+                        ^ViewCart();<br />
+                        <a href="<tmpl_var continueShoppingUrl>">^International(continue shopping button,Shop);</a>
+                <tmpl_else>
+			^ViewCart(); (^CartItemCount;)
+                        <tmpl_if description><div class="description"><tmpl_var description></div></tmpl_if>
+                        <tmpl_if in_stock>
+                                <tmpl_var buy_form_header>
+                                <tmpl_var buy_options>
+                                <tmpl_var buy_button>
+                                <tmpl_var buy_form_footer>
+                        <tmpl_else>
+                                <tmpl_var no_stock_message>
+                        </tmpl_if>
+                </tmpl_if>
+
+		
+		<tmpl_if variant_loop>
+		<tmpl_if session.var.adminOn>
+		<ul>
+			<strong>^International(variants,Asset_Product);</strong>
+			<tmpl_loop variant_loop>
+				<li><tmpl_var variant_controls><tmpl_var variant_title> <tmpl_var variant_price></li>
+			</tmpl_loop>
+		</ul>
+		<tmpl_else>
+			<tmpl_loop variant_loop>
+			</tmpl_loop>
+		</tmpl_if>
+		</tmpl_if>
+		
+		
+		
+			
+		<tmpl_if feature_loop>
+		<ul>
+			<strong>^International(30,Asset_Product);</strong>
+			<tmpl_loop feature_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var feature_controls></tmpl_if><tmpl_var feature_feature></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>		
+		
+		<tmpl_if benefit_loop>
+		<ul>
+			<strong>^International(54,Asset_Product);</strong>
+			<tmpl_loop benefit_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var benefit_controls></tmpl_if><tmpl_var benefit_benefit></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>	
+
+		<tmpl_if specification_loop>
+		<ul>
+			<strong>^International(31,Asset_Product);</strong>
+			<tmpl_loop specification_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var specification_controls></tmpl_if><tmpl_var specification_label>: <tmpl_var specification_specification> <tmpl_var specification_units></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>		
+		
+		<tmpl_if accessory_loop>
+		<ul>
+			<strong>^International(32,Asset_Product);</strong>
+			<tmpl_loop accessory_loop>
+				<li><tmpl_if session.var.adminOn><tmpl_var accessory_controls></tmpl_if><a href="<tmpl_var accessory_url>"><tmpl_var accessory_title></a></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>	
+		
+		<tmpl_if relatedproduct_loop>
+		<ul>
+			<strong>^International(33,Asset_Product);</strong>
+			<tmpl_loop relatedproduct_loop>
+				<li><a href="<tmpl_var relatedproduct_url>"><tmpl_var relatedproduct_title></a></li>
+			</tmpl_loop>		
+		</ul>
+		</tmpl_if>			
+	</div>	
+	
+	<div style="clear:both"></div>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Product
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,83 @@
+==== Template ================================================================
+Asset ID    : PsFn7dJt4wMwBa8hiE3hOA
+Menu Title  : Print Badge (Default)
+Parent      : root/import/ems
+Title       : Print Badge (Default)
+URL         : root/import/ems/print-badge-default
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<html>
+<head>
+
+	<style type="text/css">
+body { margin: 0; }
+		#badge {
+ 			position: absolute;
+ 			top: 0.2in;
+ 			left: 0px;
+			width:3.8in;
+			height:3in;
+			position:relative;
+		}
+		#badge div {
+			position:relative;
+			z-index:10;
+			color:white;
+			text-align:center;
+		}
+		#badge div span {
+			display:block;				
+			margin:5px;
+			background-color:#f0f0f0;
+			color:black;
+			font-family:verdana;
+			font-weight:bold;
+			border:solid gray 1px;
+			opacity:.75;
+			filter: alpha(opacity=75); 
+			-moz-opacity: 0.75;
+		}
+	</style>
+
+</head>
+<body>
+
+<div id="badge">
+	<div style="top:10%; font-size:125%;position:relative;">
+		<span><tmpl_var badgeTitle></span>
+	</div>
+	<div style="top:30%; position:relative;">
+		<span style="font-size: 175%;"><tmpl_var name></span>
+		<span style="font-size: 100%;"><tmpl_var organization></span>
+		<span style="font-size: 100%;"><tmpl_var city>, <tmpl_var state></span>
+	</div>
+	<div style="top:80%; position:relative;text-align: right;">
+		<span><tmpl_var badgeNumber></span>
+	</div>
+</div>
+
+</body>
+</html>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: EMS/PrintBadge
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

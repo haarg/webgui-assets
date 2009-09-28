@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : _d5WTkKjnwct-_Dk7gZHvQ
+Menu Title  : bottom-right.jpg
+Parent      : shopping-cart-collateral-items
+Title       : bottom-right.jpg
+URL         : shopping-cart-collateral-items/bottom-right.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="bottom-right.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

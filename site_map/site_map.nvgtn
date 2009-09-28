@@ -1,0 +1,41 @@
+==== Wobject::Navigation =====================================================
+Asset ID    : pJd5TLAjfWMVXD6sCRLwUg
+Menu Title  : Site Map
+Parent      : site_map
+Title       : Site Map
+URL         : site_map/site_map
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  ancestorEndPoint: '55'
+  assetsToInclude: descendants
+  descendantEndPoint: '55'
+  mimeType: text/html
+  reversePageLoop: '0'
+  showHiddenPages: '0'
+  showSystemPages: '0'
+  showUnprivilegedPages: '0'
+  startPoint: root
+  startType: specificUrl
+  templateId: PBtmpl0000000000000048
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

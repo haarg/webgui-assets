@@ -1,0 +1,55 @@
+==== Template ================================================================
+Asset ID    : PBtmplBlankStyle000001
+Menu Title  : WebGUI 6 Blank Style
+Parent      : root/import/style
+Title       : WebGUI 6 Blank Style
+URL         : pbtmplblankstyle000001
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>^Page(title); - <tmpl_var session.setting.companyName></title>
+	<link rel="icon" href="^Extras(favicon.png);" type="image/png" />
+	<link rel="shortcut icon" href="^Extras(favicon.ico);" />
+	<tmpl_var head.tags>
+<style type="text/css">
+body {
+	margin: 0;
+	padding: 0;
+}
+</style>
+</head>
+<body>
+^AdminBar("PBtmpl0000000000000090");
+<tmpl_var body.content>
+
+<p>
+^AdminToggle();
+</p>
+</body>
+</html>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: style
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

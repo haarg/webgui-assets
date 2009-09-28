@@ -1,0 +1,58 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000004
+Menu Title  : Default LDAP Account Display Template
+Parent      : root/import/auth/ldap/account
+Title       : Default LDAP Account Display Template
+URL         : default_ldap_account_display_template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>
+	<tmpl_var title>
+</h2>
+
+<tmpl_var account.message>
+<tmpl_if account.form.karma>
+<br /><br />
+<table>
+<tr>
+	<td class="formDescription">
+		<tmpl_var account.form.karma.label>
+	</td>
+	<td class="tableData">
+	 	<tmpl_var account.form.karma>
+	</td>
+</tr>
+</table>
+</tmpl_if>
+
+<div class="accountOptions">
+	<ul>
+		<tmpl_loop account.options>
+			<li><tmpl_var options.display></li>
+		</tmpl_loop>
+	</ul>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Auth/LDAP/Account
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

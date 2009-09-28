@@ -1,0 +1,177 @@
+==== Snippet =================================================================
+Asset ID    : 3n3H85BsdeRQ0I08WmvlOg
+Menu Title  : thingy.css
+Parent      : root/import/thingy-templates
+Title       : thingy.css
+URL         : root/import/thingy-templates/thingy.css
+==== snippet =================================================================
+.wgThingy {
+	margin:5px;
+}
+
+.wgThingy * .styleButton {
+	color:black;	
+	margin:0px 5px;
+	display:block;
+	float:left;
+}
+.wgThingy * .spacerOne {
+	padding-left:15px;
+}
+
+
+.wgThingy * .rowOne,
+.wgThingy * tr.rowOne td
+ {
+	background: #EEEEEE;
+	margin:1px;
+	border:solid #CDCDCD 1px;
+	color:#000;
+	padding:2px;
+}
+.wgThingy * .rowTwo,
+.wgThingy * tr.rowTwo td {
+	background: #DBDBDB;
+	margin:1px;
+	border:solid #DDDDDD 1px;
+	color:#000;	
+	padding:2px;
+}
+.wgThingsWrapper img {	
+	display:block;
+	vertical-align:center;
+	float:left;
+}
+.wgThingsWrapper .label {
+	font-weight:bold;	
+	padding-left:15px;
+}
+.wgThingy h2.title {
+	background: #000;
+	height:42px;
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing:1px;			
+	line-height:42px;
+	padding-left:15px;
+	margin-bottom:0px;
+}
+
+.wgThingy * span.smaller {
+	font-size:13px;
+	color:white;
+}
+.wgThingy .controls {
+	line-height:35px;
+	height:35px;
+	background: #f1f1f1;	
+	margin-top:0px;
+	margin-bottom:20px;
+	padding:0px;
+}
+
+
+.wgThingy * .label {
+	background:black;
+	color:white;
+	padding:2px 5px;
+	font-family:arial;
+	font-size:11px;
+	font-weight:bold;
+	vertical-align:middle;
+}
+.wgThingy .label a {
+	color:white;
+}
+
+.searchTable * input,
+.editThing * input {
+	background: white;
+	border:solid #555 1px;
+}
+
+
+
+
+.editThing {
+	margin-top:15px;	
+}	
+
+
+
+#thingyList, #thingyList * {
+	margin:0px;
+	padding:0px;
+}
+#thingyList {
+	position:relative;	
+	float:left;
+}
+#thingyList .goButton:link,
+#thingyList .goButton:visited {
+	padding:2px 25px 2px 2px;
+	background: #F1F1F1 url(^FileUrl(root/import/thingy-templates/images/go-btn.gif);) no-repeat right;
+	line-height:20px;
+	border:solid #a2a2a2 1px;
+	color:#a2a2a2;
+	text-decoration:none;
+	font-family:verdana, arial;
+	font-size:10px;
+	font-weight:bold;
+	margin-left:20px;
+	letter-spacing:0px;
+}
+#thingyList .goButton:hover {
+	background-color:white;
+}
+#thingyList .things {
+	padding:0px;
+	margin:0px;
+	width:300px;
+	z-index:5000;
+	position:absolute;
+	top:27px;
+	left:20px;
+	border:solid #a2a2a2 1px;
+	border-top-style:none;
+}
+#thingyList .things a:link,
+#thingyList .things a:visited {
+	display:block;
+	background-color:#f1f1f1;
+	border-top:solid #a2a2a2 1px;	
+	border-bottom:solid #727272 1px;
+	line-height:12px;
+	font-size:10px;
+	height:12px;
+	padding:2px 5px;
+	text-decoration:none;
+	font-weight:bold;
+	color:#a2a2a2;
+}
+#thingyList .things a:hover {
+	background-color:white;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '1'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

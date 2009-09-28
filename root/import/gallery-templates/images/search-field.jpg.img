@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : aZ-1HYQamkRHYXvzAra8WQ
+Menu Title  : search-field.jpg
+Parent      : root/import/gallery-templates/images
+Title       : search-field.jpg
+URL         : root/import/gallery-templates/images/search-field.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="search-field.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,33 @@
+==== Wobject::Folder =========================================================
+Asset ID    : oHk7fAFhEEkB7dHzi0QOQA
+Menu Title  : WebGUI/Expired
+Parent      : root/import/auth
+Title       : WebGUI/Expired
+URL         : root/import/auth/webgui/expired
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000060
+  sortAlphabetically: '0'
+  sortOrder: ASC
+  styleTemplateId: PBtmpl0000000000000060
+  templateId: PBtmpl0000000000000078
+  visitorCacheTimeout: '3600'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

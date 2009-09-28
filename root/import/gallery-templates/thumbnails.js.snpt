@@ -1,0 +1,118 @@
+==== Snippet =================================================================
+Asset ID    : 7fE8md51vTCcuJFOvxNaGA
+Menu Title  : thumbnails.js
+Parent      : root/import/gallery-templates
+Title       : thumbnails.js
+URL         : root/import/gallery-templates/thumbnails.js
+==== snippet =================================================================
+// Depends on BrowserDetect.js
+
+// Make the thumbnails a little bigger while the mouse is over them
+function scaleThumbUp ( e, anchor ) {
+	
+	// IE6 doesn't like to do the right thing with the CSS stuff below, exclude it
+	if ( BrowserDetect ) {
+		if ( BrowserDetect.browser == "Explorer" && BrowserDetect.version < 7 ) {
+			return;
+		}
+	}
+
+        // Make a new image with the same image src as the anchor
+        var oldImage    = anchor.getElementsByTagName("img")[0];
+
+        var newContainer	= document.createElement("div");
+	newContainer.className	= "thumb-popup";
+        newContainer.style.position = "absolute";
+        newContainer.style.zIndex   = "1";
+        var newWidth    = oldImage.offsetWidth * 3;
+        var newHeight   = oldImage.offsetHeight * 3;
+        var newLeft     = ( ( anchor.offsetLeft + ( anchor.offsetWidth / 2 ) ) - ( newWidth / 2 ) );
+        var newTop      = ( ( anchor.offsetTop + ( anchor.offsetHeight / 2 ) ) - ( newHeight / 2 ) ); 
+        newContainer.style.left     = newLeft + "px";
+        newContainer.style.top      = newTop + "px";
+        newContainer.style.width    = newWidth + "px";
+        newContainer.style.height   = newHeight + "px";
+
+	var newImage    = document.createElement("img");
+        newImage.src    = oldImage.src;
+	newImage.style.width		= "100%";
+	newImage.style.height	= "100%";
+	newContainer.appendChild( newImage );
+ 
+        // Make some text for the caption
+        var caption         = document.createElement("div");
+        caption.appendChild( document.createTextNode( anchor.title ) );
+        caption.className       = "caption";
+    	newContainer.appendChild( caption );
+
+        var newBox              = document.createElement("a");
+        newBox.href             = anchor.href;
+        newBox.style.display    = "block";
+        newBox.style.position   = "absolute";
+        newBox.style.zIndex     = "10";
+        newBox.style.left       = ( anchor.offsetLeft ) + "px";
+        newBox.style.top        = ( anchor.offsetTop ) + "px";
+        newBox.style.height     = ( anchor.offsetHeight ) + "px";
+        newBox.style.width      = ( anchor.offsetWidth ) + "px";
+	newBox.style.border	= "1px solid transparent";
+
+        anchor.parentNode.appendChild( newContainer );
+        anchor.parentNode.appendChild( newBox );
+
+	YAHOO.util.Event.addListener( newBox, "click", function () { window.location.href = anchor.href } );
+        YAHOO.util.Event.addListener( newContainer, "mouseout", scaleThumbDown, [ newBox, newContainer, caption ] );
+        YAHOO.util.Event.addListener( newBox, "mouseout", scaleThumbDown, [ newBox, newContainer, caption ] );
+}
+
+function scaleThumbDown ( e, elements ) {
+        for ( var i = 0; i < elements.length; i++ ) {
+                elements[i].parentNode.removeChild( elements[i] );
+        }
+}
+
+var anchorTimeout;
+function enterAnchor ( e, anchor ) {
+    if ( typeof anchorTimeout != "undefined" ) {
+        clearTimeout( anchorTimeout );
+    }
+    anchorTimeout = setTimeout( function() { scaleThumbUp( e, anchor ); }, 150 );
+}
+
+function leaveAnchor ( e, anchor ) {
+    if ( typeof anchorTimeout != "undefined" ) {
+        clearTimeout( anchorTimeout );
+    }
+}
+
+function initThumb () {
+        var anchors = YAHOO.util.Dom.getElementsByClassName( "thumb" );
+        for ( var i = 0; i < anchors.length; i++ ) {
+                YAHOO.util.Event.addListener( anchors[i], "mouseover", enterAnchor, anchors[i] );
+                YAHOO.util.Event.addListener( anchors[i], "mouseout", leaveAnchor, anchors[i] );
+        }
+}
+
+YAHOO.util.Event.onDOMReady( initThumb );
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/javascript
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

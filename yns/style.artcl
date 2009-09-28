@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : Wl8WZ43g2rK5AYr9o4zY7w
+Menu Title  : Get Style
+Parent      : your_next_step
+Title       : Get Style
+URL         : yns/style
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Not a designer? No problem! Plain Black's professional <a href="http://www.plainblack.com/services/design">design</a> team can make your site look great. Our team is fast, easy to work with, and can even migrate your existing content into your new WebGUI site.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: QlXRvOaqkv9X2kY-eAQXKA
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

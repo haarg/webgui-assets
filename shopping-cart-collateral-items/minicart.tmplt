@@ -1,0 +1,83 @@
+==== Template ================================================================
+Asset ID    : EBlxJpZQ9o-8VBOaGQbChA
+Menu Title  : MiniCart
+Parent      : shopping-cart-collateral-items
+Title       : MiniCart
+URL         : shopping-cart-collateral-items/minicart
+==== headBlock ===============================================================
+<style>
+	.wgMiniCart * a:link,
+	.wgMiniCart * a:visited {
+		color:black;
+	}
+	.wgMiniCart{
+		background:#f1f1f1;
+		border:solid #e0e0e0 1px;
+		-moz-border-radius:15px;
+	}
+	.wgMiniCart h2.title {
+		background-color:#e0e0e0;
+		margin:0px;
+		-moz-border-radius-topLeft:15px;
+		-moz-border-radius-topRight:15px;
+		padding:3px;
+		border-bottom:solid white 1px;
+	}
+	.wgMiniCart .items {
+		border-top:solid #e0e0e0 1px;
+	}
+	.wgMiniCart .item {
+		border-bottom:solid #e0e0e0 1px;
+		border-top:solid #fff 1px;
+		padding:3px 0px 3px 15px;
+	}
+	.wgMiniCart .total {
+		padding:3px 0px 3px 15px;
+		border-top:solid white 1px;
+	}
+	.wgMiniCart .cart {
+		background-color:white;
+		-moz-border-radius-bottomLeft:15px;
+		-moz-border-radius-bottomRight:15px;
+		padding:3px;
+		margin-top:10px;
+	}
+</style>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgMiniCart">
+	<h2 class="title">Cart</h2>
+	<div class="items">
+		<tmpl_loop items>
+			<div class="item"><tmpl_var __COUNTER__>) <tmpl_var name> (<tmpl_var quantity>)</div>
+		</tmpl_loop>
+	</div>
+	<div class="total">
+		<b>^International(total,Shop);: <tmpl_var totalPrice></b>
+	</div>
+	<div class="cart">
+		^ViewCart;
+	</div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/MiniCart
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : er-3faBjY-hhlDcc5aKqdQ
+Menu Title  : top_bg.jpg
+Parent      : root/import/gallery-templates/images
+Title       : top_bg.jpg
+URL         : root/import/gallery-templates/images/top_bg2.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="top_bg.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : JU9bjsLRoWj7GVHs__prig
+Menu Title  : top-left.jpg
+Parent      : shopping-cart-collateral-items
+Title       : top-left.jpg
+URL         : shopping-cart-collateral-items/top-left.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="top-left.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

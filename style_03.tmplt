@@ -1,0 +1,88 @@
+==== Template ================================================================
+Asset ID    : stevestyle000000000003
+Menu Title  : Style 03
+Parent      : root/import/webgui-7-style-3
+Title       : Style 03
+URL         : style_03
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<link rel="icon" href="^Extras(favicon.png);" type="image/png" />
+        <link rel="SHORTCUT ICON" href="^Extras(favicon.ico);" />
+	<link href="^/(style3/css03.css);" rel="stylesheet" type="text/css" />
+	<!--[if IE 6]>
+		<style type="text/css">
+			@import url(^/(style3/css03-ie.css););
+		</style>
+	<![endif]-->
+
+	<tmpl_var head.tags>
+	<title>^c; - ^Page(title);</title>
+	</head>
+<body>
+^AdminBar();
+
+
+<div id="main">
+	<div id="header">
+		<div id="headerTitle">
+			<div id="headerRight">
+				<div id="login">
+					^L("","","PBtmpl0000000000000092"); &middot; ^AdminToggle;
+				</div>
+				<div id="title">
+					<h1>^H(^c;);</h1>
+					<h2>^Page(title);</h2>
+				</div>
+				<a href="http://www.webgui.org"><img src="^FileUrl(style3/wg.jpg);" style="border: 0px;" alt="webgui" /></a><br />
+			</div>
+		</div>
+	</div>
+	^AssetProxy(style3_coolmenu);
+
+	<div id="mainBody">
+		<div id="contentArea">
+			<tmpl_var body.content>
+		</div>
+		<div id="topCorner"></div>
+		<div id="bottomCorner"></div>
+
+		<div id="footer">
+			<div id="copyright">
+				&copy; ^D(%y); ^c;
+			</div>
+			<a href="http://www.plainblack.com"><img src="^FileUrl(style3/pb.jpg);" style="border: 0px;" alt="plain black" /></a><br />
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: style
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

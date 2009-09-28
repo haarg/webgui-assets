@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : v_XBgwwZqgW1D5s4y05qfg
+Menu Title  : addtl-info.gif
+Parent      : root/import/gallery-templates/images
+Title       : addtl-info.gif
+URL         : root/import/gallery-templates/images/addtl-info.gif
+==== parameters ==============================================================
+style="border-style:none;" alt="addtl-info.gif"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

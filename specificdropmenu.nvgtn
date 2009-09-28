@@ -1,0 +1,41 @@
+==== Wobject::Navigation =====================================================
+Asset ID    : PBnav00000000000000021
+Menu Title  : SpecificDropMenu
+Parent      : root/import/navigation
+Title       : SpecificDropMenu
+URL         : specificdropmenu
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: PBtmpl0000000000000060
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  ancestorEndPoint: '55'
+  assetsToInclude: descendants
+  descendantEndPoint: '3'
+  mimeType: text/html
+  reversePageLoop: '0'
+  showHiddenPages: '0'
+  showSystemPages: '0'
+  showUnprivilegedPages: '0'
+  startPoint: home
+  startType: specificUrl
+  templateId: PBtmpl0000000000000117
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

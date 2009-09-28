@@ -1,0 +1,45 @@
+==== Wobject::Article ========================================================
+Asset ID    : j_1qEqM6iLfQLiR6VKy0aA
+Menu Title  : Free Documentation
+Parent      : documentation
+Title       : Free Documentation
+URL         : documentation/free-documentation
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>There are hundreds of pages of free documentation available for WebGUI, provided by both Plain Black and the community at large. The following list is by no means comprehensive, but it should get you started in the right direction.</p>
+<p>
+</p>
+<ul>
+<li><a href="https://www.plainblack.com/services/training/webgui-primer">Primer</a> - A downloadable PDF that shows you the basics of publishing content in WebGUI.</li>
+<li><a href="http://wiki.webgui.org/">Wiki</a> - Hundreds of pages of WebGUI community contributed content featuring a variety of tutorials.</li>
+<li><a href="http://www.webguiworldwide.org/">Worldwide</a> - A collection of WebGUI related web sites from all over the world that have documentation and other resources for WebGUI.</li>
+<li><a href="http://www.webgui.org/community-wiki/api">API Docs</a> - The documentation of all of the WebGUI source code.</li>
+<li><a href="^PageUrl(,op=viewHelpIndex);">Template Help</a> - The documentation of all of WebGUI's template variables.</li>
+</ul>
+<p>&nbsp;</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: http://
+  storageId: 2k_h890E0bVoT1Jq6s-Edg
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : 6QuS-0rosuZTdTv11fobig
+Menu Title  : Talk to the Experts
+Parent      : your_next_step
+Title       : Talk to the Experts
+URL         : yns/experts
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Plain Black&reg; created the WebGUI Content Engine&reg; and is here to answer your questions and provide you with services to make sure your WebGUI implementation is entirely successful. We bend over backwards to make sure you're a success. <a href="http://www.plainblack.com/contact_us">Contact us</a> today to see how we can help you.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: qDIYM6Jcmkk_LmWZIqqJ7w
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

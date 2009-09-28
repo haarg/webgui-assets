@@ -1,0 +1,50 @@
+==== Wobject::Article ========================================================
+Asset ID    : NK8bqlwVRILJknqeCDPBHg
+Menu Title  : Getting Started (part 2)
+Parent      : getting_started
+Title       : Getting Started (part 2)
+URL         : getting_started/getting-started-part2
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+
+<p>
+Now you should <a href="^PageUrl;?op=auth">log in</a> and <a href="^PageUrl;?op=switchOnAdmin">go into admin mode</a>. The default username is "admin" and the default password is "123qwe", but you probably customized both of those when you visited this site for the very first time.
+</p>
+<p>
+Now that you're logged in, we recommend that you <a href="^/;?op=listUsers">add a new user</a> for yourself with admin privileges just in case you forget the login information for your primary admin account. Don't worry if you lock yourself out, you can always contact <a href="http://www.plainblack.com">Plain Black&reg;</a> support to get instructions to get back in.
+</p><p><b>NOTE:</b> If you appear to be get logged out while moving between pages, this is most likely your browser displaying a cached version of the page. Click on your browser's refresh button to correct the problem.</p>
+<p>
+No doubt after you enabled admin mode you saw a menu along the left side of the screen, that's called the Admin Bar. Use that to add content and access administrative functions. You're now ready to begin exploring your new WebGUI site.</p>
+<p>
+For more information about services related to WebGUI <a href="http://www.plainblack.com/services">click here</a>.
+</p>
+<p>
+Enjoy your new WebGUI site!
+</p>
+
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '0'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: 0jTuDoyTcQK6ju8cs8a4ew
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

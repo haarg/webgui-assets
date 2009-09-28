@@ -1,0 +1,304 @@
+==== Template ================================================================
+Asset ID    : CalendarEventEdit00001
+Menu Title  : Default Calendar Event Edit
+Parent      : root/import/calendar-templates
+Title       : Default Calendar Event Edit
+URL         : root/import/calendar-templates/default-calendar-event-edit
+==== headBlock ===============================================================
+<script src="/extras/yui/build/yahoo/yahoo.js" type="text/javascript"></script>
+<script src="/extras/yui/build/event/event.js" type="text/javascript"></script>
+<script src="/extras/yui/build/dom/dom.js" type="text/javascript"></script>
+<script src="/extras/yui/build/dragdrop/dragdrop.js" type="text/javascript"></script>
+<script src="/extras/yui/build/logger/logger.js" type="text/javascript"></script>
+<script src="/extras/textFix.js" type="text/javascript"></script>
+<script src="/extras/tabs/tabs.js" type="text/javascript"></script>
+    <style type="text/css">
+        body * {
+            margin:0px;
+        }
+        table td {
+            font-family:Arial;
+            font-size:10px;
+        }
+        #tabs a {
+            border:solid #F0F0F0 1px;
+            -moz-border-radius-topLeft: 20px;
+            -moz-border-radius-topRight: 20px;
+            font-weight:bold;
+            padding: 2px 15px 0px 15px;
+            text-align;center;
+            background-color:#FBFBFB;
+            border-top:solid #F0F0F0 2px;
+            color:#b0b0b0;
+            text-decoration:none;
+            font-size:10pt;
+            display:block;
+            float:left;
+            margin-right:5px;
+        }
+        #tabs a:hover {
+            color:black;
+        }
+        #tabs .active {
+            background-color:#F0F0F0;
+            color:#404040;
+        }
+        table a {
+            font-size:11px;
+            color:#447BFD;
+        }
+        input, select {
+            font-size:10px;
+            border:gray solid 1px;
+            background-color:#F0F0F0;
+            cursor:pointer;
+        }
+    </style>
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var formHeader>
+
+<tmpl_if formErrors>
+<h1>^International(errors,Asset_Event);</h1>
+<ul>
+<tmpl_loop formErrors>
+    <li><tmpl_var message></li>
+</tmpl_loop>
+</ul>
+</tmpl_if>
+
+<table id="tabs" cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <td style="text-align:left;">
+        <a href="#" id="tab_event" onclick="toggleTab('event'); return false;" class="tab active">^International(tab event,Asset_Event);</a>
+        <a href="#" id="tab_recursion" onclick="toggleTab('recursion'); return false;" class="tab">^International(recurrence,Asset_Event);</a>
+        <tmpl_var formSave>
+        <tmpl_var formCancel>
+    </td>
+</tr>
+</table>
+
+<!-- Event tab -->
+<table id="event" cellpadding="0" cellspacing="0" border="0">
+<tr>
+    <td class="border" style="text-align:left;width:700px">
+        <table cellpadding="2" style="margin:5px;">
+        <tr>
+            <td class="label" style="text-align:right">^International(event title,Asset_Event);</td>
+            <td><tmpl_var formTitle></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right">^International(short title,Asset_Event);</td>
+            <td><tmpl_var formMenuTitle></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right">^International(location,Asset_Event);</td>
+            <td><tmpl_var formLocation></td>
+        </tr>   
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(description,Asset_Event);</td>
+            <td><tmpl_var formDescription></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(start date,Asset_Event);</td>
+            <td><tmpl_var formStartDate></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(end date,Asset_Event);</td>
+            <td><tmpl_var formEndDate></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(time,Asset_Event);</td>
+            <td><tmpl_var formTime></td>
+        </tr>
+        <tr><td colspan="2">&nbsp;</td></tr>
+<!-- RELATED LINKS -->
+		<tr>
+			<td class="label" style="text-align:right;vertical-align:top;">^International(related material,Asset_Event);</td>
+                        <td>
+<table id='relatedLinks' width='100%'>
+<tr><td colspan='4'>
+<input type=button name='addrelatedlink' value='^International(add related link,Asset_Event);' onClick='addBlankRelated();' id='addLink'>
+</td></tr>
+  <tr id='event_link_header'>
+    <th class='label'> &nbsp; &nbsp; </th>
+    <th class='label'>URL</th>
+    <th class='label'>^International(link description,Asset_Event);</th>
+    <th class='label'>^International(link view group,Asset_Event);</th>
+  </tr>
+<tmpl_if relatedLinks><tmpl_loop relatedLinks>
+  <tr id='<tmpl_var row_id>'> 
+    <td><input id='<tmpl_var delete_id>' type='button' name='<tmpl_var delete_name>' value='DEL' onClick="return delete_link('<tmpl_var eventlinkId>','<tmpl_var l
+inkurl>');">
+    </td>
+    <td><input type='text' name='rel_url_<tmpl_var eventlinkId>' value='<tmpl_var linkurl>'>
+    </td>
+    <td><input type='text' name='rel_text_<tmpl_var eventlinkId>' value="<tmpl_var linktext>">
+    </td>
+    <td><div id='<tmpl_var div_id>'><tmpl_var group_id>
+<input type='hidden' id='<tmpl_var seq_num_id>' name='<tmpl_var seq_num_name>' value='<tmpl_var seq_num_value>'>
+<input type='hidden' id='rel_delc_id_<tmpl_var eventlinkId>' name='rel_delconfirm_<tmpl_var eventlinkId>' value='0'>
+        </div>
+    </td>
+  </tr>
+</tmpl_loop>
+</tmpl_if></table>
+	</td>
+</tr>
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(group to view,Asset_Event);</td>
+            <td><tmpl_var formGroupIdView></td>
+        </tr>
+        <tr>
+            <td class="label" style="text-align:right;vertical-align:top">^International(attachments for event,Asset_Event);</td>
+            <td><tmpl_var formAttachments></td>
+        </tr>
+        </table>
+    </td>
+</tr>
+</table>
+        </table>
+    </td>
+</tr>
+</table>
+
+<table style="display: none; margin: 5px;" id="recursion" cellpadding="2" cellspacing="0" border="0">
+<tr>
+    <td class="label" style="text-align:right;vertical-align:top">^International(recurrence pattern,Asset_Event);</td>
+    <td><tmpl_var formRecurPattern></td>
+</tr>
+<tr>
+    <td class="label" style="text-align:right;vertical-align:top">^International(recurrence range,Asset_Event);</td>
+    <td>
+        <p style="float: left; margin: 5px;">^International(start,Asset_Event);:</p> 
+        <div style="float: left; margin: 5px;"><tmpl_var formRecurStart></div><br/>
+        <p style="float: left; clear: left; margin: 5px;">^International(end,Asset_Event);:</p>
+        <div style="float: left; margin: 5px;"><tmpl_var formRecurEnd></div>
+    </td>
+</tr>
+<!--<tr>
+    <td class="label" style="text-align:right;vertical-align:top">^International(include dates,Asset_Event);</td>
+    <td><tmpl_var formRecurInclude></td>
+</tr>
+<tr>
+    <td class="label" style="text-align:right;vertical-align:top">^International(exclude dates,Asset_Event);</td>
+    <td><tmpl_var formRecurExclude></td>
+</tr>-->
+</table>
+
+<tmpl_var formFooter>
+
+<script type="text/javascript">
+var old_tab = document.getElementById("event");
+function toggleTab(id) 
+{
+    if (old_tab)
+    {
+        old_tab.style.display = "none";
+        document.getElementById("tab_"+old_tab.getAttribute("id")).className = "tab";
+    }
+    element = document.getElementById(id);
+    element.style.display = "block";
+    document.getElementById("tab_"+id).className = "tab active";
+    old_tab = element;
+}
+var del_array = new Array();
+
+function delete_link (el_id,url) {
+   if (!document.getElementById('rel_row_'+el_id)) return;
+   if (!confirm ("Delete this related link?\n"+url)) return;
+
+   document.getElementById('rel_row_'+el_id).style.display = 'none';
+   document.getElementById('rel_del_id_'+el_id).value = 'X';
+   document.getElementById('rel_delc_id_'+el_id).value = 1;
+
+   return true;
+}
+
+function addBlankRelated () {
+
+  var tbl = document.getElementById('relatedLinks');
+  var lastRow = tbl.rows.length;
+  var iteration = lastRow-1;
+  var row = tbl.insertRow(lastRow);
+  var link_id = 'new_'+iteration;
+
+  // DEL cell
+  var cellDel = row.insertCell(0);
+  var el1 = document.createElement('input');
+  el1.type = 'button';
+  el1.value = 'DEL';
+  el1.name = 'rel_del_'+ link_id;
+  el1.id = 'rel_del_id_'+ link_id;
+  cellDel.appendChild(el1);
+
+  // URL cell
+  var cellURL = row.insertCell(1);
+  var el1 = document.createElement('input');
+  el1.type = 'text';
+  el1.name = 'rel_url_'+ link_id;
+  cellURL.appendChild(el1);
+
+  // TEXT cell
+  var cellTEXT = row.insertCell(2);
+  var el2 = document.createElement('input');
+  el2.type = 'text';
+  el2.name = 'rel_text_'+ link_id;
+  cellTEXT.appendChild(el2);
+
+  var el3 = document.createElement('input');
+  el3.type = 'hidden';
+  el3.id = 'rel_seq_id_' + link_id;
+  el3.name = 'rel_seq_' + link_id;
+  el3.value = iteration ? iteration : 1;
+
+  // GRP cell
+  var genericGroup = new String ('<tmpl_var ESCAPE=JS genericGroup>');
+  var cellGRP = row.insertCell(3);
+  var el4 = document.createElement('div');
+  el4.name = 'rel_group_'+ link_id;
+  var searchStr = 'ZZZZZZZZZZ';
+  var replaceStr = link_id;
+  var re = new RegExp (searchStr, "g");
+  el4.innerHTML = genericGroup.replace(re, replaceStr);
+  cellGRP.appendChild(el4);
+  cellGRP.appendChild(el3);
+
+  var el5 = document.createElement('input');
+  el5.type = 'hidden';
+  el5.id = 'rel_delc_id_' + link_id;
+  el5.name = 'rel_delconfirm_' + link_id;
+  el5.value = 0;
+
+  cellGRP.appendChild(el5);
+
+  document.getElementById('rel_del_id_'+link_id).onclick = function (event) {delete_link(link_id, 'Unsaved Entry');};
+  row.id = 'rel_row_'+ link_id;
+  return true;
+}
+
+</script>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Calendar/EventEdit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

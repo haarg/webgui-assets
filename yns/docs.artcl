@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : FOvmwGC0GtZo5VTxJIL3OA
+Menu Title  : Get Documentation
+Parent      : your_next_step
+Title       : Get Documentation
+URL         : yns/docs
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p><a href="http://www.plainblack.com/store/services/books2">WebGUI Documentation</a> is the ultimate compendium to WebGUI. This is a must for anyone working in WebGUI, and Plain Black offers vast bulk discounts so you can give it to everyone in your organization.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: http://
+  storageId: WOkKCSUedPrlPkYwsTgEEA
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

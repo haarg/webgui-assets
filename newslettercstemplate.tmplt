@@ -1,0 +1,92 @@
+==== Template ================================================================
+Asset ID    : newslettercs0000000001
+Menu Title  : ' Newsletter Manager'
+Parent      : root/import/newsletter
+Title       : Newsletter Manager (default)
+URL         : newslettercstemplate
+==== headBlock ===============================================================
+<style type="text/css">
+.pagination {
+	-moz-box-sizing:border-box;
+	background:#676767;
+	color:#C0C0C0;
+	width:100%;
+	text-align:right;
+	padding:3px;
+	font-size:9pt;
+	font-family:arial;
+}
+.pagination a {
+	color:white;
+	font-size:8pt;
+	text-decoration:underline;
+}
+
+.pagination a:hover {
+	text-decoration:none;
+}
+
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+	<h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+	<tmpl_var description>
+</tmpl_if>
+
+<p class="pagination">
+	<tmpl_if user.canPost>
+		<a href="<tmpl_var add.url>"><tmpl_var add.label></a>
+		|
+	</tmpl_if>
+	<tmpl_unless user.isVisitor>
+        <a href="<tmpl_var mySubscriptionsUrl>">^International(my subscriptions,Asset_Newsletter);</a>
+        |
+	</tmpl_unless>
+	<a href="<tmpl_var search.url>"><tmpl_var search.label></a>
+</p>
+
+<p />
+
+<tmpl_loop post_loop>
+	<p><b><a href="<tmpl_var url>"><tmpl_var title></a></b><br />
+	<tmpl_var synopsis></p>
+</tmpl_loop>
+
+<tmpl_if pagination.pageCount.isMultiple>
+	<div class="pagination">
+		<tmpl_var pagination.previousPage> &bull; <tmpl_var pagination.pageList.upTo10> &bull; <tmpl_var pagination.nextPage>
+	</div>
+</tmpl_if>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Collaboration
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

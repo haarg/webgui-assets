@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000132
+Menu Title  : Empty
+Parent      : root/import/style
+Title       : Empty
+URL         : empty
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var body.content>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: style
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

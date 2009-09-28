@@ -1,0 +1,82 @@
+==== Template ================================================================
+Asset ID    : yBwydfooiLvhEFawJb0VTQ
+Menu Title  : Print Ticket (Default)
+Parent      : root/import/ems
+Title       : Print Ticket (Default)
+URL         : root/import/ems/print-ticket-default
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<html>
+<head>
+
+	<style type="text/css">
+body { margin: 0; }
+		#ticket {
+ 			position: absolute;
+ 			top: 0.2in;
+ 			left: 0px;
+			width:3.8in;
+			height:1in;
+			position:relative;
+		}
+		#ticket div {
+			position:relative;
+			z-index:10;
+			color:white;
+			text-align:center;
+		}
+		#ticket div span {
+			display:block;				
+			margin:5px;
+			background-color:#f0f0f0;
+			color:black;
+			font-family:verdana;
+			font-weight:bold;
+			border:solid gray 1px;
+			opacity:.75;
+			filter: alpha(opacity=75); 
+			-moz-opacity: 0.75;
+		}
+	</style>
+
+</head>
+<body>
+
+<div id="ticket">
+	<div style="top:10%; font-size:125%;position:relative;">
+		<span><tmpl_var ticketEventNumber>: <tmpl_var ticketTitle></span>
+	</div>
+	<div style="top:30%; position:relative;">
+		<span style="font-size: 75%;"><tmpl_var ticketLocation></span>
+		<span style="font-size: 75%;"><tmpl_var ticketStart> / <tmpl_var ticketDuration></span>
+	</div>
+	<div style="top:60%; font-size: 50%; position:relative;text-align: right;">
+		<span><tmpl_var badgeNumber>: <tmpl_var name></span>
+	</div>
+</div>
+
+</body>
+</html>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: EMS/PrintTicket
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

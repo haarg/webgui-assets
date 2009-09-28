@@ -1,0 +1,67 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000013
+Menu Title  : Default WebGUI Login Template
+Parent      : root/import/auth/webgui/login
+Title       : Default WebGUI Login Template
+URL         : default_webgui_login_template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>
+   <tmpl_var title>
+</h2>
+
+<tmpl_if login.message>
+   <tmpl_var login.message>
+</tmpl_if>
+
+<tmpl_var login.form.header>
+<table >
+<tmpl_var login.form.hidden>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var login.form.username.label></td>
+   <td class="tableData"><tmpl_var login.form.username></td>
+</tr>
+<tr>
+   <td class="formDescription" valign="top"><tmpl_var login.form.password.label></td>
+   <td class="tableData"><tmpl_var login.form.password></td>
+</tr>
+<tr>
+   <td class="formDescription" valign="top"></td>
+   <td class="tableData"><tmpl_var login.form.submit></td>
+</tr>
+</table>
+<tmpl_var login.form.footer>
+
+<div class="accountOptions">
+   <ul>
+     <tmpl_if recoverPassword.isAllowed>
+	     <li><a href="<tmpl_var recoverPassword.url>"><tmpl_var recoverPassword.label></a></li>
+	  </tmpl_if>
+           <tmpl_if anonymousRegistration.isAllowed>
+	     <li><a href="<tmpl_var createAccount.url>"><tmpl_var createAccount.label></a></li>
+	  </tmpl_if>
+   </ul>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Auth/WebGUI/Login
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

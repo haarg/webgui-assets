@@ -1,0 +1,98 @@
+==== RichEdit ================================================================
+Asset ID    : PBrichedit000000000001
+Menu Title  : Content Manager's Rich Edit
+Parent      : root/import/richedit
+Title       : Content Manager's Rich Edit
+URL         : content_managers_rich_edit
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== validElements ===========================================================
+*[*]
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  allowMedia: 0
+  askAboutRichEdit: '0'
+  cssFile: ~
+  directionality: ltr
+  disableRichEditor: '0'
+  editorHeight: '0'
+  editorWidth: '0'
+  enableContextMenu: '1'
+  inlinePopups: '0'
+  nowrap: '0'
+  preformatted: '0'
+  removeLineBreaks: '0'
+  sourceEditorHeight: '500'
+  sourceEditorWidth: '600'
+  toolbarLocation: bottom
+  toolbarRow1: 'bold
+
+    italic
+
+    justifyleft
+
+    justifyright
+
+    justifycenter
+
+    justifyfull
+
+    indent
+
+    outdent
+
+    sub
+
+    sup
+
+    formatselect
+
+    removeformat'
+  toolbarRow2: 'bullist
+
+    numlist
+
+    link
+
+    wgpagetree
+
+    anchor
+
+    unlink
+
+    advhr
+
+    image
+
+    wginsertimage
+
+    charmap
+
+    wgmacro'
+  toolbarRow3: 'tablecontrols
+
+    visualaid
+
+    preview
+
+    code
+
+    cleanup
+
+    replace'
+  useBr: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

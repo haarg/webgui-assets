@@ -1,0 +1,129 @@
+==== Template ================================================================
+Asset ID    : OkphOEdaSGTXnFGhK4GT5A
+Menu Title  : Default Gallery List Files For User
+Parent      : root/import/gallery-templates
+Title       : Default Gallery List Files For User
+URL         : root/import/gallery-templates/default-gallery-list-files-for-user
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
+			<a href="<tmpl_var url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_rss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var url>">^International('template listFilesForUser title','Asset_Gallery',<tmpl_var username>);</a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">			
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+			</form>
+		</div>	
+		<tmpl_var title>
+	</div>	
+
+	<tmpl_var description>			
+
+	<h2>My Albums</h2>
+	
+	<tmpl_loop user_albums>
+		<div class="wgAlbum">
+			<a href="<tmpl_var url>" class="albumTitle">
+				<tmpl_var title>
+			</a>
+			<div class="albumImage">		
+				<tmpl_if thumbnailUrl><a href="<tmpl_var url>"><img src="<tmpl_var thumbnailUrl>" alt="" /><tmpl_else><a href="<tmpl_var url_addPhoto>"><img src="^FileUrl(root/import/gallery-templates/images/blank-image.jpg);" alt="Start Adding Images!" /></tmpl_if></a>
+			</div>
+			<div class="albumDesc">
+				<div class="description">	
+					<tmpl_if description>
+						<tmpl_var description>
+					<tmpl_else>
+						<a href="<tmpl_var url>?func=edit">Add a Description</a>
+					</tmpl_if>
+				</div>	
+			</div>	
+		</div>
+	</tmpl_loop>
+	
+	<div style="clear:both"></div>
+	
+	<h2>My Pictures</h2>
+	
+	<tmpl_loop user_files>
+		<div class="wgPicture">
+			<a href="<tmpl_var url>" class="title">
+				<tmpl_var title>
+			</a>
+			<div class="thumbnail">		
+				<a href="<tmpl_var url>"><img src="<tmpl_var thumbnailUrl>" alt="Image" /></a>
+			</div>
+			<tmpl_if synopsis>
+				<div class="pictureDesc">
+					<div class="description">
+						<tmpl_var synopsis>
+					</div>	
+				</div>	
+			</tmpl_if>
+			<div class="details">
+				<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> Comments</a></div>
+				<div class="date">^D("%M/%d/%Y", Created ^International('template file creationDate','Asset_GalleryAlbum'););</div>
+				<div style="clear:both"></div>
+			</div>
+			<div style="clear:both"></div>
+		</div>	
+	</tmpl_loop>			
+			
+	<div style="clear:both"></div>
+		
+	<div class="paginationContainer">	
+		<del class="container">
+			<ul class="pagination">
+				<li><a href="<tmpl_var pagination.previousPageUrl>"<tmpl_unless pagination.isFirstPage> class="current"</tmpl_unless>>&laquo;</a></li>
+				<tmpl_loop pagination.pageLoop.upTo10>
+				<li><a href="<tmpl_var pagination.url>"<tmpl_if pagination.url> class="current"</tmpl_if>><tmpl_var pagination.text></a></li>
+				</tmpl_loop>
+				<li><a href="<tmpl_var pagination.nextPageUrl>"<tmpl_unless pagination.isLastPage> class="current"</tmpl_unless>>&raquo;</a></li>
+			</ul>		
+		</del>	
+	</div>	
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Gallery/ListFilesForUser
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

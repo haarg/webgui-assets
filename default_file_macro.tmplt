@@ -1,0 +1,33 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000039
+Menu Title  : Default File Macro
+Parent      : root/import/macro/file
+Title       : Default File Macro
+URL         : default_file_macro
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a href="<tmpl_var file.url>"><img src="<tmpl_var file.icon>" style="border-style:none;vertical-align:middle;" alt="<tmpl_var file.name>" /><tmpl_var file.name></a>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/File
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

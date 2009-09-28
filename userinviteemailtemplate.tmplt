@@ -1,0 +1,35 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0userInviteEmail
+Menu Title  : Default User Invite Email Template
+Parent      : root/import/messaging
+Title       : Default User Invite Email Template
+URL         : userinviteemailtemplate
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var invitationMessage>
+<tmpl_var registrationUrl>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: userInvite/Email
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

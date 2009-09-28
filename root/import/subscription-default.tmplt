@@ -1,0 +1,87 @@
+==== Template ================================================================
+Asset ID    : eqb9sWjFEVq0yHunGV8IGw
+Menu Title  : Subscription (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Subscription (Default)
+URL         : root/import/subscription-default
+==== headBlock ===============================================================
+<style type="text/css">
+	.wgSubscription {
+
+	}
+	.wgSubscription .controls {
+		background-color:black;
+		padding:3px 10px;
+		color:white;
+		margin:5px 0px;
+	}
+	.wgSubscription h3.title {
+		margin-bottom:3px;
+	}
+	.wgSubscription .description * {
+		margin-top:0px;
+	}
+	.wgSubscription .controls a {
+		color:white;
+	}
+	.wgSubscription .smaller {
+		font-size:10px;
+		margin-bottom:10px;
+	}
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgSubscription">
+	<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+	<tmpl_if session.var.adminOn>
+		<div><tmpl_var controls></div>
+		<div class="controls"><tmpl_var codeControls></div>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h3 class="title"><tmpl_var title></h3>
+	</tmpl_if>
+
+	<tmpl_if hasAddedToCart>
+		<div class="description">
+			<tmpl_var thankYouMessage>
+			^ViewCart;<br />
+                        <a href="<tmpl_var continueShoppingUrl>">^International(continue shopping button,Shop);</a>
+		</div>
+	<tmpl_else>
+		<div class="description">			
+			<tmpl_if description>
+				<div><tmpl_var description></div>
+				<div><tmpl_var price></div>			</tmpl_if>
+			
+			<tmpl_if redeemCodeLabel><div class="smaller">(<a href="<tmpl_var redeemCodeUrl>"><tmpl_var redeemCodeLabel></a>)</div></tmpl_if>
+			<tmpl_var formHeader>
+			<tmpl_var purchaseButton>
+			<tmpl_var formFooter>			
+		</div>
+	</tmpl_if>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Subscription
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

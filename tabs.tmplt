@@ -1,0 +1,49 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000124
+Menu Title  : Tabs
+Parent      : root/import/navigation
+Title       : Tabs
+URL         : tabs
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+		<tmpl_if displayTitle>
+		<h2><tmpl_var title></h2>
+		</tmpl_if>
+		<tmpl_if description>
+			<p><tmpl_var description></p>
+		</tmpl_if>
+		<tmpl_if session.var.adminOn>
+<tmpl_var controls>
+</tmpl_if>
+<tmpl_loop page_loop>
+   <tmpl_if page.isCurrent>
+      <span class="rootTabOn">
+   <tmpl_else>
+      <span class="rootTabOff">
+   </tmpl_if>
+   <a  <tmpl_if page.newWindow>onclick="window.open('<tmpl_var page.url>')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle></a>
+   </span>
+</tmpl_loop>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Navigation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

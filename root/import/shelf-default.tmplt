@@ -1,0 +1,84 @@
+==== Template ================================================================
+Asset ID    : nFen0xjkZn8WkpM93C9ceQ
+Menu Title  : Shelf (Default)
+Parent      : root/import/shelf2
+Title       : Shelf (Default)
+URL         : root/import/shelf-default
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/shelf2/shelf.css););
+</style>
+<!--[if IE]>
+	<style type="text/css">
+		@import url(^/(root/import/shelf2/shelf-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgShelf">
+	<tmpl_if session.var.adminOn>
+		<p><tmpl_var controls></p>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2><tmpl_var title></h2>
+	</tmpl_if>
+
+<div style="float:right; margin-right:15px;">
+		^ViewCart(); (^CartItemCount;)
+	</div>
+
+	<tmpl_if description>
+		<div class="description"><tmpl_var description></div>
+	</tmpl_if>
+	
+
+	<tmpl_if shelves>
+		<div class="wgShelves">
+			<strong>^International(subcategories,Asset_Shelf);:</strong> 
+			<tmpl_loop shelves>
+		  		<tmpl_unless __first__>&bull;</tmpl_unless>
+		  		<a href="<tmpl_var url>"><tmpl_var title></a>
+			</tmpl_loop>
+		</div>
+	</tmpl_if>
+
+	<tmpl_loop products>
+		<div class="product">
+			<div class="link"><a href="<tmpl_var url>"><tmpl_var title></a></div>
+			<tmpl_if thumbnailUrl>
+				<a href="<tmpl_var url>" class="thumbnail"><img src="<tmpl_var thumbnailUrl>" alt="<tmpl_var title>" /></a>
+			</tmpl_if>
+			
+			<div class="synopsis">
+				<tmpl_var synopsis>
+				<span class="price">(<tmpl_var price>)</span>
+			</div>
+		</div>
+	</tmpl_loop>
+
+	<div style="clear: both;"></div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shelf
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : 2ci_v2d4x4uvyjTRlC49OA
+Menu Title  : moveDown.gif
+Parent      : root/import/gallery-templates/images
+Title       : moveDown.gif
+URL         : root/import/gallery-templates/images/movedown.gif
+==== parameters ==============================================================
+style="border-style:none;" alt="moveDown.gif"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

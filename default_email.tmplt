@@ -1,0 +1,56 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000085
+Menu Title  : Default Email
+Parent      : root/import/dataform
+Title       : Default Email
+URL         : default_email
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<br /><br />
+<tmpl_loop field_loop>
+<table cellpadding="3" cellspacing="2" border="0" width="80%">
+	<tmpl_unless field.isMailField>
+	<tr>
+		<td width="23%" align="right" bgcolor="#DFDFDF" style="background-color:#DFDFDF;"><b><tmpl_var field.label> :</b></td>		
+		<td width="75%" bgcolor="#F0F0F0" style="background-color:#F0F0F0;"><tmpl_var field.value></td>
+	</tr>
+	</tmpl_unless>
+</table>
+</tmpl_loop>
+
+<tmpl_loop tab_loop>
+<h2><tmpl_var tab.label></h2>
+<tmpl_loop tab.field_loop>
+<table cellpadding="3" cellspacing="2" border="0" width="80%">
+	<tmpl_unless tab.field.isMailField>
+	<tr>
+		<td width="23%" align="right" bgcolor="#DFDFDF" style="background-color:#DFDFDF;"><b><tmpl_var tab.field.label> :</b></td>		
+		<td width="75%" bgcolor="#F0F0F0" style="background-color:#F0F0F0;"><tmpl_var tab.field.value></td>
+	</tr>
+	</tmpl_unless>
+</table>
+</tmpl_loop>
+</tmpl_loop>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: DataForm
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

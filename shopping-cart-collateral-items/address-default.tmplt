@@ -1,0 +1,121 @@
+==== Template ================================================================
+Asset ID    : XNd7a_g_cTvJVYrVHcx2Mw
+Menu Title  : Address (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Address (Default)
+URL         : shopping-cart-collateral-items/address-default
+==== headBlock ===============================================================
+<style type="text/css">
+	.wgAddress h2.title {
+		background: black;
+		padding:5px;
+		padding-left:15px;
+		line-height:32px;
+		color:white;
+		margin:0px;
+		height:32px;
+	}
+	.wgAddress table {
+		margin-top:15px;
+	}
+
+	.wgAddress .label {
+		background:#000;
+		color:white;
+		font-weight:bold;
+		padding-left:5px;
+	}
+	.wgAddress input, .wgAddress select {
+		border:solid #555 1px;
+	}
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgAddress">
+	<h2 class="title">Add Address</h2>
+	<tmpl_if error>
+		<div class="error"><tmpl_var error></div>
+	</tmpl_if>
+	
+	<tmpl_var formHeader>
+	<table>
+		<tr>
+			<td class="label"><label for="label_formId">^International(label,Shop);</label></td>
+			<td><tmpl_var labelField> ^International(label help,Shop);</td>
+		</tr>
+
+		<tr>
+			<td class="label"><label for="firstName_formId">^International(firstName,Shop);</label></td>
+			<td><tmpl_var firstNameField></td>
+		</tr>
+
+
+		<tr>
+			<td class="label"><label for="lastName_formId">^International(lastName,Shop);</label></td>
+			<td><tmpl_var lastNameField></td>
+		</tr>
+
+
+		<tr>
+			<td class="label"><label for="address1_formId">^International(address,Shop);</label></td>
+			<td><tmpl_var address1Field></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><tmpl_var address2Field></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><tmpl_var address3Field></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="city_formId">^International(city,Shop);</label></td>
+			<td><tmpl_var cityField></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="state_formId">^International(state,Shop);</label></td>
+			<td><tmpl_var stateField></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="code_formId">^International(code,Shop);</label></td>
+			<td><tmpl_var codeField></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="country_formId">^International(country,Shop);</label></td>
+			<td><tmpl_var countryField></td>
+		</tr>
+		<tr>
+			<td class="label"><label for="phoneNumber_formId">^International(phone number,Shop);</label></td>
+			<td><tmpl_var phoneNumberField></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><tmpl_var saveButton></td>
+		</tr>
+	</table>
+	<tmpl_var formFooter>
+
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/Address
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

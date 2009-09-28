@@ -1,0 +1,41 @@
+==== Wobject::Navigation =====================================================
+Asset ID    : 7.0-style0000000000070
+Menu Title  : Style3 Coolmenu
+Parent      : root/import/webgui-7-style-3
+Title       : Style3 Coolmenu
+URL         : style3_coolmenu
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+~
+==== Properties ==============================================================
+display:
+  displayTitle: '0'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000060
+  styleTemplateId: PBtmpl0000000000000060
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  ancestorEndPoint: '55'
+  assetsToInclude: descendants
+  descendantEndPoint: '55'
+  mimeType: text/html
+  reversePageLoop: '0'
+  showHiddenPages: '0'
+  showSystemPages: '0'
+  showUnprivilegedPages: '0'
+  startPoint: '1'
+  startType: relativeToRoot
+  templateId: stevecoolmenu000000001
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

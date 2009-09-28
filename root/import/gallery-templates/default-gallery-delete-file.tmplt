@@ -1,0 +1,87 @@
+==== Template ================================================================
+Asset ID    : zcX-wIUct0S_np14xxOA-A
+Menu Title  : Default Gallery Delete File
+Parent      : root/import/gallery-templates
+Title       : Default Gallery Delete File
+URL         : root/import/gallery-templates/default-gallery-delete-file
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
+			<a href="<tmpl_var url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">			
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />							
+			</form>
+		</div>	
+		Delete Photo
+	</div>		
+
+	<br /><br />
+
+	<div id="adminWrapper">
+
+		<div style="width:350px;padding:5px">
+
+			<div class="messageStyle" style="text-align:center;font-size:12px">
+				^International("template delete message","Asset_Photo");
+			</div>
+
+			<br />
+
+			<div style="text-align:center;width:350px;margin-top:5px">	
+				<a href="<tmpl_var url>" class="adminButton">^International("template delete no","Asset_GalleryAlbum");</a>
+				<a href="<tmpl_var url_yes>" class="adminButton">^International("template delete yes","Asset_GalleryAlbum");</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryFile/Delete
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

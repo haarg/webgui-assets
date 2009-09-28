@@ -1,0 +1,120 @@
+==== Template ================================================================
+Asset ID    : 6X-7Twabn5KKO_AbgK3PEw
+Menu Title  : Default Gallery Edit Album
+Parent      : root/import/gallery-templates
+Title       : Default Gallery Edit Album
+URL         : root/import/gallery-templates/default-gallery-edit-album
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
+			<a href="<tmpl_var url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">			
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+			</form>
+		</div>	
+		<tmpl_if isNewAlbum>
+			^International('template add','Asset_GalleryAlbum');
+		<tmpl_else>
+			^International('template edit','Asset_GalleryAlbum');
+		</tmpl_if>
+		^International('template assetName','Asset_GalleryAlbum');
+	</div>		
+
+	<br /><br />
+	
+	<tmpl_var form_start>
+
+	<table class="adminTable" style="width:350px" cellpadding="5">
+	<tr>
+		<td class="label">^International('editForm title label','Asset_GalleryAlbum');</td>
+		<td><tmpl_var form_title></td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm description label','Asset_GalleryAlbum');</td>
+		<td><tmpl_var form_description></td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm othersCanAdd label','Asset_GalleryAlbum');</td>
+		<td><tmpl_var form_othersCanAdd></td>
+	</tr>
+
+	<tmpl_if file_loop>
+	<tr>
+		<td colspan="2">
+			<div style="border-top:solid #999 1px;padding-top:5px">
+				<br />
+
+				^International('editForm assetIdThumbnail label','Asset_GalleryAlbum');<br /><br />
+				<tmpl_loop file_loop>
+				<div class="galleryOrg">
+					<div class="left">
+					<label for="assetIdThumbnail_<tmpl_var assetId>"><img src="<tmpl_var thumbnailUrl>" alt="<tmpl_var menuTitle>" /></label>
+					
+					<div><tmpl_var form_promote><tmpl_var form_demote><tmpl_var form_delete></div>		
+					<p><label>Use as Album Thumbnail: <tmpl_var form_assetIdThumbnail></label></p>
+					</div>
+					
+					<div class="right">
+						<tmpl_var form_synopsis>
+					</div>
+					<div style="clear: both">&nbsp;</div>
+				</div></tmpl_loop>
+			</div>			
+		</td>
+	</tr>
+	</tmpl_if>
+	</table>
+	
+	
+	<div style="text-align:right;width:350px;margin-top:5px">	
+		<tmpl_var form_cancel><tmpl_var form_submit>
+	</div>
+	<tmpl_var editForm_end></div></form>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryAlbum/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

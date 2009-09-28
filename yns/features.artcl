@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : 4Yfz9hqBqM8OYMGuQK8oLw
+Menu Title  : Get Features
+Parent      : your_next_step
+Title       : Get Features
+URL         : yns/features
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>What's that you say? WebGUI's thousands of features are still missing some important ones? No problem, our professional development team can <a href="http://www.plainblack.com/services/development">add any features you need</a> for your site. We've built hundreds of custom apps for people. From simple macros, to custom single sign on systems, to applications that will manage your entire company, our team can do it.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: x4_4U_yb-MAGELG0jxAqpQ
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

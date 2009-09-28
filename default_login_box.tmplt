@@ -1,0 +1,54 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000044
+Menu Title  : Default Login Box
+Parent      : root/import/macro/l_loginbox
+Title       : Default Login Box
+URL         : default_login_box
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="loginBox">
+<tmpl_if user.isVisitor>
+	<tmpl_var form.header>
+             <label for="username_formId"><tmpl_var username.label></label><br />
+             <tmpl_var username.form><br />
+             <label for="identifier_formId"><tmpl_var password.label></label><br />
+             <tmpl_var password.form><br />
+             <tmpl_var form.login>
+	<tmpl_var form.footer>
+	<tmpl_if session.setting.anonymousRegistration>
+                        <p><a href="<tmpl_var account.create.url>"><tmpl_var account.create.label></a></p>
+	</tmpl_if>	
+<tmpl_else>
+	<tmpl_unless customText>
+		<tmpl_var hello.label> <a href="<tmpl_var account.display.url>"><tmpl_var session.user.username></a>.
+                          <a href="<tmpl_var logout.url>"><tmpl_var logout.label></a>
+	<tmpl_else>
+		<tmpl_var customText>
+	</tmpl_unless>
+</tmpl_if>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Macro/L_loginBox
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

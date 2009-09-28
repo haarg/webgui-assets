@@ -1,0 +1,44 @@
+==== Template ================================================================
+Asset ID    : newsletter000000000001
+Menu Title  : ' Summary Newsletter'
+Parent      : root/import/newsletter
+Title       : ' Summary Newsletter (default)'
+URL         : newsletterdefaulttemplate
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<p><tmpl_var header></p>
+
+<tmpl_loop thread_loop>
+<p>
+    <a href="<tmpl_var url>"><tmpl_var title></a><br />
+    <p><tmpl_var synopsis></p>
+</p>
+</tmpl_loop>
+
+<p><tmpl_var footer></p>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: newsletter
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

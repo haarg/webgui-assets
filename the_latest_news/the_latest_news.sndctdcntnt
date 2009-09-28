@@ -1,0 +1,38 @@
+==== Wobject::SyndicatedContent ==============================================
+Asset ID    : fK-HMSboA3uu0c1KYkYspA
+Menu Title  : The Latest News
+Parent      : the_latest_news
+Title       : The Latest News
+URL         : the_latest_news/the_latest_news
+==== synopsis ================================================================
+~
+==== rssUrl ==================================================================
+http://www.plainblack.com/news/news?func=viewRSS
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+This is the latest news from Plain Black and WebGUI pulled directly from the site every hour.
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayMode: interleaved
+  displayTitle: '0'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+  templateId: GNvjCFQWjY2AF2uf0aCM8Q
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  hasTerms: ''
+  maxHeadlines: '3'
+  processMacroInRssUrl: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

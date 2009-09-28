@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : TlhKOVmWblZOsAdqmhEpeg
+Menu Title  : sub-btn.jpg
+Parent      : root/import/gallery-templates/images
+Title       : sub-btn.jpg
+URL         : root/import/gallery-templates/images/sub-btn.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="sub-btn.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

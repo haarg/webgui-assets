@@ -1,0 +1,109 @@
+==== Template ================================================================
+Asset ID    : KAMdiUdJykjN02CPHpyZOw
+Menu Title  : Default Gallery View Album Slideshow
+Parent      : root/import/gallery-templates
+Title       : Default Gallery View Album Slideshow
+URL         : root/import/gallery-templates/default-gallery-view-album-slideshow
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<script src="^Extras(yui/build/yahoo/yahoo-min.js);"></script> 
+<script src="^Extras(yui/build/event/event-min.js);"></script>  
+<script src="^Extras(yui/build/dom/dom-min.js);"></script>  
+<script type="text/javascript" src="^/(root/import/gallery-templates/slideshow.js);"></script>
+
+<script type="text/javascript">
+	var ss  = new WebGUI.Slideshow();
+</script>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
+
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addPhoto>">^International(template url_addPhoto,Asset_GalleryAlbum);</a></tmpl_if>
+			<tmpl_if canEdit>
+				<a href="<tmpl_var url_edit>">^International(template url_edit,Asset_GalleryAlbum);</a>
+				<a href="<tmpl_var url_delete>">^International(template url_delete,Asset_GalleryAlbum);</a>
+			</tmpl_if>			
+			<a href="<tmpl_var gallery_url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var gallery_url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">
+			<a href="<tmpl_var url_thumbnails>">^International(template url_thumbnails,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url_slideshow>" class="current">^International(template url_slideshow,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url>">^International(template url,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+			</form>
+		</div>	
+		<tmpl_var title> &middot;
+		<span class="author">^International(template by,Asset_Gallery);: <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a></span>		
+	</div>	
+
+	<tmpl_var description>
+
+	<div class="wgSlideshow">
+		<div class="controls">
+			<a href="javascript:return false" onclick="ss.previous()"><img src="^FileUrl(root/import/gallery-templates/images/prev-btn.gif);" style="border-style:none" alt="Previous Button" /></a>
+			<a href="javascript:return false" onclick="ss.togglePlay()"><img src="^FileUrl(root/import/gallery-templates/images/play-btn.gif);" style="border-style:none" /></a>
+			<a href="javascript:return false" onclick="ss.next()"><img style="border-style:none" src="^FileUrl(root/import/gallery-templates/images/next-btn.gif);" style="border-style:none" alt="Next Button"/></a>
+		</div>
+		<div id="slideshow-container">	
+			<tmpl_loop file_loop>
+				<div class="slideshow-item">			
+					<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>
+					<div class="counter"><tmpl_var __COUNTER__></div>
+					<a href="<tmpl_var url>"><img src="<tmpl_var fileUrl>" style="border: none" /></a>			
+					<tmpl_if synopsis>
+						<div class="synopsis"><tmpl_var synopsis></div>				
+					</tmpl_if>
+				</div>
+			</tmpl_loop>
+		</div>			
+	</div>		
+	
+	<div style="clear:both"></div>
+</div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryAlbum/ViewSlideshow
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

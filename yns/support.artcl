@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : ix1p0AbwKAz8QWB-T-HHfg
+Menu Title  : Get Support
+Parent      : your_next_step
+Title       : Get Support
+URL         : yns/support
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Plain Black provides <a href="http://www.plainblack.com/services/support">support packages</a> to fit any budget or need. Start out with online support which costs only $500 per year! And grow support as your needs grow. We build custom support packages to match our client's needs. And no matter what level of support you purchase, you get WebGUI Documentation included in your purchase.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: gU8kZk0nV6SqcwKqSiojQQ
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,38 @@
+==== Template ================================================================
+Asset ID    : WikiPHTmpl000000000001
+Menu Title  : Default Page History
+Parent      : root/import/wiki
+Title       : Default Page History
+URL         : default-wiki-page-history
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<ul>
+<tmpl_loop pageHistoryEntries>
+	<li><tmpl_var toolbar> <tmpl_var actionTaken> at <tmpl_var date> (<tmpl_var interval>) by <tmpl_var username></li>
+</tmpl_loop>
+</ul>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: WikiPage_pageHistory
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

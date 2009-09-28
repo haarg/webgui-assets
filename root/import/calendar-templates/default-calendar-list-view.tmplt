@@ -1,0 +1,139 @@
+==== Template ================================================================
+Asset ID    : kj3b-X3i6zRKnhLb4ZiCLw
+Menu Title  : Default Calendar List View
+Parent      : root/import/calendar-templates
+Title       : Default Calendar List View
+URL         : root/import/calendar-templates/default-calendar-list-view
+==== headBlock ===============================================================
+<style type="text/css">
+	#wgListView * {
+		padding:0px;
+		margin:0px;
+	}	
+	#wgListView a:link,
+	#wgListView a:visited {			
+		font-weight:bold;
+	}
+	#wgListView .newUnit {
+		font-weight:bold;
+	}
+	#wgListView .allEvents {
+		padding-left:20px;
+	}
+	#wgListView .controls {
+		margin-top:20px;
+	}	
+	#wgListView .tab:link,
+	#wgListView .tab:visited {;
+		font-weight: bold;
+		padding: 2px 15px 0px 15px;
+		text-align: center;
+		font-size: 15px;
+		line-height:15px;
+		margin-right: 5px;		
+	}
+	#wgListView .bar {
+		text-align:right;
+	}
+	* html #wgListView .bar {
+		height:1%;
+	}
+	#wgListView .bar a:hover {
+		text-decoration:underline;
+	}
+	#wgListView .allEvents {
+		padding:15px;
+	}
+	#wgListView .event {
+		margin:10px 0px;
+	}
+	#wgListView .event .wgDate {
+		font-size:9px;
+		font-style:italic;
+	}
+	#wgListView h3 a:link,
+	#wgListView h3 a:visited {
+		font-size:16px;
+		margin-bottom:2px;
+	}
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div id="wgListView">
+	<tmpl_if session.var.adminOn>
+		<div><tmpl_var controls></div>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h2><tmpl_var title></h2>
+	</tmpl_if>
+
+	<div class="controls">
+		<a class="tab" href="<tmpl_var urlDay>">^International(label day,Asset_Calendar);</a>
+		<a class="tab" href="<tmpl_var urlWeek>">^International(label week,Asset_Calendar);</a>
+		<a class="tab" href="<tmpl_var urlMonth>">^International(label month,Asset_Calendar);</a>
+		<a class="tab active" href="?type=list">List</a>
+		<a class="tab" href="<tmpl_var urlSearch>">^International(label search,Asset_Calendar);</a>		
+		<div class="bar">		
+			<tmpl_if editor>
+				<a href="<tmpl_var urlAdd>">^International(add event,Asset_Calendar);</a> &bull;
+			</tmpl_if> 
+			<a href="<tmpl_var urlPrint>">^International(print,Asset_Calendar);</a> &bull; <a href="<tmpl_var urlIcal>">^International(iCal,Asset_Calendar); </a>
+		</div>
+	</div>
+
+	<div class="allEvents">
+		<tmpl_loop events>
+			<div class="newUnit">
+				<tmpl_if new_year>
+					^D("%y",<tmpl_var startEpoch>);
+				</tmpl_if>
+				<tmpl_if new_month>
+					^D("%c %y",<tmpl_var startEpoch>);
+				</tmpl_if>
+				<tmpl_if new_day>
+					^D("%w, %c %d %y",<tmpl_var startEpoch>);
+				</tmpl_if>
+			</div>
+
+			<div class="event">
+				<h3><a href="<tmpl_var eventUrl>"><tmpl_var eventTitle></a> <span class="wgDate"><tmpl_var eventStartDateDayName>, <tmpl_var eventStartDateMonthName> <tmpl_var eventStartDateDayOfMonth>, <tmpl_var eventStartDateYear></span></h3>
+				
+				<div class="wgDescription"><tmpl_var eventDescription></div>				
+			</div>
+		</tmpl_loop>
+
+		<div class="pagination">
+			<tmpl_if url_previousPage>
+				<a href="<tmpl_var url_previousPage>">&lt;&lt; ^International(previous page,Asset_Calendar);</a>
+			</tmpl_if>
+
+			<tmpl_if url_nextPage>
+				<a href="<tmpl_var url_nextPage>">^International(next page,Asset_Calendar); &gt;&gt;</a>
+			</tmpl_if>
+		</div>
+	</div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Calendar/List
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

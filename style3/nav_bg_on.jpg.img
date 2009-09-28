@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : 7.0-style0000000000066
+Menu Title  : nav_bg_on.jpg
+Parent      : root/import/webgui-7-style-3
+Title       : nav_bg_on.jpg
+URL         : style3/nav_bg_on.jpg
+==== parameters ==============================================================
+style="border-style:none;"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

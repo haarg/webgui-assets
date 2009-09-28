@@ -1,0 +1,215 @@
+==== Template ================================================================
+Asset ID    : aIpCmr9Hi__vgdZnDTz1jw
+Menu Title  : Cart (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Cart (Default)
+URL         : default-shopping-cart-template
+==== headBlock ===============================================================
+	<style type="text/css">
+			#shoppingCart {
+				font-family:arial;
+				font-size:12px;
+			}
+
+			#shoppingCart tr.header td {
+				font-weight:bold;
+				text-align:right;
+				padding:3px 5px;
+			}
+
+			#shoppingCart tr.data td {
+				text-align:right;
+				padding:3px 5px;
+			}
+
+			#shoppingCart input, #shoppingCart .summary select {
+				text-align:right;
+				border:solid gray 1px;
+				background: url(^FileUrl(shopping-cart-collateral-items/input_bg.jpg);) repeat-x top left;
+				padding-right:2px;
+				font-size:10px;
+			}
+			#shoppingCart tr.alt td {
+				background-color:#F0F0F0;
+			}
+			#shoppingCart tr.alt td.delete {
+				padding-left:10px;
+				-moz-border-radius-topLeft:10px;
+				-moz-border-radius-bottomLeft:10px;
+				border-top-left-radius:10px;
+				border-bottom-left-radius:10px;
+			}
+			#shoppingCart tr.alt td.shipping {
+				padding-right:10px;
+				-moz-border-radius-topRight:10px;
+				-moz-border-radius-bottomRight:10px;
+				border-top-right-radius:10px;
+				border-bottom-right-radius:10px;
+			}
+			#shoppingCart tr.topLine td {
+				margin-top:10px;
+				border-top:solid silver 1px;
+			}
+			#shoppingCart tr.summary td {
+				background-color: #f3f3f3;
+				padding:5px 10px 5px 10px;
+			}
+			#shoppingCart .summary .empty {
+				background-color: transparent;
+				border-style:none;
+			}
+			#shoppingCart .summary .topLeft {
+				background: #f3f3f3 url(^FileUrl(shopping-cart-collateral-items/top-left.jpg);) top left no-repeat;
+			}
+			#shoppingCart .summary .topRight {
+				background: #f3f3f3 url(^FileUrl(shopping-cart-collateral-items/top-right.jpg);) top right no-repeat;
+			}
+			#shoppingCart .summary .bottomLeft {
+				background: #f3f3f3 url(^FileUrl(shopping-cart-collateral-items/bottom-left.jpg);) bottom left no-repeat;
+			}
+			#shoppingCart .summary .bottomRight {
+				background: #f3f3f3 url(^FileUrl(shopping-cart-collateral-items/bottom-right.jpg);) bottom right no-repeat;
+			}
+			#shoppingCart .summary select {
+				padding-right:0px;
+				text-align:left;
+			}
+			#shoppingCart tr.bottomLine td {
+				border-bottom: solid 1px silver;
+			}
+			#shoppingCart tr.topLine td {
+				border-top: solid 1px #fff;
+			}
+		</style>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if error><div class="error"><tmpl_var error></div></tmpl_if>
+
+<tmpl_if message><div class="message"><tmpl_var message></div></tmpl_if>
+
+<tmpl_var formHeader>
+<table border="0" cellpadding="0" cellspacing="0" id="shoppingCart">
+<tr>
+	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_var checkoutButton><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
+</tr>
+<tr>
+	<td colspan="6"></td>
+</tr>
+<tr class="header">
+	<td></td>
+	<td style="text-align:left">^International(item,Shop);</td>
+	<td>^International(price,Shop);</td>
+	<td>^International(quantity,Shop);</td>
+	<td>^International(extended price,Shop);</td>
+	<tmpl_if hasShippingAddress>
+		<td>^International(per item shipping,Shop);</td>
+	</tmpl_if>
+</tr>
+<tmpl_loop items>
+<tr class="data <tmpl_if __ODD__>alt</tmpl_if>">
+	<td class="delete"><tmpl_var removeButton></td>
+	<td style="text-align:left"><tmpl_var configuredTitle></td>
+	<td><tmpl_var price></td>
+	<td><tmpl_if isUnique><tmpl_var quantity><tmpl_else><tmpl_var quantityField></tmpl_if></td>
+	<td><tmpl_var extendedPrice></td>
+	<tmpl_if hasShippingAddress>
+		<td class="shipping">
+			<tmpl_if isShippable>
+				<tmpl_var shipToButton><br />
+				<tmpl_var shippingAddress>
+			<tmpl_else>
+				^International(not applicable,Shop);
+			</tmpl_if>
+		</td>
+	</tmpl_if>
+</tr>
+</tmpl_loop>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr class="summary">
+	<td class="empty"></td>
+	<td class="topLeft">&nbsp;</td>
+	<td colspan="2"></td>
+	<td class="topRight">&nbsp;</td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary">
+	<td class="empty"></td>
+	<td><strong>^International(subtotal,Shop);</strong></td>
+	<td colspan="2"></td>
+	<td style="text-align:right"><tmpl_var subtotalPrice></td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary">
+	<td class="empty"></td>
+	<td><strong>^International(tax,Shop);</strong></td>
+	<td colspan="2"></td>
+	<td style="text-align:right"><tmpl_var tax></td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary">
+	<td class="empty"></td>
+	<td colspan="2"><strong>^International(shipping,Shop);</strong> <tmpl_var shipToButton><br />
+		<span style="font-size:9px">
+			<tmpl_var shippingAddress>
+		</span>
+	</td>
+	<td colspan="2" style="text-align:right;vertical-align:top">
+		<tmpl_var shippingOptions>
+	</td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary bottomLine">
+	<td class="empty"></td>
+	<td><strong>^International(in shop credit,Shop);</strong></td>
+        <td colspan="2" style="font-size:9px">(^International(available,Shop);: <tmpl_var inShopCreditAvailable>)</td>
+	<td style="text-align:right;"><tmpl_var inShopCreditDeduction></td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary topLine">
+	<td class="empty"></td>
+	<td><strong>^International(total,Shop);</strong></td>
+	<td colspan="2"></td>
+	<td style="text-align:right"><strong><tmpl_var totalPrice></strong></td>
+	<td class="empty"></td>
+</tr>
+<tr class="summary">
+	<td class="empty"></td>
+	<td class="bottomLeft">&nbsp;</td>
+	<td colspan="2"></td>
+	<td class="bottomRight">&nbsp;</td>
+	<td class="empty"></td>
+</tr>
+<tr>
+	<td>&nbsp;</td>
+</tr>
+<tr>
+	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_var checkoutButton><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
+</tr>
+
+</table>
+<tmpl_var formFooter>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/Cart
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

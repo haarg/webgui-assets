@@ -1,0 +1,54 @@
+==== Template ================================================================
+Asset ID    : ZipArchiveTMPL00000001
+Menu Title  : Default Zip Archive Template
+Parent      : root/import/ziparchiveasset
+Title       : Default Zip Archive Template
+URL         : zip-archive-template
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<tmpl_if session.var.adminOn>
+   <tmpl_if controls>
+      <p><tmpl_var controls></p>
+   </tmpl_if>
+</tmpl_if>
+
+<tmpl_if error>
+<ul>
+  <li><tmpl_var error></li>
+</ul>
+</tmpl_if>
+
+<tmpl_if fileUrl>
+   <a href="<tmpl_var fileUrl>"><tmpl_var title></a>
+<tmpl_else>
+  <tmpl_if pageError>
+      <tmpl_var noInitialPage>
+  <tmpl_else>
+      <tmpl_var noFileSpecified>
+  </tmpl_if>
+</tmpl_if>	
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: ZipArchiveAsset
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

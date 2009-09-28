@@ -1,0 +1,59 @@
+==== Snippet =================================================================
+Asset ID    : 5m5I7__l40C4hhv4ydqAHQ
+Menu Title  : thingy-ie.css
+Parent      : root/import/thingy-templates
+Title       : thingy-ie.css
+URL         : root/import/thingy-templates/thingy-ie.css
+==== snippet =================================================================
+#thingyList .things {
+	padding:0px;
+	margin:0px;
+	width:200px;
+	z-index:5000;
+	position:absolute;
+	top:27px;
+	left:20px;
+	border:solid #a2a2a2 1px;
+	border-top-style:none;
+}
+
+#thingyList .things a:link,
+#thingyList .things a:visited {
+	display:block;
+	background-color:#f1f1f1;
+	border-top:solid #a2a2a2 1px;	
+	border-bottom:solid #727272 1px;
+	line-height:12px;
+	font-size:10px;
+	height:12px;
+	padding:2px 5px;
+	text-decoration:none;
+	font-weight:bold;
+	color:#a2a2a2;
+	width:190px;
+}
+#thingyList .things a:hover {
+	background-color:white;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

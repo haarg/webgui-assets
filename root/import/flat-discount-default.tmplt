@@ -1,0 +1,50 @@
+==== Template ================================================================
+Asset ID    : 63ix2-hU0FchXGIWkG3tow
+Menu Title  : Flat Discount (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Flat Discount (Default)
+URL         : root/import/flat-discount-default
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+ <p><tmpl_var controls></p>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+ <h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+  <p><tmpl_var description></p>
+</tmpl_if>
+<tmpl_if hasAddedToCart>
+<p><tmpl_var thankYouMessage></p>
+<p><a href="<tmpl_var continueShoppingUrl>">^International(continue shopping button,Shop);
+</tmpl_if>
+
+<tmpl_unless alreadyHasCoupon><tmpl_var formHeader><tmpl_var addToCartButton><tmpl_var formFooter></tmpl_unless>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: FlatDiscount
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,27 @@
+==== File ====================================================================
+Asset ID    : Vzv1pWpg_w6R_o-b0rM2qQ
+Menu Title  : Ad
+Parent      : getting_started
+Title       : Ad
+URL         : home/ad2
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: pbtmpl0000000000000221
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,78 @@
+==== Template ================================================================
+Asset ID    : PBEmsBadgeTemplate0000
+Menu Title  : Default EMS Badge Template
+Parent      : root/import/ems
+Title       : Default EMS Badge Template
+URL         : default_emsbadge
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<h1><tmpl_var title></h1>
+<p><tmpl_var description></p>
+<h1>^International(badge holder information,Asset_EventManagementSystem);</h1>
+<tmpl_var addressBook>
+<tmpl_if error>
+<p><b><tmpl_var error></b></p>
+</tmpl_if>
+<tmpl_var formHeader>
+<table>
+<tr>
+<td>^International(name,Shop);</td><td><tmpl_var name></td>
+</tr>
+<tr>
+<td>^International(organization,Asset_EventManagementSystem);</td><td><tmpl_var organization></td>
+</tr>
+<tr>
+<td>^International(address,Shop);</td><td><tmpl_var address1></td>
+</tr>
+<tr>
+<td>&nbsp;</td><td><tmpl_var address2></td>
+</tr>
+<tr>
+<td>&nbsp;</td><td><tmpl_var address3></td>
+</tr>
+<tr>
+<td>^International(city,Shop);</td><td><tmpl_var city></td>
+</tr>
+<tr>
+<td>^International(state,Shop);</td><td><tmpl_var state></td>
+</tr>
+<tr>
+<td>^International(code,Shop);</td><td><tmpl_var zipcode></td>
+</tr>
+<tr>
+<td>^International(country,Shop);</td><td><tmpl_var country></td>
+</tr>
+<tr>
+<td>^International(phone number,Shop);</td><td><tmpl_var phone></td>
+</TR>
+<tr>
+<td>^International(email address,Asset_EventManagementSystem);</td><td><tmpl_var email></td>
+</tr>
+</table>
+<tmpl_var submitAddress>
+<tmpl_var formFooter>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: EMSBadge
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

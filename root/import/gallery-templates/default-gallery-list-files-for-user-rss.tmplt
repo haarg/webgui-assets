@@ -1,0 +1,49 @@
+==== Template ================================================================
+Asset ID    : -ANLpoTEP-n4POAdRxCzRw
+Menu Title  : Default Gallery List Files For User RSS
+Parent      : root/import/gallery-templates
+Title       : Default Gallery List Files For User RSS
+URL         : root/import/gallery-templates/default-gallery-list-files-for-user-rss
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title><tmpl_var title></title>
+<link><tmpl_var url></link>
+<description><tmpl_var description></description>
+
+<tmpl_loop user_files>
+<item>
+<title><tmpl_var title></title>
+<link><tmpl_var url></link>
+<description><tmpl_var synopsis></description>
+<guid isPermaLink="true"><tmpl_var url></guid>
+<pubDate><tmpl_var rssDate></pubDate>
+</item>
+</tmpl_loop>
+</channel>
+</rss>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Gallery/ListFilesForUserRss
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

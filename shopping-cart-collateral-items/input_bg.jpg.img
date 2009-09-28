@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : Iz2mUR3jCPKyemwAea4b2g
+Menu Title  : input_bg.jpg
+Parent      : shopping-cart-collateral-items
+Title       : input_bg.jpg
+URL         : shopping-cart-collateral-items/input_bg.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="input_bg.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

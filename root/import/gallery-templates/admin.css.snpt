@@ -1,0 +1,157 @@
+==== Snippet =================================================================
+Asset ID    : _hELmIJfgbAyXFNqPyApxQ
+Menu Title  : admin.css
+Parent      : root/import/gallery-templates
+Title       : admin.css
+URL         : root/import/gallery-templates/admin.css
+==== snippet =================================================================
+#adminWrapper {
+	text-align:left;
+	font-family:arial;
+	font-size:11px;
+	position: relative;
+	z-index: 2;
+}
+
+h2 {
+	font-size:15px;
+}
+
+.messageStyle {
+	font-weight:bold;
+	font-family:arial;
+	font-size:10px;
+	margin-bottom:8px;
+}
+
+.adminButton {
+	border:solid silver 1px;
+	background-color:#e0e0e0;
+	font-weight:bold;
+	font-size:10px;
+	color:#333;
+	cursor:pointer;
+	padding: 0.5em 1em;
+}	
+
+.adminTable {
+	border:solid silver 1px;
+	background-color:#F0F0F0;
+	color: black;
+	width:320px;
+	padding:5px;
+}
+
+.adminTable select, .adminTable input, .adminTable textarea{
+	border:solid gray 1px;
+	font-size:10px;
+	padding-left:5px;
+}
+
+.label {
+	white-space:nowrap;
+	text-align:right;
+	padding-right:10px;
+	font-weight:bold;
+	width:1px;
+	vertical-align:top;
+}
+
+.galleryOrg {
+	position:relative;
+	margin-top:0px;
+	padding-top:0px;
+	margin-left:5px;
+	border:gray solid 1px;
+	text-align:center;
+	margin-top:3px;
+	width: 95%;
+	background-color: #DEDEDE
+}
+
+.galleryOrg .left {
+	float: left;
+	width: 36%;
+}
+
+.galleryOrg .right {
+	width: 63%;
+}
+ 
+.galleryOrg img {
+	display:block;
+	height:150px;
+	margin:0px auto;
+}
+
+.promote {
+	margin-left:3px;
+}
+
+.promote img {
+	height:14px;
+	width:16px;
+}
+
+.demote {
+	margin-right:3px;
+}
+
+.demote img {
+	height:14px;
+	width:16px;
+}
+
+.delete img {
+	height: 14px;
+}
+
+.numbering {
+	position:absolute;
+	top:0px;
+	left:0px;
+	padding:1px;
+	background-color:black;
+	color:white;
+	-moz-border-radius-bottomRight:5px
+}
+
+input.captionEnter {
+	width:93px;
+	clear:both;
+	margin-bottom:3px
+}
+
+.galleryOrg button {
+	border-style:none;
+	background:none;
+}
+.galleryOrg button img {
+	width:16px;
+	height:auto;
+}
+.galleryOrg .synopsis input {
+	width:80px;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

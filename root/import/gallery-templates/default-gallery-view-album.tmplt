@@ -1,0 +1,117 @@
+==== Template ================================================================
+Asset ID    : 05FpjceLYhq4csF1Kww1KQ
+Menu Title  : Default Gallery View Album
+Parent      : root/import/gallery-templates
+Title       : Default Gallery View Album
+URL         : root/import/gallery-templates/default-gallery-view-album
+==== headBlock ===============================================================
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery.css););
+	</style>
+	
+	<!--[if IE ]>
+		<style type="text/css">
+			@import url(^/(root/import/gallery-templates/gallery-ie.css););
+		</style>
+	<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
+
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addPhoto>">^International(template url_addPhoto,Asset_GalleryAlbum);</a></tmpl_if>
+			<tmpl_if canEdit>
+				<a href="<tmpl_var url_edit>">^International(template url_edit,Asset_GalleryAlbum);</a>
+				<a href="<tmpl_var url_delete>">^International(template url_delete,Asset_GalleryAlbum);</a>
+			</tmpl_if>			
+			<a href="<tmpl_var gallery_url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var gallery_url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_viewRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var gallery_url>"><tmpl_var gallery_title></a></div>
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">
+			<a href="<tmpl_var url_thumbnails>">^International(template url_thumbnails,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url_slideshow>">^International(template url_slideshow,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;</span>
+			<a href="<tmpl_var url>" class="current">^International(template url,Asset_GalleryAlbum);</a><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />									
+			</form>
+		</div>	
+		<tmpl_var title> &middot;
+		<span class="author">^International(template by,Asset_Gallery);: <a href="<tmpl_var url_listFilesForOwner>"><tmpl_var ownerUsername></a></span>		
+	</div>	
+
+
+	<tmpl_var description>
+
+	<tmpl_loop file_loop>
+		<div class="wgPicture">
+			<a href="<tmpl_var url>" class="title">
+				<tmpl_var title>
+			</a>
+			<div class="thumbnail">		
+				<a href="<tmpl_var url>"><img src="<tmpl_var thumbnailUrl>" alt="Image" /></a>
+			</div>
+			<tmpl_if synopsis>
+				<div class="pictureDesc">
+					<div class="description">
+						<tmpl_var synopsis>
+					</div>	
+				</div>	
+			</tmpl_if>
+			<div class="details">
+				<div class="comments"><a href="<tmpl_var url>"><tmpl_var numberOfComments> Comments</a></div>
+				<div class="date">Created  ^D("%M/%d/%Y",<tmpl_var creationDate>);</div>
+				<div style="clear:both"></div>
+			</div>
+			<div style="clear:both"></div>
+		</div>	
+	</tmpl_loop>
+
+	<div style="clear:both"></div>
+<tmpl_if pagination.pageCount.isMultiple>
+	<div class="paginationContainer">
+		<del class="container">
+			<ul class="pagination">
+				<li><a href="<tmpl_var pagination.previousPageUrl>"<tmpl_unless pagination.isFirstPage> class="current"</tmpl_unless>>&laquo;</a></li>
+				<tmpl_loop pagination.pageLoop.upTo10>
+				<li><a href="<tmpl_var pagination.url>"<tmpl_if pagination.url> class="current"</tmpl_if>><tmpl_var pagination.text></a></li>
+				</tmpl_loop>
+				<li><a href="<tmpl_var pagination.nextPageUrl>"<tmpl_unless pagination.isLastPage> class="current"</tmpl_unless>>&raquo;</a></li>
+			</ul>		
+		</del>	
+	</div>		
+</tmpl_if>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryAlbum/View
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

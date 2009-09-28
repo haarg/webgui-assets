@@ -1,0 +1,39 @@
+==== Wobject::Article ========================================================
+Asset ID    : bX5rYxb6tZ9docY6sUhBlw
+Menu Title  : Getting Started
+Parent      : getting_started
+Title       : Getting Started
+URL         : getting_started/getting-started
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+
+<p>
+If you're reading this message that means you've successfully installed and configured the WebGUI Content Engine&reg;. Great job! To get started with managing content, watch the short instructional video below.
+</p>
+<p><b>NOTE:</b> Click on the green start icon on the video to begin your tutorial.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: r3QdZwvuVK9o9kLb7mpHGQ
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

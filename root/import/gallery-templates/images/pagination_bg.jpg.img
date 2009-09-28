@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : YfXKByTwDZVituMc4h13Dg
+Menu Title  : pagination_bg.jpg
+Parent      : root/import/gallery-templates/images
+Title       : pagination_bg.jpg
+URL         : root/import/gallery-templates/images/pagination_bg.jpg
+==== parameters ==============================================================
+style="border-style:none;" alt="pagination_bg.jpg"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '0'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

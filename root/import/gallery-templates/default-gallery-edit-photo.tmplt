@@ -1,0 +1,143 @@
+==== Template ================================================================
+Asset ID    : 7JCTAiu1U_bT9ldr655Blw
+Menu Title  : Default Gallery Edit Photo
+Parent      : root/import/gallery-templates
+Title       : Default Gallery Edit Photo
+URL         : root/import/gallery-templates/default-gallery-edit-photo
+==== headBlock ===============================================================
+<style type="text/css">
+	@import url(^/(root/import/gallery-templates/gallery.css););
+	@import url(^/(root/import/gallery-templates/admin.css););
+</style>
+	
+<!--[if IE ]>
+	<style type="text/css">
+		@import url(^/(root/import/gallery-templates/gallery-ie.css););
+	</style>
+<![endif]-->
+
+<!--[if IE 7]>
+	<link href="^/(root/import/gallery-templates/admin_ie7.css);" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgGallery">	
+	<div class="firstBar">	
+		<div class="buttons">
+			<tmpl_if canAddFile><a href="<tmpl_var url_addAlbum>">^International('template url_addAlbum','Asset_Gallery');</a></tmpl_if>
+			<a href="<tmpl_var url>?func=search">Advanced Search</a>
+			<a href="<tmpl_var url>?func=listFilesForUser">My Gallery</a>
+			<a href="<tmpl_var url_listAlbumsRss>" class="rss"><img src="^FileUrl(root/import/gallery-templates/images/rss.gif);" style="border-style:none;display:block" /></a>				
+		</div>	
+		<div class="title"><a href="<tmpl_var url>"><tmpl_var title></a></div>			
+	</div>	
+	
+	<div class="secondBar">	
+		<div class="searchArea">			
+			<form action="<tmpl_var gallery_url>" enctype="multipart/form-data" method="GET" class="searchBox">
+				<input type="hidden" name="func" value="search"  />				
+				<input id="basicSearch_formId" type="text" name="basicSearch" value="" maxlength="255" class="searchText"  />				
+				<input type="submit" name="submit" id="submit_formId" value="Search" class="searchBtn" />							
+			</form>
+		</div>	
+		<tmpl_if isNewPhoto>
+			^International('template add','Asset_GalleryAlbum');
+		<tmpl_else>
+			^International('template edit','Asset_GalleryAlbum');
+		</tmpl_if> 
+		^International('template assetName','Asset_Photo');
+	</div>		
+
+	<br /><br />
+
+	<h2></h2>
+
+	<tmpl_if errors>
+		<p>^International('template error happened','Asset_Photo');</p>
+		<ul>
+		<tmpl_loop errors>
+			<li><tmpl_var error></li>
+		</tmpl_loop>
+		</ul>
+	</tmpl_if>
+
+	<tmpl_var form_start>
+
+	<table class="adminTable" style="width:350px" cellpadding="5">
+<tmpl_if isNewPhoto>
+	<tr>
+		<td class="label">^International('template upload type','Asset_GalleryAlbum');</td>
+		<td>
+			<span class="adminButton">^International('template upload single','Asset_GalleryAlbum');</span>
+			<a href="<tmpl_var url_addArchive>" class="adminButton">^International('template upload archive','Asset_GalleryAlbum');</a>
+		</td>
+	</tr>
+</tmpl_if>
+	<tr>
+		<td class="label">^International('editForm title label','Asset_Photo');</td>
+		<td>
+			<tmpl_var form_title>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm synopsis label','Asset_Photo');</td>
+		<td>
+			<tmpl_var form_synopsis>
+		</td>
+	</tr>
+	<tr>
+		<td class="label"><tmpl_if isNewPhoto>^International('editForm photo new','Asset_Photo'); <tmpl_else>^International('editForm photo replace','Asset_Photo');</tmpl_if></td>
+		<td>
+			<tmpl_var form_photo>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm keywords','Asset_Photo');</td>
+		<td>
+			<tmpl_var form_keywords>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm location','Asset_Photo');</td>
+		<td>
+			<tmpl_var form_location>
+		</td>
+	</tr>
+	<tr>
+		<td class="label">^International('editForm friendsOnly','Asset_Photo');</td>
+		<td>
+			<tmpl_var form_friendsOnly>
+		</td>
+	</tr>
+	</table>
+	
+	<div style="text-align:right;width:350px;margin-top:5px">	
+		<a href="<tmpl_var url_album>" class="adminButton" onclick="history.go(-1); return false">^International('editForm cancel','Asset_Photo');</a> <input type="submit" value="^International('editForm save','Asset_Photo');" class="adminButton" />
+	</div>
+	
+	</div></form>
+
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: GalleryFile/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

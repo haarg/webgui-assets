@@ -1,0 +1,24 @@
+==== WebGUI::Asset ===========================================================
+Asset ID    : PBasset000000000000001
+Menu Title  : Root
+Parent      : root
+Title       : Root
+URL         : root
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

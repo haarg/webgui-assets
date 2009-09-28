@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : diZvW4bSgZWwyyGP3qXi1g
+Menu Title  : Commercial Documentation
+Parent      : documentation
+Title       : Commercial Documentation
+URL         : documentation/commercial-documentation
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p><a href="http://www.plainblack.com/">Plain Black</a> has created a whole line of commercial books which total over 1500 pages of detailed documentation about WebGUI. Both black and white and full color editions of these books are available, and they are updated frequently to keep you on top of the latest WebGUI features. <a href="https://www.plainblack.com/store/services/books2">Visit the book store today to stock your WebGUI library.</a> Other than hands on <a href="https://www.plainblack.com/services/training">training</a>, there is no better way to hone your WebGUI skills. No matter what your need, Plain Black has created a book that's right for you and is creating new books each year.</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: http://
+  storageId: kjLi5s-xRSCL63HfE8ArtA
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

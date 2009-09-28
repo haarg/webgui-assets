@@ -1,0 +1,79 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000130
+Menu Title  : Tree Navigation
+Parent      : root/import/navigation
+Title       : Tree Navigation
+URL         : root/import/navigation/tree-navigation
+==== headBlock ===============================================================
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/treeview/assets/skins/sam/treeview.css);" />
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/treeview/treeview-min.js);"></script>
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if displayTitle>
+	<h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+	<p><tmpl_var description></p>
+</tmpl_if>
+
+<tmpl_if session.var.adminOn>
+	<tmpl_var controls>
+</tmpl_if>
+
+<div  class=" yui-skin-sam">
+	<div id="treenavdiv"> </div>
+</div>
+
+<script type="text/javascript">
+//Wrap our initialization code in an anonymous function
+//to keep out of the global namespace:
+(function(){
+  var init = function() {
+    //create the TreeView instance:
+    var tree = new YAHOO.widget.TreeView("treenavdiv");
+		
+    //get a reusable reference to the root node:
+    var root = tree.getRoot();
+
+   //create a place to store all the new nodes
+    var nodes = [];
+
+    //create the nodes
+<tmpl_loop page_loop>
+    nodes['<tmpl_var page.assetId escape=JS>'] = new YAHOO.widget.TextNode('<a <tmpl_if page.newWindow>onclick="window.open(\'<tmpl_var page.url>\')" href="#" <tmpl_else>href="<tmpl_var page.url>"</tmpl_if>><tmpl_var page.menuTitle escape=JS></a>', ((nodes['<tmpl_var page.parent.assetId escape=JS>']) ? nodes['<tmpl_var page.parent.assetId escape=JS>'] : root), <tmpl_if page.relativeDepthIs0>true<tmpl_else><tmpl_if page.isAncestor>true<tmpl_else>false</tmpl_if></tmpl_if>);
+</tmpl_loop>
+
+    // draw the tree
+    tree.draw();
+  }
+  //Add an onDOMReady handler to build the tree when the document is ready
+  YAHOO.util.Event.onDOMReady(init);
+})();
+</script>
+
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Navigation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

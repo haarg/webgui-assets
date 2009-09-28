@@ -1,0 +1,33 @@
+==== Wobject::Layout =========================================================
+Asset ID    : mTOiwwk3q4k9g5-XykXhPA
+Menu Title  : Documentation
+Parent      : home
+Title       : Documentation
+URL         : documentation
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>With any large system, having the right documentation to get you started is mandatory. The good news is that WebGUI has abundant documentation.</p>
+==== Properties ==============================================================
+display:
+  displayTitle: '1'
+  isHidden: '0'
+  newWindow: '0'
+  printableStyleTemplateId: PBtmpl0000000000000111
+  styleTemplateId: stevestyle000000000003
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  assetOrder: asc
+  assetsToHide: ~
+  templateId: PBtmpl0000000000000054
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

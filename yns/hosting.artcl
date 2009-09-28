@@ -1,0 +1,35 @@
+==== Wobject::Article ========================================================
+Asset ID    : iCYOjohB9SKvAPr6bXElKA
+Menu Title  : Get Hosting
+Parent      : your_next_step
+Title       : Get Hosting
+URL         : yns/hosting
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== description =============================================================
+<p>Who better to host your WebGUI sites than Plain Black. Let us deal with upgrades, security, and server management. Doing so lets you focus on building your WebGUI site, which is where your time and expertise should be spent. And when you <a href="http://www.plainblack.com/services/hosting">sign up with hosting</a>, online support is included!</p>
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  displayTitle: '1'
+  isHidden: '1'
+  newWindow: '0'
+  printableStyleTemplateId: stevestyle000000000003
+  styleTemplateId: stevestyle000000000003
+  templateId: PBtmpl0000000000000002
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  linkTitle: ~
+  linkURL: ~
+  storageId: eTxnooflqjFWIwkyfE0nPQ
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

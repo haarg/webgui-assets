@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : default_post_received
+Menu Title  : Default Post Received
+Parent      : root/import/collaboration
+Title       : Default Post Received
+URL         : default_post_received
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<p>Your post has been received and is being processed so it can be added to the site. Please be patient.</p><p><a href="<tmpl_var url>">Back to site.</a></p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Collaboration
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

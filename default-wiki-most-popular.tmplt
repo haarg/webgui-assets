@@ -1,0 +1,40 @@
+==== Template ================================================================
+Asset ID    : WikiMPTmpl000000000001
+Menu Title  : Default Most Popular
+Parent      : root/import/wiki
+Title       : Default Most Popular
+URL         : default-wiki-most-popular
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2><tmpl_var title></h2>
+
+<ol><tmpl_loop mostPopular>
+<li><a href="<tmpl_var url>"><tmpl_var title></a></li>
+</tmpl_loop></ol>
+
+<div style="padding: 8px;"><a href="<tmpl_var searchUrl>"><tmpl_var searchLabel></a> | <a href="<tmpl_var recentChangesUrl>"><tmpl_var recentChangesLabel></a> | <a href="<tmpl_var wikiHomeUrl>"><tmpl_var wikiHomeLabel></a></div>
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: WikiMaster_mostPopular
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,537 @@
+==== Template ================================================================
+Asset ID    : BMybD3cEnmXVk2wQ_qEsRQ
+Menu Title  : Badge Builder (Default)
+Parent      : root/import/ems
+Title       : Badge Builder (Default)
+URL         : root/import/ems/badge-builder-default
+==== headBlock ===============================================================
+<link href="^Extras(/yui/build/reset-fonts-grids/reset-fonts-grids.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/tabview/assets/skins/sam/tabview.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/container/assets/skins/sam/container.css);" rel="stylesheet" type="text/css">
+
+
+<script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-beta-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/container/container-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/tabview/tabview-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui-webgui/build/string/string.js);" type="text/javascript"></script>
+
+<style type="text/css">
+		.skuDescription {
+		background-color: white;
+		max-width: 400px;
+		border:1px solid #000;
+		padding:10px;
+		}
+		.forwardButton {
+			background-color: green;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+		.backwardButton {
+			background-color: red;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+		#emstickets p, #emsribbons p, #emstokens p { text-align: left; padding: 5px; }
+		#badge {
+			font-size: 15px;
+			-moz-border-radius: 10px;
+			-webkit-border-radius: 10px;
+			border-radius: 10px;
+			border: 3px solid #2647a0;
+		}
+		#badgeHolderName {
+			background-color: #2647a0;
+			width: 100%;
+			color: white;
+			font-family: bold;
+			font-size: 25px;
+			padding: 5px 0px 5px 0px;
+			margin: 5px 0px 5px 0px;
+			margin-bottom: 5px;
+		}
+		#badgeTicketList div , #badgeRibbonList div , #badgeTokenList div {
+			border-top: 1px solid #808080;
+			width: 100%;
+			font-size: 13px;
+			padding: 5px 0px 5px 0px;
+			margin-top: 5px;
+		}
+</style>
+
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class=" yui-skin-sam"> <!-- start yui wrapper -->
+   <div class="yui-gc"> <!-- start grid -->
+     <div class="yui-u first" style="overflow: auto;"> <!-- start first column -->
+		<div id="emsExtras" class="yui-navset">  <!-- start tabs -->
+    <ul class="yui-nav">
+        <li id="emsticketstab"><a href="#emstickets"><em>^International(tickets,Asset_EventManagementSystem);</em></a></li>
+        <li id="emsribbonstab"><a href="#emsribbons"><em>^International(ribbons,Asset_EventManagementSystem);</em></a></li>
+        <li id="emstokenstab"><a href="#emstokens"><em>^International(tokens,Asset_EventManagementSystem);</em></a></li>
+    </ul>            
+    <div class="yui-content"> <!-- start tab data -->
+
+
+
+	
+<!-- TICKETS TAB -->
+	
+        <div id="emstickets"> <!-- start ticket tab data -->
+<tmpl_if canEdit>
+	<p>
+		<a href="<tmpl_var addTicketUrl>">^International(add a ticket,Asset_EventManagementSystem);</a>
+		&bull;
+		<a href="<tmpl_var manageEventMetaFieldsUrl>">^International(meta fields,Asset_EventManagementSystem);</a>
+		&bull;
+		<a href="<tmpl_var importTicketsUrl>">^International(import,Asset_EventManagementSystem);</a>
+		&bull;
+		<a href="<tmpl_var exportTicketsUrl>">^International(export,Asset_EventManagementSystem);</a>
+	</p>
+</tmpl_if>
+	<p><tmpl_var ticketInstructions><br />
+		<div id="search"><form id="keywordSearchForm"><input type="text" name="keywords" id="keywordsField" /><input type="submit" value="^International(search,Asset_EventManagementSystem);" /></form></div>
+	</p>
+	<div id="emsTicketPaging"></div>
+	<form><div id="emsTicketList"></div></form>
+
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function () {
+    var DataSource = YAHOO.util.DataSource,
+        Dom        = YAHOO.util.Dom,
+        DataTable  = YAHOO.widget.DataTable,
+        Paginator  = YAHOO.widget.Paginator;
+    
+    // the datasource deals with the stuff returned from www_getTicketsAsJson
+    var mySource = new DataSource('<tmpl_var getTicketsUrl>');
+    mySource.responseType   = DataSource.TYPE_JSON;
+    mySource.responseSchema = {
+        resultsList : 'records',
+        totalRecords: 'totalRecords',
+        fields      : [ 'location', 'startDate', 'duration', 'eventNumber', 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId']
+    };
+
+    var buildQueryString = function (state,dt) {
+        return ";startIndex=" + state.pagination.recordOffset +
+               ";keywords=" + Dom.get('keywordsField').value +
+               ";results=" + state.pagination.rowsPerPage;
+    };
+
+    // paginator in case there are a lot of tickets
+    var myPaginator = new Paginator({
+        containers         : ['emsTicketPaging'],
+        pageLinks          : 5,
+        rowsPerPage        : 25,
+        rowsPerPageOptions : [25,50,100],
+        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+    });
+
+	// ticket description formatter
+		var formatViewTicketDescription = function(elCell, oRecord, oColumn, title) {
+			elCell.innerHTML = title;
+			elCell.id = 'cell_' + oRecord.getData('assetId');
+			elCell.tooltip = new YAHOO.widget.Tooltip("tt_" + oRecord.getData('assetId'), 
+				{ context:elCell.id, autodismissdelay:250000,
+				text:'<div class="skuDescription">'+oRecord.getData('description')+'</div>' });
+        }; 
+
+	// add to cart formatter
+		var formatAddToCart = function(elCell, oRecord, oColumn, assetId) {
+			elCell.innerHTML = (oRecord.getData('quantityAvailable') < 1) ? '' : '<input type="checkbox" name="assetId"  value="'+assetId+'" />'; 
+        }; 
+	
+	// manage ticket formatter
+		var formatManageTicket = function(elCell, oRecord, oColumn, editUrl) {
+			elCell.innerHTML = '<a href="' + oRecord.getData('deleteUrl') + '">^International(delete,Asset_EventManagementSystem);</a> / <a href="' + editUrl + '">^International(edit,Asset_EventManagementSystem);</a>'; 
+        }; 
+	
+	// quantity available formatter
+		var formatQuantityAvailable = function(elCell, oRecord, oColumn, quantityAvailable) {
+			elCell.innerHTML = (quantityAvailable < 1) ? '<strong>^International(sold out,Asset_EventManagementSystem);!</strong>' : quantityAvailable;
+        }; 
+	
+    // create the data table
+    var myTableConfig = {
+        initialRequest         : ';startIndex=0',
+        generateRequest        : buildQueryString,
+        paginationEventHandler : DataTable.handleDataSourcePagination,
+        paginator              : myPaginator
+    };
+        var myColumnDefs = [
+	<tmpl_if canEdit>
+	    {key:"editUrl", label:"^International(manage,Asset_EventManagementSystem);", formatter:formatManageTicket},
+	</tmpl_if>
+	<tmpl_if hasBadge>
+		{key:"assetId", label: '<input type="button" value="^International(buy,Asset_EventManagementSystem);" class="forwardButton" onclick="submitTicketsToBadge(this.form);" />', formatter:formatAddToCart},
+	</tmpl_if>
+		{key:"eventNumber", label:"^International(event number,Asset_EventManagementSystem);",sortable:true},
+		{key:"title", label:"^International(99,Asset);",sortable:true,formatter:formatViewTicketDescription},
+		{key:"price", label:"^International(price,Asset_EventManagementSystem);",sortable:true,formatter:YAHOO.widget.DataTable.formatCurrency},
+		{key:"quantityAvailable",sortable:true,label:"^International(quantity available,Asset_EventManagementSystem);", formatter:formatQuantityAvailable},
+		{key:"startDate", label:"^International(event start date,Asset_EventManagementSystem);",sortable:true},
+		{key:"duration", label:"^International(duration,Asset_EventManagementSystem);",sortable:true}
+    ];
+    var myTable = new DataTable('emsTicketList', myColumnDefs, mySource, myTableConfig);
+
+
+<tmpl_if hasBadge>
+	// buy button in footer
+	var tfoot = myTable.getTbodyEl().parentNode.createTFoot();
+	var tr = tfoot.insertRow(-1);
+       <tmpl_if canEdit>tr.appendChild(document.createElement('th'));</tmpl_if>
+	var th = tr.appendChild(document.createElement('th'));
+	th.innerHTML = '<input type="button" value="^International(buy,Asset_EventManagementSystem);" class="forwardButton" onclick="submitTicketsToBadge(this.form);" />';
+       <tmpl_if canEdit>
+		var thEnd = tr.appendChild(document.createElement('th'));
+		thEnd.colSpan = 6;
+	</tmpl_if>
+</tmpl_if>
+
+	Dom.get('keywordSearchForm').onsubmit = function () {
+        mySource.sendRequest(';keywords=' + Dom.get('keywordsField').value + ';startIndex=0', myTable.onDataReturnInitializeTable, myTable);
+        return false;
+    };
+
+	});
+	
+	function submitTicketsToBadge (form)  {
+		var field = form.assetId;
+		var assetIds = new Array();
+		for (i = 0; i < field.length; i++) {
+			if (field[i].checked == true) {
+				assetIds.push(field[i].value)
+			}
+		}
+		populateRegistrantBadge({func:'addTicketsToBadge',assetIds: assetIds});
+	}
+
+
+	</script>
+		</div> <!-- end ticket tab data -->
+
+
+
+	
+<!-- RIBBONS TAB -->
+	
+        <div id="emsribbons"> <!-- start ribbon tab data -->
+<tmpl_if canEdit>
+	<p><a href="<tmpl_var addRibbonUrl>">^International(add a ribbon,Asset_EventManagementSystem);</a></p>
+</tmpl_if>
+	<p><tmpl_var ribbonInstructions></p>
+    <div id="emsRibbonPaging"></div>
+    <div id="emsRibbonList"></div>
+
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function () {
+    var DataSource = YAHOO.util.DataSource,
+        Dom        = YAHOO.util.Dom,
+        DataTable  = YAHOO.widget.DataTable,
+        Paginator  = YAHOO.widget.Paginator;
+    
+    // the datasource deals with the stuff returned from www_getRibbonsAsJson
+    var mySource = new DataSource('<tmpl_var getRibbonsUrl>');
+    mySource.responseType   = DataSource.TYPE_JSON;
+    mySource.responseSchema = {
+        resultsList : 'records',
+        totalRecords: 'totalRecords',
+        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId']
+    };
+
+    // paginator in case there are a lot of ribbons
+    var myPaginator = new Paginator({
+        containers         : ['emsRibbonPaging'],
+        pageLinks          : 5,
+        rowsPerPage        : 25,
+        rowsPerPageOptions : [25,50,100],
+        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+    });
+
+	// ribbon description formatter
+		var formatViewRibbonDescription = function(elCell, oRecord, oColumn, title) {
+			elCell.innerHTML = title;
+			elCell.id = 'cell_' + oRecord.getData('assetId');
+			elCell.tooltip = new YAHOO.widget.Tooltip("tt_" + oRecord.getData('assetId'), 
+				{ context:elCell.id, autodismissdelay:250000,
+				text:'<div class="skuDescription">'+oRecord.getData('description')+'</div>' });
+        }; 
+
+	// add to cart formatter
+		var formatAddToCart = function(elCell, oRecord, oColumn, assetId) {
+			elCell.innerHTML = (oRecord.getData('quantityAvailable') < 1) ? '' : '<form style="display:inline;"><input type="button" onclick="populateRegistrantBadge({func:\'addRibbonToBadge\',assetId:\'' +assetId+ '\'});" class="forwardButton" value="^International(buy,Asset_EventManagementSystem);" /></form>'; 
+        }; 
+	
+	// manage ribbon formatter
+		var formatManageRibbon = function(elCell, oRecord, oColumn, editUrl) {
+			elCell.innerHTML = '<a href="' + oRecord.getData('deleteUrl') + '">^International(delete,Asset_EventManagementSystem);</a> / <a href="' + editUrl + '">^International(edit,Asset_EventManagementSystem);</a>'; 
+        }; 
+	
+    // create the data table
+    var myTableConfig = {
+        initialRequest         : '',
+        paginator              : myPaginator 
+    };
+        var myColumnDefs = [
+
+<tmpl_if canEdit>
+	   {key:"editUrl", label:"^International(manage,Asset_EventManagementSystem);", formatter:formatManageRibbon},
+</tmpl_if>
+<tmpl_if hasBadge>
+		{key:"assetId", label:"^International(buy,Asset_EventManagementSystem);", formatter:formatAddToCart},
+</tmpl_if>
+
+		{key:"title", label:"^International(99,Asset);",sortable:true,formatter:formatViewRibbonDescription},
+		{key:"price", label:"^International(price,Asset_EventManagementSystem);",sortable:true,formatter:YAHOO.widget.DataTable.formatCurrency}
+    ];
+    var myTable = new DataTable('emsRibbonList', myColumnDefs, mySource, myTableConfig);
+
+	});
+	</script>
+		</div> <!-- end ribbon tab data -->
+	
+
+
+
+
+	<!-- TOKENS TAB -->
+	
+        <div id="emstokens"> <!-- start token tab data -->
+<tmpl_if canEdit>
+	<p><a href="<tmpl_var addTokenUrl>">^International(add a token,Asset_EventManagementSystem);</a></p>
+</tmpl_if>
+	<p><tmpl_var tokenInstructions></p>
+	<div id="emsTokenPaging"></div>
+    <div id="emsTokenList"></div>
+
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function () {
+    var DataSource = YAHOO.util.DataSource,
+        Dom        = YAHOO.util.Dom,
+        DataTable  = YAHOO.widget.DataTable,
+        Paginator  = YAHOO.widget.Paginator;
+    
+    // the datasource deals with the stuff returned from www_getTokensAsJson
+    var mySource = new DataSource('<tmpl_var getTokensUrl>');
+    mySource.responseType   = DataSource.TYPE_JSON;
+    mySource.responseSchema = {
+        resultsList : 'records',
+        totalRecords: 'totalRecords',
+        fields      : [ 'url', 'title', 'description', 'price', 'deleteUrl', 'editUrl', 'assetId']
+    };
+
+    // paginator in case there are a lot of tokens
+    var myPaginator = new Paginator({
+        containers         : ['emsTokenPaging'],
+        pageLinks          : 5,
+        rowsPerPage        : 25,
+        rowsPerPageOptions : [25,50,100],
+        template           : "<strong>{CurrentPageReport}</strong> {PreviousPageLink} {PageLinks} {NextPageLink} {RowsPerPageDropdown}"
+    });
+
+	// token description formatter
+		var formatViewTokenDescription = function(elCell, oRecord, oColumn, title) {
+			elCell.innerHTML = title;
+			elCell.id = 'cell_' + oRecord.getData('assetId');
+			elCell.tooltip = new YAHOO.widget.Tooltip("tt_" + oRecord.getData('assetId'), 
+				{ context:elCell.id, autodismissdelay:250000,
+				text:'<div class="skuDescription">'+oRecord.getData('description')+'</div>' });
+        }; 
+
+	// add to cart formatter
+		var formatAddToCart = function(elCell, oRecord, oColumn, assetId) {
+			var selector = '<select name="quantity">';
+			var i=1;
+			while (i<101) {
+				selector += '<option value="'+i+'">'+i+'</option>';
+				if (i>=20) {
+					i += 5;
+				}
+				else {
+					i++;
+				}
+			}
+			selector += '</select>';
+			elCell.innerHTML = '<form style="display:inline;"><input type="button" onclick="populateRegistrantBadge({func:\'addTokenToBadge\',assetId:\'' +assetId+ '\',quantity:this.form.quantity.value});" class="forwardButton" value="^International(buy,Asset_EventManagementSystem);" />' + selector +'</form>'; 
+        }; 
+	
+	// manage token formatter
+		var formatManageToken = function(elCell, oRecord, oColumn, editUrl) {
+			elCell.innerHTML = '<a href="' + oRecord.getData('deleteUrl') + '">^International(delete,Asset_EventManagementSystem);</a> / <a href="' + editUrl + '">^International(edit,Asset_EventManagementSystem);</a>'; 
+        }; 
+	
+    // create the data table
+    var myTableConfig = {
+        initialRequest         : '',
+        paginator              : myPaginator 
+    };
+        var myColumnDefs = [
+<tmpl_if canEdit>
+	    {key:"editUrl", label:"^International(manage,Asset_EventManagementSystem);", formatter:formatManageToken},
+</tmpl_if>
+<tmpl_if hasBadge>
+	   {key:"assetId", label:"^International(buy,Asset_EventManagementSystem);", formatter:formatAddToCart},	
+</tmpl_if>
+		{key:"title", label:"^International(99,Asset);",sortable:true,formatter:formatViewTokenDescription},
+		{key:"price", label:"^International(price,Asset_EventManagementSystem);",sortable:true,formatter:YAHOO.widget.DataTable.formatCurrency}
+    ];
+    var myTable = new DataTable('emsTokenList', myColumnDefs, mySource, myTableConfig);
+
+	});
+	</script>
+		</div> <!-- end token tab data -->
+	  </div> <!-- end tab data -->
+     </div> <!-- end tabs -->
+	</div> <!-- end first column -->
+	<div class="yui-u"> <!-- start second column -->
+
+
+
+
+
+
+<!-- BADGE DISPLAY -->
+
+<tmpl_if hasBadge>
+^ViewCart;
+		<div id="badge">
+			<tmpl_var title>
+			<div id="badgeHolderName"></div>
+			<div id="badgeType"></div>
+			<div id="badgeTicketList"></div>
+			<div id="badgeRibbonList"></div>
+			<div id="badgeTokenList"></div>
+		</div>
+</tmpl_if>
+		<ul style="text-align: left;list-style:disc;">
+		<tmpl_loop otherBadgesInCart>
+			<li><a href="<tmpl_var badgeUrl>"><tmpl_var badgeLabel></a></li>
+		</tmpl_loop>
+			<li><a href="<tmpl_var lookupBadgeUrl>">^International(lookup badge,Asset_EventManagementSystem);</a></li>
+			<li><a href="<tmpl_var url>">^International(buy badge,Asset_EventManagementSystem);</a></li>
+			
+		</ul>
+<tmpl_if hasBadge>
+		<script type="text/javascript">
+		function populateRegistrantBadge (args) {
+			var Dom = YAHOO.util.Dom;
+			var El = YAHOO.util.Element;
+			var sprintf = WebGUI.str.sprintf;
+		    var callback = {
+				success: function(o) {
+					var badgeData = YAHOO.lang.JSON.parse(o.responseText);
+					if (badgeData.hasPurchased == 0) {
+						Dom.get('badgeType').innerHTML=badgeData.title +' ($' + (sprintf('%.2f',badgeData.price)) + ')';
+					}
+					else {
+						Dom.get('badgeType').innerHTML=badgeData.title;
+					}
+					Dom.get('badgeHolderName').innerHTML=badgeData.name;
+					var tickets = Dom.get('badgeTicketList');
+					
+					// ticket list
+					tickets.innerHTML='';
+					for (var i=0; i < badgeData.tickets.length; i++) {
+						var ticket = badgeData.tickets[i];
+						var div = document.createElement('div');
+						div.innerHTML = ticket.title + ' - ' + ticket.startDate;
+						if (ticket.hasPurchased == 0) {
+							div.innerHTML += ' ($' + (sprintf('%.2f',ticket.price)) + ' / <a href="javascript:populateRegistrantBadge({func:\'removeItemFromBadge\',itemId:\''+ticket.itemId+'\'});">^International(remove,Asset_EventManagementSystem);</a>)';
+						}
+						tickets.appendChild(div);
+					}
+					
+					// ribbon list
+					var ribbons = Dom.get('badgeRibbonList');
+					ribbons.innerHTML='';
+					for (var i=0; i < badgeData.ribbons.length; i++) {
+						var ribbon = badgeData.ribbons[i];
+						var div = document.createElement('div');
+						div.innerHTML = ribbon.title;
+						if (ribbon.hasPurchased == 0) {
+							div.innerHTML += ' ($' + (sprintf('%.2f',ribbon.price)) + ' / <a href="javascript:populateRegistrantBadge({func:\'removeItemFromBadge\',itemId:\''+ribbon.itemId+'\'});">^International(remove,Asset_EventManagementSystem);</a>)';
+						}
+						ribbons.appendChild(div);
+					}
+					
+					// token list
+					var tokens = Dom.get('badgeTokenList');
+					tokens.innerHTML='';
+					for (var i=0; i < badgeData.tokens.length; i++) {
+						var token = badgeData.tokens[i];
+						var div = document.createElement('div');
+						div.innerHTML = token.quantity + ' - ' + token.title;
+						if (token.hasPurchased == 0) {
+							div.innerHTML += ' ($' + (sprintf('%.2f',token.price)) + ' / <a href="javascript:populateRegistrantBadge({func:\'removeItemFromBadge\',itemId:\''+token.itemId+'\'});">^International(remove,Asset_EventManagementSystem);</a>)';
+						}
+						tokens.appendChild(div);
+					}
+				},
+				failure: function(o) {
+					alert('error communicating with server');
+				}
+			};
+			var url = '<tmpl_var customRequestUrl>';
+			for (var i in args) {
+				if (i == 'assetIds') {
+					var ids = args[i];
+					for (var j=0; j<ids.length;j++) {
+						url += ';assetId=' + ids[j];	
+					}
+				}
+				else {
+					url += ';' + i + '=' + args[i];
+				}
+			}
+            this.request = YAHOO.util.Connect.asyncRequest('GET', url , callback);			
+		}
+		YAHOO.util.Event.onDOMReady(function () {
+			populateRegistrantBadge({'func':'getRegistrantAsJson'});
+		});
+		</script>
+</tmpl_if>
+
+	</div> <!-- end second column -->
+	</div> <!-- end grid -->
+</div> <!-- end yui wrapper -->
+
+
+
+<script type="text/javascript">
+(function() {
+	var whichTab = '<tmpl_var whichTab>';
+	YAHOO.util.Dom.addClass(YAHOO.util.Dom.get('ems' + whichTab + 'tab'),'selected');
+    var tabView = new YAHOO.widget.TabView('emsExtras');
+	})();
+</script>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: EMS/BadgeBuilder
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

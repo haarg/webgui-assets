@@ -1,0 +1,80 @@
+==== Template ================================================================
+Asset ID    : vrKXEtluIhbmAS9xmPukDA
+Menu Title  : Donation (Default)
+Parent      : shopping-cart-collateral-items
+Title       : Donation (Default)
+URL         : root/import/default-donation-template
+==== headBlock ===============================================================
+<style type="text/css">
+	.wgDonation h3.title {
+		background: #000;
+		height:42px;
+		color:white;
+		font-size:18px;
+		font-weight:bold;
+		letter-spacing:1px;			
+		line-height:42px;
+		padding-left:15px;
+		margin-bottom:0px;
+	}
+	.wgDonation .cart {
+		margin:15px 0px 15px 25px;
+	}
+	.wgDonation #price_formId {
+		background-color:white;
+		border:solid black 1px;
+	}
+</style>
+
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wgDonation">
+	<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+	<tmpl_if session.var.adminOn>
+		<div class="controls"><tmpl_var controls></div>
+	</tmpl_if>
+
+	<tmpl_if displayTitle>
+		<h3 class="title"><tmpl_var title></h2>
+	</tmpl_if>
+
+
+	<tmpl_if hasAddedToCart>
+		<blockquote><tmpl_var thankYouMessage></blockquote>
+		<div class="cart">^ViewCart;</div>
+                <a href="<tmpl_var continueShoppingUrl>">^International(continue shopping button,Shop);</a>
+	<tmpl_else>
+		<tmpl_if description>
+			<div class="description"><tmpl_var description></div>
+		</tmpl_if>
+	</tmpl_if>
+
+	<tmpl_unless hasAddedToCart>
+	<tmpl_var formHeader>
+	<tmpl_var priceField><tmpl_var donateButton>
+	<tmpl_var formFooter>
+	</tmpl_unless>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '0'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Donation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

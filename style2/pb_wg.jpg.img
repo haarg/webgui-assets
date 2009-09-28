@@ -1,0 +1,30 @@
+==== File::Image =============================================================
+Asset ID    : 7.0-style0000000000044
+Menu Title  : pb_wg.jpg
+Parent      : root/import/webgui-7-style-2
+Title       : pb_wg.jpg
+URL         : style2/pb_wg.jpg
+==== parameters ==============================================================
+style="border-style:none;"
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  templateId: PBtmpl0000000000000088
+  thumbnailSize: '50'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

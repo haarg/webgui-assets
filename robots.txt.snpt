@@ -1,0 +1,33 @@
+==== Snippet =================================================================
+Asset ID    : pbrobot000000000000001
+Menu Title  : robots.txt
+Parent      : root/import
+Title       : robots.txt
+URL         : robots.txt
+==== snippet =================================================================
+User-agent: googlebot
+Disallow: *?op=displayLogin
+Disallow: *?op=makePrintable
+
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/plain
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,64 @@
+==== Template ================================================================
+Asset ID    : WikiFrontTmpl000000001
+Menu Title  : Default Wiki Front Page
+Parent      : root/import/wiki
+Title       : Default Wiki Front Page
+URL         : default-wiki-front-page
+==== headBlock ===============================================================
+~
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
+<tmpl_if displayTitle><h2><tmpl_var title></h2></tmpl_if>
+
+<tmpl_var description>
+<h3><tmpl_var searchLabel></h3>
+<tmpl_var searchFormHeader><tmpl_var searchQuery><tmpl_var searchSubmit><tmpl_var searchFormFooter>
+<br />
+
+<div style="float: left; width: 50%;">
+    <h3><a href="<tmpl_var recentChangesUrl>"><tmpl_var recentChangesLabel></a></h3>
+    <ul><tmpl_loop recentChanges>
+        <li>
+            <tmpl_if isAvailable>
+                <a href="<tmpl_var url>"><tmpl_var title></a>
+            <tmpl_else>
+                <tmpl_var title> (<tmpl_var actionTaken>)
+            </tmpl_if>
+        </li>
+    </tmpl_loop></ul>
+</div>
+<div style="float: left;">
+    <h3><a href="<tmpl_var mostPopularUrl>"><tmpl_var mostPopularLabel></a></h3>
+    <ol><tmpl_loop mostPopular>
+        <li><a href="<tmpl_var url>"><tmpl_var title></a></li>
+    </tmpl_loop></ol>
+
+</div>
+<div style="clear: both;"></div>
+
+<div><tmpl_var keywordCloud></div>
+
+
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: WikiMaster_front
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,631 @@
+==== Snippet =================================================================
+Asset ID    : _9_eiaPgxzF_x_upt6-PNQ
+Menu Title  : gallery.css
+Parent      : root/import/gallery-templates
+Title       : gallery.css
+URL         : root/import/gallery-templates/gallery.css
+==== snippet =================================================================
+/* FIXES FLOAT ISSUES. WITHOUT THIS, FLOATS GET ALL NUTSY ESPECIALLY IN OPERA AND SAFARI */
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {display: inline-block;}
+/* END FLOAT FIX */
+
+
+
+.wgGallery {
+	font-family:verdana, arial;
+	text-align:left;
+}
+
+
+
+
+.firstBar {
+	background: black;
+	color:white;
+	font-size:18px;
+	font-weight:bold;
+}
+
+.firstBar .title {				
+	margin-left:20px;	
+	line-height:42px;	
+}
+.firstBar .title a {
+	font-size:18px;
+	font-weight:bold;
+	color:white;
+}
+.firstBar .buttons {
+	float:right;
+}
+.firstBar .buttons a {
+	display:block;
+	float:left;
+	height:42px;
+	line-height:42px;	
+	font-size:10px;
+	color:white;
+	font-weight:bold;
+	text-align:center;
+	padding:0px 5px;		
+}
+.firstBar .buttons .rss {
+	display:block;
+	height:29px;
+	position:relative;
+	background:transparent;
+	padding-top:13px;
+}
+
+
+
+
+.secondBar {
+	background: #F1F1F1;
+	text-align:left;
+	border-top:solid #8B8B8B 5px;	
+	color: black;
+	overflow: hidden;
+}
+.secondBar .author {
+	font-size:10px;
+}
+
+
+.secondBar .desc p {
+	margin-left: 20px;
+	margin-top: 0;
+	color: black;
+}
+
+.pictures {
+	
+}
+
+
+.searchArea {
+	float:right;
+}
+.searchArea * {
+	float:left;
+}	
+.searchArea input.searchText {
+	border:solid black 1px;	
+	width:100px;	
+	margin:0px;
+	padding:2px;
+	margin-top:5px;
+	font-size:10px;
+	height:15px;
+	margin-right:10px;
+}	
+.searchArea input.searchBtn {
+	border:solid black 1px;		
+	margin:0px;
+	padding:3px;
+	margin-top:5px;
+	font-size:10px;	
+	vertical-align:center;
+	cursor:pointer;
+	height:21px;
+}	
+.searchArea a:link,
+.searchArea a:visited,
+.secondBar .author a:link,
+.secondBar .author a:visited {
+	font-size:11px;
+	color:black;
+}
+.searchArea .current {
+	font-weight:bold;
+	text-transform:uppercase;
+	text-decoration:none;
+	font-size:10px;
+}		
+
+
+
+
+.wgAlbum {
+	display: -moz-inline-box; /* Moz */
+	display: inline-block; /* Op, Saf, IE \*/
+	vertical-align: top; /* IE Mac non capisce e a volte crea extra v space */
+	width:250px;
+	margin:10px;
+}
+.wgAlbum .albumTitle {		
+	background: black;
+	color:white;
+	font-size:12px;
+	font-weight:bold;
+	padding:10px;
+	padding-right:50px;
+	border:solid #475f6f 1px;
+	border-bottom:solid #8B8B8B 5px;
+	text-align:left;
+	display:block;
+}
+.wgAlbum .albumImage {
+	background: #F1F1F1;
+	border-left: solid black 1px;
+	border-right: solid black 1px;
+	padding-top:15px;
+	height:135px;
+}		
+.wgAlbum .albumImage a {
+	height:135px;
+	width:200px;
+	overflow:hidden;	
+	display:block;
+	margin:0px 23px;
+}
+.wgAlbum .albumImage img {		
+	border-style:none;
+	display:block;
+	width:200px;
+	height:auto;	
+	border:solid black 1px;	
+}
+.wgAlbum .albumDesc {
+	background: #F1F1F1;
+	border-left: solid black 1px;
+	border-right: solid black 1px;
+	border-bottom: solid black 1px;
+	text-align:center;
+	padding: 5px 23px;
+}
+.wgAlbum .description {
+	font-size:10px;			
+	height:40px;
+	overflow:auto;
+	text-align:left;
+	border:solid silver 1px;
+	padding:5px;
+	background-color: #fff;
+	color:#222;
+}
+.albumDesc .description * {
+	margin:2px 0px;
+}
+
+
+
+
+/* PAGINATION STYLES */
+.wgGallery .paginationContainer {
+	text-align:center;	
+	background: black;
+	height:42px;
+}
+.wgGallery .container {
+	clear:both; 
+	text-align:center;
+}
+.wgGallery .pagination {						
+	margin:0px auto 20px auto;
+	display:table;
+	list-style-type:none;
+	white-space:nowrap;
+	padding:0px;
+	height:42px;
+}
+.wgGallery .pagination li {
+	display:table-cell;
+}
+.wgGallery .pagination a {
+	display:block;
+	width:50px;	
+	line-height:42px;
+	color:white;	
+	font-size:10px;		
+	text-align:center;
+}
+
+
+
+.wgPicture a:link,
+.wgPicture a:visited {
+	color:black;
+}
+.wgPicture {
+	width:250px;
+	margin:10px;
+	display: -moz-inline-box; /* Moz */
+	display: inline-block; /* Op, Saf, IE \*/
+	vertical-align: top; /* IE Mac non capisce e a volte crea extra v space */
+}
+.wgPicture .title {
+	background:#e0e0e0;
+	display:block;
+	font-size:12px;
+	text-align:center;
+	padding:2px 5px;
+	border:solid black 1px;
+	border-bottom:solid #8B8B8B 4px;
+}
+.wgPicture .thumbnail {
+	text-align:center;
+	background: #F1F1F1;
+	padding:15px 23px 15px 23px;
+	margin:0px;
+	border-left:solid black 1px;
+
+	border-right:solid black 1px;
+}
+.wgPicture .thumbnail a {
+	display:block;
+	width:200px;
+	height:120px;
+	overflow:hidden;
+	border:solid black 1px;
+}
+.wgPicture .thumbnail img {
+	border-style:none;
+	width:200px;
+	height:auto;
+}
+.wgPicture .pictureDesc {
+	padding:0px;
+	border-top:solid #e1e1e1 1px;
+	border-bottom:solid gray 1px;
+	border-left:solid black 1px;
+	border-right:solid black 1px;
+	background:#F1F1F1;
+	margin:0px;
+}
+.wgPicture .pictureDesc .description {
+	margin:0px;
+	padding:5px;
+	font-size:10px;
+}
+.wgPicture .details {
+	background:#e0e0e0;
+	border:solid #999 1px;
+	border-top:solid #aaa 1px;
+	font-size:9px;
+	padding:1px 3px;	
+}
+.wgPicture .details .date {
+	float:right;
+}
+.wgPicture .details .comments {
+	float:left;
+}
+.wgPicture .details a {	
+	font-size:9px;	
+}
+
+
+
+/* 
+*	--BEGIN STYLES FOR PHOTO VIEW --
+ *	The Photo view uses some/all of the above classes, plus those in this section.
+*/
+.wgSnapshot {
+	float:left;
+	margin:10px;
+	max-width:250px;	
+	width:25%;
+}
+.wgSnapshot fieldset {	
+	background-color:#fefefe;
+	border:solid #555 2px;
+	padding:10px;
+	background-color:#f9f9f9;
+	text-align:center;
+}
+.wgSnapshot legend {
+	color:#333;
+	font-size:15px;
+	font-weight:bold;	
+}
+.wgSnapshot a.thumbnail img {
+	width:200px;
+	height:auto;
+	border:solid #555 2px;
+}
+.wgSnapshot .description {
+	font-size:9px;
+	border:solid #555555 2px;
+	padding:5px;
+	width:190px;
+	margin:0px auto;
+	background-color:#fff;
+	height:50px;
+	overflow:auto;
+	text-align:left;
+	overflow:auto;
+}
+.wgSnapshot a.fullSize {
+	margin:0px auto;
+}
+
+
+
+.wgPictureDetails {
+	float:left;
+	width:70%;	
+	margin:10px;
+} 
+.wgPictureDetails a:link,
+.wgPictureDetails a:visited {
+	color:black;
+}
+.wgPictureDetails fieldset {	
+	background-color:#fefefe;
+	border:solid #555 2px;
+	padding:10px;
+	background-color:#f9f9f9;	
+	margin-bottom:10px;
+}
+.wgPictureDetails legend {
+	color:#333;
+	font-size:15px;
+	font-weight:bold;
+}
+
+
+
+.rowOne {
+	background: #EFEFEF;
+	margin:1px;
+	border:solid #CDCDCD 1px;
+	color:black;
+	padding:3px;
+}
+.rowTwo {
+	background: #DCDCDC;
+	margin:1px;
+	border:solid #DDDDDD 1px;
+	color:black;	
+	padding:3px;
+}
+.rowOne .label, .rowTwo .label {
+	margin-left:15px;
+	display:inline;
+	text-align:left;
+	font-weight:bold;
+	font-size:11px;
+}
+.rowOne .data, .rowTwo .data {		
+	font-size:10px;
+	margin-left:5px;
+	display:inline;
+}
+a.fullSize:link,
+a.fullSize:visited {	
+	color:black;
+	display:block;
+	text-align:center;
+	font-weight:bold;
+	font-size:10px;	
+}
+
+
+
+
+.wgComments {	
+	font-size:9px;	
+	margin:10px;
+	width:90%;
+}
+.wgComments .title {
+	font-size:14px;
+	font-weight:bold;
+	color:#333;
+	border-bottom:solid #555555 2px;
+	padding-bottom:2px;
+}	
+.wgComments .title a {
+	color:navy;
+	text-decoration:none;
+}
+.wgComments .comment, .wgComments .commentAlt {
+	position:relative;	
+	padding:5px;	
+}
+.wgComments .comment {
+	background-color:#e1e1e1;
+	border-top:solid #F7F7F7 1px;
+	border-bottom:solid #C9C9C9 1px;
+}
+.wgComments .commentAlt {
+	background-color:#f0f0f0;	
+	border-bottom:solid #CDCDCD 1px;
+	border-top:solid #FBFBFB 1px;
+}
+.wgComments .number {
+	float:left;
+	font-size:30px;
+	color:silver;
+	margin:5px 10px 5px 5px;
+}
+.wgComments  .posted {	
+	font-style:italic;
+	padding-top:3px;
+	font-size:9px;
+	color:gray;
+}
+.wgComments .posted a {
+	color:navy;
+	text-decoration:underline;
+}
+
+
+
+
+/* 
+*	--BEGIN STYLES FOR THUMBNAIL VIEW --
+ *	The Thumbnail view uses some/all of the above classes, plus those in this section.
+*/
+
+.thumbView {
+	width:400px;
+	height:auto;
+}
+.thumbView .thumbnail a {
+	display:block;
+	width:350px;
+	height:auto;	
+	border:solid black 1px;
+}
+.thumbView .thumbnail img {
+	border-style:none;
+	width:350px;
+	height:auto;
+}
+.thumb {
+	width:100px;
+	height:65px;
+	overflow:hidden;
+	display:block;
+	float:left;
+	border:solid black 2px;
+	margin:10px;
+}
+.thumb img {
+	width:100px;
+	height:auto;
+	border-style:none;
+}
+.thumb-popup {
+	border:solid #555 1px;
+	padding:2px;
+	padding-bottom:4px;
+	padding-right:4px;
+	background-color:silver;
+}
+.thumb-popup img {
+	border:solid #555 1px;
+}
+.thumb-popup .caption {
+	background-color:black;
+	color:white;
+	padding:4px;
+	border:solid #555 2px;
+}
+
+
+
+
+/* 
+*	--BEGIN STYLES FOR SLIDESHOW VIEW --
+ *	The Slideshow view uses some/all of the above classes, plus those in this section.
+*/
+.wgSlideshow .controls {
+	background: url(^FileUrl(root/import/gallery-templates/images/pagination_bg.jpg);) repeat-x;
+	width:500px;
+	height:42px;
+	margin:0px auto;
+	border:solid black 2px;
+}
+.wgSlideshow {	
+	text-align:center;
+}
+#slideshow-container {
+	width:500px;
+	height:auto;
+	margin:0px auto;
+	text-align:center;
+	border:solid black 2px;
+	position:relative;
+	z-index:0;
+}
+#slideshow-container .slideshow-item img {
+	width:100%;
+	height:auto;
+	border-style:none;
+	display:block;
+}
+#slideshow-container .slideshow-item .title {
+	background-color:black;
+	padding:3px;
+	color:white;
+	border-top:solid white 1px;
+	border-bottom:solid white 1px;
+}
+#slideshow-container .slideshow-item .title a {
+	color:white;
+	font-size:11px;
+	font-weight:bold;	
+}
+#slideshow-container .slideshow-item .counter {
+	background-color:black;
+	padding:3px;
+	color:white;
+	font-size:11px;
+	font-weight:bold;
+}
+#slideshow-container .slideshow-item .synopsis {
+	width:494px;
+	background-color:white;
+	padding:3px;
+	color:black;
+	font-size:11px;
+	font-weight:bold;
+	border-top:solid black 1px;
+	text-align:left;
+}
+
+
+
+
+
+
+/* 
+*	--BEGIN STYLES FOR SEARCH VIEW --
+ *	The Search view uses some/all of the above classes, plus those in this section.
+*/
+#adminWrapper {
+	margin-top:20px;
+}
+#adminWrapper .label {
+	background:black;
+	font-weight:bold;	
+	font-size:10px;
+	color:white;
+}
+#adminWrapper td.data input {
+	background: #f1f1f1;
+	vertical-align:middle;
+}
+#adminWrapper td.radio input {
+	border-style:none;
+	background:none;
+}
+#adminWrapper .forwardButton {
+	cursor:pointer;
+	float:rigbt;
+}
+#adminWrapper .forwardButton:hover {
+	color:gold;
+}
+==== synopsis ================================================================
+~
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  cacheTimeout: '3600'
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  mimeType: text/css
+  processAsTemplate: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+
