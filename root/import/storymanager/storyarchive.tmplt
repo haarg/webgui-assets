@@ -23,7 +23,7 @@ URL         : root/import/storymanager/storyarchive
     </tmpl_loop>
 </ul>
 </tmpl_loop>
-<p><tmpl_var pagination.pageList.upTo10></p>
+<tmpl_if pagination.pageCount.isMultiple><p><tmpl_var pagination.pageList.upTo10></p></tmpl_if>
 <p><a href="<tmpl_var rssUrl>">^International(rss,WebGUI');</a> &bull;
 <a href="<tmpl_var atomUrl>">Atom</a></p>
 <tmpl_var keywordCloud>

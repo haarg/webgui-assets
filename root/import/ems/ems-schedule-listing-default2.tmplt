@@ -1,0 +1,165 @@
+==== Template ================================================================
+Asset ID    : S2_LsvVa95OSqc66ITAoig
+Menu Title  : EMS Schedule Listing (default)
+Parent      : root/import
+Title       : EMS Schedule Listing (default)
+URL         : root/import/ems/ems-schedule-listing-default2
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
+<tmpl_if displayTitle>
+ 	<h2><tmpl_var title></h2>
+</tmpl_if>
+<tmpl_if description>
+	<p><tmpl_var description></p>
+</tmpl_if>
+
+
+<div class=" yui-skin-sam"> 
+<div id="emsPaginatorTop"></div>
+<div id="emsScheduleTable"></div>
+<div id="emsPaginatorBottom"></div>
+ </div>
+
+<a href="<tmpl_var backUrl>">^International(schedule back link,Asset_EventManagementSystem);</a>
+
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function () {
+    var DataSource = YAHOO.util.DataSource,
+        Dom        = YAHOO.util.Dom,
+        DataTable  = YAHOO.widget.DataTable;
+
+    var mySource = new DataSource('<tmpl_var dataSourceUrl>;' ); 
+     //  work here because the data does not fall into the typical organization.
+    mySource.responseType   = DataSource.TYPE_JSON;
+    mySource.responseSchema = {
+        resultsList : 'records',
+        fields      : [ 'colDate', <tmpl_var fieldList> ],
+        metaFields: {
+            totalRecords: "totalRecords", // Access to value in the server response 
+            totalPages : "totalPages",
+            currentPage:  "currentPage"
+        }
+    };
+
+        // view item formatter
+        var formatViewScheduleItem = function(elCell, oRecord, oColumn, title) {
+            var data = title; // oRecord.getData(oColumn.getData('field'));
+            if( data.type == "empty") { return; }
+            if( data.type == "label") {
+                elCell.innerHTML = data.title;
+                return;
+            }
+            var id = data.assetId;
+            elCell.innerHTML = data.title;
+            elCell.id = 'cell_' + id;
+            elCell.tooltip = new YAHOO.widget.Tooltip("tt_" + id ,
+                { context:elCell.id, autodismissdelay:250000,
+                text:'<div class="eventDescription">' + data.description + '</div>' });
+        };
+
+    // create the data table
+    var dataPaginator = new YAHOO.widget.Paginator( { 
+     rowsPerPage: 1  ,
+     totalRecords : 1,
+     alwaysVisible  : true,
+     containers : [ "emsPaginatorTop", "emsPaginatorBottom" ],
+}  );
+    // create the data table
+    var myTableConfig = {
+        initialRequest         : '',
+         dynamicData: true, // Enables dynamic server-driven data
+    };
+        var myColumnDefs = [
+    {key:"colDate", label:"", formatter:"date"},
+    <tmpl_var dataColumns>
+    ];
+    var myTable = new DataTable('emsScheduleTable', myColumnDefs, mySource, myTableConfig);
+    myTable.handleDataReturnPayload = function(oRequest, oResponse, oPayload) {
+        oPayload.totalRecords = oResponse.meta.totalRecords;
+     dataPaginator.setState( {
+           totalRecords : oResponse.meta.totalPages ,
+           page : oResponse.meta.currentPage ,
+           startIndex : 0,
+           rowsPerPage : 1,
+       } );
+       dataPaginator.render();
+        return oPayload;
+    };
+function getNewPage (newState) {
+     mySource.sendRequest( 'pageNumber=' + newState.page, {
+        success : myTable.onDataReturnInitializeTable,
+        failure : myTable.onDataReturnInitializeTable,
+        scope   : myTable,
+        argument: myTable.getState()
+    } );
+ }
+   dataPaginator.subscribe('changeRequest',getNewPage);
+
+     dataPaginator.setPage(1);
+
+     return {
+        ds: mySource,
+        dt: myTable
+    };
+});
+</script>
+
+==== extraHeadTags ===========================================================
+<link href="^Extras(/yui/build/fonts/fonts-min.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/paginator/assets/skins/sam/paginator.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/datatable/assets/skins/sam/datatable.css);" rel="stylesheet" type="text/css">
+<link href="^Extras(/yui/build/container/assets/skins/sam/container.css);" rel="stylesheet" type="text/css">
+
+<script src="^Extras(/yui/build/utilities/utilities.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/json/json-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/paginator/paginator-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datasource/datasource-min.js);" type="text/javascript"></script>
+<script src="^Extras(/yui/build/datatable/datatable-min.js);" type="text/javascript"></script>
+
+<script src="^Extras(/yui/build/container/container-min.js);" type="text/javascript"></script>
+		<style type="text/css">
+		.eventDescription {
+		background-color: white;
+		max-width: 400px;
+		border:1px solid #000;
+		padding:10px;
+		}
+		.forwardButton {
+			background-color: green;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+		.backwardButton {
+			background-color: red;
+			color: white;
+			font-weight: bold;
+			padding: 3px;
+		}
+                .yui-dt thead {display:none;} 
+		</style>
+
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: EMS
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

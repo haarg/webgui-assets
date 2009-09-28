@@ -1,0 +1,67 @@
+==== Template ================================================================
+Asset ID    : D6cJpRcey35aSkh9Q_FPUQ
+Menu Title  : Default EU User Screen
+Parent      : root/import
+Title       : Default EU User Screen
+URL         : root/import/default-eu-user-screen
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>Enter VAT numbers</h2>
+
+<tmpl_if errorMessage>
+<p>
+    <b>Error:</b> <tmpl_var errorMessage>
+</p>
+</tmpl_if>
+
+
+<tmpl_loop vatNumber_loop>
+    <tmpl_if __FIRST__>
+    <table border="1">
+    <tr>
+        <th>Country</th>
+        <th>VAT Number</th>
+        <th>Approved for use</th>
+        <th></th>
+    </tr>
+    </tmpl_if>
+
+    <tr>
+        <td><tmpl_var countryName></td>
+        <td><tmpl_var vatNumber></td>
+        <td><tmpl_if isUsable>yes<tmpl_else>no</tmpl_if></td>
+        <td><a href="<tmpl_var deleteUrl>">delete</a></td>
+    </tr>
+
+    <tmpl_if __FIRST__>
+    </table>
+    </tmpl_if>
+</tmpl_loop>
+
+<p>
+    <b>Add another VAT Number:</b><br />
+    <tmpl_var addVatNumber_form>
+</p>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: TaxDriver/EU/User
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

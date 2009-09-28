@@ -20,6 +20,7 @@ URL         : root/import/ems/ems-badge-listing-default
 <div class=" yui-skin-sam">
 	<p>
 	<a href="<tmpl_var buildBadgeUrl>">^International(view tickets,Asset_EventManagementSystem);</a>
+	&bull; <a href="<tmpl_var viewScheduleUrl>">^International(view schedule,Asset_EventManagementSystem);</a>
 	&bull; ^ViewCart;
 <tmpl_if canEdit>
 	&bull; <a href="<tmpl_var addBadgeUrl>">^International(add a badge,Asset_EventManagementSystem);</a>

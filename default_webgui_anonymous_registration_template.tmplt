@@ -16,10 +16,12 @@ URL         : default_webgui_anonymous_registration_template
 <tmpl_var create.form.header>
 <tmpl_var create.form.hidden>
 <table >
+<tmpl_if create.form.username>
 <tr>
    <td class="formDescription" valign="top"><tmpl_var create.form.username.label></td>
    <td class="tableData"><tmpl_var create.form.username></td>
 </tr>
+</tmpl_if>
 <tr>
    <td class="formDescription" valign="top"><tmpl_var create.form.password.label></td>
    <td class="tableData"><tmpl_var create.form.password></td>

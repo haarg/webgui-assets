@@ -1,0 +1,41 @@
+==== Template ================================================================
+Asset ID    : u9vfx33XDk5la1-QC5FK7g
+Menu Title  : Default Map Point View
+Parent      : home/map/map-templates
+Title       : Default Map Point View
+URL         : home/map/map-templates/default-map-point-view
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_var title><br/>
+<tmpl_if address1><tmpl_var address1><br/></tmpl_if>
+<tmpl_if address2><tmpl_var address2><br/></tmpl_if>
+<tmpl_if city><tmpl_var city><tmpl_if state>,</tmpl_if></tmpl_if>
+<tmpl_if state><tmpl_var state></tmpl_if>
+<tmpl_if zipCode><tmpl_var zipCode><br/><tmpl_else><tmpl_if city><br/><tmpl_else><tmpl_if state><br/></tmpl_if></tmpl_if></tmpl_if>
+<tmpl_if phone>Phone: <tmpl_var phone><br/></tmpl_if>
+<tmpl_if fax>Fax: <tmpl_var fax><br/></tmpl_if>
+<tmpl_if email><a href="mailto:<tmpl_var email>"><tmpl_var email><br/></tmpl_if>
+<tmpl_if photo>^StorageUrl(<tmpl_var photo>);</tmpl_if>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: MapPoint/View
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

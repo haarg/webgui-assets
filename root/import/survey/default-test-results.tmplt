@@ -1,0 +1,116 @@
+==== Template ================================================================
+Asset ID    : S3zpVitAmhy58CAioH359Q
+Menu Title  : Default Test Results
+Parent      : root/import
+Title       : Default Test Results
+URL         : root/import/survey/default-test-results
+==== synopsis ================================================================
+~
+==== template ================================================================
+
+<tmpl_if aggregate>
+
+ <h3 class="<tmpl_if has_problems>fail<tmpl_else>pass</tmpl_if>">^International('test results', 'Asset_Survey'); - 
+     <tmpl_if has_problems>^International('fail', 'Asset_Survey');<tmpl_else>^International('pass', 'Asset_Survey');</tmpl_if></h3>
+ <p class="test-summary">Tests=<tmpl_var total>, Passed=<tmpl_var passed>, Failed=<tmpl_var failed>, <tmpl_var elapsed_timestr></p>
+  <table><tbody>
+   <tr class="tableData"><th>^International('test name', 'Asset_Survey');</th>
+                         <th>^International('tests run', 'Asset_Survey');</th>
+                         <th>^International('tests passed', 'Asset_Survey');</th>
+                         <th>^International('tests failed', 'Asset_Survey');</th>
+			 <th>^International('test result', 'Asset_Survey');</th></tr>
+   <tmpl_loop results>
+    <tr class="tableData <tmpl_if has_problems>fail<tmpl_else>pass</tmpl_if> <tmpl_var type>">
+     <td><tmpl_var name></td>
+     <td><tmpl_var tests_run></td>
+     <td><tmpl_var passed></td>
+     <td><tmpl_var failed></td>
+     <td><tmpl_if has_problems>^International('fail', 'Asset_Survey');<tmpl_else>^International('pass', 'Asset_Survey');</tmpl_if></td>
+     <td><a href="?func=editTest;testId=<tmpl_var testId>">^International('575', 'WebGUI');</a></td>
+     <td><a href="?func=runTest;testId=<tmpl_var testId>">^International('run test', 'Asset_Survey');</a></td>
+    </tr>
+   </tmpl_loop>
+  </tbody></table>
+
+ <h3>^International('details', 'Asset_Survey');</h3>
+ <table><tbody>
+ <tr class="tableData"><td>all_passed</td> <td><tmpl_var all_passed></td></tr>
+ <tr class="tableData"><td>get_status</td> <td><tmpl_var get_status></td></tr>
+ <tr class="tableData"><td>failed</td> <td><tmpl_var failed></td></tr>
+ <tr class="tableData"><td>parse_errors</td> <td><tmpl_var parse_errors></td></tr>
+ <tr class="tableData"><td>passed</td> <td><tmpl_var passed></td></tr>
+ <tr class="tableData"><td>skipped</td> <td><tmpl_var skipped></td></tr>
+ <tr class="tableData"><td>todo</td> <td><tmpl_var todo></td></tr>
+ <tr class="tableData"><td>todo_passed</td> <td><tmpl_var todo_passed></td></tr>
+ <tr class="tableData"><td>wait</td> <td><tmpl_var wait></td></tr>
+ <tr class="tableData"><td>exit</td> <td><tmpl_var exit></td></tr>
+ <tr class="tableData"><td>total</td> <td><tmpl_var total></td></tr>
+ <tr class="tableData"><td>has_problems</td> <td><tmpl_var has_problems></td></tr>
+ <tr class="tableData"><td>has_errors</td> <td><tmpl_var has_errors></td></tr>
+ </tbody></table>
+
+<tmpl_else>
+
+ <h3 class="<tmpl_if has_problems>fail<tmpl_else>pass</tmpl_if>">^International('test results', 'Asset_Survey'); - 
+   <tmpl_if has_problems>^International('fail', 'Asset_Survey');<tmpl_else>^International('pass', 'Asset_Survey');</tmpl_if></h3>
+ <tmpl_loop results>
+ <table><tbody>
+ 
+ <tr class="tableData <tmpl_if is_ok>pass<tmpl_else>fail</tmpl_if> <tmpl_var type>">
+   <td><tmpl_var as_string></td>
+ </tr>
+ </tbody></table>
+ </tmpl_loop>
+ 
+ <h3>^International('details', 'Asset_Survey');</h3>
+ <table><tbody>
+ <tr class="tableData"><td>passed</td> <td><tmpl_var passed></td></tr>
+ <tr class="tableData"><td>failed</td> <td><tmpl_var failed></td></tr>
+ <tr class="tableData"><td>actual_passed</td> <td><tmpl_var actual_passed></td></tr>
+ <tr class="tableData"><td>actual_failed</td> <td><tmpl_var actual_failed></td></tr>
+ <tr class="tableData"><td>todo</td> <td><tmpl_var todo></td></tr>
+ <tr class="tableData"><td>todo_passed</td> <td><tmpl_var todo_passed></td></tr>
+ <tr class="tableData"><td>skipped</td> <td><tmpl_var skipped></td></tr>
+ <tr class="tableData"><td>plan</td> <td><tmpl_var plan></td></tr>
+ <tr class="tableData"><td>tests_planned</td> <td><tmpl_var tests_planned></td></tr>
+ <tr class="tableData"><td>tests_run</td> <td><tmpl_var tests_run></td></tr>
+ <tr class="tableData"><td>skip_all</td> <td><tmpl_var skip_all></td></tr>
+ <tr class="tableData"><td>has_problems</td> <td><tmpl_var has_problems></td></tr>
+ <tr class="tableData"><td>exit</td> <td><tmpl_var exit></td></tr>
+ <tr class="tableData"><td>wait</td> <td><tmpl_var wait></td></tr>
+ </tbody></table>
+
+</tmpl_if>
+==== extraHeadTags ===========================================================
+<style type="text/css">
+.fail {
+  color: red;
+}
+.pass {
+  color: green;
+}
+/* All lines other than tests */
+.plan, .pragma, .comment, .bailout, .version, .unknown {
+  color: blue;
+}
+</style>
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: Survey/TestResults
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -1,0 +1,42 @@
+==== Template ================================================================
+Asset ID    : 9j0_Z1j3Jd0QBbY2akb6qw
+Menu Title  : Default Map View
+Parent      : home/map/map-templates
+Title       : Default Map View
+URL         : home/map/map-templates/default-map-view
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+<tmpl_if canEdit><tmpl_var button_setCenter></tmpl_if>
+<tmpl_if canAddPoint><tmpl_var button_addPoint></tmpl_if>
+<div style="width: 80%;padding-right:2%; float: left;"><tmpl_var map></div>
+<div style="width: 15%; float: left;">
+	<tmpl_loop mapPoints>
+		<a href="#" onclick="WebGUI.Map.focusOn('<tmpl_var assetId>');return false">
+			<tmpl_var title>
+		</a><br/>
+	</tmpl_loop>
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: Map/View
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

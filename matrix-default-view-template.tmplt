@@ -74,11 +74,7 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
 </form>
 
 
-<script type='text/javascript'>
-var maxComparisons = 10;
-var matrixUrl = '/home/untitled3';
-
-</script>
+<tmpl_var javascript>
 
     </div>
     <div class="buttons">
