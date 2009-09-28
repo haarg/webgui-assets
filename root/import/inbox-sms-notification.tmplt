@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : i9-G00ALhJOr0gMh-vHbKA
 Menu Title  : Inbox SMS Notification
-Parent      : root/import
+Parent      : root/import/account/inbox
 Title       : Inbox SMS Notification
 URL         : root/import/inbox-sms-notification
 ==== synopsis ================================================================

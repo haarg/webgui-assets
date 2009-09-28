@@ -22,6 +22,7 @@ URL         : root/import/ad-sku/default-purchase-ad-sku-template
         <p><tmpl_var adSkuDescription></p>
         <h4><a href="<tmpl_var manageLink>">^International(form manage link,Asset_AdSku);</a></h4>
         <tmpl_var formHeader>
+        <tmpl_var formAdId>
         <table border="0" cellpadding="3" cellspacing="0">
         <tbody>
         <tr>
@@ -38,20 +39,21 @@ URL         : root/import/ad-sku/default-purchase-ad-sku-template
         </tr>
         <tr>
         <td>^International(form purchase number of clicks,Asset_AdSku);</td>
-        <td><tmpl_var formClicks> ^International(form purchase per click,Asset_AdSku, <tmpl_var clickPrice> );
-        <br><tmpl_var clickDiscount></td>
+        <td><tmpl_var formClicks>^International(form purchase per click,Asset_AdSku,<tmpl_var clickPrice> );
+        <tmpl_if clickDiscount><br /><tmpl_var clickDiscount></tmpl_if>
+        <tmpl_if minimumClicks><br />^International(minimum clicks,Asset_AdSku,<tmpl_var minimumClicks>);</tmpl_if></td>
         </tr>
         <tr>
         <td>^International(form purchase number of impressions,Asset_AdSku);</td>
-        <td><tmpl_var formImpressions> ^International(form purchase per click,Asset_AdSku, <tmpl_var impressionPrice> );
-        <br><tmpl_var impressionDiscount></td>
+        <td><tmpl_var formImpressions>^International(form purchase per click,Asset_AdSku, <tmpl_var impressionPrice> );
+        <tmpl_if impressionDiscount><br /><tmpl_var impressionDiscount></tmpl_if>
+        <tmpl_if minimumImpressions><br />^International(minimum impressions,Asset_AdSku,<tmpl_var minimumImpressions>);</tmpl_if></td>
         </tr>
         <tr>
         <td colspan="2" align="right"><tmpl_var formSubmit></td>
         </tr>
         </tbody>
         </table>
-        <tmpl_var formAdId>
         <tmpl_var formFooter>
 </tmpl_if>
 ^ViewCart(); (^CartItemCount;)

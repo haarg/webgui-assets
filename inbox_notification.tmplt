@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : b1316COmd9xRv4fCI3LLGA
 Menu Title  : Inbox Notification
-Parent      : root/import
+Parent      : root/import/account/inbox
 Title       : Inbox Notification
 URL         : inbox_notification
 ==== synopsis ================================================================

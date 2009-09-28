@@ -12,9 +12,6 @@ URL         : root/import/ad-sku/default-manage-ad-sku-template
 <tmpl_if session.var.adminOn>
         <p><tmpl_var controls></p>
 </tmpl_if>
-        <tmpl_if error_msg>
-        <div class="error"><tmpl_var error_msg></div>
-        </tmpl_if>
         <h3>^International("form manage title","Asset_AdSku");</h3>
         <h4><a href='<tmpl_var purchaseLink>'>^International("form purchase link","Asset_AdSku");</a></h4>
         <br /><br />

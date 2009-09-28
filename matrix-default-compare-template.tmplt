@@ -276,7 +276,7 @@ function setStickied (checkbox) {
                 <button type="button" >^International('search label','Asset_Matrix');</button>
             </span>        
             <span class="yui-button yui-push-button">
-                <button type="button" onclick="javascript:location.replace('^/(<tmpl_var url>);')">Return to Matrix</button>
+                <button type="button" onclick="javascript:location.replace('^/(<tmpl_var url>);')">^International(Return to Matrix,Asset_Matrix);</button>
             </span>
         </div>        
        

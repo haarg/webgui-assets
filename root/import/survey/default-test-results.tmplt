@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : S3zpVitAmhy58CAioH359Q
 Menu Title  : Default Test Results
-Parent      : root/import
+Parent      : root/import/survey
 Title       : Default Test Results
 URL         : root/import/survey/default-test-results
 ==== synopsis ================================================================

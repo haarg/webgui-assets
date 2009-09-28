@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : S2_LsvVa95OSqc66ITAoig
 Menu Title  : EMS Schedule Listing (default)
-Parent      : root/import
+Parent      : root/import/ems
 Title       : EMS Schedule Listing (default)
 URL         : root/import/ems/ems-schedule-listing-default2
 ==== synopsis ================================================================

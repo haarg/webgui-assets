@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : 7F-BuEHi7t9bPi008H8xZQ
 Menu Title  : Default Survey Summary
-Parent      : root/import
+Parent      : root/import/survey
 Title       : Default Survey Summary
 URL         : root/import/survey/default-survey-summary
 ==== synopsis ================================================================

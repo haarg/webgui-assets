@@ -1,7 +1,7 @@
 ==== Wobject::Folder =========================================================
 Asset ID    : lo1rpxn3t8YPyKGers5eQg
 Menu Title  : Friend Manager
-Parent      : root/import
+Parent      : root/import/account
 Title       : Friend Manager
 URL         : root/import/account/friendmanager
 ==== synopsis ================================================================

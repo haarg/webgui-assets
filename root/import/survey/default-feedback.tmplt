@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : nWNVoMLrMo059mDRmfOp9g
 Menu Title  : Default Feedback
-Parent      : root/import
+Parent      : root/import/survey
 Title       : Default Feedback
 URL         : root/import/survey/default-feedback
 ==== synopsis ================================================================
