@@ -38,7 +38,7 @@ URL         : root/import/storymanager/storytemplate
     <tmpl_else>
         <ol id="photoCarousel">
         <tmpl_loop photo_loop>
-            <li>
+            <li <tmpl_if photoWidth>style="width:<tmpl_var photoWidth>px;"</tmpl_if>>
             <tmpl_if imageCaption><span class="photoCaption"><tmpl_var imageCaption></span><br /></tmpl_if>
             <tmpl_if imageLink><a href="<tmpl_var imageLink>"></tmpl_if><img src="<tmpl_var imageUrl>" <tmpl_if imageAlt>alt="<tmpl_var imageAlt>"</tmpl_if> <tmpl_if imageTitle>title="<tmpl_var imageTitle>"</tmpl_if> /><tmpl_if imageLink></a></tmpl_if><br />
             <tmpl_if imageByline><span class="photoByline">^International(Source,Asset_Story);: <tmpl_var imageByline></span></tmpl_if>

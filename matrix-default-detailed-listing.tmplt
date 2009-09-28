@@ -182,9 +182,9 @@ function setStickied (checkbox) {
         </tmpl_if>
         <div class="stats">
             <ul>
-                <li><strong>^International('web site label','Asset_MatrixListing');</strong><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a></li>
-                <li><strong>^International('version label','Asset_MatrixListing');</strong><tmpl_var version></li>
-                <li><strong>^International('manufacturer label','Asset_MatrixListing');</strong><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a></li>
+                <li><strong>^International('web site label','Asset_MatrixListing');</strong><tmpl_if productUrl><a onclick="window.open('<tmpl_var productUrl_click>')" href="#"><tmpl_var productUrl></a><tmpl_else>&nbsp;</tmpl_if></li>
+                <li><strong>^International('version label','Asset_MatrixListing');</strong><tmpl_if version><tmpl_var version><tmpl_else>&nbsp;</tmpl_if></li>
+                <li><strong>^International('manufacturer label','Asset_MatrixListing');</strong><tmpl_if manufacturerName><a onclick="window.open('<tmpl_var manufacturerUrl_click>')" href="#"><tmpl_var manufacturerName></a><tmpl_else>&nbsp;</tmpl_if></li>
                 <li><strong>^International('last updated label','Asset_MatrixListing');</strong><tmpl_var lastUpdated_date></li>
                 <li><strong>^International('clicks label','Asset_Matrix');</strong><tmpl_var clicks></li>
                 <li><strong>^International('views label','Asset_Matrix');</strong><tmpl_var views></li>

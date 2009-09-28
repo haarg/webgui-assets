@@ -70,7 +70,7 @@ YAHOO.util.Event.onDOMReady(function () {
         return oPayload;
     }
     Dom.get('keywordSearchForm').onsubmit = function () {
-        var state = myDataTable.getState();
+        var state = myTable.getState();
         state.pagination.recordOffset = 0;
         mySource.sendRequest('keywords=' + Dom.get('keywordsField').value + ';startIndex=0', {success: myTable.onDataReturnInitializeTable, scope:myTable, argument:state});  
         return false;
