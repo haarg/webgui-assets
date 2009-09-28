@@ -32,6 +32,7 @@ URL         : root/import/survey/default-survey-take
 	    <div id="survey"></div>
 	            
 	    <input type=hidden id=assetPath value=<tmpl_var url>>
+	    <input type=hidden id=surveyResponseRevision value=<tmpl_var revision>>
 
 </div>
 ==== extraHeadTags ===========================================================

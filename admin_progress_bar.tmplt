@@ -1,0 +1,56 @@
+==== Template ================================================================
+Asset ID    : YP9WaMPJHvCJl-YwrLVcPw
+Menu Title  : Progress Bar
+Parent      : root/import
+Title       : Progress Bar
+URL         : admin_progress_bar
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="wrapper">
+    <div id="application_title" class="adminConsoleTitle" style="height:73px;">
+        <tmpl_var title>
+    </div>
+    <div id="application_workarea" class="adminConsoleWorkArea" >
+        <div id="progressStatus">^International(Working...,WebGUI);</div>
+        <div id="progressMeter" style="height: 10px; width: 1px; background-color: blue;">&nbsp;</div>
+    </div>
+    <tmpl_if icon><div id="application_icon" class="adminConsoleTitleIcon">
+        <img src="<tmpl_var icon>" style="border-style:none;height:48px;width:48px;" title="<tmpl_var application.title>" alt="<tmpl_var title>" />
+    </div></tmpl_if>
+    <div class="adminConsoleTitleIconMedalian">
+        <img src="^Extras(adminConsole/medalian.gif);" style="border-style:none;height:65px;width:65px;" alt="*" />
+    </div>
+</div>
+==== extraHeadTags ===========================================================
+<link href="^Extras(adminConsole/adminConsole.css);" type="text/css" rel="stylesheet" />
+<script type="text/javascript">
+/** updateWgProgressBar()
+  * called every time the server sends updated progress
+  * convenient place to hook in your own UI behaviour
+*/
+function updateWgProgressBar(counter, message) {
+    document.getElementById("progressMeter").style.width = counter;
+    document.getElementById("progressStatus").innerHTML = message;
+}
+</script>
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: AdminConsole/ProgressBar
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+
