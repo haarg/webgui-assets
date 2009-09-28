@@ -153,6 +153,9 @@ input.mcbutton-selected{
         margin-left: 5px;
 }
 
+#restartMessage {
+    color: #FF0000;
+}
 
 ==== synopsis ================================================================
 ~

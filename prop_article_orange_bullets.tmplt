@@ -1,0 +1,92 @@
+==== Template ================================================================
+Asset ID    : CGirMWuhmjFFXITINo9djw
+Menu Title  : Prop Article Orange Bullets
+Parent      : root/import/prop-style
+Title       : Prop Article Orange Bullets
+URL         : prop_article_orange_bullets
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+	<p><tmpl_var controls></p>
+</tmpl_if>
+
+<div class="block maxheight" style="height:429px;">
+<div class="block left_top_corner maxheight">
+<div class="block right_top_corner maxheight">
+<div class="block left_bottom_corner maxheight">
+<div class="block right_bottom_corner maxheight">
+<div class="inner maxheight" style="height:429px;">
+
+
+
+<tmpl_if displayTitle>
+	<div class=title_block>
+	<span class="style1"><tmpl_var title></span>
+	</div>
+</tmpl_if>
+
+<tmpl_if pagination.isFirstPage>
+<tmpl_if image.url>
+	<table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td class="content">
+	<img src="<tmpl_var image.url>" align="right" border="0" alt="<tmpl_var image.url>" />
+</tmpl_if>
+</tmpl_if>
+
+<tmpl_if description>
+	<tmpl_var description>
+</tmpl_if>
+
+<tmpl_if pagination.isLastPage>
+	<tmpl_if linkUrl>
+	<tmpl_if linkTitle>
+		<p />
+		<a href="<tmpl_var linkUrl>"><tmpl_var linkTitle></a>
+	</tmpl_if>
+	</tmpl_if>
+	<tmpl_if attachment.name><p><p style="display:inline;vertical-align:middle;"><a href="<tmpl_var attachment.url>"><img src="<tmpl_var attachment.icon>" style="vertical-align:middle;border: 0px;" alt="<tmpl_var attachment.name>" /> <tmpl_var attachment.name></a></p></p></tmpl_if>
+</tmpl_if>
+
+<tmpl_if pagination.pageCount.isMultiple>
+<tmpl_var pagination.previousPage>
+&#183;
+<tmpl_var pagination.pageList.upTo20>
+&#183;
+<tmpl_var pagination.nextPage>
+</tmpl_if>
+
+<tmpl_if pagination.isFirstPage>
+<tmpl_if image.url>
+	</td></tr></table>
+</tmpl_if>
+</tmpl_if>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Article
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

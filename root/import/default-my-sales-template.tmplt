@@ -1,0 +1,73 @@
+==== Template ================================================================
+Asset ID    : -zxyB-O50W8YnL39Ouoc4Q
+Menu Title  : Default My Sales Template
+Parent      : root/import/account/shop
+Title       : Default My Sales Template
+URL         : root/import/default-my-sales-template
+==== synopsis ================================================================
+~
+==== template ================================================================
+<div class="WGProfile_registration">
+    <div class="WGinboxTbl">
+        <p class="bar">
+            Payout Totals
+        </p>
+        <table>
+            <tbody>
+                <tr><td>Paid : </td><td><tmpl_var paid></td></tr>
+                <tr><td>Scheduled for payment : </td><td><tmpl_var scheduled></td></tr>
+                <tr><td>Not yet scheduled : </td><td><tmpl_var notPaid></td</tr>
+                <tr><td>Total : </td><td><tmpl_var total></td></tr>
+            </tbody>
+        </table>
+       
+        <p class="bar">Sales</p>           
+       
+        <table class="WGProfileFields">
+            <thead>
+                <tr>
+                    <td class="WGContribTitleLeft">Product</td>
+                    <td class="WGContribTitle">Quantity</td>
+                    <td class="WGContribTitle">Payout</td>
+                </tr>
+            </thead>
+            <tbody>
+            <tmpl_if product_loop>
+                <tmpl_loop product_loop>
+                <tr class="<tmpl_if __ODD__>WGoddThread<tmpl_else>WGevenThread</tmpl_if>">
+                    <td class="WGContribEntryLeft"><a href="<tmpl_var url>"><tmpl_var configuredTitle></a></td>
+                    <td class="WGContribEntry"><tmpl_var quantity></td>
+                    <td class="WGContribEntry"><tmpl_var payoutAmount></td>
+                </tr>
+                </tmpl_loop>
+            <tmpl_else>
+                <tr class="WGoddThread">
+                    <td colspan="3">^International(no contributions,Account_Contributions);</td>
+                </tr>
+            </tmpl_if>
+            </tbody>
+        </table>
+           
+        <p class="bar"><span class="WGContribCount"><tmpl_var total_sales> Sales :: <tmpl_var total_products> Products</span></p>
+    </div>               
+</div>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Shop/MySales
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

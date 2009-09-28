@@ -12,6 +12,14 @@ URL         : root/import/survey/default-survey-take
 
     <tmpl_if user_canTakeSurvey></tmpl_if>
 
+	    <script type="text/javascript" src="^Extras(yui/build/utilities/utilities.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/container/container-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/button/button-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/calendar/calendar-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/json/json-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/resize/resize-min.js);"></script>
+	    <script type="text/javascript" src="^Extras(yui/build/slider/slider-min.js);"></script>
 
 	    <script type="text/javascript" src="^Extras(wobject/Survey/administersurvey/comm.js);"></script>
 	    <script type="text/javascript" src="^Extras(wobject/Survey/administersurvey.js);"></script>

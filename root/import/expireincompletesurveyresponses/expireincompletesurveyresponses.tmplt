@@ -1,0 +1,36 @@
+==== Template ================================================================
+Asset ID    : ExpireIncResptmpl00001
+Menu Title  : ExpireIncompleteSurveyResponses
+Parent      : root/import/expireincompletesurveyresponses
+Title       : ExpireIncompleteSurveyResponses
+URL         : root/import/expireincompletesurveyresponses/expireincompletesurveyresponses
+==== synopsis ================================================================
+~
+==== template ================================================================
+Dear <tmpl_var firstName> <tmpl_var lastName>,
+
+Your responses for the Survey <tmpl_var surveyTitle> have expired <tmpl_if deleted> and have been deleted</tmpl_if>.  
+
+Sincerely,
+<tmpl_var companyName>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: ExpireIncompleteSurveyResponses
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

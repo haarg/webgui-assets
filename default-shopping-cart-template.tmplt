@@ -14,7 +14,7 @@ URL         : default-shopping-cart-template
 <tmpl_var formHeader>
 <table border="0" cellpadding="0" cellspacing="0" id="shoppingCart">
 <tr>
-	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_var checkoutButton><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
+	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_if readyForCheckout><tmpl_var checkoutButton></tmpl_if><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
 </tr>
 <tr>
 	<td colspan="6"></td>
@@ -98,6 +98,13 @@ URL         : default-shopping-cart-template
 	<td style="text-align:right"><strong><tmpl_var totalPrice></strong></td>
 	<td class="empty"></td>
 </tr>
+<tmpl_if minimumCartAmount>
+<tr class="summary">
+	<td class="empty"></td>
+	<td colspan="4"><i>(^International(required minimum order amount,Shop); <tmpl_var minimumCartAmount>)</i></td>
+	<td class="empty"></td>
+</tr>
+</tmpl_if>
 <tr class="summary">
 	<td class="empty"></td>
 	<td class="bottomLeft">&nbsp;</td>
@@ -118,7 +125,7 @@ URL         : default-shopping-cart-template
 </tr>
 </tmpl_if>
 <tr>
-	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_var checkoutButton><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
+	<td colspan="6"><tmpl_var updateButton><tmpl_var continueShoppingButton><tmpl_if hasShippingAddress><tmpl_if readyForCheckout><tmpl_var checkoutButton></tmpl_if><tmpl_else><tmpl_var chooseShippingButton></tmpl_if></td>
 </tr>
 
 </table>

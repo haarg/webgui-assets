@@ -11,6 +11,15 @@ URL         : root/import/survey/default-questions
         <div id=headertitle><tmpl_var name='title'></div>
         <div id=headertext><tmpl_var name='text'></div>
 </div>
+
+<tmpl_if wasRestarted>
+<div id="restartMessage">
+<p>
+^International('restart message','Asset_Survey');
+</p>
+</div>
+</tmpl_if>
+
 <tmpl_if name="showProgress">
 	<div id="progress">
 		<tmpl_var name='questionsAnswered'> out of <tmpl_var name='totalQuestions'>
@@ -62,7 +71,7 @@ URL         : root/import/survey/default-questions
             <tmpl_var name='verts'>
             <span class=answer>
         <tmpl_var name="text">
-                <textarea name="<tmpl_var name="id">" id="<tmpl_var name="id">" rows="<tmpl_var name="textRows">" cols="<tmpl_var name="textCols">"></textarea><br />
+                <input type="text" name="<tmpl_var name="id">" id="<tmpl_var name="id">"><br />
             </span>
             <tmpl_if name='verbatim'>
                 <span><input type=text size=50 name='<tmpl_var name='id'>verbatim'></span>
@@ -71,6 +80,19 @@ URL         : root/import/survey/default-questions
         </tmpl_loop>
     </tmpl_if>
 
+    <tmpl_if name='textAreaType'>
+        <tmpl_loop name=answers>
+            <tmpl_var name='verts'>
+            <span class=answer>
+        <tmpl_var name="text">
+                <textarea name="<tmpl_var name="id">" id="<tmpl_var name="id">" rows="<tmpl_var name="textRows">" cols="<tmpl_var name="textCols">"></textarea><br />
+            </span>
+            <tmpl_if name='verbatim'>
+                <span><input type=text size=50 name='<tmpl_var name='id'>verbatim'></span>
+            </tmpl_if>  
+            <tmpl_var name='verte'>
+        </tmpl_loop>
+    </tmpl_if>
 
     <tmpl_if name='multipleChoice'>
         <table class="scale">
@@ -186,7 +208,7 @@ URL         : root/import/survey/default-questions
                         |&nbsp;<input type=text id='<tmpl_var name='id'>' name='<tmpl_var name='id'>'>&nbsp;|&nbsp;
             <span><tmpl_var name='text'></span>                        
                         </td><td></td></tr>
-                        <tr><td>0&nbsp;&nbsp;</td><td>
+                        <tr><td><tmpl_var name='min'>&nbsp;&nbsp;</td><td>
                         <div id='<tmpl_var name='id'>slider-bg' tabindex='-1' title='Slider' class=slider-bg>
                         <div id='<tmpl_var name='id'>slider-thumb' class=slider-thumb>
                                     <img src='^Extras(/wobject/Survey/thumb-n.gif);'>
@@ -208,7 +230,7 @@ URL         : root/import/survey/default-questions
 
 
 </tmpl_loop>
-<hr><input type=button id=submitbutton value=continue></input>
+<hr><input type=button id=submitbutton value=<tmpl_if isLastPage>finish<tmpl_else>continue</tmpl_if>></input>
 </form>
 
 </div>

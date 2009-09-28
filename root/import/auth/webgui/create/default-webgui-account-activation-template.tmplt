@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : PBtmpl0000000000000016
+Menu Title  : Default WebGUI Account Activation Template
+Parent      : root/import
+Title       : Default WebGUI Account Activation Template
+URL         : root/import/auth/webgui/create/default-webgui-account-activation-template
+==== synopsis ================================================================
+~
+==== template ================================================================
+^International('email address validation email body','AuthWebGUI');
+
+<tmpl_var activationUrl>
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Auth/WebGUI/Activation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

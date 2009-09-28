@@ -1,0 +1,87 @@
+==== Template ================================================================
+Asset ID    : fCibAeqRifEEAhFL6-pEKg
+Menu Title  : Prop Nav
+Parent      : root/import/prop-style
+Title       : Prop Nav
+URL         : webgui7/prop/hierarchical-top-nav
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+	<div style="margin: 0pt 5px; float: left;"><tmpl_var controls></div>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+	<h2><tmpl_var title></h2>
+</tmpl_if>
+
+<tmpl_if description>
+	<p><tmpl_var description></p>
+</tmpl_if>
+
+<div class="yui-skin-sam">
+<tmpl_loop page_loop>
+  <tmpl_if __FIRST__>
+    <div id="navigation-<tmpl_var assetId>" class="yuimenubar">
+      <div class="bd">
+        <ul class="first-of-type">
+  </tmpl_if>
+  <tmpl_loop page.depthDiff_loop>
+          </ul>
+         </div>
+       </div>
+     </li>
+  </tmpl_loop>
+  <li class="yuimenuitem"><a <tmpl_if page.newWindow>onclick="window.open(this.href); return false;" </tmpl_if>href="<tmpl_var page.url>"><tmpl_var page.menuTitle></a>
+  <tmpl_if page.hasViewableChildren>
+    <div>
+      <div class="bd">
+        <ul>
+  <tmpl_else>
+    </li>
+  </tmpl_if>
+  <tmpl_if __LAST__> 
+    <tmpl_loop page.indent_loop>
+      <tmpl_unless __first__></li></tmpl_unless>
+      </ul></div></div>
+    </tmpl_loop>
+    </ul></div></div>
+  </tmpl_if>
+</tmpl_loop>
+</div>
+<script type="text/javascript">
+    YAHOO.util.Event.onContentReady("navigation-<tmpl_var assetId>", function() {
+        var wgMenuBar = new YAHOO.widget.MenuBar("navigation-<tmpl_var assetId>", {
+            autosubmenudisplay : true,
+            showdelay          : 250,
+            hidedelay          : 750,
+            lazyload           : true
+        });
+        wgMenuBar.render();
+    });
+</script>
+==== extraHeadTags ===========================================================
+<link rel="stylesheet" type="text/css" href="^Extras(yui/build/menu/assets/skins/sam/menu.css);" />
+<script type="text/javascript" src="^Extras(yui/build/yahoo-dom-event/yahoo-dom-event.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/container/container_core-min.js);"></script>
+<script type="text/javascript" src="^Extras(yui/build/menu/menu-min.js);"></script>
+<!-- Page-specific script -->
+
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: Navigation
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

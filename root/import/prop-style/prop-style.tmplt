@@ -1,0 +1,123 @@
+==== Template ================================================================
+Asset ID    : olxhUOpdclI-sl4Q5FYNdA
+Menu Title  : Prop Style
+Parent      : root/import/prop-style
+Title       : Prop Style
+URL         : root/import/prop-style/prop-style
+==== synopsis ================================================================
+~
+==== template ================================================================
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <tmpl_var head.tags>
+</head>
+
+<body id="page1" onload="new ElementMaxHeight();">
+^AdminBar();
+    <div class="tall_box">
+         <div class="tall_top_left">&nbsp;</div>
+         <div class="tall_top_right">&nbsp;</div>
+    </div>
+    <div class="site_center">
+        <div id="main">
+            <!-- header -->
+            <div id="header">
+                <div class="row_1">
+                    <div class="indent"><a href="/"><img src="^Extras(propeller/images/propeller_logo.gif);" alt="" width="343" height="66" /></a>
+                    
+                    </div>
+			<div class="col_2">
+			<h2>^Page(title);</h2>
+                    <div id="login">
+                    ^L("","","PBtmpl0000000000000092"); &middot; ^AdminToggle;
+                    </div>
+		</div>
+                    </div>
+                <div class="row_2">
+                    <div class="indent">
+</div>
+              </div>
+                <div class="row_3">
+                    <ul class="menu">
+                        ^AssetProxy(prop_coolmenu);
+                    </ul>
+                    
+                </div>
+            </div>
+            <!-- content -->
+	        <div id="contentArea">
+			<tmpl_var body.content>
+		</div>
+            <!-- footer -->
+            <div id="footer">
+             <div class="footer_block">
+   <div class="left">
+   <div class="right">
+    <div class="inner">
+    <div class="container">
+    <div class="wrapper1">
+     <div class="wrapper2">
+     <div class="column1"> Propeller &copy; 2008 All rights reserved.<br />
+      <a href="index.html">Welcome</a> | <a href="index-1.html">Services</a> | <a href="index-2.html">Events</a> | <a href="index-3.html">About Us</a> | <a href="index-5.html">Contact Us</a></div>
+          <div class="column2">Terms of Use<br />        <a href="index-7.html">Privacy Policy</a></div>
+                                            <div class="column3">Oklahoma's Premiere Legal, Accounting, Human Resources, Marketing &amp; Tax firm</div>
+<div class="clear" style="padding-right:20px;"><br /></div>
+          </div>
+        </div>
+        </div>
+        </div>
+      </div>
+      </div>
+          </div>
+              <div align="center"><font color="#999999"><font size="-2"> The information contained in this website is for descriptive purposes only and is not a contract. It is intended to provide a general overview of the unique plans.<br />
+         Please remember that only the plan contract can give actual terms, amounts, conditions and exclusions.</font></font> </div>
+            </div>
+    </div>
+</body>
+</html>
+
+==== extraHeadTags ===========================================================
+<title>^c; - ^Page(title);</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<link href="^Extras(propeller/css/style.css);" rel="stylesheet" type="text/css" />
+<link href="^Extras(propeller/css/layout.css);" rel="stylesheet" type="text/css" />
+<script src="^Extras(propeller/js/maxheight.js);" type="text/javascript"></script>
+<script type="text/javascript" language="javascript" src="^Extras(propeller/js/lytebox.js);"></script>
+<link rel="stylesheet" href=href="^Extras(propeller/css/lytebox.css);" type="text/css" media="screen" />
+
+<style type="text/css">
+<!--
+.style1 {
+	font-family: "Times New Roman", Times, serif;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: normal;
+}
+.style2 {
+	color: #0060B6;
+	font-weight: bold;
+}
+-->
+</style>
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: style
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+
