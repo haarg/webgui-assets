@@ -122,7 +122,9 @@ URL         : root/import/survey/default-answer-edit
             <div class="wg-hoverhelp">^International('answer text description','Asset_Survey');</div>
         </div>
     </p>
-    <textarea name='text' style="width:450px;height:150px;" id="texteditortarget"><tmpl_var text></textarea>
+    <div style="height: 200px">
+        <textarea name='text' id="texteditortarget"><tmpl_var text></textarea>
+    </div>
     
     </form>
 </div>

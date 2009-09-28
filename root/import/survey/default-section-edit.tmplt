@@ -160,8 +160,10 @@ URL         : root/import/survey/default-section-edit
         <div>^International('section text','Asset_Survey');
             <div class="wg-hoverhelp">^International('section text description','Asset_Survey');</div>
         </div>
-    </p> 
-    <textarea name="text" maxlength="2056" style="width:450px;height:150px;" id="texteditortarget"><tmpl_var text></textarea>
+    </p>
+    <div style="height: 200px">
+        <textarea name="text" maxlength="2056" id="texteditortarget"><tmpl_var text></textarea>
+    </div>
     
     </form>
 </div>
