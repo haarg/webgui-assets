@@ -21,7 +21,7 @@ body {
 }
 
 div.dateanswer {
-    min-height: 250px;
+    overflow: auto;
 }
 div.slider-bg {
     position: relative;

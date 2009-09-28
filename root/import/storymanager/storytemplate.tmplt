@@ -8,7 +8,7 @@ URL         : root/import/storymanager/storytemplate
 ~
 ==== template ================================================================
 <a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
-<tmpl_if session.var.adminOn><p><tmpl_var controls></p></tmpl_if>
+<tmpl_if canEdit><p><tmpl_var controls></p></tmpl_if>
 <div class="viewStory">
 <p><span class="crumb">
 <tmpl_loop crumb_loop>

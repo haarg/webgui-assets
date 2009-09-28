@@ -185,18 +185,16 @@ URL         : root/import/survey/default-questions
     </tmpl_if>
      
     <tmpl_if name='dateType'>
+        <div class=dateanswer>
         <tmpl_loop name=answers>
             <tmpl_var name='verts'>
-            <span class=dateanswer>
-                    <table><tr><td/><td><tmpl_var name='text'></td><td/></tr>
-                    <div id='<tmpl_var name='id'>container'></div>
-                    <input name='<tmpl_var name='id'>' id='<tmpl_var name='id'>' type=text></input>
-                <span id='<tmpl_var name='id'>button'></span>
-            <tmpl_if name='verbatim'>
-                <span><input size=50 type=text name='<tmpl_var name='id'>verbatim'></span>
-            </tmpl_if>  
+            <tmpl_var name="text">
+            <input name='<tmpl_var name='id'>' id='<tmpl_var name='id'>' type=text></input>
+            <span id='<tmpl_var name='id'>button'></span>
+            <div id='<tmpl_var name='id'>container'></div>
             <tmpl_var name='verte'>
         </tmpl_loop>    
+        </div>
     </tmpl_if>
 
     <tmpl_if name='slider'>
