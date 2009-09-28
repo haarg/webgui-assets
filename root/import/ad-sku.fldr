@@ -1,9 +1,9 @@
 ==== Wobject::Folder =========================================================
-Asset ID    : RSAMkc6WQmfRE3TOr1_3Mw
-Menu Title  : ExpireIncompleteSurveyResponses
-Parent      : root/import/survey
-Title       : ExpireIncompleteSurveyResponses
-URL         : root/import/expireincompletesurveyresponses
+Asset ID    : jmlI9IK-lV8n2WMYmmPhAA
+Menu Title  : Ad Sku
+Parent      : root/import
+Title       : Ad Sku
+URL         : root/import/ad-sku
 ==== synopsis ================================================================
 ~
 ==== extraHeadTags ===========================================================

@@ -1,15 +1,13 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0000000000000016
-Menu Title  : Default WebGUI Account Activation Template
-Parent      : root/import/auth/webgui/create
-Title       : Default WebGUI Account Activation Template
-URL         : root/import/auth/webgui/create/default-webgui-account-activation-template
+Asset ID    : NBVSVNLp9X_bV7WrCprtCA
+Menu Title  : Annotate Image
+Parent      : root/import/imageasset
+Title       : Annotate Image
+URL         : image3
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-^International('email address validation email body','AuthWebGUI');
-
-<tmpl_var activationUrl>
+<tmpl_if session.var.adminOn><tmpl_if controls><p><tmpl_var controls></p></tmpl_if></tmpl_if><tmpl_var annotateJs><div class="yui-skin-sam"><img src="<tmpl_var fileUrl>" <tmpl_var parameters> /></div>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
@@ -22,11 +20,11 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 properties:
-  namespace: Auth/WebGUI/Activation
+  namespace: ImageAsset
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
 security:
-  groupIdEdit: '3'
+  groupIdEdit: '12'
   groupIdView: '7'
   ownerUserId: '3'
 

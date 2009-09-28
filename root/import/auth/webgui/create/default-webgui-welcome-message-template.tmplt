@@ -1,15 +1,16 @@
 ==== Template ================================================================
-Asset ID    : PBtmpl0000000000000016
-Menu Title  : Default WebGUI Account Activation Template
+Asset ID    : PBtmpl0000000000000015
+Menu Title  : Default WebGUI Welcome Message Template
 Parent      : root/import/auth/webgui/create
-Title       : Default WebGUI Account Activation Template
-URL         : root/import/auth/webgui/create/default-webgui-account-activation-template
+Title       : Default WebGUI Welcome Message Template
+URL         : root/import/auth/webgui/create/default-webgui-welcome-message-template
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-^International('email address validation email body','AuthWebGUI');
+^International('50','WebGUI');: <tmpl_var newUser_username>
+^International('51','WebGUI');: <tmpl_var newUser_password>
 
-<tmpl_var activationUrl>
+<tmpl_var welcomeMessage>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
@@ -22,11 +23,11 @@ meta:
   isPackage: '0'
   isPrototype: '0'
 properties:
-  namespace: Auth/WebGUI/Activation
+  namespace: Auth/WebGUI/Welcome
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
 security:
-  groupIdEdit: '3'
+  groupIdEdit: '12'
   groupIdView: '7'
   ownerUserId: '3'
 

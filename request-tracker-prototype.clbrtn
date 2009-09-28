@@ -24,6 +24,7 @@ display:
   printableStyleTemplateId: ''
   richEditor: PBrichedit000000000002
   rssCapableRssEnabled: '0'
+  rssCapableRssLimit: 10
   rssCapableRssTemplateId: PBtmpl0000000000000142
   searchTemplateId: ''
   sortBy: assetData.revisionDate

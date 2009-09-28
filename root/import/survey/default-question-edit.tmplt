@@ -14,6 +14,8 @@ URL         : root/import/survey/default-question-edit
     <input type='hidden' name='id' value='<tmpl_var id>'>
     <input type='hidden' name='delete' id='delete' value=0>
     <input type='hidden' name='copy' id='copy' value=0>
+    <input type='hidden' name='addtype' id='addtype' value=''>
+    <input type='hidden' name='removetype' id='removetype' value=0>
     <table>
     <tr><td>
     

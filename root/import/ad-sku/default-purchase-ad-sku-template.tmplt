@@ -1,0 +1,73 @@
+==== Template ================================================================
+Asset ID    : AldPGu0u-jm_5xK13atCSQ
+Menu Title  : Default Purchase Ad Sku Template
+Parent      : root/import/ad-sku
+Title       : Default Purchase Ad Sku Template
+URL         : root/import/ad-sku/default-purchase-ad-sku-template
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+        <p><tmpl_var controls></p>
+</tmpl_if>
+        <tmpl_if error_msg>
+        <div class="error"><tmpl_var error_msg></div>
+        </tmpl_if>
+        <h3><tmpl_var adSkuTitle></h3>
+        <p><tmpl_var adSkuDescription></p>
+        <h4><a href="<tmpl_var manageLink>">^International("form manage link","Asset_AdSku");</a></h4>
+        <tmpl_var formHeader>
+        <table border="0" cellpadding="3" cellspacing="0">
+        <tbody>
+        <tr>
+        <td>^International(form purchase ad title,Asset_AdSku);</td>
+        <td><tmpl_var formTitle></td>
+        </tr>
+        <tr>
+        <td>^International(form purchase ad link,Asset_AdSku);</td>
+        <td><tmpl_var formLink></td>
+        </tr>
+        <tr>
+        <td>^International(form purchase ad image,Asset_AdSku);</td>
+        <td><tmpl_var formImage></td>
+        </tr>
+        <tr>
+        <td>^International(form purchase number of clicks,Asset_AdSku);</td>
+        <td><tmpl_var formClicks> ^International("form purchase per click","Asset_AdSku", <tmpl_var clickPrice> );
+        <br><tmpl_var clickDiscount></td>
+        </tr>
+        <tr>
+        <td>^International(form purchase number of impressions,Asset_AdSku);</td>
+        <td><tmpl_var formImpressions> ^International("form purchase per click","Asset_AdSku", <tmpl_var impressionPrice> );
+        <br><tmpl_var impressionDiscount></td>
+        </tr>
+        <tr>
+        <td colspan="2" align="right"><tmpl_var formSubmit></td>
+        </tr>
+        </tbody>
+        </table>
+        <tmpl_var formAdId>
+        <tmpl_var formFooter>
+^ViewCart(); (^CartItemCount;)
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: AdSku/Purchase
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

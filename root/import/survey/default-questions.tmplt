@@ -144,6 +144,22 @@ URL         : root/import/survey/default-questions
         </table>
     </tmpl_if>
 
+    <tmpl_if name='dateShort'>
+	<span class='dateshort'>
+        <tmpl_loop name=answers>
+	    <input type=hidden name='<tmpl_var name='id'>' id='<tmpl_var name='id'>'>
+            <tmpl_var name='verts'>
+        	<tmpl_var name="text">
+		<select name='<tmpl_var name='id'>-month' id='<tmpl_var name='id'>-month'>
+		<tmpl_loop name=months>
+			<option value=<tmpl_var name='month'>><tmpl_var name='month'></option>
+		</tmpl_loop>
+		</select>
+		<input name='<tmpl_var name='id'>-year' id='<tmpl_var name='id'>-year' type=text size=4>
+            <tmpl_var name='verte'>
+        </tmpl_loop>    
+	</span>
+    </tmpl_if>
      
     <tmpl_if name='dateType'>
         <tmpl_loop name=answers>

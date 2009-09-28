@@ -1,0 +1,60 @@
+==== Template ================================================================
+Asset ID    : ohjyzab5i-yW6GOWTeDUHg
+Menu Title  : Default Manage Ad Sku Template
+Parent      : root/import/ad-sku
+Title       : Default Manage Ad Sku Template
+URL         : root/import/ad-sku/default-manage-ad-sku-template
+==== synopsis ================================================================
+~
+==== template ================================================================
+<a name="id<tmpl_var assetId>" id="id<tmpl_var assetId>"></a>
+
+<tmpl_if session.var.adminOn>
+        <p><tmpl_var controls></p>
+</tmpl_if>
+        <tmpl_if error_msg>
+        <div class="error"><tmpl_var error_msg></div>
+        </tmpl_if>
+        <h3>^International("form manage title","Asset_AdSku");</h3>
+        <h4><a href='<tmpl_var purchaseLink>'>^International("form purchase link","Asset_AdSku");</a></h4>
+        <br /><br />
+        <table border="0" cellpadding="3" cellspacing="0">
+            <tbody> <tr>
+                <th>^International("form manage table header title","Asset_AdSku");</th>
+                <th>^International("form manage table header clicks","Asset_AdSku");</th>
+                <th>^International("form manage table header impressions","Asset_AdSku");</th>
+                <th>^International("form manage table header renew","Asset_AdSku");</th>
+            </tr>
+            <tmpl_loop myAds>
+                </tr>
+                    <td><tmpl_var rowTitle></td>
+                    <td><tmpl_var rowClicks></td>
+                    <td><tmpl_var rowImpressions></td>
+                    <td><a href="<tmpl_var rowRenewLink>">^International("form manage table value renew","Asset_AdSku");</a></td>
+                </tr>
+            </tmpl_loop>
+
+        </tbody>
+        </table>
+
+^ViewCart(); (^CartItemCount;)
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: AdSku/Manage
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '12'
+  groupIdView: '7'
+  ownerUserId: '3'
+

@@ -32,7 +32,7 @@ URL         : templates/thingy-default
 		<div class="wgThingsWrapper">
 			<tmpl_loop things_loop>
 				<div class="<tmpl_if __ODD__>rowOne<tmpl_else>rowTwo</tmpl_if>">
-					<tmpl_var thing_editIcon><tmpl_var thing_viewIcon> <tmpl_var thing_deleteIcon> <span class="spacerOne"><tmpl_var thing_label><span>
+					<tmpl_var thing_deleteIcon>  <tmpl_var thing_editIcon><tmpl_var thing_viewIcon> <tmpl_var thing_copyIcon> <span class="spacerOne"><tmpl_var thing_label><span>
 				</div>
 			</tmpl_loop>
 		</div>

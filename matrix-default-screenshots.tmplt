@@ -1,7 +1,7 @@
 ==== Template ================================================================
 Asset ID    : matrixtmpl000000000006
 Menu Title  : Matrix Default Screenshots
-Parent      : root/import
+Parent      : root/import/matrix
 Title       : Matrix Default Screenshots
 URL         : matrix-default-screenshots
 ==== synopsis ================================================================
