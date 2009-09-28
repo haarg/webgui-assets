@@ -20,7 +20,7 @@ URL         : root/import/carousel/carousel-hidden-textareas
 	</tmpl_if>
 
 	<tmpl_loop item_loop>
-		<textarea id="<tmpl_var itemId>" style="visibility: hidden;"><tmpl_var text></textarea>
+		<textarea id="<tmpl_var itemId>" style="display: none;"><tmpl_var text></textarea>
 	</tmpl_loop>
 ==== extraHeadTags ===========================================================
 ~
@@ -31,7 +31,7 @@ display:
 meta:
   inheritUrlFromParent: '0'
   isExportable: '1'
-  isPackage: '1'
+  isPackage: '0'
   isPrototype: '0'
 properties:
   namespace: Carousel

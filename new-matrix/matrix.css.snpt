@@ -127,7 +127,8 @@ URL         : new-matrix/matrix.css
 #sortByViews-button,
 #sortByCompares-button,
 #sortByUpdated-button,
-#sortByClicks-button {
+#sortByClicks-button,
+#sortByName-button {
 	background: none;
 	white-space:nowrap;
 	border-style:none;
@@ -141,7 +142,8 @@ URL         : new-matrix/matrix.css
 #sortByViews-button:hover,
 #sortByCompares-button:hover,
 #sortByUpdated-button:hover,
-#sortByClicks-button:hover {
+#sortByClicks-button:hover,
+#sortByName-button:hover {
 	color:black;
 }
 
@@ -387,7 +389,6 @@ URL         : new-matrix/matrix.css
 	color:#333;
 }
 #matrixRatings .formDescription a:before {
-	content: "ÃƒÆ’Ã¢â‚¬Å¡Ãƒâ€šÃ‚Â» ";
 	text-decoration:none;
 }
 #matrixRatings .formDescription a {

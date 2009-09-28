@@ -56,7 +56,14 @@ URL         : shopping-cart-collateral-items/my-purchases-detail-default
 	<tmpl_loop items>
 		<tr>
 			<td><tmpl_var lastUpdated></td>
-			<td><a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a></td>
+			<td>
+				<a href="<tmpl_var viewItemUrl>"><tmpl_var configuredTitle></a>
+				<tmpl_if actionsLoop><br/>
+				<tmpl_loop actionsLoop>
+				[<a href="<tmpl_var url>"><tmpl_var label></a>] 
+				</tmpl_loop>
+				</tmpl_if>
+			</td>
 			<td><tmpl_var price></td>
 			<td><tmpl_var quantity></td>
 			<td class="smallAddress"><tmpl_var itemShippingAddress></td>

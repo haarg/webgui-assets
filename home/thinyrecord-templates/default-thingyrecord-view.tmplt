@@ -1,0 +1,64 @@
+==== Template ================================================================
+Asset ID    : TKmhv8boP3TD2xwSwUBq0g
+Menu Title  : Default ThingyRecord View
+Parent      : root/import/thingyrecord-templates
+Title       : Default ThingyRecord View
+URL         : home/thinyrecord-templates/default-thingyrecord-view
+==== synopsis ================================================================
+~
+==== template ================================================================
+<tmpl_if session.var.adminOn>
+<tmpl_var controls>
+</tmpl_if>
+
+<tmpl_if displayTitle>
+<h3><tmpl_var title></h3>
+</tmpl_if>
+
+<tmpl_var description>
+
+<tmpl_if message>
+<tmpl_var message>
+</tmpl_if>
+
+<tmpl_var form_header>
+<table cellpadding="0" cellspacing="0" border="0">
+<tmpl_loop form_fields>
+	<tr>
+		<td><tmpl_var field_label></td>
+		<td><tmpl_var field_input></td>
+	</tr>
+</tmpl_loop>
+
+<tmpl_if form_hide>
+	<tr>
+		<td>Hide?</td>
+		<td><tmpl_var form_hide></td>
+	</tr>
+</tmpl_if>
+
+</table>
+
+<tmpl_var form_submit>
+<tmpl_var form_footer>
+
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '1'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+properties:
+  namespace: ThingyRecord/View
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+security:
+  groupIdEdit: '3'
+  groupIdView: '7'
+  ownerUserId: '3'
+

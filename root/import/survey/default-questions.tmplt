@@ -156,12 +156,14 @@ URL         : root/import/survey/default-questions
 	    <input type=hidden name='<tmpl_var name='id'>' id='<tmpl_var name='id'>'>
             <tmpl_var name='verts'>
         	<tmpl_var name="text">
+		^International('year', 'Asset_Survey');
+		<input name='<tmpl_var name='id'>-year' id='<tmpl_var name='id'>-year' type=text size=4>
+		^International('month', 'Asset_Survey');
 		<select name='<tmpl_var name='id'>-month' id='<tmpl_var name='id'>-month'>
 		<tmpl_loop name=months>
 			<option value=<tmpl_var name='month'>><tmpl_var name='month'></option>
 		</tmpl_loop>
 		</select>
-		<input name='<tmpl_var name='id'>-year' id='<tmpl_var name='id'>-year' type=text size=4>
             <tmpl_var name='verte'>
         </tmpl_loop>    
 	</span>
@@ -252,7 +254,11 @@ URL         : root/import/survey/default-questions
 
 
 </tmpl_loop>
-<hr><input type=button id=submitbutton value=<tmpl_if isLastPage>finish<tmpl_else>continue</tmpl_if>></input>
+<hr>
+<tmpl_if allowBackBtn>
+<input type=button id=backbutton value="^International('back', 'Asset_Survey');"></input>
+</tmpl_if>
+<input type=button id=submitbutton value="<tmpl_if isLastPage>^International('finish', 'Asset_Survey');<tmpl_else>^International('continue', 'Asset_Survey');</tmpl_if>"></input>
 </form>
 
 </div>

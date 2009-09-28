@@ -36,6 +36,7 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
         	<td><tmpl_var bestViews_sortButton></td>
             <td><tmpl_var bestCompares_sortButton></td>
             <td><tmpl_var lastUpdated_sortButton></td>
+            <td><tmpl_var alphanumeric_sortButton></td>
         </tr>
         </table>
         <tmpl_var compareForm>

@@ -11,10 +11,6 @@ URL         : root/import/survey/default-survey-edit
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
     <title>WebGUI ^International(assetName,Asset_Survey);</title>
     
-    <style type="text/css">
-        body { margin:0; padding:0; }
-    </style>
-    
     <link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
     <link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
     <link rel="stylesheet" type="text/css" href="^Extras(wobject/Survey/surveyedit.css);" />
@@ -61,24 +57,18 @@ URL         : root/import/survey/default-survey-edit
     	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
     </div>
     
-    <div id="warnings-outer">
+    <div id="warnings-outer" style="display:none" class="wgWarning">
 	<h2>^International(warnings,Asset_Survey);</h2>
         <div id="warnings"></div>
     </div>
     
     <div class="workarea">
-        <table>
-            <tr><td>
-                <ul id="sections" class="draglist"></ul>
-            </td></tr>
-            <tr><td>
-            <div class=buttons>
+    	<div id="sections-panel"></div>
+	<div id=buttons class=buttons>
                 <span id=addSection></span>
                 <span id=addQuestion></span>
                 <span id=addAnswer></span>
-            </div>
-            </td></tr>
-        </table>
+    	</div>
     </div>
     <div id="edit"></div>
 

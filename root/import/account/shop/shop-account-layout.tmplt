@@ -23,6 +23,7 @@ URL         : root/import/account/shop/shop-account-layout
             <ul class="yui-nav">
                 <li <tmpl_if managesPurchasesIsActive>class="selected"</tmpl_if>><a href="<tmpl_var manage_purchases_url>" title="^International(manage purchases label,Account_Shop);"><em>^International(manage purchases label,Account_Shop);</em></a></li>
                 <li <tmpl_if viewSalesIsActive>class="selected"</tmpl_if>><a href="<tmpl_var view_sales_url>" title="^International(my sales label,Account_Shop);"><em>^International(my sales label,Account_Shop);</em></a></li>
+                <li <tmpl_if manageTaxIsActive>class="selected"</tmpl_if>><a href="<tmpl_var manage_tax_url>" title="^International(manage tax label,Account_Shop);"><em>^International(manage tax label,Account_Shop);</em></a></li>
             </ul>
         </div>
         <div class="yui-content">
