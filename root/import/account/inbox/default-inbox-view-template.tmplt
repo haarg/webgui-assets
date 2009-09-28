@@ -17,7 +17,7 @@ URL         : root/import/account/inbox/default-inbox-view-template
                     </p>
 	
 			<p class="bar">
-                            <span class="WGinbox_buttons"> <input type="button" value="^International(new message label,Account_Inbox);" onClick="<tmpl_if canSendMessages>location.href='<tmpl_var new_message_url>'<tmpl_else>alert('^International(no friends hover,Account_Inbox);');</tmpl_if>" /><input type="submit" value="^International(delete label,Account_Inbox);"></span>
+                            <span class="WGinbox_buttons"> <input type="button" value="^International(new message label,Account_Inbox);" onClick="<tmpl_if canSendMessages>location.href='<tmpl_var new_message_url>'<tmpl_else>alert('^International(no friends hover,Account_Inbox);');</tmpl_if>" /><input name="action" type="submit" value="^International(delete label,Account_Inbox);" /><input name="action" type="submit" value="^International(mark as read label,Account_Inbox);" /><input name="action" type="submit" value="^International(mark as unread label,Account_Inbox);" /></span>
                                     <tmpl_if pagination.pageCount.isMultiple>
                                     <span class="WGProfile_pagination">
                                         <tmpl_if pagination.previousPageUrl><a href="<tmpl_var pagination.previousPageUrl>" class="prevNext"><img src="^Extras(account/images/prev.gif);" alt="Previous" /><tmpl_var pagination.previousPageText></a></tmpl_if>&nbsp;
@@ -25,7 +25,7 @@ URL         : root/import/account/inbox/default-inbox-view-template
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </span>
                                     </tmpl_if>
-                                <span class="WGinbox_messagerpp"><tmpl_var message_rpp></span>
+                                <span class="WGinbox_messagerpp"><tmpl_var message_rpp> <tmpl_var userFilter></span>
 			</p>
                     
                 <table class="WGProfileFields">
@@ -58,7 +58,7 @@ URL         : root/import/account/inbox/default-inbox-view-template
                                         &nbsp;<tmpl_if pagination.nextPageUrl><a href="<tmpl_var pagination.nextPageUrl>" class="prevNext"><tmpl_var pagination.nextPageText><img src="^Extras(account/images/next.gif);" alt="Next" /></a></tmpl_if>
                                     </span>
                                     </tmpl_if>
-                                <span class="WGmessagerpp"><tmpl_var message_rpp></span>
+                                <span class="WGmessagerpp"><tmpl_var message_rpp> <tmpl_var userFilter></span>
 			</p>	
 
                      <p class="WGinbox_count">
@@ -99,12 +99,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   namespace: Account/Inbox/View
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
-  usePacked: '1'
+  usePacked: '0'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

@@ -10,10 +10,10 @@ URL         : root/import/survey/default-answer-edit
 <div id='answer'>
 <div class='hd'>^International('please enter answer information','Asset_Survey');</div>
 <div class='bd'>
-
     <form name='form' method='POST' action='?func=submitObjectEdit'>
     <input type='hidden' name='id' value='<tmpl_var id>'>
     <input type='hidden' name='delete' id='delete' value='0'>
+    <input type='hidden' name='copy' id='copy' value=0>
     
     <table>
     <tr><td>
@@ -72,14 +72,14 @@ URL         : root/import/survey/default-answer-edit
     
         
         <p>
-            <div>^International('text answer','Asset_Survey'); ^International('comment cols','Asset_Survey');
+            <div>^International('textCols label','Asset_Survey');
                 <div class="wg-hoverhelp">^International('cols description','Asset_Survey');</div>
             </div>
             <input type='text' size=2 value='<tmpl_var textCols>' name='textCols'>
         </p>
         
         <p>
-            <div>^International('text answer','Asset_Survey'); ^International('comment rows','Asset_Survey');
+            <div>^International('textRows label','Asset_Survey');
                 <div class="wg-hoverhelp">^International('rows description','Asset_Survey');</div>
             </div>
             <input type='text' size='2' value='<tmpl_var textRows>' name='textRows'>
@@ -139,12 +139,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   namespace: Survey/Edit
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
-  usePacked: '1'
+  usePacked: '0'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

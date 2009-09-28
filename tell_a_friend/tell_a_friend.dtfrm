@@ -18,6 +18,7 @@ display:
   defaultView: '0'
   displayTitle: '0'
   emailTemplateId: PBtmpl0000000000000085
+  htmlAreaRichEditor: '**Use_Default_Editor**'
   isHidden: '1'
   listTemplateId: PBtmpl0000000000000021
   mailData: '1'
@@ -31,7 +32,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   mailAttachments: '0'
   useCaptcha: '0'

@@ -29,20 +29,27 @@ URL         : root/import/survey/default-survey
 </tmpl_if>
 
 <tmpl_if user_canTakeSurvey>
+  <tmpl_unless maxResponsesSubmitted>
 	<a href=<tmpl_var take_survey_url> >^International('take survey','Asset_Survey');</a>
+	|
+  </tmpl_unless>
 </tmpl_if>
 
 <tmpl_if user_canViewReports>
-	| <a href=<tmpl_var view_simple_results_url> >^International('view simple results','Asset_Survey');</a>
+	<a href=<tmpl_var view_simple_results_url> >^International('view simple results','Asset_Survey');</a>
 	| <a href=<tmpl_var view_transposed_results_url> >^International('view transposed results','Asset_Survey');</a>
 	| <a href=<tmpl_var view_statistical_overview_url> >^International('view statistical overview','Asset_Survey');</a>
 	| <a href=<tmpl_var view_grade_book_url> >^International('view grade book','Asset_Survey');</a>
+	|
 </tmpl_if>
 
 <tmpl_if user_canEditSurvey>
-        | <a href=<tmpl_var delete_responses_url> onclick="return confirm('This will delete all User Responses. Are you sure you want to continue?');">^International('delete responses','Asset_Survey');</a>
+        <a href=<tmpl_var delete_responses_url> onclick="return confirm('This will delete all User Responses. Are you sure you want to continue?');">^International('delete responses','Asset_Survey');</a>
 </tmpl_if>
 </div>
+
+<tmpl_var lastResponseFeedback>
+
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================
@@ -54,12 +61,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   namespace: Survey
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
-  usePacked: '1'
+  usePacked: '0'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

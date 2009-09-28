@@ -51,9 +51,9 @@ URL         : root/import/survey/default-survey-edit
     
     <div>
     	<a href=".">^International(493,WebGUI);</a> |
-    	<tmpl_if session.var.adminOn>
-		<a href="?func=edit">^International(575,WebGUI);</a> |
-    	</tmpl_if>
+	<a href="?func=edit">^International(575,WebGUI);</a> |
+    	<a href="?func=graph">^International('visualize','Asset_Survey');</a> |
+    	<a href="?func=editTestSuite">^International('test suite','Asset_Survey');</a> |
     	<a href="?func=takeSurvey">^International('take survey','Asset_Survey');</a>
     </div>
     
@@ -85,12 +85,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   namespace: Survey/Edit
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
-  usePacked: '1'
+  usePacked: '0'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

@@ -26,7 +26,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 security:
   groupIdEdit: '3'
   groupIdView: '7'

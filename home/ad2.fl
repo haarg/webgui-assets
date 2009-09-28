@@ -18,7 +18,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   templateId: pbtmpl0000000000000221
 security:

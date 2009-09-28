@@ -19,7 +19,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   allowMedia: 0
   askAboutRichEdit: '0'

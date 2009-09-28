@@ -39,7 +39,47 @@ var tooFewMessage = '^International('too few message','Asset_Matrix');';
             <td><tmpl_var alphanumeric_sortButton></td>
         </tr>
         </table>
-        <tmpl_var compareForm>
+        <form action="<tmpl_var compareForm_url>" enctype="multipart/form-data" method="post" name="doCompare"><div class="formContents"><br /><input type="hidden" name="func" value="compare"  />
+<div id="compareForm">
+<table id="compareFormTable"> 
+	        <thead> 
+	            <tr> 
+	                <th>checked</th> 
+	                <th>assetId</th> 
+	                <th>title</th> 
+	                <th>views</th>
+	                <th>clicks</th>
+	                <th>compares</th>
+	                <th>lastUpdated</th>
+			<th>url</th>
+	            </tr> 
+	        </thead> 
+	        <tbody> 
+<tmpl_loop listing_loop>
+	            <tr> 
+	                <td><tmpl_var checked></td> 
+	                <td><tmpl_var assetId></td> 
+	                <td><tmpl_var title></td> 
+	                <td><tmpl_var views></td>
+			<td><tmpl_var clicks></td> 
+	                <td><tmpl_var compares></td> 
+	                <td><tmpl_var lastUpdated></td>
+			<td><tmpl_var url></td>  
+	            </tr> 
+</tmpl_loop>
+		</tbody> 
+	    </table> 
+</div> <br />
+</div>
+</form>
+
+
+<script type='text/javascript'>
+var maxComparisons = 10;
+var matrixUrl = '/home/untitled3';
+
+</script>
+
     </div>
     <div class="buttons">
      	<span id="compare2"><button type="button">^International('compare button label','Asset_Matrix');</button></span>
@@ -174,12 +214,12 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '0'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   namespace: Matrix
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
-  usePacked: '1'
+  usePacked: '0'
 security:
   groupIdEdit: '12'
   groupIdView: '7'

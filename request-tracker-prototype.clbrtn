@@ -21,9 +21,10 @@ display:
   maxImageSize: '0'
   newWindow: '0'
   postFormTemplateId: PBtmpl0000000000000210
-  postReceivedTemplateId: default-post-received
+  postReceivedTemplateId: default_post_received1
   postsPerPage: '10'
   printableStyleTemplateId: ''
+  replyRichEditor: PBrichedit000000000002
   richEditor: PBrichedit000000000002
   searchTemplateId: ''
   sortBy: assetData.revisionDate
@@ -51,7 +52,7 @@ meta:
   isExportable: '1'
   isPackage: '0'
   isPrototype: '1'
-  usePackedHeadTags: '1'
+  usePackedHeadTags: '0'
 properties:
   archiveAfter: '2592000'
   archiveEnabled: '1'
@@ -82,6 +83,7 @@ security:
   groupToEditPost: '12'
   ownerUserId: '3'
   postGroupId: '2'
+  replyFilterCode: javascript
   subscriptionGroupId: ~
   threadApprovalWorkflow: pbworkflow000000000003
   useCaptcha: '0'

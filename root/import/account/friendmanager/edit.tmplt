@@ -1,0 +1,71 @@
+==== Template ================================================================
+Asset ID    : lG2exkH9FeYvn4pA63idNg
+Menu Title  : Friend Manager Edit Friends
+Parent      : root/import/account/friendmanager
+Title       : Friend Manager Edit Friends
+URL         : root/import/account/friendmanager/edit
+==== synopsis ================================================================
+~
+==== template ================================================================
+<h2>Friends for <tmpl_var username></h2>
+<p><a href="<tmpl_var manageUrl>">^International(back to friend manager,Account_FriendManager);</a></p>
+<tmpl_var formHeader>
+<tmpl_if has_friends>
+<div class="fmRemove">
+<h3>^International(remove friends,Account_FriendManager);</h3>
+<table>
+<tmpl_loop friends_loop>
+<tr>
+<td><tmpl_var checkForm></td>
+<td><tmpl_var username></td>
+</tr>
+</tmpl_loop>
+<tr>
+<td><tmpl_var removeAll></td>
+<td>^International(remove all,Account_FriendManager);</td>
+</tr>
+</table>
+</div>
+</tmpl_if>
+<div class="fmAdd">
+<h3>^International(add new friends,Account_FriendManager);</h3>
+<tmpl_if groupName>
+<p>^International(group,WebGUI);: <tmpl_var groupName>. <a href="<tmpl_var viewAllUrl>">^International(view users from all groups,Account_FriendManager);</a></p>
+</tmpl_if>
+<tmpl_var addUserForm>
+<tmpl_if addManagers>
+<p>^International(Add Friend Managers,Account_FriendManager);: <tmpl_var addManagers></p>
+</tmpl_if>
+</div>
+<div style="clear:both;"></div>
+<tmpl_var submit>
+<tmpl_var formFooter>
+==== extraHeadTags ===========================================================
+<style>
+div.fmAdd, div.fmRemove {
+    float: left;
+    margin: 5px;
+    padding: 3px;
+}
+
+</style>
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: Account/FriendManager/Edit
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+

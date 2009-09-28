@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : b1316COmd9xRv4fCI3LLGA
+Menu Title  : Inbox Notification
+Parent      : root/import
+Title       : Inbox Notification
+URL         : inbox_notification
+==== synopsis ================================================================
+~
+==== template ================================================================
+^International(inbox notification,Account_Inbox);
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: Account/Inbox/Notification
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+
