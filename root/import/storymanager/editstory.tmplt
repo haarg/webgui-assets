@@ -55,9 +55,18 @@ URL         : root/import/storymanager/editstory
 <div style="clear: both;"></div>
 </div>
 <tmpl_loop photo_form_loop>
+<fieldset class="photoContainer">
+<legend>^International(photo,WebGUI);</legend>
+<tmpl_if hasPhoto>
 <div>
 <label>^International(photo,WebGUI);</label>
-<span><tmpl_var imgUploadForm></span>
+<span><p style="display:inline;vertical-align:middle;"><a href="<tmpl_var imgUrl>"><img src="<tmpl_var imgThumb>" alt="<tmpl_var imgFilename>" style="border-style:none;vertical-align:middle;" /><tmpl_var imgFilename></a></p></span>
+<div style="clear: both;"></div>
+</div>
+</tmpl_if>
+<div>
+<label><tmpl_if hasPhoto>^International(Replace image with new image,Asset_Story);<tmpl_else>^International(photo,WebGUI);</tmpl_if></label>
+<span><tmpl_var newUploadForm></span>
 <div style="clear: both;"></div>
 </div>
 <div>
@@ -92,7 +101,7 @@ URL         : root/import/storymanager/editstory
 <div style="clear: both;"></div>
 </div>
 </tmpl_if>
-<hr>
+</fieldset>
 </tmpl_loop>
 <div>
 <span><tmpl_var saveButton> <tmpl_var cancelButton> <tmpl_var saveAndAddButton> </span>

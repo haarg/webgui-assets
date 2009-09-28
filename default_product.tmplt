@@ -25,6 +25,7 @@ URL         : default_product
 		<tmpl_if thumbnail3><li><a class="thumbpic" href="#"><img src="<tmpl_var thumbnail3>" alt="<tmpl_var thumbnail3>" /><img class="bigImage" src="<tmpl_var image3>" alt="<tmpl_var image3>" /></a></li></tmpl_if>
 	</ul>
 
+	<div style="clear:both"></div>
 		<div class="buttons">
 			<tmpl_if brochure_url><a href="<tmpl_var brochure_url>"  target="_blank"><tmpl_var brochure_label></a></tmpl_if>
 			<tmpl_if manual_url><a href="<tmpl_var manual_url>" target="_blank"><tmpl_var manual_label></a></tmpl_if>
@@ -32,7 +33,7 @@ URL         : default_product
 		</div>			
 		<tmpl_if session.var.adminOn>
 			<div class="controls">
-				<div class="title">Controls</div>
+				<div class="title">^International(Controls,Asset_Product);</div>
 				<ul>
 				<tmpl_unless variant_loop>
 					<li><a href="<tmpl_var addvariant_url>">^International(Set Product price and SKU,Asset_Sku);</a></li>

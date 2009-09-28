@@ -38,7 +38,7 @@ URL         : root/import/survey/default-survey-take
 ==== extraHeadTags ===========================================================
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/fonts/fonts-min.css);" />
 <link rel="stylesheet" type="text/css" href="^Extras(yui/build/assets/skins/sam/skin.css);" />
-<link rel="stylesheet" type="text/css" href="/survey.css" />
+<link rel="stylesheet" type="text/css" href="^/(survey.css);" />
 
 
 ==== Properties ==============================================================

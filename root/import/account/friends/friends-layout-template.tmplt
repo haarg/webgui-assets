@@ -17,7 +17,7 @@ URL         : root/import/account/friends/friends-layout-template
 <!--[if gt IE 6]> <div style="clear: both; height:0;"></div> <![endif]-->
 <!--[if !IE]>--><div style="clear: both; height:0;"></div><!--<![endif]-->
 <tmpl_if is_edit><a href="<tmpl_var view_friends_url>" class="WGprofile_displayView">^International('friends as others label','Account_Friends');</a><tmpl_else><tmpl_if can_edit_friends><a href="<tmpl_var edit_friends_url>" class="WGprofile_displayView">^International('edit my friends','Account_Friends');</a><tmpl_else><a href="<tmpl_var back_url>" class="WGprofile_displayView">^International('back label','Account_Friends');</a></tmpl_if></tmpl_if>
-<div class="WGprofile_displaySubContent">
+<div class="WGsubContent">
 <div class="yui-skin-sam">
     <div id="wgAccountTabs" class="yui-navset">
         <div class="yui-content">
@@ -29,7 +29,7 @@ URL         : root/import/account/friends/friends-layout-template
 </div>
 </div>
 ==== extraHeadTags ===========================================================
-<link rel="stylesheet" href="/root/import/account/account.css" type="text/css">
+<link rel="stylesheet" href="^/(/root/import/account/account.css);" type="text/css">
 
 ==== Properties ==============================================================
 display:

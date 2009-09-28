@@ -23,9 +23,15 @@ URL         : matrix-default-view-template
 var tooManyMessage = '^International('too many message','Asset_Matrix');';
 var tooFewMessage = '^International('too few message','Asset_Matrix');';
 var maxComparisons = <tmpl_var maxComparisons>;
-var matrixUrl = '<tmpl_var matrix_url>';
+var matrix_url = '<tmpl_var matrix_url>';
 
 YAHOO.util.Event.addListener(window, "load", function() {
+    if (YAHOO.env.ua.opera) {
+        String.prototype.trim = function() {
+         return this.replace(/^\s+|\s+$/g, '');
+        };
+    }
+
     YAHOO.example.XHR_JSON = new function() {
         this.formatUrl = function(elCell, oRecord, oColumn, sData) {
 	     elCell.innerHTML = "<a href='" + oRecord.getData("url") + "'>" + sData + "</a>";

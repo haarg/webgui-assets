@@ -11,7 +11,7 @@ URL         : new-matrix/matrix-nav-tmpl
 
 <tmpl_if page_loop>
 <tmpl_loop page_loop>
-	<a href="<tmpl_var page.url>">Return to Matrix</a>
+	<a href="<tmpl_var page.url>">^International(Return to Matrix,Asset_Matrix);</a>
 </tmpl_loop>
 </tmpl_if>
 

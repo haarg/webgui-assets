@@ -10,25 +10,25 @@ URL         : root/import/default-my-sales-template
 <div class="WGProfile_registration">
     <div class="WGinboxTbl">
         <p class="bar">
-            Payout Totals
+            ^International(Payout Totals,Account_Shop);
         </p>
         <table>
             <tbody>
-                <tr><td>Paid : </td><td><tmpl_var paid></td></tr>
-                <tr><td>Scheduled for payment : </td><td><tmpl_var scheduled></td></tr>
-                <tr><td>Not yet scheduled : </td><td><tmpl_var notPaid></td</tr>
-                <tr><td>Total : </td><td><tmpl_var total></td></tr>
+                <tr><td>^International(Paid,Account_Shop); : </td><td><tmpl_var paid></td></tr>
+                <tr><td>^International(Scheduled for payment,Account_Shop); : </td><td><tmpl_var scheduled></td></tr>
+                <tr><td>^International(Not yet scheduled,Account_Shop); : </td><td><tmpl_var notPaid></td</tr>
+                <tr><td>^International(total,Shop); : </td><td><tmpl_var total></td></tr>
             </tbody>
         </table>
        
-        <p class="bar">Sales</p>           
+        <p class="bar">^International(my sales label,Account_Shop);</p>
        
         <table class="WGProfileFields">
             <thead>
                 <tr>
-                    <td class="WGContribTitleLeft">Product</td>
-                    <td class="WGContribTitle">Quantity</td>
-                    <td class="WGContribTitle">Payout</td>
+                    <td class="WGContribTitleLeft">^International(Product,Account_Shop);</td>
+                    <td class="WGContribTitle">^International(quantity,Shop);</td>
+                    <td class="WGContribTitle">^International(Payout,Account_Shop);</td>
                 </tr>
             </thead>
             <tbody>
@@ -48,7 +48,7 @@ URL         : root/import/default-my-sales-template
             </tbody>
         </table>
            
-        <p class="bar"><span class="WGContribCount"><tmpl_var total_sales> Sales :: <tmpl_var total_products> Products</span></p>
+        <p class="bar"><span class="WGContribCount"><tmpl_var total_sales> ^International(my sales label,Account_Shop); :: <tmpl_var total_products> ^International(Products,Account_Shop);</span></p>
     </div>               
 </div>
 ==== extraHeadTags ===========================================================

@@ -112,7 +112,7 @@ URL         : root/import/gallery-templates/gallery.css
 	padding:3px;
 	margin-top:5px;
 	font-size:10px;	
-	vertical-align:center;
+	vertical-align:middle;
 	cursor:pointer;
 	height:21px;
 }	
@@ -134,7 +134,9 @@ URL         : root/import/gallery-templates/gallery.css
 
 
 .wgAlbum {
-	display: -moz-inline-box; /* Moz */
+	/* display: -moz-inline-box;  Although this works in later versions of FireFox, it does not work in 2.x */
+	display:block;
+	float:left;
 	display: inline-block; /* Op, Saf, IE \*/
 	vertical-align: top; /* IE Mac non capisce e a volte crea extra v space */
 	width:250px;
@@ -237,7 +239,9 @@ URL         : root/import/gallery-templates/gallery.css
 .wgPicture {
 	width:250px;
 	margin:10px;
-	display: -moz-inline-box; /* Moz */
+	/*display: -moz-inline-box;  This does not work in earlier versions of Firefox */
+	display:block;
+	float:left;
 	display: inline-block; /* Op, Saf, IE \*/
 	vertical-align: top; /* IE Mac non capisce e a volte crea extra v space */
 }
@@ -497,31 +501,25 @@ a.fullSize:visited {
 	float:left;
 	border:solid black 2px;
 	margin:10px;
+        z-index: 0;
+        position: relative;
+}
+.thumb:hover {
+    background-color: transparent;
+    z-index: 50;
+    overflow: visible;
 }
 .thumb img {
 	width:100px;
 	height:auto;
 	border-style:none;
 }
-.thumb-popup {
-	border:solid #555 1px;
-	padding:2px;
-	padding-bottom:4px;
-	padding-right:4px;
-	background-color:silver;
+.thumb:hover img {
+    bottom: 65px;
+    left: -75px;
+    position: absolute;
+    width: 250px;
 }
-.thumb-popup img {
-	border:solid #555 1px;
-}
-.thumb-popup .caption {
-	background-color:black;
-	color:white;
-	padding:4px;
-	border:solid #555 2px;
-}
-
-
-
 
 /* 
 *	--BEGIN STYLES FOR SLIDESHOW VIEW --

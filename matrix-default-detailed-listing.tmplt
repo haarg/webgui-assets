@@ -196,9 +196,9 @@ function setStickied (checkbox) {
             <br class="wg-clear" />
         </div>
         <div class="commentsMail">
-            <strong class="title">Comments</strong>
+            <strong class="title">^International(Comments,WebGUI);</strong>
             <tmpl_var comments>
-            <a onclick="showHide('theLink','matrixMail');" href="javascript:return false" class="showLink" id="theLink">Send Creator a Message</a>
+            <a onclick="showHide('theLink','matrixMail');" href="javascript:return false" class="showLink" id="theLink">^International(Send Creator a Message,Asset_MatrixListing);</a>
             <div id="matrixMail" style="display:none">
                 <tmpl_if emailSent>
                     <div style="color: green;">^International('message sent message','Asset_MatrixListing');<br /></div>
