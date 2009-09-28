@@ -16,7 +16,7 @@ URL         : home/map/map-templates/default-map-point-view
 <tmpl_if phone>Phone: <tmpl_var phone><br/></tmpl_if>
 <tmpl_if fax>Fax: <tmpl_var fax><br/></tmpl_if>
 <tmpl_if email><a href="mailto:<tmpl_var email>"><tmpl_var email><br/></tmpl_if>
-<tmpl_if photo>^StorageUrl(<tmpl_var photo>);</tmpl_if>
+<tmpl_if storageIdPhoto><img src="^StorageUrl(<tmpl_var storageIdPhoto>);" /></tmpl_if>
 ==== extraHeadTags ===========================================================
 ~
 ==== Properties ==============================================================

@@ -8,18 +8,30 @@ URL         : home/map/map-templates/default-map-view
 ~
 ==== template ================================================================
 <tmpl_if session.var.adminOn><tmpl_var controls></tmpl_if>
+<select onchange="WebGUI.Map.focusOn(this.options[this.selectedIndex].value);">
+	<option value="">-- Select a point</option>
+	<tmpl_loop mapPoints>
+		<option value="<tmpl_var assetId>">
+			<tmpl_var title>
+		</option>
+	</tmpl_loop>
+</select>
 <tmpl_if canEdit><tmpl_var button_setCenter></tmpl_if>
 <tmpl_if canAddPoint><tmpl_var button_addPoint></tmpl_if>
-<div style="width: 80%;padding-right:2%; float: left;"><tmpl_var map></div>
-<div style="width: 15%; float: left;">
-	<tmpl_loop mapPoints>
-		<a href="#" onclick="WebGUI.Map.focusOn('<tmpl_var assetId>');return false">
-			<tmpl_var title>
-		</a><br/>
-	</tmpl_loop>
-</div>
+<tmpl_var map>
+
 ==== extraHeadTags ===========================================================
-~
+<style type="text/css">
+.wg_editMapPoint label {
+    display: block;
+}
+.wg_editMapPoint input, .wg_editMapPoint textarea, .wg_editMapPoint select {
+    display: block;
+}
+.wg_editMapPoint textarea {
+    width: 100%;
+}
+</style>
 ==== Properties ==============================================================
 display:
   isHidden: '1'

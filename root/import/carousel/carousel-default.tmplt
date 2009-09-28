@@ -24,7 +24,7 @@ URL         : root/import/carousel/carousel-default
     <div id="<tmpl_var assetId>">
         <ol>
 	<tmpl_loop item_loop>
-	    <li class="item" id="<tmpl_var itemId>">
+	    <li class="item" id="<tmpl_var itemId>" <tmpl_if slideWidth>style="width:<tmpl_var slideWidth>px;"</tmpl_if>>
 	        <tmpl_var text>
             </li>
         </tmpl_loop>

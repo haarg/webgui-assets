@@ -7,23 +7,22 @@ URL         : home/map/map-templates/default-edit-map-point
 ==== synopsis ================================================================
 ~
 ==== template ================================================================
-<div style="height: 300px; width: 300px; overflow: scroll;">
+<div class="wg_editMapPoint">
 <tmpl_var form_header>
-<table>
-<tr><td>Title</td><td><tmpl_var form_title></td></tr>
-<tr><td>Description</td><td><tmpl_var form_synopsis></td></tr>
-<tr><td>Website</td><td><tmpl_var form_website></td></tr>
-<tr><td>Address</td><td><tmpl_var form_address1></td></tr>
-<tr><td></td><td><tmpl_var form_address2></td></tr>
-<tr><td>City</td><td><tmpl_var form_city></td></tr>
-<tr><td>State/Province</td><td><tmpl_var form_state></td></tr>
-<tr><td>Zip/Postal Code</td><td><tmpl_var form_zipCode></td></tr>
-<tr><td>Country</td><td><tmpl_var form_country></td></tr>
-<tr><td>Phone</td><td><tmpl_var form_phone></td></tr>
-<tr><td>Fax</td><td><tmpl_var form_fax></td></tr>
-<tr><td>E-mail</td><td><tmpl_var form_email></td></tr>
-<tr><td>Photo</td><td><tmpl_var form_photo></td></tr>
-</table>
+<label>Title<tmpl_var form_title></label>
+<label>Description<tmpl_var form_synopsis></label>
+<label>Website<tmpl_var form_website></label>
+<label>Address<tmpl_var form_address1></label>
+<tmpl_var form_address2></label>
+<label>City<tmpl_var form_city></label>
+<label>State/Province<tmpl_var form_state></label>
+<label>Zip/Postal Code<tmpl_var form_zipCode></label>
+<label>Country<tmpl_var form_country></label>
+<label>Phone<tmpl_var form_phone></label>
+<label>Fax<tmpl_var form_fax></label>
+<label>E-mail<tmpl_var form_email></label>
+<label>Photo<tmpl_var form_storageIdPhoto></label>
+<tmpl_var form_save>
 <tmpl_var form_footer>
 </div>
 ==== extraHeadTags ===========================================================

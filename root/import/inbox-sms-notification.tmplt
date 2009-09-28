@@ -1,0 +1,32 @@
+==== Template ================================================================
+Asset ID    : i9-G00ALhJOr0gMh-vHbKA
+Menu Title  : Inbox SMS Notification
+Parent      : root/import
+Title       : Inbox SMS Notification
+URL         : root/import/inbox-sms-notification
+==== synopsis ================================================================
+~
+==== template ================================================================
+^International(inbox sms notification,Account_Inbox);
+==== extraHeadTags ===========================================================
+~
+==== Properties ==============================================================
+display:
+  isHidden: '0'
+  newWindow: '0'
+meta:
+  inheritUrlFromParent: '0'
+  isExportable: '1'
+  isPackage: '0'
+  isPrototype: '0'
+  usePackedHeadTags: '0'
+properties:
+  namespace: Account/Inbox/Notification
+  parser: WebGUI::Asset::Template::HTMLTemplate
+  showInForms: '1'
+  usePacked: '0'
+security:
+  groupIdEdit: '4'
+  groupIdView: '7'
+  ownerUserId: '3'
+
