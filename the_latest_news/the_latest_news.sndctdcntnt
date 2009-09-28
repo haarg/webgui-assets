@@ -15,9 +15,9 @@ This is the latest news from Plain Black and WebGUI pulled directly from the sit
 ==== Properties ==============================================================
 display:
   cacheTimeout: '3600'
-  displayMode: interleaved
   displayTitle: '0'
   isHidden: '1'
+  maxHeadlines: '3'
   newWindow: '0'
   printableStyleTemplateId: PBtmpl0000000000000111
   styleTemplateId: stevestyle000000000003
@@ -29,7 +29,6 @@ meta:
   isPrototype: '0'
 properties:
   hasTerms: ''
-  maxHeadlines: '3'
   processMacroInRssUrl: '0'
 security:
   groupIdEdit: '3'

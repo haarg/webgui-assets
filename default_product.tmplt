@@ -167,9 +167,9 @@ URL         : default_product
 				<div class="title">Controls</div>
 				<ul>
 				<tmpl_unless variant_loop>
-					<li><a href="<tmpl_var addvariant_url>">Set Product price and SKU</a></li>
+					<li><a href="<tmpl_var addvariant_url>">^International(Set Product price and SKU,Asset_Sku);</a></li>
 				<tmpl_else>
-					<li><a href="<tmpl_var addvariant_url>">Add a Variant</a></li>	
+					<li><a href="<tmpl_var addvariant_url>">^International(Add a Variant,Asset_Sku);</a></li>	
 				</tmpl_unless>								
 				<li><a href="<tmpl_var addfeature_url>"><tmpl_var addfeature_label></a></li>
 				<li><a href="<tmpl_var addBenefit_url>"><tmpl_var addBenefit_label></a></li>

@@ -24,14 +24,14 @@ URL         : syndicated_articles
 </tmpl_if>
 
 <h2>
-<tmpl_if channel.link>
-	<a href="<tmpl_var channel.link>"><tmpl_var channel.title></a>
+<tmpl_if channel_link>
+	<a href="<tmpl_var channel.link>"><tmpl_var channel_title></a>
 <tmpl_else>
 	<tmpl_var channel.title>
 </tmpl_if>
 </h2>
 
-<tmpl_if channel.description>
+<tmpl_if channel_description>
 	<tmpl_var channel.description><p />
 </tmpl_if>
 
