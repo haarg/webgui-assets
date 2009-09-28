@@ -17,9 +17,10 @@ URL         : home/thinyrecord-templates/default-thingyrecord-view
 
 <tmpl_var description>
 
-<tmpl_if message>
-<tmpl_var message>
-</tmpl_if>
+<tmpl_if addedToCart>
+<tmpl_var message><br />
+<a href="<tmpl_var url>">^International(continue shopping button,Shop);</a><br />
+<tmpl_else>
 
 <tmpl_var form_header>
 <table cellpadding="0" cellspacing="0" border="0">
@@ -41,6 +42,7 @@ URL         : home/thinyrecord-templates/default-thingyrecord-view
 
 <tmpl_var form_submit>
 <tmpl_var form_footer>
+</tmpl_if>
 
 ==== extraHeadTags ===========================================================
 ~
