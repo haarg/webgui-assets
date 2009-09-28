@@ -27,8 +27,8 @@ URL         : newslettercstemplate
 		|
 	</tmpl_if>
 	<tmpl_unless user.isVisitor>
-        <a href="<tmpl_var mySubscriptionsUrl>">^International(my subscriptions,Asset_Newsletter);</a>
-        |
+        <tmpl_if mySubscriptionsUrl><a href="<tmpl_var mySubscriptionsUrl>">^International(my subscriptions,Asset_Newsletter);</a>
+        |</tmpl_if>
 	</tmpl_unless>
 	<a href="<tmpl_var search.url>"><tmpl_var search.label></a>
 </p>
@@ -81,7 +81,7 @@ meta:
   isPrototype: '0'
   usePackedHeadTags: '0'
 properties:
-  namespace: newsletter
+  namespace: Collaboration
   parser: WebGUI::Asset::Template::HTMLTemplate
   showInForms: '1'
   usePacked: '0'

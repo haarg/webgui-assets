@@ -52,16 +52,33 @@ YAHOO.util.Event.onDOMReady(function () {
     mySource.responseType   = DataSource.TYPE_JSON;
     mySource.responseSchema = {
         resultsList : 'records',
-        fields      : [ 'location', 'startDate', 'duration', 'eventNumber', 'url', 'title', 'description', 'price', 'quantityAvailable', 'deleteUrl', 'editUrl', 'assetId'],
+        fields      : [
+            {"key" : 'location',          "parser" : "string"},
+            {"key" : 'startDate',         "parser" : "string"},
+            {"key" : 'duration',          "parser" : "number"},
+            {"key" : 'eventNumber',       "parser" : "number"},
+            {"key" : 'url',               "parser" : "string"},
+            {"key" : 'title',             "parser" : "string"},
+            {"key" : 'description',       "parser" : "string"},
+            {"key" : 'price',             "parser" : "number"},
+            {"key" : 'quantityAvailable', "parser" : "number"},
+            {"key" : 'deleteUrl',         "parser" : "string"},
+            {"key" : 'editUrl',           "parser" : "string"},
+            {"key" : 'assetId',           "parser" : "string"}
+        ],
         metaFields: {
             totalRecords: "totalRecords" // Access to value in the server response
         }
     };
 
     var buildQueryString = function (state,dt) {
-        return ";startIndex=" + state.pagination.recordOffset +
-               ";keywords=" + Dom.get('keywordsField').value +
-               ";results=" + state.pagination.rowsPerPage;
+        var query = ";startIndex=" + state.pagination.recordOffset
+                  + ";keywords="   + Dom.get('keywordsField').value
+                  + ";results="    + state.pagination.rowsPerPage
+                  + ';sortKey='    + state.sortedBy.key
+                  + ';sortDir='   + ((state.sortedBy.dir === YAHOO.widget.DataTable.CLASS_DESC) ? "DESC" : "ASC")
+                  ;
+        return query;
     };
 
 

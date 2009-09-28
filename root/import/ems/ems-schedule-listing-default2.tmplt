@@ -87,7 +87,7 @@ YAHOO.util.Event.onDOMReady(function () {
     var formatDate = function( elCell, oRecord, oColumn, title ) {
         if( title == "" ) { Dom.addClass( elCell, 'emptyCell' ); return; }
          Dom.addClass( elCell, 'dateHeader' );
-         elCell.innerHTML = m_names[parseInt(title.substr(5,2))] + ' ' +
+         elCell.innerHTML = m_names[parseInt(title.substr(5,2),10)-1] + ' ' +
                               title.substr(8,2) + ' @ ' +
                               title.substr(11,5) ;
     }
@@ -116,7 +116,7 @@ YAHOO.util.Event.onDOMReady(function () {
 	    currentPageClass        : 'yui-pg-current-page', // default 
 	    pageLabelBuilder        : function (page,paginator) { 
 	        var title = dateRecords[page-1]; 
-                return     m_names[parseInt(title.substr(5,2))] + ' ' +
+                return     m_names[parseInt(title.substr(5,2),10)-1] + ' ' +
                               title.substr(8,2) ;   
 
 	    }, 

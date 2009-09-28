@@ -16,6 +16,14 @@ URL         : wiki-master-by-keyword-template.tmpl
 </tmpl_loop>
 </ul>
 
+<p> Yo, dudely </p>
+
+<tmpl_if pagination.pageCount.isMultiple>
+    <div class="pagination">
+        <tmpl_var pagination.previousPage>  &#183; <tmpl_var pagination.pageList.upTo10> &#183; <tmpl_var pagination.nextPage>
+    </div>
+</tmpl_if>
+
 
 ==== extraHeadTags ===========================================================
 ~
